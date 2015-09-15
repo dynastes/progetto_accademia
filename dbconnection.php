@@ -1,5 +1,6 @@
 <?php
 	$connessione = mysqli_connect("127.0.0.1", "root", "Jumala91", "progetto_accademia");
+	
 	if($connessione){
 		//echo "Connessione al database riuscita!!!!!!!!!!!";
 	} else {

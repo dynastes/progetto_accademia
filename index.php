@@ -1,7 +1,31 @@
 <?php
 @session_start();
-@include_once 'utente_loggato.php';
+//@include_once 'utente_loggato.php'; //è già in menu.php
 @include_once 'dbconnection.php';
+
+//inizio controllo per il login:
+$usermail=$_POST['usermail'];
+$password=$_POST['password'];
+
+$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
+$risultato=$connessione->query($loginString);
+if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
+	echo "Login In Corso............";
+	//if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
+		echo "Creazione SESSIONE:......";
+		$risultato=$connessione->query($loginString,MYSQLI_USE_RESULT); ///FUNZIONA O NO?????
+		echo "$risultato->Nome";
+		$_SESSION['login'] = true;
+		/*$utente = new utenteLoggato();
+		$utente->set_parameter();
+		$utente=serialize($utente);
+		$_SESSION['ut'] = $utente;*/
+	//}
+	//@header("location:testdom.php");
+	//reindirizzamento alla pagina HOME PAGE dell'utente
+} else { //se non vi sono valori nel database (o vi sono più valori restituiti, anche se improbabile) allora esegui l'ELSE
+	echo "<div style=\"width:100%;background-color:#FF3333;text-align:center;\"><b>NOME UTENTE o PASSWORD errati. Riprova ad eseguire il login</b></div>";
+}
 ?>
 
 
@@ -41,86 +65,64 @@
 	<!-- end header -->
 	<section id="featured">
 	<!-- start slider -->
-	<div class="container">
-		<section class="loginform cf">
-		<form name="login" action="index_submit" method="get" accept-charset="utf-8">
-			<table align="center" >
-			<tr>
-				<td>
-					<label for="usermail">Email &nbsp;</label>
-				
-				</td>
-				<td>
-					
-					<input type="email" name="usermail" placeholder="yourname@email.com" required>
-				</td>
-			</tr>
-			<tr>
-			<td>
-			</br>
-			</td>
-			
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="password">Password  &nbsp;</label>
-				
-				</td>
-				<td>
-				
-					<input type="password" name="password" placeholder="password" required>
-				</td>
-			</tr>
-			<tr>
-			<td>
-			</br>
-			</td>
-			
-			</tr>
-			<tr>
-				<td>
-					<input type="submit" value="Login">
-				</td>
-			</tr>
-			<tr>
-			<td>
-			</br>
-			</td>
-			
-			</tr>
-			<tr>
-			<td>
-			<a href="register.html">Registrati</a>
-			</br>
-			<a href="">Password dimenticata ? </a>
-			</td>
-			
-			</tr>
-			</table>
-			<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
-
-
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-
-
-
-			</div>
-		</form>
-			
+		<div class="container">
+			<section class="loginform cf">
+				<form name="login" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
+					<table align="center" >
+						<tr>
+							<td>
+								<label for="usermail">Email &nbsp;</label>
+							
+							</td>
+							<td>
+								<input type="email" name="usermail" placeholder="yourname@email.com" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								</br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="password">Password  &nbsp;</label>
+							</td>
+							<td>
+								<input type="password" name="password" placeholder="password" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								</br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" value="Login">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								</br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="register.html">Registrati</a>
+								</br>
+								<a href="">Password dimenticata ? </a>
+							</td>
+						</tr>
+					</table>
+					<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
+						<p align="center">Copyright © 2015 Accademia Di Belle Arti Kandinskij <a href="" rel="nofollow" target="_blank"></a>
+						</p>
+					</div>
+				</form>		
+			</section>
+		</div>	
 	</section>
-	<!-- INSERIRE QUI IL FORM PER IL LOGIN -->
-	
-	</div>	
-
-	</section>
-	
-	
-	
-</div>
+</div> <!-- CHIUSURA DIV WRAPPER -->
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
