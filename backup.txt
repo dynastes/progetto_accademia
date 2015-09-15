@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moderna - Bootstrap 3 flat corporate template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://bootstraptaste.com" />
+<!-- css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="css/flexslider.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+
+
+<!-- Theme skin -->
+<link href="skins/default.css" rel="stylesheet" />
+
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					<img src="logo.png" alt="" />
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="components.html">Components</a></li>
+								<li><a href="pricingbox.html">Pricing box</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+	<!-- end header -->
+	<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+		<section class="loginform cf">
+		<form  name="login" action="index_submit" method="get" accept-charset="utf-8">
+		<table align="center" n>
+			<tr>
+				<td>
+					<label for="usermail">Email &nbsp;</label>
+				
+				</td>
+				<td>
+					
+					<input type="email" name="usermail" placeholder="yourname@email.com" required>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="password">Password  &nbsp;</label>
+				
+				</td>
+				<td>
+				
+					<input type="password" name="password" placeholder="password" required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="Login">
+				</td>
+			</tr>
+			</table>
+			
+		</form>
+	</section>
+	<!-- INSERIRE QUI IL FORM PER IL LOGIN -->
+	</div>	
+
+	
+	
+
+</div>
+</div>
+	<div class="footer">
+<div class="container">
+<div class="col-md-12">
+<p class="enigma_footer_copyright_info">
+Copyright © 2015 Accademia Di Belle Arti Kandinskij
+<a href="" rel="nofollow" target="_blank"></a>
+</p>
+</div>
+</div>
+<style type="text/css">
+</div>
+<!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/google-code-prettify/prettify.js"></script>
+<script src="js/portfolio/jquery.quicksand.js"></script>
+<script src="js/portfolio/setting.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
