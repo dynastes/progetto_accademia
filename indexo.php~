@@ -11,20 +11,17 @@ $loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Passw
 $risultato=$connessione->query($loginString);
 if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	echo "Login In Corso............";
-	if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
+	//if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
 		echo "Creazione SESSIONE:......";
 		$res=$risultato->fetch_assoc(); //mette i risultati in un array
 		echo "Risultato= " . $res["Nome"];
 		$_SESSION['login'] = true;
-		
-		//popolo l'oggetto UTENTE
 		$utente = new utenteLoggato();
-		$utente->set_parameter($res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"]);
-		echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
+		$utente->setNome($res["Nome"]);
 		echo " NOME UTENTE= ".$utente->nome;
 		$utente=serialize($utente);
 		$_SESSION['ut'] = $utente;
-	}
+	//}
 	//@header("location:testdom.php");
 	//reindirizzamento alla pagina HOME PAGE dell'utente
 } else { //se non vi sono valori nel database (o vi sono più valori restituiti, anche se improbabile) allora esegui l'ELSE
