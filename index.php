@@ -3,12 +3,18 @@
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
 
-//inizio controllo per il login:
-$usermail=$_POST['usermail'];
-$password=$_POST['password'];
+$risultato="";
 
-$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
-$risultato=$connessione->query($loginString);
+//inizio controllo per il login:
+if(isset($_POST['usermail'])){
+	//echo "email SETTATA";
+	$usermail=$_POST['usermail'];
+	$password=$_POST['password'];
+	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
+	$risultato=$connessione->query($loginString);
+}
+
+
 if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	echo "Login In Corso............";
 	if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
@@ -25,10 +31,12 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$utente=serialize($utente);
 		$_SESSION['ut'] = $utente;
 	}
-	//@header("location:testdom.php");
+	@header("location:testdom.php");
 	//reindirizzamento alla pagina HOME PAGE dell'utente
 } else { //se non vi sono valori nel database (o vi sono più valori restituiti, anche se improbabile) allora esegui l'ELSE
-	echo "<div style=\"width:100%;background-color:#FF3333;text-align:center;\"><b>NOME UTENTE o PASSWORD errati. Riprova ad eseguire il login</b></div>";
+	if(isset($_POST['usermail'])){
+		echo "<div style=\"width:100%;background-color:#FF3333;text-align:center;\"><b>NOME UTENTE o PASSWORD errati. Riprova ad eseguire il login</b></div>";
+	}
 }
 ?>
 
