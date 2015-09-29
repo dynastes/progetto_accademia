@@ -1,3 +1,15 @@
+<?php @include_once 'menu.php';
+
+if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
+	//echo "Avviso settato!!!! ".$_POST['avviso'];
+	/*$insert=$_POST['avviso'];
+	if ($connessione->query($insert) === TRUE) {
+		 echo "New record created successfully";
+	} else {
+		 echo "Error: " . $sql . "<br>" . $conn->error;
+	}*/
+}
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -21,7 +33,7 @@
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
-					@include_once 'menu.php';
+					menu();
 				?>
 			</div> <!-- FINE MENU -->
 
@@ -31,7 +43,7 @@
 				</div>
 				<div name="avvisi">
 				<h2>Pubblica avvisi </h2>
-					<form id="carica_avvisi" name="carica-avvisi" method="post" action="carica-avvisi.php" accept-charset="utf-8">
+					<form id="carica_avvisi" name="carica-avvisi" method="post" action="carica-avvisi.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
 						
 						<textarea rows="20" cols="155" name="avviso"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
 						</br>
