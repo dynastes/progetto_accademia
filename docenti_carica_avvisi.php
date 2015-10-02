@@ -1,5 +1,8 @@
 <?php @include_once 'menu.php';
-
+if($_SESSION['query']===1){
+	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Avviso pubblicato correttamente</div>";
+	$_SESSION['query']=0;
+}
 if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 	//echo "Avviso settato!!!! ".$_POST['avviso'];
 	/*$insert=$_POST['avviso'];
@@ -45,7 +48,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				<h2>Pubblica avvisi </h2>
 					<form id="carica_avvisi" name="carica-avvisi" method="post" action="carica-avvisi.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
 						
-						<textarea rows="20" cols="155" name="avviso"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
+						<textarea rows="20" cols="155" name="avviso" style="width:100%;"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
 						</br>
 						<input  type="submit" value="pubblica avviso">
 					</form>

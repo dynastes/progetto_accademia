@@ -25,7 +25,9 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		
 		//popolo l'oggetto UTENTE
 		$utente = new utenteLoggato();
-		$utente->set_parameter($res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"]);
+		$utente->set_parameter($res["Id"],$res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"]);
+		//finito di popolare l'utente
+		
 		echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
 		echo " NOME UTENTE= ".$utente->nome;
 		$utente=serialize($utente);

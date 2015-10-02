@@ -1,5 +1,6 @@
 <?php
 class utenteLoggato{
+	var $id;
 	var $nome;
 	var $cognome;
 	var $data_nascita;
@@ -29,7 +30,8 @@ class utenteLoggato{
 		$this->nome=$nome;
 	}
 
-	public function set_parameter($nome,$cognome,$data_nascita,$cf,$email,$indirizzo,$residenza,$telefono){
+	public function set_parameter($id,$nome,$cognome,$data_nascita,$cf,$email,$indirizzo,$residenza,$telefono){
+		$this->id=$id;
 		$this->nome=$nome;
 		$this->cognome=$cognome;
 		$this->data_nascita=$data_nascita;

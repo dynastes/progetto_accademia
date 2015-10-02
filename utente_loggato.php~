@@ -30,11 +30,14 @@ class utenteLoggato{
 	}
 
 	public function set_parameter($nome,$cognome,$data_nascita,$cf,$email,$indirizzo,$residenza,$telefono){
-		$this->cf=$cf;
 		$this->nome=$nome;
 		$this->cognome=$cognome;
-		$this->matricola=$matricola;
-		$this->ruolo=$ruolo;
+		$this->data_nascita=$data_nascita;
+		$this->cf=$cf;
+		$this->email=$email;
+		$this->indirizzo=$indirizzo;
+		$this->residenza=$residenza;
+		$this->telefono=$telefono;
 	}
 }
 ?>
