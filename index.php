@@ -28,12 +28,38 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$utente->set_parameter($res["Id"],$res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"]);
 		//finito di popolare l'utente
 		
+		//IDENTIFICO se l'utente è un DOCENTE, STUDENTE, ADMIN
+		//#DOCENTE
+		$controllaRuolo="SELECT d.Id_anagrafe FROM docenti d, anagrafe a WHERE d.Id_anagrafe=". $utente->id;
+		$risultato="";
+		$risultato=$connessione->query($controllaRuolo);
+		$res=$risultato->fetch_assoc();
+		if ($res["Id_anagrafe"]>0){
+			$utente->set_ruolo("docente");
+		} else {
+			//#STUDENTE
+			$utente->set_ruolo("studente");
+		}
+		//#ADMIN
+		$controllaRuolo="SELECT am.Id_anagrafe FROM amministratori am, anagrafe a WHERE am.Id_anagrafe=". $utente->id;
+		$risultato="";
+		$risultato=$connessione->query($controllaRuolo);
+		$res=$risultato->fetch_assoc();
+		if($res["Id_anagrafe"]>0){
+			$utente->set_ruolo("admin");
+		}
+		
+		
+		//FINE IDENTIFICAZIONE
+		
 		echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
 		echo " NOME UTENTE= ".$utente->nome;
+		echo " RUOLO= ".$utente->ruolo;
 		$utente=serialize($utente);
 		$_SESSION['ut'] = $utente;
 	}
-	@header("location:testdom.php");
+	echo "\nReindirizzamento in corso...";
+	//@header("location:testdom.php");
 	//reindirizzamento alla pagina HOME PAGE dell'utente
 } else { //se non vi sono valori nel database (o vi sono più valori restituiti, anche se improbabile) allora esegui l'ELSE
 	if(isset($_POST['usermail'])){

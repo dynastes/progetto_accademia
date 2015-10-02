@@ -9,6 +9,7 @@ class utenteLoggato{
 	var $indirizzo;
 	var $residenza;
 	var $telefono;
+	var $ruolo; //valori: docente, studente, admin
 
 	public function __construct(){
 		$this->cf=null;
@@ -40,6 +41,10 @@ class utenteLoggato{
 		$this->indirizzo=$indirizzo;
 		$this->residenza=$residenza;
 		$this->telefono=$telefono;
+	}
+
+	public function set_ruolo($ruolo){
+		$this->ruolo=$ruolo;
 	}
 }
 ?>
