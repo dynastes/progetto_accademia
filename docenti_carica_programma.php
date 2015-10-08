@@ -34,13 +34,17 @@
 				<div id="avvisi">
 					<?php 
 						if(isset($_FILES['FileUtente'])){
+							$directory="./caricamenti/".$utente->id . $utente->nome."/";
+							if (!file_exists($directory)) {
+								 mkdir($directory, 0777, true);
+							}
 							$tempPos = $_FILES['FileUtente']['tmp_name'];
-							$destPos = "./caricamenti/".$_FILES['FileUtente']['name'];
+							$destPos = $directory.$_FILES['FileUtente']['name'];
 							move_uploaded_file($tempPos, $destPos);
 							echo '<div style="width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;">
 									Operazione eseguita! Il file "'. $_FILES['FileUtente']['name'] . '" è stato caricato correttamente
 									</div>';
-							echo 'Per caricare un ulteriore file, <a href="docenti_carica_avvisi.php">cliccare qui</a>';
+							echo 'Per caricare un ulteriore file, <a href="docenti_carica_programma.php">cliccare qui</a>';
 						}else{ 
 							echo '<p>Carica un file PDF o .doc/docx/opf contenente il programma di studi del tuo corso</p>
 							<form action="docenti_carica_programma.php" enctype="multipart/form-data" method="POST">
