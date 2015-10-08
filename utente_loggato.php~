@@ -43,8 +43,8 @@ class utenteLoggato{
 		$this->telefono=$telefono;
 	}
 
-	public function set_ruolo(){
-		
+	public function set_ruolo($ruolo){
+		$this->ruolo=$ruolo;
 	}
 }
 ?>

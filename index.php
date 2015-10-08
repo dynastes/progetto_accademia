@@ -58,8 +58,11 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$utente=serialize($utente);
 		$_SESSION['ut'] = $utente;
 	}
+	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
 	echo "\nReindirizzamento in corso...";
-	//@header("location:testdom.php");
+	@header("location:docenti_home.php");
+	//FINE RIGHE DA IMMETTERE NELL'IF
+	
 	//reindirizzamento alla pagina HOME PAGE dell'utente
 } else { //se non vi sono valori nel database (o vi sono più valori restituiti, anche se improbabile) allora esegui l'ELSE
 	if(isset($_POST['usermail'])){

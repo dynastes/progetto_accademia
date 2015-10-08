@@ -46,5 +46,9 @@ class utenteLoggato{
 	public function set_ruolo($ruolo){
 		$this->ruolo=$ruolo;
 	}
+	
+	public function get_ruolo(){
+		return $this->ruolo;
+	}
 }
 ?>

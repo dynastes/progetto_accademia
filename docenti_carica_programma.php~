@@ -36,6 +36,7 @@
 						if(isset($_FILES['FileUtente'])){
 							$tempPos = $_FILES['FileUtente']['tmp_name'];
 							$destPos = "./caricamenti/".$_FILES['FileUtente']['name'];
+							echo "Caricamento in corso...";
 							move_uploaded_file($tempPos, $destPos);
 							echo '<div style="width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;">
 									Operazione eseguita! Il file "'. $_FILES['FileUtente']['name'] . '" è stato caricato correttamente
