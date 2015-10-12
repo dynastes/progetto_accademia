@@ -29,13 +29,29 @@
 			<div id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<p>Qui verranno elencati i programmi caricati attraverso l'apposita pagina <a href="docenti_carica_programma.php">Carica Programmi</a></p>
+				</div>
+				<div class="box-programmi-caricati">
+					<p><b>Nome file</b></p>
+				</div>
+				<div class="box-programmi-caricati">
+					<p><b>Data caricamento</b></p>
+				</div>
+				<div class="box-programmi-caricati">
+					<p><b>Link di download</b></p>
 				</div>
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
-				$stringasql="SELECT Nome_file, Data_caricamento FROM docenti_programmi_caricati WHERE Id_docente=".$utente->id;
+				$stringasql="SELECT Nome_file, Data_caricamento, Percorso_file, Nome_file FROM docenti_programmi_caricati WHERE Id_docente=".$utente->id;
 				$elencoCaricamenti=$connessione->query($stringasql);
 				while($res=$elencoCaricamenti->fetch_assoc()){
 					echo '<div class="box-programmi-caricati">';
-					echo $res["Nome_file"]." - ".$res["Data_caricamento"];
+					echo $res["Nome_file"];
+					echo '</div>';
+					echo '<div class="box-programmi-caricati">';
+					echo $res["Data_caricamento"];
+					echo '</div>';
+					echo '<div class="box-programmi-caricati">';
+					echo '<a href="'.$res["Percorso_file"].$res["Nome_file"].'">Scarica File</a>';
 					echo '</div>';
 				}
 				?>

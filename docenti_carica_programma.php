@@ -52,7 +52,7 @@
 							echo 'Per caricare un ulteriore file, <a href="docenti_carica_programma.php">cliccare qui</a>';
 						}else{ 
 							echo '<p>Carica i documenti contenenti il programma di studi del tuo corso.
-							I file caricati devono essere del formato <b>.zip, PDF, doc, ppt, jpg</b>. Altri formati potrebbero non essere caricati.
+							I file caricati devono essere del formato <b>.zip, doc, ppt, jpg</b>. Altri formati potrebbero non essere caricati.
 							Dimensione massima consentita: 1MB</p>
 							<form width:60%;" action="docenti_carica_programma.php" enctype="multipart/form-data" method="POST">
 								<input style="float:left;" type="file" name="FileUtente">
