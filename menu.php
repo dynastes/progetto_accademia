@@ -49,7 +49,7 @@ function menu(){
 					<a href="#">Programma</a>
 					<!-- Flyout -->
 					<ul class="flyout-content nav stacked" id="riquadro">
-						<li class="over"><a href="#">Visualizza programma</a></li>
+						<li class="over"><a href="docenti_visualizza_programma.php">Visualizza programma</a></li>
 						<li  class="over"><a href="docenti_carica_programma.php">Carica programma</a></li>
 					</ul>
 				</li>
