@@ -57,7 +57,7 @@ function menu(){
 					<a href="#">Avvisi</a>
 					<!-- Flyout -->
 					<ul class="flyout-content nav stacked" id="riquadro">
-						<li  class="over"><a href="#">Visualizza avvisi</a></li>
+						<li  class="over"><a href="docenti_visualizza_avvisi.php">Visualizza avvisi</a></li>
 						<li  class="over"><a href="docenti_carica_avvisi.php">Carica avvisi</a></li>
 					</ul>
 				</li>

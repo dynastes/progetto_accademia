@@ -123,9 +123,13 @@ li{
 
 /* Fine struttura menu */
 /*BOX-PROGRAMMI-CARICATI*/
+#box-caricamenti-principale{
+	width:99%;
+}
+
 .box-programmi-caricati{
 	border:1px solid #ffffff;
-	width:32%;
+	width:33%;
 	background-color:#EFEFEF;
 	margin-bottom:0px;
 	text-align:center;

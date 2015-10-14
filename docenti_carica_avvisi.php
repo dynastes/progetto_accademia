@@ -46,9 +46,10 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				</div>
 				<div name="avvisi">
 				<h2>Pubblica avvisi </h2>
+					<p>Per visualizzare tutti gli avvisi pubblicati, cliccare sul seguente link: <a href="docenti_visualizza_avvisi.php">Visualizza Avvisi</a> </p>
 					<form id="carica_avvisi" name="carica-avvisi" method="post" action="carica-avvisi.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
 						
-						<textarea rows="20" cols="155" name="avviso" style="width:100%;"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
+						<textarea rows="20" cols="155" name="avviso" style="width:100%;height:30%;"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
 						</br>
 						<input  type="submit" value="pubblica avviso">
 					</form>
