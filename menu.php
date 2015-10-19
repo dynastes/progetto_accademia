@@ -44,7 +44,7 @@ function menu(){
 		if($utente->get_ruolo()=="docente"){
 			$menu='<ul class="nav site-nav" >
 				<li><a href="docenti_home.php">Home</a><!-- * --></li>
-				<li><a href="#">Profilo</a><!-- * --></li>
+				<li><a href="docenti_profilo.php">Profilo</a><!-- * --></li>
 				<li class="flyout">
 					<a href="#">Programma</a>
 					<!-- Flyout -->

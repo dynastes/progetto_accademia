@@ -31,7 +31,7 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
 					<p>Qui verranno elencati tutti gli avvisi da Lei caricati attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Carica Avvisi</a></p>
 				</div>
-				<div class="box-programmi-caricati">
+				<!--div class="box-programmi-caricati">
 					<p><b>Data Pubblicazione</b></p>
 				</div>
 				<div class="box-programmi-caricati">
@@ -40,11 +40,20 @@
 				<div class="box-programmi-caricati">
 					<p><b>Opzioni</b></p>
 				</div>
+				<div class="box-programmi-caricati">
+					<p><b>Visibilità</b></p>
+				</div-->
+				<table id="box-caricamenti-principale">
+				<tr>
+					<td class="box-programmi-caricati"><b>Data pubblicazione</b></td>
+					<td class="box-programmi-caricati"><b>Testo dell'avviso</b></td>
+					<td class="box-programmi-caricati"><b>Opzioni</b></td>
+					<td class="box-programmi-caricati"><b>Visibilità</b></td>
+				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				echo '<table id="box-caricamenti-principale">';
-				$stringasql="SELECT Testo, Data_pubblicazione FROM avvisi WHERE Id_docente=".$utente->id;
+				$stringasql="SELECT Testo, Data_pubblicazione, Visibilita FROM avvisi WHERE Id_docente=".$utente->id;
 				$elencoCaricamenti=$connessione->query($stringasql);
 				while($res=$elencoCaricamenti->fetch_assoc()){
 					echo "<tr>";
@@ -56,6 +65,13 @@
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
 							echo '<a href="#">Cancella Avviso (non funzionante)</a>';
+						echo '</td>';
+						echo '<td class="box-programmi-caricati">';
+							if($res["Visibilita"]==="pubblico"){
+								echo '<span style="color:green;">'.$res["Visibilita"].'</span>';
+							} else {
+								echo '<span style="color:red;">'.$res["Visibilita"].'</span>';
+							}
 						echo '</td>';
 					echo "</tr>";
 				}

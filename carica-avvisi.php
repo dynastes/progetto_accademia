@@ -1,8 +1,9 @@
 <?php @include_once 'menu.php'; 
 $testo=$_POST['avviso'];
-echo "###Inserimento dell'avviso: \n".$testo." scritto da: ".$utente->nome."\n\n";
+$visibilita=$_POST['visibility'];
+echo "###Inserimento dell'avviso: \n".$testo." scritto da: ".$utente->nome." e con visibilità ".$visibilita."\n\n";
 //aggiustare QUERY dopo la creazione della tabella AVVISI
-$insert="INSERT INTO avvisi (Id_docente, Testo, Data_pubblicazione) VALUES (".$utente->id.",'". $testo. "',SYSDATE())";
+$insert="INSERT INTO avvisi (Id_docente, Testo, Data_pubblicazione, Visibilita) VALUES (".$utente->id.",'". $testo. "',SYSDATE(), '".$visibilita."')";
 
 if ($connessione->query($insert) === TRUE) {
 	$_SESSION['query']=1;

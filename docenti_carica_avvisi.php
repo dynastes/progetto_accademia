@@ -51,6 +51,14 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 						
 						<textarea rows="20" cols="155" name="avviso" style="width:100%;height:30%;"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
 						</br>
+						<div style="margin-top:10px;">
+							<label>Rendi l'avviso visibile a:</label>
+							<select name="visibility" id="visibility">
+								<option value="pubblico">Studenti, docenti e amministratori</option>
+								<option value="privato">Solo amministratori</option>
+							</select>
+						</div>
+						<br>
 						<input  type="submit" value="pubblica avviso">
 					</form>
 				</div>
