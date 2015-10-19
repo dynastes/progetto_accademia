@@ -4,6 +4,7 @@
 @include_once 'dbconnection.php';
 
 $risultato="";
+$ruoloUtente="";//serve per poter prelevare da utente->ruolo il ruolo dell'utente e poterlo reinirizzare nella homepage corretta
 
 //inizio controllo per il login:
 if(isset($_POST['usermail'])){
@@ -55,12 +56,19 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
 		echo " NOME UTENTE= ".$utente->nome;
 		echo " RUOLO= ".$utente->ruolo;
+		$ruoloUtente=$utente->ruolo;
 		$utente=serialize($utente);
 		$_SESSION['ut'] = $utente;
 	}
 	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
 	echo "\nReindirizzamento in corso...";
-	@header("location:docenti_home.php");
+	if($ruoloUtente==="studente"){
+		@header("location:studenti_home.php");
+	} else if ($ruoloUtente==="docente"){
+		@header("location:docenti_home.php");
+	} else if ($ruoloUtente==="admin"){
+		@header("location:admin.php");
+	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
 	
 	//reindirizzamento alla pagina HOME PAGE dell'utente

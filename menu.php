@@ -19,7 +19,7 @@ function menu(){
 		//admin, studente, docente
 		if($utente->get_ruolo()=="studente"){
 			$menu='<ul class="nav site-nav" >
-			<li><a href="#">Home</a><!-- * --></li>
+			<li><a href="studenti_home.php">Home</a><!-- * --></li>
 			<li><a href="#">Profilo</a><!-- * --></li>
 			<li class="flyout">
 				<a href="#">Piano di studi</a>
