@@ -33,8 +33,8 @@ function menu(){
 				<a href="#">Documenti</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
-					<li  class="over"><a href="#">Visualizza documenti</a></li>
-					<li  class="over"><a href="#">Carica documenti</a></li>
+					<li  class="over"><a href="studenti_visualizza_documenti.php">Visualizza documenti</a></li>
+					<li  class="over"><a href="studenti_carica_documenti.php">Carica documenti</a></li>
 				</ul>
 			</li>
 			<li><a href="#">Contatti</a><!-- * --></li>

@@ -31,7 +31,15 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
 				</div>
 				<div id="avvisi">
-					<p>avviso1</p>
+					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da docenti o admin. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
+					<div id="elenco-avvisi">
+						<?php
+							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an
+WHERE av.Id_docente=an.Id";
+							$avvisiLista=$connessione->query($sqlavvisi);
+							
+						?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -39,8 +47,7 @@
 		<!-- INIZIO FOOTER -->
 		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
 				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
+					Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				</p>
 			</div> 
 	</body>

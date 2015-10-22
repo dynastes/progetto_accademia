@@ -29,9 +29,8 @@
 			<div id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
-					<p>Qui verranno elencati i programmi caricati attraverso l'apposita pagina <a href="docenti_carica_programma.php">Carica Programmi</a></p>
+					<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina <a href="studenti_carica_documenti.php">Carica documenti</a></p>
 				</div>
-
 				<table id="box-caricamenti-principale">
 					<tr>
 						<td class="box-documenti-caricati" style="background-color:#D0D0D0;">
@@ -45,7 +44,7 @@
 						</td>
 					</tr>
 					<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
-					$stringasql="SELECT Nome_file, Data_caricamento, Percorso_file, Nome_file FROM docenti_programmi_caricati WHERE Id_docente=".$utente->id;
+					$stringasql="SELECT Nome_file, Data_caricamento, Percorso_file, Nome_file FROM studenti_documenti_caricati WHERE Id_studente=".$utente->id;
 					$elencoCaricamenti=$connessione->query($stringasql);
 					while($res=$elencoCaricamenti->fetch_assoc()){
 						echo '<tr>';
@@ -57,7 +56,7 @@
 						echo '</tr>';
 					}
 					?>
-				</table>	
+				</table>
 			</div>
 		</div>
 
