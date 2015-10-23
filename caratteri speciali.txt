@@ -1,0 +1,4 @@
+apostrofo('): &lsquo;
+apostrofo speciale(`): &rsquo;
+doppie virgolette apertura("): &rdquo;
+doppie virgolette chusuira("): &ldquo;
