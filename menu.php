@@ -25,7 +25,7 @@ function menu(){
 				<a href="#">Piano di studi</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
-					<li class="over"><a href="#">Visualizza piano di studi</a></li>
+					<li class="over"><a href="studenti_visualizza_piano_studi.php">Visualizza piano di studi</a></li>
 					<li  class="over"><a href="#">Gestisci materie integrative</a></li>
 				</ul>
 			</li>

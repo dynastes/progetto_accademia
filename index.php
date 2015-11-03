@@ -31,7 +31,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		
 		//IDENTIFICO se l'utente è un DOCENTE, STUDENTE, ADMIN
 		//#DOCENTE
-		$controllaRuolo="SELECT d.Id_anagrafe FROM docenti d, anagrafe a WHERE d.Id_anagrafe=". $utente->id;
+		$controllaRuolo="SELECT Id_anagrafe FROM docenti WHERE Id_anagrafe=". $utente->id;
 		$risultato="";
 		$risultato=$connessione->query($controllaRuolo);
 		$res=$risultato->fetch_assoc();
@@ -39,7 +39,13 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 			$utente->set_ruolo("docente");
 		} else {
 			//#STUDENTE
-			$utente->set_ruolo("studente");
+			$controllaRuolo="SELECT Id_anagrafe FROM studenti WHERE Id_anagrafe=". $utente->id;
+			$risultato="";
+			$risultato=$connessione->query($controllaRuolo);
+			$res=$risultato->fetch_assoc();
+			if ($res["Id_anagrafe"]>0){
+				$utente->set_ruolo("studente");
+			}
 		}
 		//#ADMIN
 		$controllaRuolo="SELECT am.Id_anagrafe FROM amministratori am, anagrafe a WHERE am.Id_anagrafe=". $utente->id;
@@ -61,13 +67,13 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$_SESSION['ut'] = $utente;
 	}
 	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
-	echo "\nReindirizzamento in corso...";
+	echo "\nReindirizzamento in corso... l'utente è un: ".$ruoloUtente;
 	if($ruoloUtente==="studente"){
 		@header("location:studenti_home.php");
 	} else if ($ruoloUtente==="docente"){
 		@header("location:docenti_home.php");
 	} else if ($ruoloUtente==="admin"){
-		@header("location:admin.php");
+		@header("location:admin_home.php");
 	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
 	
