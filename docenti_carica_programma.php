@@ -34,7 +34,7 @@
 				<div id="avvisi">
 					<?php 
 						if(isset($_FILES['FileUtente'])){
-							$directory="./caricamenti/".$utente->id . $utente->nome."/";
+							$directory="./caricamenti/docenti/".$utente->id . $utente->nome."/";
 							if (!file_exists($directory)) {
 								 mkdir($directory, 0777, true);
 							}

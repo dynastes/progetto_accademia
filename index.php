@@ -12,6 +12,7 @@ if(isset($_POST['usermail'])){
 	$usermail=$_POST['usermail'];
 	$password=$_POST['password'];
 	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
+	//echo -n "$loginString";
 	$risultato=$connessione->query($loginString);
 }
 
@@ -30,6 +31,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		//finito di popolare l'utente
 		
 		//IDENTIFICO se l'utente è un DOCENTE, STUDENTE, ADMIN
+		echo "Id dell'UTENTE: ".$utente->id;
 		//#DOCENTE
 		$controllaRuolo="SELECT Id_anagrafe FROM docenti WHERE Id_anagrafe=". $utente->id;
 		$risultato="";
@@ -37,6 +39,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$res=$risultato->fetch_assoc();
 		if ($res["Id_anagrafe"]>0){
 			$utente->set_ruolo("docente");
+			echo "utente DOCENTE";
 		} else {
 			//#STUDENTE
 			$controllaRuolo="SELECT Id_anagrafe FROM studenti WHERE Id_anagrafe=". $utente->id;
@@ -45,15 +48,17 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 			$res=$risultato->fetch_assoc();
 			if ($res["Id_anagrafe"]>0){
 				$utente->set_ruolo("studente");
+				echo "utente STUDENTE";
 			}
 		}
 		//#ADMIN
-		$controllaRuolo="SELECT am.Id_anagrafe FROM amministratori am, anagrafe a WHERE am.Id_anagrafe=". $utente->id;
+		$controllaRuolo="SELECT Id_anagrafe FROM amministratori WHERE Id_anagrafe=". $utente->id;
 		$risultato="";
 		$risultato=$connessione->query($controllaRuolo);
 		$res=$risultato->fetch_assoc();
 		if($res["Id_anagrafe"]>0){
 			$utente->set_ruolo("admin");
+			echo "utente ADMIN";
 		}
 		
 		
@@ -82,6 +87,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 	if(isset($_POST['usermail'])){
 		echo "<div style=\"width:100%;background-color:#FF3333;text-align:center;\"><b>NOME UTENTE o PASSWORD errati. Riprova ad eseguire il login</b></div>";
 	}
+	//@session_write_close();
 }
 ?>
 

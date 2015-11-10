@@ -164,3 +164,11 @@ li{
 	text-align:center;
 	float:left;
 }
+
+.box-finanze-caricate{
+	border:1px solid #ffffff;
+	background-color:#EFEFEF;
+	margin-bottom:0px;
+	text-align:center;
+	float:left;
+}

@@ -67,25 +67,27 @@ function menu(){
 		}
 		if($utente->get_ruolo()=="admin"){
 			$menu='<ul class="nav site-nav" >
-			<li><a href="#">Home</a><!-- * --></li>
-			<li><a href="#">Profilo</a><!-- * --></li>
+			<li><a href="admin_home.php">Home</a><!-- * --></li>
+			<li><a href="admin_gestione_finanze.php">Gestione Finanze</a><!--(mostrare i pagamenti caricati dagli utenti tramite la loro pagina "Carica Documenti")--></li>
 			<li class="flyout">
-				<a href="#">Piano di studi</a>
+				<a href="admin_gestisci_docenti.php">Gestisci Docenti</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
-					<li class="over"><a href="#">Visualizza piano di studi</a></li>
-					<li  class="over"><a href="#">Gestisci materie integrative</a></li>
+					<li class="over"><a href="admin_inserisci_materia.php">Inserisci Materia</a></li>
+					<li class="over"><a href="admin_cambia_materia_docenti.php">Imposta/cambia materia docenti</a></li>
+					<li class="over"><a href="admin_iscritto_in_studente.php">Imposta orari di lezione</a></li>
 				</ul>
 			</li>
 			<li class="flyout">
-				<a href="#">Documenti</a>
+				<a href="#">Gestisci allievi</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
-					<li  class="over"><a href="#">Visualizza documenti</a></li>
-					<li  class="over"><a href="#">Carica documenti</a></li>
+					<li  class="over"><a href="#">Trasforma iscritto in studente</a></li>
+					<li  class="over"><a href="#">Visualizza tutti gli studenti</a></li>
 				</ul>
 			</li>
-			<li><a href="#">Contatti</a><!-- * --></li>
+			<li><a href="admin_gestisci_certificati.php">Gestisci Certicifati</a><!-- (viene visualizzata la lsita di certificati richiesti dagli utenti e in attesa di essere creati/autorizzati) --></li>
+			<li><a href="admin_richieste_protocolli.php">Richieste Protocolli</a></li> <!-- creare tabella che possa registrare i protocolli in entrata [richieste da parte degli studenti del foglio timbrato delle materie + protocolli generali al di fuori del sito gestionale che necessitano di registrazione] e in uscita [qualsiasi cosa esce dalla segreteria] -->
 			<li><a href="logout.php">Disconnetti</a><!-- * --></li>
 		</ul>';
 	}
