@@ -37,6 +37,7 @@ function menu(){
 					<li  class="over"><a href="studenti_carica_documenti.php">Carica documenti</a></li>
 				</ul>
 			</li>
+			<li><a href="studenti_richiedi_certificato.php">Richiedi Certificato</a><!-- * --></li>
 			<li><a href="#">Contatti</a><!-- * --></li>
 			<li><a href="logout.php">Disconnetti</a><!-- * --></li>
 		</ul>';
@@ -45,6 +46,7 @@ function menu(){
 			$menu='<ul class="nav site-nav" >
 				<li><a href="docenti_home.php">Home</a><!-- * --></li>
 				<li><a href="docenti_profilo.php">Profilo</a><!-- * --></li>
+				<li><a href="docenti_visualizza_orario_lezioni.php">Orario proprie lezioni</a></li>
 				<li class="flyout">
 					<a href="#">Programma</a>
 					<!-- Flyout -->
@@ -75,11 +77,11 @@ function menu(){
 				<ul class="flyout-content nav stacked" id="riquadro">
 					<li class="over"><a href="admin_inserisci_materia.php">Inserisci Materia</a></li>
 					<li class="over"><a href="admin_cambia_materia_docenti.php">Imposta/cambia materia docenti</a></li>
-					<li class="over"><a href="admin_iscritto_in_studente.php">Imposta orari di lezione</a></li>
+					<li class="over"><a href="admin_imposta_orari_lezione.php">Imposta orari di lezione</a></li>
 				</ul>
 			</li>
 			<li class="flyout">
-				<a href="#">Gestisci allievi</a>
+				<a href="#">Gestisci Allievi</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
 					<li  class="over"><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto in studente</a></li>

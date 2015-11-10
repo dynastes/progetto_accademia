@@ -46,7 +46,7 @@
 								<td><!--label>ID Professore:</label--></td>
 								<td><input type="text" value="<?php echo $resNomeCognome['Id_anagrafe'];?>" name="id-docente" hidden></input></td>
 							</tr>
-							<tr style="margin-top:20px;">
+							<tr style="margin-top:20px; background-color:#efefef;">
 								<td style="width:16%;"><label>Scegli materia :</label></td>
 								<td>
 									<select name="materia-da-modificare">
@@ -68,10 +68,11 @@
 										?>
 									</select>
 								</td>
+								<td></td>
 							</tr>
-							<tr style="margin-top:20px;">
+							<tr style="margin-top:20px; background-color:#d0d0d0;">
 								<td><label>Cosa vuoi fare?</label></td>
-								<td><input type="radio" name="opzioni-materia" value="sostituisci" checked>Sostituisci con un'altra</td>
+								<td><input type="radio" name="opzioni-materia" value="sostituisci" checked>Sostituisci con un'altra materia:</td>
 								<td>
 									<select name="materia-sostitutiva">
 										<?php
@@ -85,9 +86,9 @@
 									</select>
 								</td>
 							</tr>
-							<tr style="margin-top:20px;">
+							<tr style="margin-top:20px; background-color:#d0d0d0;">
 								<td></td>
-								<td><input type="radio" name="opzioni-materia" value="aggiungi">Assegna una materia</td>
+								<td><input type="radio" name="opzioni-materia" value="aggiungi">Aggiungi una nuova materia:</td>
 								<td>
 									<select name="materia-aggiuntiva">
 										<?php
@@ -101,12 +102,12 @@
 									</select>
 								</td>
 							</tr>
-							<tr style="margin-top:20px;">
+							<tr style="margin-top:20px; background-color:#d0d0d0;">
 								<td></td>
 								<td><input type="radio" name="opzioni-materia" value="elimina">Togli relazione materia-professore</td><br>
 								<td></td>
 							</tr>
-							<tr style="margin-top:20px;">
+							<tr style="margin-top:20px;  background-color:#efefef;">
 								<td></td>
 								<td><input  type="submit" value="Modifica relazione Materia-Docente"></td>
 							</tr>

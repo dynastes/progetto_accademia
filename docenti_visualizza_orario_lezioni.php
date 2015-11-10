@@ -1,12 +1,4 @@
-<?php @include_once 'menu.php'; 
-if($_SESSION['studente-inserito']===1){
-	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Studente aggiunto correttamente</div>";
-	$_SESSION['studente-inserito']=0;
-} else if($_SESSION['studente-inserito']===-1){
-	echo "<div style=\"width:100%;color:red;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:red;background-color:#F78181;\">ATTENZIONE: studente non inserito</div>";
-	$_SESSION['studente-inserito']=0;
-}
-?>
+<?php @include_once 'menu.php'; ?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -37,7 +29,7 @@ if($_SESSION['studente-inserito']===1){
 			<div id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
-					<p>In questa pagina sarà possibile cambiare lo status di un iscritto in studente effettivo dell'accademia. Ecco qui sotto l'elenco degli studenti che ancora non sono stati immatricolati</p>
+					<p>Qui verranno elencati tutti gli avvisi da Lei caricati attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Carica Avvisi</a></p>
 				</div>
 				<!--div class="box-programmi-caricati">
 					<p><b>Data Pubblicazione</b></p>
@@ -53,25 +45,26 @@ if($_SESSION['studente-inserito']===1){
 				</div-->
 				<table id="box-caricamenti-principale">
 				<tr>
-					<td class="box-programmi-caricati"><b>Nome</b></td>
-					<td class="box-programmi-caricati"><b>Cognome</b></td>
-					<td class="box-programmi-caricati"><b>Opzioni</b></td>
+					<td class="box-programmi-caricati"><b>Nome materia</b></td>
+					<td class="box-programmi-caricati"><b>Inizio orario lezione</b></td>
+					<td class="box-programmi-caricati"><b>Fine orario lezione</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome, a.Id FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola=0";
-				$elencoStudenti=$connessione->query($stringasql);
-				while($res=$elencoStudenti->fetch_assoc()){
+				$stringasql="SELECT Nome_materia, Orario_inizio, Orario_fine FROM materie WHERE Id_docente=".$utente->id;
+				
+				$elencoMaterie=$connessione->query($stringasql);
+				while($res=$elencoMaterie->fetch_assoc()){
 					echo "<tr>";
 						echo '<td class="box-programmi-caricati">';
-							echo $res["Nome"];
+							echo $res["Nome_materia"];
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
-							echo $res["Cognome"];
+							echo $res["Orario_inizio"];
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
-							echo '<a href="admin_trasforma_iscritto_in_studente_dettagli.php?Id='.$res["Id"].'">Converti iscritto in Studente</a>';
+							echo $res["Orario_fine"];
 						echo '</td>';
 					echo "</tr>";
 				}
