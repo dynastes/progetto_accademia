@@ -42,12 +42,12 @@
 					<p>Ecco i dettagli del professor: <?php echo $resNomeCognome["Cognome"]." ".$resNomeCognome["Nome"] ?></p>
 					<form method="post" action="admin_cambia_materia_query.php">
 						<table>
-							<tr>
+							<tr style="margin-top:20px;">
 								<td><!--label>ID Professore:</label--></td>
 								<td><input type="text" value="<?php echo $resNomeCognome['Id_anagrafe'];?>" name="id-docente" hidden></input></td>
 							</tr>
-							<tr>
-								<td><label>Scegli materia da sostituire/eliminare:</label></td>
+							<tr style="margin-top:20px;">
+								<td style="width:16%;"><label>Scegli materia :</label></td>
 								<td>
 									<select name="materia-da-modificare">
 									<?php
@@ -69,11 +69,9 @@
 									</select>
 								</td>
 							</tr>
-							<tr>
-								<td><label>Operazione da effettuare sulla materia selezionata:</label></td>
-								<td><input type="radio" name="opzioni-materia" value="sostituisci" checked>Sostituisci con un'altra
-								<br>
-								<input type="radio" name="opzioni-materia" value="elimina">Togli relazione materia-professore</td>
+							<tr style="margin-top:20px;">
+								<td><label>Cosa vuoi fare?</label></td>
+								<td><input type="radio" name="opzioni-materia" value="sostituisci" checked>Sostituisci con un'altra</td>
 								<td>
 									<select name="materia-sostitutiva">
 										<?php
@@ -87,7 +85,28 @@
 									</select>
 								</td>
 							</tr>
-							<tr>
+							<tr style="margin-top:20px;">
+								<td></td>
+								<td><input type="radio" name="opzioni-materia" value="aggiungi">Assegna una materia</td>
+								<td>
+									<select name="materia-aggiuntiva">
+										<?php
+										//elenco materie per menù
+										$sqlMaterie="SELECT Id, Nome_materia FROM materie";
+										$res=$connessione->query($sqlMaterie);
+										while($resMaterie=$res->fetch_assoc()){
+											echo '<option value="'.$resMaterie["Id"].'">'.$resMaterie["Nome_materia"].'</option>';
+										} 
+										?>
+									</select>
+								</td>
+							</tr>
+							<tr style="margin-top:20px;">
+								<td></td>
+								<td><input type="radio" name="opzioni-materia" value="elimina">Togli relazione materia-professore</td><br>
+								<td></td>
+							</tr>
+							<tr style="margin-top:20px;">
 								<td></td>
 								<td><input  type="submit" value="Modifica relazione Materia-Docente"></td>
 							</tr>
