@@ -82,8 +82,8 @@ function menu(){
 				<a href="#">Gestisci allievi</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
-					<li  class="over"><a href="#">Trasforma iscritto in studente</a></li>
-					<li  class="over"><a href="#">Visualizza tutti gli studenti</a></li>
+					<li  class="over"><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto in studente</a></li>
+					<li  class="over"><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>
 				</ul>
 			</li>
 			<li><a href="admin_gestisci_certificati.php">Gestisci Certicifati</a><!-- (viene visualizzata la lsita di certificati richiesti dagli utenti e in attesa di essere creati/autorizzati) --></li>

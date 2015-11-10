@@ -60,16 +60,16 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
  						<br />
 						<table>
 							<tr>
-								<td><label for="usermail">ID Docente: &nbsp;</label></td>
-								<td><input style="color:black;" type="text" name="id-docente" placeholder="0" value="0" required></td>
+								<td><!--label for="usermail">ID Docente: &nbsp;</label--></td>
+								<td><input style="color:black;" type="text" name="id-docente" placeholder="0" value="0" required hidden></td>
 							</tr>
 							<tr>
 								<td><label for="usermail">Codice Materia:&nbsp;</label></td>
-								<td><input style="color:black;" type="text" name="codice-materia" placeholder="ABCDE"></td>
+								<td><input style="color:black;" type="text" name="codice-materia"></td>
 							</tr>
 							<tr>
 								<td><label for="usermail">Nome materia:&nbsp;</label></td>
-								<td><input type="text" name="nome-materia" placeholder="Scultura di Banane Nere" style="width:220px;" required></td>
+								<td><input type="text" name="nome-materia" placeholder="Scultura, Pittura ecc..." style="width:220px;" required></td>
 							</tr>
 							<tr>
 								<td><label for="usermail">Anno:&nbsp;</label></td>
@@ -89,7 +89,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 							</tr>
 							<tr>
 								<td><label for="usermail">CFA:&nbsp;</label></td>
-								<td><input type="text" name="cfa" placeholder="numero da 1 a +infinito"></td>
+								<td><input type="text" name="cfa" required></td>
 							</tr>
 							<tr>
 								<td><label for="usermail">Tipo di materia:&nbsp;</label></td>
