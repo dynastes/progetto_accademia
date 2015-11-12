@@ -2,9 +2,9 @@
 @include_once 'menu.php';
 
 $tipoCertificato=$_POST["tipo-certificato"];
-$sqlInserisciCertificato="INSERT INTO studenti_richieste_certificati 
+$sqlInserisciCertificato="INSERT INTO studenti_richieste 
 							(Id_anagrafe, Stato_richiesta, Data_invio, Tipo) 
-							VALUES (".$utente->id.", 'Non letto', SYSDATE(), ".$tipoCertificato.")";
+							VALUES (".$utente->id.", 'Non letto', NOW(), ".$tipoCertificato.")";
 
 
 if($connessione->query($sqlInserisciCertificato)){

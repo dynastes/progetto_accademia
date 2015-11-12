@@ -57,9 +57,9 @@ if($_SESSION['richiesta-inviata']===1){
 								<td class="box-avvisi-home" style="width:33%;"><b>Tipo richiesta</b></td>
 							</tr>
 							<?php
-								$sqlElencoCertificati="SELECT src.Data_invio, src.Stato_richiesta, t.Tipo 
-														FROM studenti_richieste_certificati AS src, tipo_richieste AS t 
-														WHERE Id_anagrafe=".$utente->id." AND src.Tipo=t.Id ORDER BY src.Data_invio DESC";
+								$sqlElencoCertificati="SELECT sr.Data_invio, sr.Stato_richiesta, t.Tipo 
+														FROM studenti_richieste AS sr, tipo_richieste AS t 
+														WHERE Id_anagrafe=".$utente->id." AND sr.Tipo=t.Id ORDER BY sr.Id DESC";
 								$res=$connessione->query($sqlElencoCertificati);
 								while($elencoCertificati=$res->fetch_assoc()){
 									echo '<tr>';

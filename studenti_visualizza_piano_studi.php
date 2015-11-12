@@ -1,4 +1,9 @@
 <?php @include_once 'menu.php'; 
+if($_SESSION['inserimento']===1){
+	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
+	$_SESSION['inserimento']=0;
+}
+
 function coloraRighe($a){
 	if($a==="Base"){
 		return ' background-color:#AACCFF;';
@@ -159,6 +164,11 @@ function coloraRighe($a){
 							}
 							echo "</table>";
 						?>
+						<form method="post" action="studenti_modifica_piano_studi.php">
+							<div style="text-align:right; width:100%; height:15%; padding-right:5%;">
+								<input type="submit" value="Modifica piano di studi">
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
