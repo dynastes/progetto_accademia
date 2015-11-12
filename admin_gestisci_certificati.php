@@ -38,23 +38,29 @@ if($_SESSION["autorizzato"]===1){
 				</div>
 				<table id="box-caricamenti-principale">
 					<tr>
-						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:40%;">
+						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:20%;">
 							<b>Caricato da...</b>
 						</td>
-						<td class="box-finanze-caricate" style="background-color:#D0D0D0;">
+						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:35%;">
+							<b>Tipo certificato</b>
+						</td>
+						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:15%;">
 							<b>Data Invio</b>
 						</td>
 						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:30%;">
 							<b>Opzioni</b>
 						</td>
 					</tr>
-					<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
-					$stringasql="SELECT a.Nome, a.Cognome, s.Data_invio, s.Id FROM studenti_richieste_certificati AS s, anagrafe AS a WHERE s.Id_anagrafe=a.Id AND Stato_richiesta='Non letto'";
+					<?php //qui interrogo il DB per sapere la lista dei certificati richiesti dagli utenti
+					$stringasql="SELECT a.Nome, a.Cognome, src.Data_invio, src.Id, t.Tipo
+								FROM studenti_richieste_certificati AS src, anagrafe AS a, tipo_richieste AS t
+								WHERE src.Id_anagrafe=a.Id AND t.Id=src.Tipo AND Stato_richiesta='Non letto'";
 					$elencoCaricamenti=$connessione->query($stringasql);
 					while($res=$elencoCaricamenti->fetch_assoc()){
 						$nomeCognome=$res["Nome"]." ".$res["Cognome"];
 						echo '<tr>';
 							echo '<td class="box-finanze-caricate">'.$nomeCognome.'</td>';
+							echo '<td class="box-finanze-caricate">'.$res["Tipo"].'</td>';
 							echo '<td class="box-finanze-caricate">'.$res["Data_invio"].'</td>';
 							echo '<td class="box-finanze-caricate"><a href="admin_autorizza_certificati.php?Id='.$res["Id"].'">Autorizza certificato</a></td>';
 						echo '</tr>';

@@ -45,21 +45,31 @@
 				</div-->
 				<table id="box-caricamenti-principale">
 				<tr>
-					<td class="box-programmi-caricati"><b>Nome</b></td>
-					<td class="box-programmi-caricati"><b>Cognome</b></td>
+					<td class="box-programmi-caricati"><b>Materia</b></td>
+					<td class="box-programmi-caricati"><b>Inizio lezione</b></td>
+					<td class="box-programmi-caricati"><b>Fine Lezione</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
-				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0";
-				$elencoStudenti=$connessione->query($stringasql);
-				while($res=$elencoStudenti->fetch_assoc()){
+				//acquisisco il corso dell'utente in questione
+				$sqlCorso="SELECT Id_corso FROM studenti WHERE Id_anagrafe=".$utente->id;
+				$res=$connessione->query($sqlCorso);
+				$resIdCorso=$res->fetch_assoc();
+
+				//prendo le materie del corso $resIdCorso
+				$sqlMaterie="SELECT m.Nome_materia, m.Orario_inizio, m.Orario_fine FROM materie AS m, materie_corsi AS mc WHERE mc.Id_corso=".$resIdCorso["Id_corso"]." AND m.Id=mc.Id_materia";
+				$res=$connessione->query($sqlMaterie);
+
+				while($resMaterie=$res->fetch_assoc()){
 					echo "<tr>";
 						echo '<td class="box-programmi-caricati">';
-							echo $res["Nome"];
+							echo ucfirst(strtolower($resMaterie["Nome_materia"]));
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
-							echo $res["Cognome"];
+							echo $resMaterie["Orario_inizio"];
+						echo '</td>';
+						echo '<td class="box-programmi-caricati">';
+							echo $resMaterie["Orario_fine"];
 						echo '</td>';
 					echo "</tr>";
 				}

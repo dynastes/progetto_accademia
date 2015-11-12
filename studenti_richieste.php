@@ -33,28 +33,39 @@ if($_SESSION['richiesta-inviata']===1){
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?></b>
 				</div>
 				<div name="avvisi">
-					<h2>Pubblica avvisi </h2>
+					<h2>Richieste</h2>
 					<p>Con questa pagina può semplicemente inviare una richiesta di certificato all'Admin del sito. La richiesta inviata verrà elencata qui sotto e marcata come "non letta" fin quando l'Admin non la leggerà e la confermerà.</p>
 					<p>Appena la richiesta verrà confermata, il suo stato passerà a "confermato" e lei potrà ritirare la richiesta in versione cartacea direttamente dalla segreteria</p>
+					<!-- ### FORM richiedi certificato ###-->
 					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8"> 
-						<label>Richiedi certificato cliccando qui: &nbsp;</label><input  type="submit" value="Richiedi certificato">
+						<label>Seleziona il certificato da richiedere:&nbsp;</label>
+						<select name="tipo-certificato">
+							<option value="1">Certificato di frequenza</option>
+							<option value="2">Certificato di iscrizione</option>
+							<option value="3">Certificato per materie sostenute</option>
+						</select>
+						<input  type="submit" value="Richiedi certificato">
 					</form>
 					<div>
 						<table style="width:100%;">
 							<tr>
-								<td class="box-avvisi-home" style="width:50%;"><b>Data invio richiesta</b></td>
-								<td class="box-avvisi-home" style="width:50%;"><b>Stato richiesta</b></td>
+								<td class="box-avvisi-home" style="width:33%;"><b>Data invio richiesta</b></td>
+								<td class="box-avvisi-home" style="width:33%;"><b>Stato richiesta</b></td>
+								<td class="box-avvisi-home" style="width:33%;"><b>Tipo richiesta</b></td>
 							</tr>
 							<?php
-								$sqlElencoCertificati="SELECT Data_invio, Stato_richiesta FROM studenti_richieste_certificati WHERE Id_anagrafe=".$utente->id;
+								$sqlElencoCertificati="SELECT src.Data_invio, src.Stato_richiesta, t.Tipo 
+														FROM studenti_richieste_certificati AS src, tipo_richieste AS t 
+														WHERE Id_anagrafe=".$utente->id." AND src.Tipo=t.Id ORDER BY src.Data_invio DESC";
 								$res=$connessione->query($sqlElencoCertificati);
 								while($elencoCertificati=$res->fetch_assoc()){
 									echo '<tr>';
 										echo '<td class="lista-avvisi-home">'.$elencoCertificati["Data_invio"].'</td>';//data invio richiesta
 										echo '<td class="lista-avvisi-home">'.$elencoCertificati["Stato_richiesta"].'</td>';//stato richiesta (non ancora letta; letta e confermata)
+										echo '<td class="lista-avvisi-home">'.$elencoCertificati["Tipo"].'</td>';
 									echo '</tr>';
 								}
 							?>

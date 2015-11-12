@@ -47,7 +47,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				</div>
 				<div name="avvisi">
 				<h2>Inserisci in dati relativi alla nuova materia</h2>
-					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_query_execute.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
+					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_materia_query_execute.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
 						<!--select name="materie" multiple="multiple" style="height:200px;">
 							<?php
 								$sqlMaterie="SELECT Nome_materia FROM materie ORDER BY Nome_materia";
@@ -58,10 +58,10 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 							?>
 						 </select-->
  						<br />
-						<table>
+						<table style="width:50%;">
 							<tr>
-								<td><!--label for="usermail">ID Docente: &nbsp;</label--></td>
-								<td><input style="color:black;" type="text" name="id-docente" placeholder="0" value="0" required hidden></td>
+								<td><label for="usermail">ID Docente: &nbsp;</label></td>
+								<td><input style="color:black;" type="text" name="id-docente" placeholder="0" value="0" ></td>
 							</tr>
 							<tr>
 								<td><label for="usermail">Codice Materia:&nbsp;</label></td>
@@ -99,7 +99,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 								</select></td>
 							</tr>
 							<tr>
-								<td colspan="2"><input  type="submit" value="Inserisci righe nel database"></td>
+								<td colspan="2"><input  type="submit" value="Inserisci righe nel database" style="margin-top:40px;"></td>
 							</tr>
 						</table>
 					</form>
