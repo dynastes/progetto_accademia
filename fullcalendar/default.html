@@ -9,7 +9,6 @@
 <script src='js/fullcalendar.min.js'></script>
 <script src= 'js/fullcalendar.js'></script>
 <script>
-
 	$(document).ready(function() {
 
 		var calendar = $('#calendar').fullCalendar({
@@ -21,7 +20,7 @@
 			defaultDate: '2015-02-12',
 			editable: true,
 			
-			events: "http://localhost/fullcalendar/events.php",
+			events: "http://localhost/Accademia/fullcalendar/events.php",
 			selectable: true,
 			selectHelper: true,
 			select: function(start, end, allDay) {
@@ -35,7 +34,7 @@
 				end = moment(end).format("YYYY-MM-DD HH:mm:ss");﻿
 				
 			 $.ajax({
-			 url: "http://localhost/fullcalendar/add_events.php",
+			 url: "http://localhost/Accademia/fullcalendar/add_events.php",
 			 data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color,
 			 type: "POST",
 			 success: function(json) {
@@ -62,7 +61,7 @@ eventDrop: function(event, delta) {
   start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
  end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
  $.ajax({
- url: 'http://localhost/fullcalendar/update_events.php',
+ url: 'http://localhost/Accademia/fullcalendar/update_events.php',
  data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
  type: "POST",
  success: function(json) {
@@ -74,7 +73,7 @@ eventResize: function(event) {
  start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
  end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
  $.ajax({
- url: 'http://localhost/fullcalendar/update_events.php',
+ url: 'http://localhost/Accademia/fullcalendar/update_events.php',
  data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
  type: "POST",
  success: function(json) {
