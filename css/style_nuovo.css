@@ -172,3 +172,14 @@ li{
 	text-align:center;
 	float:left;
 }
+ /*FULLCALENDAR*/
+#calendar { 
+	width: 800px;
+	margin: 0 auto;
+	margin-bottom:50px;
+}
+
+.fc-toolbar{
+	height: 60px;
+}
+

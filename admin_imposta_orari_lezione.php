@@ -19,7 +19,23 @@ if($_SESSION['modifica-orario']===1){
 		<link href="css/style.css" rel="stylesheet" />
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- INCLUSIONEPRE FULLCALENDAR -->
+		<link rel='stylesheet' type='text/css' href='css/fullcalendar.css' /> 
+		<script src='js/jquery.min.js'></script>
+		<script src='js/moment.min.js'></script>
+		<script src='fullcalendar/fullcalendar.min.js'></script>
+	<!-- FINE INCLUSIONE PRE FULLCALENDAR -->
+		<script type='text/javascript'>
+			$(document).ready(function() {
 
+			    // page is now ready, initialize the calendar...
+
+			    $('#calendar').fullCalendar({
+			        // put your options and callbacks here
+			    })
+
+			});
+		</script>
 	</head>
 	<body>
 		<div id="testata">
@@ -54,6 +70,7 @@ if($_SESSION['modifica-orario']===1){
 					</form>
 				</div>
 			</div>
+			<div id='calendar'></div>
 		</div>
 
 		<!-- INIZIO FOOTER -->
