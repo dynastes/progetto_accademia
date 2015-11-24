@@ -2,6 +2,28 @@
 @session_start();
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
+//@include_once 'menu.php'; 
+
+
+
+/*Verifico che la sessione sia disponibile. Se lo è, vuol dire che l'utente si è già loggato e quindi che possiede già un OGGETTO UTENTE da serializzare*/
+if(isset($_SESSION['login'])){
+	$utente=$_SESSION['ut'];
+	$utente=unserialize($utente);
+	/*se si è qui, l'utente era già loggato. Mostrare chi è*/
+	echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
+	//se l'utente era già collegato, sarà possibile reindirizzarlo alla sua home page appena cerca di ritornare al log in
+	if($utente->ruolo==="studente"){
+		@header("location:studenti_home.php");
+	} else if ($utente->ruolo==="docente"){
+		@header("location:docenti_home.php");
+	} else if ($utente->ruolo==="admin"){
+		@header("location:admin_home.php");
+	}
+}
+
+
+
 
 $risultato="";
 $ruoloUtente="";//serve per poter prelevare da utente->ruolo il ruolo dell'utente e poterlo reinirizzare nella homepage corretta
@@ -12,7 +34,7 @@ if(isset($_POST['usermail'])){
 	$usermail=$_POST['usermail'];
 	$password=$_POST['password'];
 	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
-	//echo -n "$loginString";
+	echo "### Il login è: ".$loginString." ###\n";
 	$risultato=$connessione->query($loginString);
 }
 
