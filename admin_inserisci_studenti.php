@@ -79,7 +79,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 						?>
 						<table id="box-caricamenti-principale">
 							<tr>
-								<td class="box-iscrizione-studenti"><b>Data di nascita</b></td>
+								<td class="box-iscrizione-studenti" style="width:25%;"><b>Data di nascita</b></td>
 								<td class="box-iscrizione-studenti"><b>Codice Fiscale</b></td>
 								<td class="box-iscrizione-studenti"><b>Email</b></td>
 								<td class="box-iscrizione-studenti"><b>Residenza</b></td>
@@ -87,7 +87,38 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 								<td class="box-iscrizione-studenti"><b>Telefono</b></td>
 							</tr>
 							<tr>
-								<td class="box-iscrizione-studenti"><input type="text" name="data-nascita" style="width:90%;"/></td>
+								<!--td class="box-iscrizione-studenti"><input type="text" name="data-nascita" style="width:90%;"/></td-->
+								<td class="box-iscrizione-studenti">
+									<select name="giorno-nascita">
+										<?php
+										for ($i=1; $i < 32; $i++) { 
+											echo '<option value="'.$i.'">'.$i.'</option>';
+										 } 
+										?>
+									</select>
+									<select name="mese-nascita">
+										<option value="01">Gennaio</option>
+										<option value="02">Febbraio</option>
+										<option value="03">Marzo</option>
+										<option value="04">Aprile</option>
+										<option value="05">Maggio</option>
+										<option value="06">Giugno</option>
+										<option value="07">Luglio</option>
+										<option value="08">Agosto</option>
+										<option value="09">Settembre</option>
+										<option value="10">Ottobre</option>
+										<option value="11">Novembre</option>
+										<option value="12">Dicembre</option>
+									</select>
+									<select name="anno-nascita">
+										<?php
+										$anno=date("Y");
+										for ($i=1950; $i < $anno; $i++) { 
+											echo '<option value="'.$i.'">'.$i.'</option>';
+										 } 
+										?>
+									</select>
+								</td>
 								<td class="box-iscrizione-studenti"><input type="text" name="codice-fiscale" style="width:90%;" required/></td>
 								<td class="box-iscrizione-studenti"><input type="text" name="email" style="width:90%;"/></td>
 								<td class="box-iscrizione-studenti"><input type="text" name="residenza" style="width:90%;" required/></td>

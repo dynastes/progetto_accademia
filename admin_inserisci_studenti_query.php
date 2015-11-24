@@ -1,7 +1,11 @@
 <?php @include_once 'menu.php';
 	$nomeStudente=$_POST["nome-studente"];
 	$cognomeStudente=$_POST["cognome-studente"];
-	$dataNascita=$_POST["data-nascita"];
+
+		//$dataNascita=$_POST["data-nascita"];
+		$giornoNascita=$_POST["giorno-nascita"];
+		$meseNascita=$_POST["mese-nascita"];
+		$annoNascita=$_POST["anno-nascita"];
 	$codiceFiscale=$_POST["codice-fiscale"];
 	$email=$_POST["email"];
 	$indirizzo=$_POST["indirizzo"];
@@ -13,19 +17,22 @@
 	$diplomaStudente=$_POST["diploma-studente"];
 	$idCorso=$_POST["corso-studente"];
 
-echo "COrso studente:".$idCorso." ";
-//creazione username e password
+	echo "COrso studente:".$idCorso." ";
+
+	//creazione username e password
 	$username=$nomeStudente[0].$nomeStudente[1].$nomeStudente[2].".".$cognomeStudente[0].$cognomeStudente[1].$cognomeStudente[2];
 	$username=strtolower($username);
 	$password=$username;
 
+	//creazione data nascita
+	$dataNascita=$annoNascita."-".$meseNascita."-".$giornoNascita;
 
 	//inserisci in ANAGRAFE [nome, cognome, data_nascita, codice_fiscale, email, Indirizzo, residenza, Telefono, Username, Password]
 							//id_anagrafe, anno_accademico, matricola, diploma, id_corso
 	
 
 	$sqlAnagrafe="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Codice_fiscale, Email, Indirizzo, Residenza, Telefono, Username, Password) 
-					VALUES ('".$nomeStudente."', '".$cognomeStudente."', '', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password."')";
+					VALUES ('".$nomeStudente."', '".$cognomeStudente."', '".$dataNascita."', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password."')";
 
 
 	$res=$connessione->query($sqlAnagrafe);
