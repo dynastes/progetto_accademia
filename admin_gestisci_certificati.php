@@ -33,7 +33,7 @@ if($_SESSION["autorizzato"]===1){
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencate le richieste inviate dagli studenti</p>
 					<div style="text-align:right; width:100%; margin-bottom:10px;">
 						<b><a href="admin_gestisci_certificati_autorizzati.php" >Visualizza richieste autorizzate &gt;&gt;</a></b>

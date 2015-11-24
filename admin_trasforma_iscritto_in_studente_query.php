@@ -11,7 +11,7 @@ echo $idCorso;
 
 
 
-$sqlInserisciStudente='UPDATE studenti SET Anno_accademico=0, Matricola="'.$matricolaStudente.'", Diploma="'.$diplomaStudente.'", Id_corso='.$idCorso.' WHERE Id_anagrafe='.$idStudente;
+$sqlInserisciStudente='UPDATE studenti SET Anno_accademico=1, Matricola="'.$matricolaStudente.'", Diploma="'.$diplomaStudente.'", Id_corso='.$idCorso.' WHERE Id_anagrafe='.$idStudente;
 //$sqlInserisciStudente='UPDATE studenti SET Anno_accademico=0, Matricola="$matricolaStudente", Diploma="$diplomaStudente", Id_corso=$idCorso WHERE Id_anagrafe='.$idStudente;
 
 $res=$connessione->query($sqlInserisciStudente);

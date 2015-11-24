@@ -135,23 +135,24 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 </head>
 <body>
 <div id="wrapper">
-	<!-- start header -->
-	<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-			<a href="index.html">
-                <div class="navbar-header">
-                  
-					<img src="logo.png" alt="" />
-                </div>
-             </a>
-        </div>
-	</header>
-	<!-- end header -->
 	<section id="featured">
+	<!-- start header -->
+			<header>
+		        <div class="navbar navbar-default navbar-static-top">
+		            <div class="container">
+					<a href="index.html">
+		                <div class="navbar-header" style="padding-left:70px;">
+		                  
+							<img src="logo.png" alt="" />
+		                </div>
+		             </a>
+		        </div>
+			</header>
+			<!-- end header -->
 	<!-- start slider -->
 		<div class="container">
-			<section class="loginform cf">
+				
+			<section class="loginform cf" style="float:left;">
 				<form name="login" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
 					<table align="center" >
 						<tr>

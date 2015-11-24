@@ -86,6 +86,7 @@ function menu(){
 				<a href="#">Gestisci Allievi</a>
 				<!-- Flyout -->
 				<ul class="flyout-content nav stacked" id="riquadro">
+					<li  class="over"><a href="admin_inserisci_studenti.php">Inserisci nuovo studente</a></li>
 					<li  class="over"><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto in studente</a></li>
 					<li  class="over"><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>
 				</ul>

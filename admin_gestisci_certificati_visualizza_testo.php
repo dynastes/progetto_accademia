@@ -35,7 +35,7 @@ $idTestoRichiesta=$_GET['id'];
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Di seguito verrà mostrato il contenuto della richiesta inviata dallo studente.</p>
 					<p>
 					<?php  
@@ -49,7 +49,7 @@ $idTestoRichiesta=$_GET['id'];
 					$sqlPersona="SELECT a.Nome, a.Cognome FROM anagrafe AS a, studenti_richieste AS sr WHERE a.Id=".$resTesto['Id_anagrafe'];
 					$res=$connessione->query($sqlPersona);
 					$resPersona=$res->fetch_assoc();
-					echo "<b>".$resPersona['Nome']." ".$resPersona['Cognome']."ha scritto: </b>";
+					echo "<b>".$resPersona['Nome']." ".$resPersona['Cognome']." ha scritto: </b>";
 					echo $resTesto['Testo'];
 
 					?>
