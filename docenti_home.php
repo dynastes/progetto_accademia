@@ -28,12 +28,31 @@
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome;?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome;?>!</b>
+					<p>Qui sotto vengono elencati gli avvisi pubblicati da lei (sia alla segreteria che a studenti)</p>
 				</div>
-				<div id="avvisi">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-	 				</p>
-				</div>
+				<div id="elenco-avvisi">
+						<?php
+							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE av.Id_docente=an.Id ";//AND Visibilita='pubblico'
+							$avvisiLista=$connessione->query($sqlavvisi);
+							echo '<table id="box-caricamenti-principale">';
+							echo '<tr>';
+								echo '<td style="width:17%;" class="box-avvisi-home"><b>Nome</b></td>';
+								echo '<td style="width:17%;" class="box-avvisi-home"><b>Cognome</b></td>';
+								echo '<td style="width:46%;" class="box-avvisi-home"><b>Testo</b></td>';
+								echo '<td style="width:20%;" class="box-avvisi-home"><b>Data Pubblicazione</b></td>';
+							echo '</tr>';
+							while($resAvvisi=$avvisiLista->fetch_assoc()){
+								echo '<tr>';
+									echo '<td style="width:17%;" class="lista-avvisi-home">'.$resAvvisi["Nome"].'</td>';
+									echo '<td style="width:17%;" class="lista-avvisi-home">'.$resAvvisi["Cognome"].'</td>';
+									echo '<td style="width:46%;" class="lista-avvisi-home">'.$resAvvisi["Testo"].'</td>';
+									echo '<td style="width:20%;" class="lista-avvisi-home">'.$resAvvisi["Data_pubblicazione"].'</td>';
+								echo '</tr>';
+							}
+							echo "</table>";
+						?>
+					</div>
 			</div>
 		</div>
 

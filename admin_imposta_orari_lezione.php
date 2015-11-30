@@ -30,13 +30,20 @@ if($_SESSION['modifica-orario']===1){
 		<script>
 			$(document).ready(function() {
 
+				var data = new Date();
+				var giorno=data.getDate();
+				var mese=data.getMonth()+1;
+				var anno=data.getFullYear();
+				var oggi;
+				oggi=anno+'-'+mese+'-'+giorno;
+
 				var calendar = $('#calendar').fullCalendar({
 				header: {
 						left: 'prev,next today',
 						center: 'title',
 						right: 'month,agendaWeek,agendaDay'
 					},
-					defaultDate: '2015-02-12',
+					defaultDate: oggi,
 					editable: true,
 					
 					events: "http://localhost/Accademia/fullcalendar/events.php",

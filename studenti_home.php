@@ -34,7 +34,7 @@
 					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
 					<div id="elenco-avvisi">
 						<?php
-							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE av.Id_docente=an.Id AND Visibilita='pubblico'";
+							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE Visibilita='pubblico'"; //av.Id_docente=an.Id AND
 							$avvisiLista=$connessione->query($sqlavvisi);
 							echo '<table id="box-caricamenti-principale">';
 							echo '<tr>';

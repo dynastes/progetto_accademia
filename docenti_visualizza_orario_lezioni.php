@@ -12,7 +12,58 @@
 		<link href="css/style.css" rel="stylesheet" />
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- INCLUSIONEPRE FULLCALENDAR -->
+		<link href='fullcalendar/css/fullcalendar.css' rel='stylesheet' />
+		<link href='fullcalendar/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+		<script src='fullcalendar/js/moment.min.js'></script>
+		<script src='fullcalendar/js/jquery.min.js'></script>
+		<script src='fullcalendar/js/fullcalendar.min.js'></script>
+		<script src= 'fullcalendar/js/fullcalendar.js'></script>
+		<script>
+			$(document).ready(function() {
+				//creazione della stringa giorno
+				var data = new Date();
+				var giorno=data.getDate();
+				var mese=data.getMonth()+1;
+				var anno=data.getFullYear();
+				var oggi;
+				oggi=anno+'-'+mese+'-'+giorno;
 
+				var calendar = $('#calendar').fullCalendar({
+				header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,agendaWeek,agendaDay'
+					},
+					defaultDate: oggi,
+					editable: false,
+					
+					events: "http://localhost/Accademia/fullcalendar/events.php",
+					selectable: false,
+					selectHelper: false,
+					editable: false
+					
+					
+				});
+				
+			});
+
+		</script>
+		<style>
+
+			body {
+				margin: 40px 10px;
+				padding: 0;
+				font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+				font-size: 14px;
+			}
+
+			#calendar {
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+		</style>
 	</head>
 	<body>
 		<div id="testata">
@@ -28,8 +79,8 @@
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
-					<p>Qui verranno elencati tutti gli avvisi da Lei caricati attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Carica Avvisi</a></p>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
+					<p></p>
 				</div>
 				<!--div class="box-programmi-caricati">
 					<p><b>Data Pubblicazione</b></p>
@@ -43,16 +94,16 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table id="box-caricamenti-principale">
+				<!--table id="box-caricamenti-principale">
 				<tr>
 					<td class="box-programmi-caricati"><b>Nome materia</b></td>
 					<td class="box-programmi-caricati"><b>Inizio orario lezione</b></td>
 					<td class="box-programmi-caricati"><b>Fine orario lezione</b></td>
-				</tr>
+				</tr-->
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT Nome_materia, Orario_inizio, Orario_fine FROM materie WHERE Id_docente=".$utente->id;
+				/*$stringasql="SELECT Nome_materia, Orario_inizio, Orario_fine FROM materie WHERE Id_docente=".$utente->id;
 				
 				$elencoMaterie=$connessione->query($stringasql);
 				while($res=$elencoMaterie->fetch_assoc()){
@@ -68,10 +119,11 @@
 						echo '</td>';
 					echo "</tr>";
 				}
-				echo "</table>";
+				echo "</table>";*/
 				?>
 				
 			</div>
+			<div id="calendar"  style="margin-top:100px; margin-bottom:50px;"></div>
 		</div>
 
 		<!-- INIZIO FOOTER -->

@@ -8,7 +8,7 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">
 	La richiesta di iscrizione è stata inoltrata alla segreteria dell'Accademia
 	</div>";
-	$_SESSION['messaggio']=0;
+	$_SESSION['iscritto-aggiunto']=0;
 }
 ?>
 
@@ -49,6 +49,7 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 			<!-- end header -->
 	<!-- start slider -->
 		<div class="container">	
+		<p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
 			<section class="loginform cf" style="float:left;">
 				<form name="register" action="registrati_query.php" method="post" accept-charset="utf-8">
 					<h2 align="center">Registrati</h2>

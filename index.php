@@ -11,7 +11,7 @@ if(isset($_SESSION['login'])){
 	$utente=$_SESSION['ut'];
 	$utente=unserialize($utente);
 	/*se si è qui, l'utente era già loggato. Mostrare chi è*/
-	echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
+	//echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
 	//se l'utente era già collegato, sarà possibile reindirizzarlo alla sua home page appena cerca di ritornare al log in
 	if($utente->ruolo==="studente"){
 		@header("location:studenti_home.php");
@@ -34,17 +34,17 @@ if(isset($_POST['usermail'])){
 	$usermail=$_POST['usermail'];
 	$password=$_POST['password'];
 	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
-	echo "### Il login è: ".$loginString." ###\n";
+	//echo "### Il login è: ".$loginString." ###\n";
 	$risultato=$connessione->query($loginString);
 }
 
 
 if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
-	echo "Login In Corso............";
+	//echo "Login In Corso............";
 	if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
-		echo "Creazione SESSIONE:......";
+		//echo "Creazione SESSIONE:......";
 		$res=$risultato->fetch_assoc(); //mette i risultati in un array
-		echo "Risultato= " . $res["Nome"];
+		//echo "Risultato= " . $res["Nome"];
 		$_SESSION['login'] = true;
 		
 		//popolo l'oggetto UTENTE
@@ -53,7 +53,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		//finito di popolare l'utente
 		
 		//IDENTIFICO se l'utente è un DOCENTE, STUDENTE, ADMIN
-		echo "Id dell'UTENTE: ".$utente->id;
+		//echo "Id dell'UTENTE: ".$utente->id;
 		//#DOCENTE
 		$controllaRuolo="SELECT Id_anagrafe FROM docenti WHERE Id_anagrafe=". $utente->id;
 		$risultato="";
@@ -61,7 +61,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$res=$risultato->fetch_assoc();
 		if ($res["Id_anagrafe"]>0){
 			$utente->set_ruolo("docente");
-			echo "utente DOCENTE";
+			//echo "utente DOCENTE";
 		} else {
 			//#STUDENTE
 			$controllaRuolo="SELECT Id_anagrafe FROM studenti WHERE Id_anagrafe=". $utente->id;
@@ -70,7 +70,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 			$res=$risultato->fetch_assoc();
 			if ($res["Id_anagrafe"]>0){
 				$utente->set_ruolo("studente");
-				echo "utente STUDENTE";
+				//echo "utente STUDENTE";
 			}
 		}
 		//#ADMIN
@@ -80,21 +80,21 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 		$res=$risultato->fetch_assoc();
 		if($res["Id_anagrafe"]>0){
 			$utente->set_ruolo("admin");
-			echo "utente ADMIN";
+			//echo "utente ADMIN";
 		}
 		
 		
 		//FINE IDENTIFICAZIONE
 		
-		echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
-		echo " NOME UTENTE= ".$utente->nome;
-		echo " RUOLO= ".$utente->ruolo;
+		//echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
+		//echo " NOME UTENTE= ".$utente->nome;
+		//echo " RUOLO= ".$utente->ruolo;
 		$ruoloUtente=$utente->ruolo;
 		$utente=serialize($utente);
 		$_SESSION['ut'] = $utente;
 	}
 	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
-	echo "\nReindirizzamento in corso... l'utente è un: ".$ruoloUtente;
+	//echo "\nReindirizzamento in corso... l'utente è un: ".$ruoloUtente;
 	if($ruoloUtente==="studente"){
 		@header("location:studenti_home.php");
 	} else if ($ruoloUtente==="docente"){
