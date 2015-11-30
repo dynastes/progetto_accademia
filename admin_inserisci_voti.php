@@ -43,24 +43,24 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div name="avvisi">
 				<h2>Inserisci voti</h2>
 				<label>Scegliere il professore che ha sostenuto l'esame:</label>
 					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
  						<br />
-						<table style="width:100%;">
+						<table style="width:40%;">
 							<tr>
-								<td><label for="usermail">ID Corso:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
+								<td><label for="usermail">Professore:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
 								<td><select name="id-docente">
 									<?php
 									$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome 
 												FROM docenti AS d, anagrafe AS a 
-												WHERE d.Id_anagrafe=a.Id";
+												WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
 									$resDocenti=$connessione->query($sqlDocenti);
 									while($docenti=$resDocenti->fetch_assoc()){
-										echo '<option value="'.$docenti["Id_anagrafe"].'">'.$docenti["Nome"].' '.$docenti['Cognome'].'</option>';
+										echo '<option value="'.$docenti["Id_anagrafe"].'">'.$docenti["Cognome"].' '.$docenti['Nome'].'</option>';
 									}
 									?>
 									</select>

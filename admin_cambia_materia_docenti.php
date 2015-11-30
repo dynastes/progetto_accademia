@@ -2,7 +2,8 @@
 if($_SESSION['materia']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
 	$_SESSION['materia']=0;
-}?>
+}
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -35,7 +36,7 @@ if($_SESSION['materia']===1){
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div id="avvisi">
-					<h1>Cambia docente alle materie</h1>
+					<h1>Cambia materie ai docenti</h1>
 					<p>Scegli il professore a cui assegnare una materia differente</p>
 					<form method="post" action="admin_cambia_materia_docenti_dettagli.php" name="professore-materia">
 						<select name="nome-professore">

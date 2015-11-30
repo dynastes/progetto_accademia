@@ -1,8 +1,7 @@
 <?php @include_once 'menu.php';
-if($_SESSION['inserimento']===1 && $_SESSION['inserimento2']===1){
-	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
-	$_SESSION['inserimento']=0;
-	$_SESSION['inserimento2']=0;
+if(	$_SESSION['inserimento-voto']==1){
+	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Voto aggiunto correttamente</div>";
+	$_SESSION['inserimento-voto']=0;
 }
 $idMateria=$_POST['id-materia'];
 ?>
@@ -35,11 +34,12 @@ $idMateria=$_POST['id-materia'];
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div name="avvisi">
 				<h2>Inserisci voti</h2>
-				<label>Scegliere il professore che ha sostenuto l'esame:</label>
+				<p><a href="admin_inserisci_voti.php"><b>&lt;&lt; Torna alla scelta del professore</b></a></p>
+				<label>Inserire i dettagli dello studente:</label>
 					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_query.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
  						<br />
 						<table>
@@ -74,7 +74,36 @@ $idMateria=$_POST['id-materia'];
 									<label>Inserisci data dell'esame:&nbsp;</label>
 								</td>
 								<td>
-									<input type="text" name="data" required>
+									<!--input type="text" name="data" required-->
+									<select name="giorno-esame">
+										<?php
+										for ($i=1; $i < 32; $i++) { 
+											echo '<option value="'.$i.'">'.$i.'</option>';
+										 } 
+										?>
+									</select>
+									<select name="mese-esame">
+										<option value="01">Gennaio</option>
+										<option value="02">Febbraio</option>
+										<option value="03">Marzo</option>
+										<option value="04">Aprile</option>
+										<option value="05">Maggio</option>
+										<option value="06">Giugno</option>
+										<option value="07">Luglio</option>
+										<option value="08">Agosto</option>
+										<option value="09">Settembre</option>
+										<option value="10">Ottobre</option>
+										<option value="11">Novembre</option>
+										<option value="12">Dicembre</option>
+									</select>
+									<select name="anno-esame">
+										<?php
+										$anno=date("Y");
+										for ($i=$anno; $i > $anno-2; $i--) { 
+											echo '<option value="'.$i.'">'.$i.'</option>';
+										 } 
+										?>
+									</select>
 								</td>
 							</tr>
 							<tr>

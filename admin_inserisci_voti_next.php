@@ -35,24 +35,24 @@ $idDocente=$_POST['id-docente'];
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div name="avvisi">
 				<h2>Inserisci voti</h2>
-				<label>Scegliere il professore che ha sostenuto l'esame:</label>
+				<label>Scegliere la materia:</label>
 					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next_2.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
  						<br />
-						<table style="width:100%;">
+						<table style="width:30%;">
 							<tr>
-								<td><label for="usermail">ID Corso:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
+								<td><label for="usermail">Materia:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
 								<td><select name="id-materia">
 									<?php
-									$sqlMateria="SELECT Id, Nome_materia 
+									$sqlMateria="SELECT Id, Nome_materia, Anno
 												FROM materie  
-												WHERE Id_docente=".$idDocente;
+												WHERE Id_docente=".$idDocente." ORDER BY Nome_materia";
 									$res=$connessione->query($sqlMateria);
 									while($resMateria=$res->fetch_assoc()){
-										echo '<option value="'.$resMateria["Id"].'">'.$resMateria["Nome_materia"].'</option>';
+										echo '<option value="'.$resMateria["Id"].'">'.$resMateria["Nome_materia"].' ('.$resMateria['Anno'].')'.'</option>';
 									}
 									?>
 									</select>

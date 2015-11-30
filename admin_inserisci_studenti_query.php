@@ -17,7 +17,7 @@
 	$diplomaStudente=$_POST["diploma-studente"];
 	$idCorso=$_POST["corso-studente"];
 
-	echo "COrso studente:".$idCorso." ";
+	echo "Corso studente:".$idCorso." ";
 
 	//creazione username e password
 	$username=$nomeStudente[0].$nomeStudente[1].$nomeStudente[2].".".$cognomeStudente[0].$cognomeStudente[1].$cognomeStudente[2];
@@ -39,7 +39,7 @@
 	echo "Utente inserito nella tabella ANAGRAFE.\n";
 
 	//ricerca Id anagrafe dell'utente appena inserito
-	$sqlIdAnagrafe="SELECT * FROM anagrafe WHERE Nome='".$nomeStudente."' AND Cognome='".$cognomeStudente."'";
+	$sqlIdAnagrafe="SELECT * FROM anagrafe WHERE Nome='".$nomeStudente."' AND Cognome='".$cognomeStudente."' ORDER BY Id DESC";
 	echo " #Inserimento dell'utente nella tabella Studenti (studente con id estratto da qui: ".$sqlIdAnagrafe." _____\n";
 	$res=$connessione->query($sqlIdAnagrafe);
 	if ($res){

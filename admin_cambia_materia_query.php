@@ -45,7 +45,7 @@ if ($opzioniMateria==="aggiungi"){
 	$_SESSION['materia']=1;
 }
 
-@header("location:admin_cambia_materia_docenti.php");
+@header("location:admin_cambia_materia_docenti_dettagli.php");
 
 
 

@@ -37,8 +37,8 @@ if($_SESSION['richiesta-inviata']===1){
 				</div>
 				<div name="avvisi">
 					<h2>Richieste</h2>
-					<p>Con questa pagina può semplicemente inviare una richiesta di certificato all'Admin del sito. La richiesta inviata verrà elencata qui sotto e marcata come "non letta" fin quando l'Admin non la leggerà e la confermerà.</p>
-					<p>Appena la richiesta verrà confermata, il suo stato passerà a "confermato" e lei potrà ritirare la richiesta in versione cartacea direttamente dalla segreteria</p>
+					<p>Da questa pagina si possono inviare le richieste per i certificati direttamente alla segreteria.</p>
+					<p>Una volta trattata la richiesta, lo stato passerà a "confermato" e si potrà andare a ritirare la versione cartacea.</p>
 					<!-- ### FORM richiedi certificato ###-->
 					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8"> 
 						<label>Seleziona il certificato da richiedere:&nbsp;</label>

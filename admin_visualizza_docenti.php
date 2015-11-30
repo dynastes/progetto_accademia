@@ -29,7 +29,7 @@
 			<div id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
-					<p>Qui verranno elencati tutti gli studenti che sono iscritti all'accademia</p>
+					<p>Qui verranno elencati tutti i docenti che sono iscritti all'accademia</p>
 				</div>
 				<!--div class="box-programmi-caricati">
 					<p><b>Data Pubblicazione</b></p>
@@ -47,15 +47,14 @@
 				<tr>
 					<td class="box-elenco-studenti" style="width:20%"><b>Nome</b></td>
 					<td class="box-elenco-studenti" style="width:20%"><b>Cognome</b></td>
-					<td class="box-elenco-studenti" style="width:10%"><b>Matricola</b></td>
 					<td class="box-elenco-studenti" style="width:20%"><b>Email</b></td>
 					<td class="box-elenco-studenti" style="width:20%"><b>Indirizzo</b></td>
-					<td class="box-elenco-studenti" style="width:10%"><b>Telefono</b></td>
+					<td class="box-elenco-studenti" style="width:20%"><b>Telefono</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
+				$stringasql="SELECT a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono FROM anagrafe AS a, docenti AS d WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
@@ -64,9 +63,6 @@
 						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Cognome"];
-						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
-							echo $res["Matricola"];
 						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Email"];

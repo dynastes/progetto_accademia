@@ -194,7 +194,7 @@ if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, a
 						</tr>
 						<tr>
 							<td>
-								<a href="register.html">Registrati</a>
+								<a href="registrati.php">Registrati</a>
 								</br>
 								<a href="">Password dimenticata ? </a>
 							</td>

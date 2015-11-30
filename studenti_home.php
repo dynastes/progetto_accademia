@@ -28,12 +28,10 @@
 
 			<div id="contenuto">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
-					<!-- ############################# SEZIONE MODIFICA-DATABASE, da cancellare ################################################# -->
-					<p><?php if($utente->nome==="Fabrizio"){echo '<a href="inserisci-query.php">Per inserire le query, vai qui</a>';} ?></p>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div id="avvisi">
-					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da docenti o admin. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
+					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
 					<div id="elenco-avvisi">
 						<?php
 							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE av.Id_docente=an.Id AND Visibilita='pubblico'";

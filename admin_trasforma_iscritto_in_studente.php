@@ -6,6 +6,10 @@ if($_SESSION['studente-inserito']===1){
 	echo "<div style=\"width:100%;color:red;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:red;background-color:#F78181;\">ATTENZIONE: studente non inserito</div>";
 	$_SESSION['studente-inserito']=0;
 }
+if($_SESSION['cancellazione-iscritto']===1){
+	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Iscritto cancellato correttamente</div>";
+	$_SESSION['cancellazione-iscritto']=0;
+}
 ?>
 <html>
 	<head>
@@ -55,7 +59,8 @@ if($_SESSION['studente-inserito']===1){
 				<tr>
 					<td class="box-programmi-caricati"><b>Nome</b></td>
 					<td class="box-programmi-caricati"><b>Cognome</b></td>
-					<td class="box-programmi-caricati"><b>Opzioni</b></td>
+					<td class="box-programmi-caricati"><b>Trasforma in studente</b></td>
+					<td class="box-programmi-caricati"><b>Cancella iscritto</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
@@ -72,6 +77,9 @@ if($_SESSION['studente-inserito']===1){
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
 							echo '<a href="admin_trasforma_iscritto_in_studente_dettagli.php?Id='.$res["Id"].'">Converti iscritto in Studente</a>';
+						echo '</td>';
+						echo '<td class="box-programmi-caricati">';
+							echo '<a href="admin_trasforma_iscritto_in_studente_cancella.php?Id='.$res["Id"].'"><b>X</b></a>';
 						echo '</td>';
 					echo "</tr>";
 				}

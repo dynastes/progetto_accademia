@@ -60,8 +60,19 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
  						<br />
 						<table style="width:50%;">
 							<tr>
-								<td><label for="usermail">ID Docente: &nbsp;</label></td>
-								<td><input style="color:black;" type="text" name="id-docente" placeholder="0" value="0" ></td>
+								<td><label for="usermail">Docente: &nbsp;</label></td>
+								<td>
+									<select name="id-docente">
+										<?php
+										$sqlDocenti="SELECT a.Id, a.Nome, a.Cognome FROM docenti AS d, anagrafe AS a WHERE a.Id=d.Id_anagrafe ORDER BY a.Cognome";
+										//$sqlCorso="SELECT Nome_corso, Id FROM corsi";
+										$resProf=$connessione->query($sqlDocenti);
+										while($docenti=$resProf->fetch_assoc()){
+											echo '<option value="'.$docenti["Id"].'">'.$docenti["Cognome"]." ".$docenti["Nome"].'</option>';
+										}
+										?>
+									</select>
+								</td>
 							</tr>
 							<tr>
 								<td><label for="usermail">Codice Materia:&nbsp;</label></td>
@@ -94,8 +105,8 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 							<tr>
 								<td><label for="usermail">Tipo di materia:&nbsp;</label></td>
 								<td><select name="tipo" id="tipo">
-									<option value="Fondamentale">Fondamentale</option>
-									<option value="Secondaria">Secondaria</option>
+									<option value="Fondamentale">Base o Caratterizzante</option>
+									<option value="Secondaria">Integrativa</option>
 								</select></td>
 							</tr>
 							<tr>
