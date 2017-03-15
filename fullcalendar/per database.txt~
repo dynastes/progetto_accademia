@@ -1,4 +1,6 @@
-crea un database chiamato fullcandar
+Queste sono le istruzioni date da chi ha inventato questo Tool.
+Passaparola
+Crea un database chiamato fullcandar
 
 dopo esegui questa query
 CREATE TABLE IF NOT EXISTS `evenement` (
