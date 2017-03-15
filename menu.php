@@ -73,6 +73,8 @@ function menu(){
 			<li><a href="admin_home.php">Home</a><!-- * --></li>
 			<li><a href="admin_gestione_finanze.php">Gestione Documenti</a><!--(mostrare i pagamenti caricati dagli utenti tramite la loro pagina "Carica Documenti")--></li>
 			<li><a href="admin_imposta_orari_lezione.php">Imposta Calendario</a></li>
+			<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
+
 			<li class="flyout">
 				<a href="#">Gestisci Docenti</a>
 				<!-- Flyout -->
