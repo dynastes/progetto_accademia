@@ -1,4 +1,4 @@
-crea un database chiamato fullcandar
+Crea un database chiamato fullcandar
 
 dopo esegui questa query
 CREATE TABLE IF NOT EXISTS `evenement` (

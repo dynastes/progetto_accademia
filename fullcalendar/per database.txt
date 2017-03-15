@@ -1,4 +1,6 @@
 Crea un database chiamato fullcandar
+Dopo di che, vattelappesca
+
 
 dopo esegui questa query
 CREATE TABLE IF NOT EXISTS `evenement` (
