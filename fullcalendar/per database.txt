@@ -1,13 +1,11 @@
-Crea un database chiamato fullcandar
-Dopo di che, vattelappesca
+1. Crea un database chiamato fullcandar
 
-
-dopo esegui questa query
-CREATE TABLE IF NOT EXISTS `evenement` (
- `id` int(11) NOT NULL AUTO_INCREMENT,
- `title` varchar(255) COLLATE utf8_bin NOT NULL,
- `start` datetime NOT NULL,
- `end` datetime DEFAULT NULL,
- `colore`
- PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+2. dopo esegui questa query
+	CREATE TABLE IF NOT EXISTS `evenement` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`title` varchar(255) COLLATE utf8_bin NOT NULL,
+	`start` datetime NOT NULL,
+	`end` datetime DEFAULT NULL,
+	`colore`
+	PRIMARY KEY (`id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
