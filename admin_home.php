@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Gestionale Kandinskij</title>
+		<title>Gestionale Kandinskij sd</title>
 		<link href="css/style_nuovo.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 
