@@ -11,6 +11,6 @@ $sql_inserisci_materia="INSERT INTO materie_anagrafica (Nome_materia, Id_settore
 echo $sql_inserisci_materia;
 $connessione->query($sql_inserisci_materia);
 
-//@header('location:admin_inserisci_materia_anagrafe.php');
+@header('location:admin_inserisci_materia_anagrafe.php');
 
 ?>
