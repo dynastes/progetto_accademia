@@ -10,14 +10,14 @@
 
 
 
-
+		<?php @include_once 'shared/head_inclusions.php';?>
+		<!-- 
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 
-		<!-- Optional theme -->
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
 
-		<!-- Latest compiled and minified JavaScript -->
 		<script src="js/bootstrap.min.js"></script>
+		-->
 
 
 
@@ -46,6 +46,7 @@
 
 			<div id="contenuto">
 				<div id="benvenuto">
+
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p><b>Tipo utente: <?php echo $utente->ruolo; ?></b></p>
 				</div>
@@ -88,6 +89,6 @@
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+		</div> 
 	</body>
 </html>
