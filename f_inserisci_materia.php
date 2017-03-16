@@ -1,11 +1,11 @@
 <?php
-@session_start();
+//@session_start();
 @include_once 'dbconnection.php';
 
 $id_settore=$_POST['settore'];
 $nome_materia=$_POST['nome_materia'];
 
-$_SESSION['id_settore']=$id_settore;
+//$_SESSION['id_settore']=$id_settore;
 
 $sql_inserisci_materia="INSERT INTO materie_anagrafica (Nome_materia, Id_settore) VALUES ('$nome_materia', '$id_settore');";
 $connessione->query($sql_inserisci_materia);
