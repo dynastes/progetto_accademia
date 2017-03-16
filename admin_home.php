@@ -3,33 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Gestionale Kandinskij sd</title>
-		<link href="css/style_nuovo.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-
-
-
-
 
 		<?php @include_once 'shared/head_inclusions.php';?>
-		<!-- 
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
-
-		<script src="js/bootstrap.min.js"></script>
-		-->
-
-
-
-
-
-
-
-		<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
-		<link href="js/flexslider.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
 
 	</head>
 	<body>
