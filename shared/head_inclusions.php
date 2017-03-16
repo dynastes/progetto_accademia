@@ -1,3 +1,10 @@
+<?php 
+//per includere questo file, usare il seguente codice:
+/*<?php @include_once 'shared/head_inclusions.php';?>*/
+?>
+
+
+<link href="css/style_nuovo.css" rel="stylesheet" />
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 
 <!-- Optional theme -->
@@ -5,3 +12,11 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<link href="css/style.css" rel="stylesheet" />
+
+<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="js/flexslider.css" rel="stylesheet" />
+
+<!-- da commentare in futuro-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
