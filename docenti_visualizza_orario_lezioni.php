@@ -3,15 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Gestionale Kandinskij</title>
-		<link href="css/style_nuovo.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
-		<link href="js/flexslider.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<?php @include_once 'shared/head_inclusions.php';?>
 		<!-- INCLUSIONEPRE FULLCALENDAR -->
 		<link href='fullcalendar/css/fullcalendar.css' rel='stylesheet' />
 		<link href='fullcalendar/css/fullcalendar.print.css' rel='stylesheet' media='print' />
