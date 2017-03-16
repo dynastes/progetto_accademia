@@ -6,7 +6,25 @@
 		<link href="css/style_nuovo.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 
+
+
+
+
+
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
 		<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
 		<link href="js/flexslider.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
