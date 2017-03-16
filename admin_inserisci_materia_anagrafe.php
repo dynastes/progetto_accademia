@@ -1,5 +1,5 @@
 <?php
-//@session_start();
+@session_start();
 @include_once 'dbconnection.php';
 
 /*prendere dalla tabella la lista di settori con questi campi:
@@ -37,17 +37,16 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 			<label for="settore">Settore </label>
 			<select id="settore" name="settore">
 				<?php 
-				while($res=$res_settore->fetch_assoc()) { 
-
-					// if($_SESSION['id_settore']==$res['Id']){ 
+				while($res=$res_settore->fetch_assoc()) {
+					if($_SESSION['id_settore']==$res['Id']){ 
 						?>
 						<option value="<?php echo $res['Id']; ?>" selected><?php echo $res['Codice']; ?></option>
 					
 					<?php
-					// } else { ?>
-						<!-- <option value="<?php //echo $res['Id']; ?>"><?php //echo $res['Codice']; ?></option> -->
+					 } else { ?>
+						<option value="<?php echo $res['Id']; ?>"><?php echo $res['Codice']; ?></option>
 					<?php 
-					//} 
+					} 
 				} 
 				?>
 				
