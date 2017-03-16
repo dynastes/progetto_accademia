@@ -1,8 +1,6 @@
 <?php @include_once 'menu.php'; ?>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Gestionale Kandinskij</title>
 		<?php @include_once 'shared/head_inclusions.php';?>
 
 <!-- INCLUSIONEPRE FULLCALENDAR -->

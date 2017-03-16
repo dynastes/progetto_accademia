@@ -6,8 +6,6 @@ if($_SESSION['richiesta-inviata']===1){
 ?>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Gestionale Kandinskij</title>
 		<?php @include_once 'shared/head_inclusions.php';?>
 
 	</head>

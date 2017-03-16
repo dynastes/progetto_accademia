@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Gestionale Kandinskij</title>
 <?php @include_once 'shared/head_inclusions.php';?>
 
-
-<!-- Theme skin -->
-<link href="skins/default.css" rel="stylesheet" />
 
 </head>
 <body>

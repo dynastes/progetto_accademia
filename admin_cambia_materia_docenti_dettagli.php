@@ -7,9 +7,6 @@ if($_SESSION['materia']===1){
 ?>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Gestionale Kandinskij</title>
-		
 		
 		<link href="css/style_nuovo.css" rel="stylesheet" />
 
