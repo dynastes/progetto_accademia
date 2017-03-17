@@ -1,4 +1,4 @@
-1. Crea un database chiamato fullcandar
+1. Crea un database chiamato fullcalendar
 
 2. dopo esegui questa query
 	CREATE TABLE IF NOT EXISTS `evenement` (
@@ -6,6 +6,6 @@
 	`title` varchar(255) COLLATE utf8_bin NOT NULL,
 	`start` datetime NOT NULL,
 	`end` datetime DEFAULT NULL,
-	`colore`
+	`colore` varchar(10),
 	PRIMARY KEY (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
