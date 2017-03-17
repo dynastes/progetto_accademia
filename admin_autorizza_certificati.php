@@ -6,6 +6,6 @@ $sqlAutorizza="UPDATE studenti_richieste SET Stato_richiesta='Confermato' WHERE 
 if($connessione->query($sqlAutorizza)){
 	$_SESSION['autorizzato']=1;
 }
-//test
+//test2
 @header('location:admin_gestisci_certificati.php');
 ?>
