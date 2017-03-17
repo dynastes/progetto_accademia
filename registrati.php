@@ -15,21 +15,8 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Gestionale Kandinskij</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://bootstraptaste.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
 
-
-<!-- Theme skin -->
-<link href="skins/default.css" rel="stylesheet" />
-
+<?php @include_once 'shared/head_inclusions.php';?>
 </head>
 <body>
 <div id="wrapper" style="margin-bottom:5%;">

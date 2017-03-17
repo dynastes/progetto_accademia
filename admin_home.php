@@ -1,35 +1,8 @@
 <?php @include_once 'menu.php'; ?>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Gestionale Kandinskij sd</title>
-		<link href="css/style_nuovo.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-
-
-
-
-
-
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
-
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-		<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
-		<link href="js/flexslider.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<?php @include_once 'shared/head_inclusions.php';?>
+	
 
 	</head>
 	<body>
@@ -46,6 +19,7 @@
 
 			<div id="contenuto">
 				<div id="benvenuto">
+
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p><b>Tipo utente: <?php echo $utente->ruolo; ?></b></p>
 				</div>
@@ -88,6 +62,6 @@
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+		</div> 
 	</body>
 </html>

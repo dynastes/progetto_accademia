@@ -16,18 +16,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 ?>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Gestionale Kandinskij</title>
-		<link href="css/style_nuovo.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
-		<link href="js/flexslider.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<?php @include_once 'shared/head_inclusions.php';?>
 	</head>
 	<body>
 		<div id="testata">
@@ -49,13 +38,13 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				<h2>Inserisci in dati relativi alla nuova materia</h2>
 					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_materia_query_execute.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
 						<!--select name="materie" multiple="multiple" style="height:200px;">
-							<?php
+							<?php /*
 								$sqlMaterie="SELECT Nome_materia FROM materie ORDER BY Nome_materia";
 								$totMaterie=$connessione->query($sqlMaterie);
 								while ($materia=$totMaterie->fetch_assoc()){
 									echo "<option>".$materia["Nome_materia"]."</option>";
 								}
-							?>
+							*/ ?>
 						 </select-->
  						<br />
 						<table style="width:50%;">

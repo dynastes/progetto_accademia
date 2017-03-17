@@ -25,7 +25,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 
 <html>
 	<head>
-		<title>Inserisci materia</title>
+		<?php @include_once 'shared/head_inclusions.php';?>
 	</head>
 	
 	<body>
