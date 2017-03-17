@@ -145,7 +145,7 @@ if (isset($_SESSION['modifica-orario']))
 					<!--form method="post" action="admin_imposta_orari_lezione_dettagli.php" name="professore-materia">
 						<select name="id-materia">
 						<?php
-							$sqlMaterie="SELECT Id, Nome_materia FROM materie ORDER BY Nome_materia DESC";
+							$sqlMaterie="SELECT Id, Nome_materia FROM materie_anagrafica ORDER BY Nome_materia DESC";
 							$res=$connessione->query($sqlMaterie);
 							while($resMaterie=$res->fetch_assoc()){
 								echo '<option value="'.$resMaterie["Id"].'">'.$resMaterie["Nome_materia"].'</option>';
