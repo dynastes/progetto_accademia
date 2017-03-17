@@ -1,9 +1,12 @@
 <?php @include_once 'menu.php'; 
-if($_SESSION['modifica-orario']===1){
-	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
-	$_SESSION['modifica-orario']=0;
+if (isset($_SESSION['modifica-orario']))
+{
+	if($_SESSION['modifica-orario']===1){
+		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
+		$_SESSION['modifica-orario']=0;
 
 
+	}
 }
 ?>
 <html>
