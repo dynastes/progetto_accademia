@@ -15,7 +15,7 @@ if($_SESSION["autorizzato"]===1){
 		</div>
 		<div id="principale">
 			<div id="menu">
-			<!-- INIZIO CARICAMENTO MENU -->
+			<!-- INIZIO CARICAMENTO MENU  -->
 				<?php
 					menu();
 				?>
