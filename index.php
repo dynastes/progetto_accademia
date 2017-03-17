@@ -37,9 +37,11 @@ if(isset($_POST['usermail'])){
 	//echo "### Il login è: ".$loginString." ###\n";
 	$risultato=$connessione->query($loginString);
 }
+if(empty($risultato)){
+	//ciao
+}
 
-
-if($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
+elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	//echo "Login In Corso............";
 	if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
 		//echo "Creazione SESSIONE:......";
