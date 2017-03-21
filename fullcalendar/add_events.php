@@ -4,6 +4,7 @@ $title=$_POST['title'];
 $start=$_POST['start'];
 $end=$_POST['end'];
 $color=$_POST['color'];
+$text_color=$_POST['text_color'];
  
 // connexion à la base de données
  try {
@@ -12,7 +13,7 @@ $color=$_POST['color'];
  exit('Impossible de se connecter à la base de données.');
  }
  
-$sql = "INSERT INTO evenement (title, start, end, color) VALUES (:title, :start, :end, :color)";
+$sql = "INSERT INTO evenement (title, start, end, color,text_color) VALUES (:title, :start, :end, :color, :text_color)";
 $q = $bdd->prepare($sql);
-$q->execute(array(':title'=>$title, ':start'=>$start, ':end'=>$end,':color'=>$color));
+$q->execute(array(':title'=>$title, ':start'=>$start, ':end'=>$end,':color'=>$color,':text_color'=>$text_color));
 ?>
