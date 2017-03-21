@@ -38,7 +38,7 @@ if (isset($_SESSION['modifica-orario']))
 					defaultDate: oggi,
 					editable: true,
 					
-					events: "http://localhost/Accademia/fullcalendar/events.php",
+					events: "http://localhost/progetto_accademia/fullcalendar/events.php",
 					selectable: true,
 					selectHelper: true,
 					select: function(start, end, allDay) {
@@ -52,11 +52,11 @@ if (isset($_SESSION['modifica-orario']))
 						end = moment(end).format("YYYY-MM-DD HH:mm:ss");﻿
 						
 					 $.ajax({
-					 url: "http://localhost/Accademia/fullcalendar/add_events.php",
+					 url: "http://localhost/progetto_accademia/fullcalendar/add_events.php",
 					 data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color,
 					 type: "POST",
 					 success: function(json) {
-					 alert('OK');
+					 alert('OK AGGIUNTO');
 					 }
 					 
 					 });
@@ -78,8 +78,9 @@ if (isset($_SESSION['modifica-orario']))
 		eventDrop: function(event, delta) {
 		  start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
 		 end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
+	
 		 $.ajax({
-		 url: 'http://localhost/Accademia/fullcalendar/update_events.php',
+		 url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
 		 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 		 type: "POST",
 		 success: function(json) {
@@ -91,11 +92,11 @@ if (isset($_SESSION['modifica-orario']))
 		 start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
 		 end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
 		 $.ajax({
-		 url: 'http://localhost/Accademia/fullcalendar/update_events.php',
+		 url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
 		 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 		 type: "POST",
 		 success: function(json) {
-		 alert("OK");
+		 alert("OK DIVERSO");
 		 }
 		 });
 		 
