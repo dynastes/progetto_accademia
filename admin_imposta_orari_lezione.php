@@ -57,6 +57,7 @@ if (isset($_SESSION['modifica-orario']))
 					 type: "POST",
 					 success: function(json) {
 					 alert('OK AGGIUNTO');
+					  window.location.reload();
 					 }
 					 
 					 });
@@ -158,10 +159,13 @@ if (isset($_SESSION['modifica-orario']))
 
 					<label>Scegli il colore con cui evidenziare l'evento che vuoi aggiungere:</label>
 					<select id="colore_evento">
-						<option value="red" style="background-color:red;color: white;">Esami</option>
-						<option value="blue" style="background-color:blue; color: white;">Lezioni</option>
-						<option value="orange" style="background-color:orange;">Conferenze</option>
-						<option value="yellow" style="background-color:yellow">Eventi</option>
+						<option value="red" style="background-color:red;color: white;">Rosso</option>
+						<option value="blue" style="background-color:blue; color: white;">Blu</option>
+						<option value="orange" style="background-color:orange;color: white;">Arancione</option>
+						<option value="yellow" style="background-color:yellow;color: black;">Giallo</option>
+						<option value="green" style="background-color:green;color: white;">Verde</option>
+						<option value="grey" style="background-color:grey;color: white;">Grigio</option>
+						<option value="black" style="background-color:black;color: white;">Nero</option>
 					</select>
 				</div>
 			</div>
