@@ -15,6 +15,7 @@
 <!-- JavaScript -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/select/js/bootstrap-select.js"></script>
 
 <!--link href="css/style.css" rel="stylesheet" /-->
 
