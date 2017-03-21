@@ -1,8 +1,11 @@
 <?php @include_once 'menu.php'; 
-if($_SESSION['materia']===1){
-	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
-	$_SESSION['materia']=0;
+if(!empty($_SESSION['materia'])){
+	if($_SESSION['materia']===1){ //da errore perchè la parola variabile di sessione "materia" non esiste
+		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
+		$_SESSION['materia']=0;
+	}
 }
+
 ?>
 <html>
 	<head>		
