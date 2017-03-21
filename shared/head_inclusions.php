@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <title>Area Riservata Kandinskij</title>
-<!--link href="css/style_nuovo.css" rel="stylesheet" /-->
+<link href="css/style_nuovo.css" rel="stylesheet" />
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 
 <!-- Optional theme -->
@@ -14,7 +14,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<!--link href="css/style.css" rel="stylesheet" /-->
+<link href="css/style.css" rel="stylesheet" />
 
 <link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="js/flexslider.css" rel="stylesheet" />
