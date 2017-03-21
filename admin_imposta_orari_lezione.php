@@ -37,7 +37,7 @@ if (isset($_SESSION['modifica-orario']))
 					},
 					defaultDate: oggi,
 					editable: true,
-					
+					allDaySlot: false,
 					events: "http://localhost/progetto_accademia/fullcalendar/events.php",
 					selectable: true,
 					selectHelper: true,
