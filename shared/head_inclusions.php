@@ -19,8 +19,6 @@
 
 <link href="css/style.css" rel="stylesheet" />
 
-<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="js/flexslider.css" rel="stylesheet" />
 
 <!-- da commentare in futuro-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
