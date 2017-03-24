@@ -70,7 +70,7 @@ if (isset($_SESSION['modifica-orario']))
 					 end: end,
 					 allDay: allDay,
 					 backgroundColor: color,
-					 eventTextColor : red
+					 textColor : text_color
 					 },
 					 true // make the event "stick"
 					 );
