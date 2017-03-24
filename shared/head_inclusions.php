@@ -2,16 +2,18 @@
 //per includere questo file, usare il seguente codice:
 /*<?php @include_once 'shared/head_inclusions.php';?>*/
 ?>
-
 <meta charset="utf-8">
 <title>Area Riservata Kandinskij</title>
-<link href="css/style_nuovo.css" rel="stylesheet" />
-<link href="css/bootstrap.min.css" rel="stylesheet" />
+<!--link href="css/style_nuovo.css" rel="stylesheet" /-->
 
-<!-- Optional theme -->
+<!-- BOOTSTRAP  -->
 <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
 
-<!-- Latest compiled and minified JavaScript -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
+<!-- JavaScript -->
+<script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <link href="css/style.css" rel="stylesheet" />
