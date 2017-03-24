@@ -37,13 +37,14 @@ if (isset($_SESSION['modifica-orario']))
 					},
 					defaultDate: oggi,
 					editable: true,
-					
-					events: "http://localhost/Accademia/fullcalendar/events.php",
+					allDaySlot: false,
+					events: "http://localhost/progetto_accademia/fullcalendar/events.php",
 					selectable: true,
 					selectHelper: true,
 					select: function(start, end, allDay) {
 					 var title = prompt('Event Title:');
 					 var color = document.getElementById("colore_evento").value;
+					 var text_color = document.getElementById("colore_testo").value;
 					 if (title) {
 					  
 					 start: start.unix();
@@ -52,11 +53,12 @@ if (isset($_SESSION['modifica-orario']))
 						end = moment(end).format("YYYY-MM-DD HH:mm:ss");﻿
 						
 					 $.ajax({
-					 url: "http://localhost/Accademia/fullcalendar/add_events.php",
-					 data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color,
+					 url: "http://localhost/progetto_accademia/fullcalendar/add_events.php",
+					 data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color +'&text_color='+text_color,
 					 type: "POST",
 					 success: function(json) {
-					 alert('OK');
+					 alert('OK AGGIUNTO');
+					  window.location.reload();
 					 }
 					 
 					 });
@@ -67,7 +69,8 @@ if (isset($_SESSION['modifica-orario']))
 					 start: start,
 					 end: end,
 					 allDay: allDay,
-					 backgroundColor: color
+					 backgroundColor: color,
+					 textColor : text_color
 					 },
 					 true // make the event "stick"
 					 );
@@ -78,8 +81,9 @@ if (isset($_SESSION['modifica-orario']))
 		eventDrop: function(event, delta) {
 		  start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
 		 end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
+	
 		 $.ajax({
-		 url: 'http://localhost/Accademia/fullcalendar/update_events.php',
+		 url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
 		 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 		 type: "POST",
 		 success: function(json) {
@@ -91,11 +95,11 @@ if (isset($_SESSION['modifica-orario']))
 		 start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
 		 end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
 		 $.ajax({
-		 url: 'http://localhost/Accademia/fullcalendar/update_events.php',
+		 url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
 		 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 		 type: "POST",
 		 success: function(json) {
-		 alert("OK");
+		 alert("OK DIVERSO");
 		 }
 		 });
 		 
@@ -145,7 +149,7 @@ if (isset($_SESSION['modifica-orario']))
 					<!--form method="post" action="admin_imposta_orari_lezione_dettagli.php" name="professore-materia">
 						<select name="id-materia">
 						<?php
-							$sqlMaterie="SELECT Id, Nome_materia FROM materie ORDER BY Nome_materia DESC";
+							$sqlMaterie="SELECT Id, Nome_materia FROM materie_anagrafica ORDER BY Nome_materia DESC";
 							$res=$connessione->query($sqlMaterie);
 							while($resMaterie=$res->fetch_assoc()){
 								echo '<option value="'.$resMaterie["Id"].'">'.$resMaterie["Nome_materia"].'</option>';
@@ -157,10 +161,20 @@ if (isset($_SESSION['modifica-orario']))
 
 					<label>Scegli il colore con cui evidenziare l'evento che vuoi aggiungere:</label>
 					<select id="colore_evento">
-						<option value="red" style="background-color:red;color: white;">Esami</option>
-						<option value="blue" style="background-color:blue; color: white;">Lezioni</option>
-						<option value="orange" style="background-color:orange;">Conferenze</option>
-						<option value="yellow" style="background-color:yellow">Eventi</option>
+						<option value="red" style="background-color:red;color: white;">Rosso</option>
+						<option value="blue" style="background-color:blue; color: white;">Blu</option>
+						<option value="orange" style="background-color:orange;color: white;">Arancione</option>
+						<option value="yellow" style="background-color:yellow;color: black;">Giallo</option>
+						<option value="green" style="background-color:green;color: white;">Verde</option>
+						<option value="grey" style="background-color:grey;color: white;">Grigio</option>
+						<option value="black" style="background-color:black;color: white;">Nero</option>
+					</select>
+					<br>
+					<label>Scegli il colore del testo dell'evento che vuoi aggiungiere </label>
+					<select id="colore_testo">
+						<option value="white" style="background-color:grey;color: white;">Bianco</option>
+						<option value="black" style="background-color:grey; color: black;">Nero</option>
+						
 					</select>
 				</div>
 			</div>
