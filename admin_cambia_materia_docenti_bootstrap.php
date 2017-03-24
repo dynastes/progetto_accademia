@@ -9,14 +9,9 @@
 			<?php @include_once 'shared/head_inclusions.php';?>
 
 		</head>
-		<script>
-			$('.selectpicker').selectpicker({
-			  style: 'btn-info',
-			  size: 4
-			});
-
-		</script>
+		
 		<body>
+	
 			<div class="container">
 			<div class="row">
 		<div id="testata"  class="col-md-4">
@@ -38,20 +33,26 @@
 					<div id="avvisi">
 						<h1>Cambia materie ai docenti</h1>
 						<p>Scegli il professore a cui assegnare una materia differente</p>
-						<form method="post" action="admin_cambia_materia_docenti_dettagli.php" name="professore-materia" class="form-control">
+						<form method="post" action="admin_cambia_materia_docenti_dettagli.php" name="professore-materia" >
 							
-							<div class="dropdown input-group">
+						
 						<select class="selectpicker">
 						<?php
 								$sqlProfessori="SELECT a.Nome, a.Cognome, d.Id_anagrafe FROM anagrafe AS a, docenti AS d WHERE d.Id_anagrafe=a.Id";
 								$resProf=$connessione->query($sqlProfessori);
 								while($res=$resProf->fetch_assoc()){
-									echo '<option class="" value="'.$res["Id_anagrafe"].'">'.$res["Cognome"].' '.$res["Nome"].'</option>';
+									echo '<option value="'.$res["Id_anagrafe"].'">'.$res["Cognome"].' '.$res["Nome"].'</option>';
 								//	echo ('<option>'.$res["Nome"].' '.$res["Cognome"].'</option>');
 								}
 							?>
 							</select>
-							</div>
+								<select class="selectpicker">
+								<option> Opzione 1 </option>
+								<option> Opzione 2 </option>
+								<option> Opzione 3 </option>
+								<option> Opzione 4 </option>
+							</select>
+						
 							
 							
 							
