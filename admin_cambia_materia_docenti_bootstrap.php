@@ -11,10 +11,7 @@
 		</head>
 		
 		<body>
-		<script type="text/javascript">
-    $('.selectpicker').selectpicker({
-      });
-</script>
+	
 			<div class="container">
 			<div class="row">
 		<div id="testata"  class="col-md-4">
@@ -48,6 +45,12 @@
 								//	echo ('<option>'.$res["Nome"].' '.$res["Cognome"].'</option>');
 								}
 							?>
+							</select>
+								<select class="selectpicker">
+								<option> Opzione 1 </option>
+								<option> Opzione 2 </option>
+								<option> Opzione 3 </option>
+								<option> Opzione 4 </option>
 							</select>
 						
 							
