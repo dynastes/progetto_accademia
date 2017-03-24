@@ -31,12 +31,13 @@
 						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					</div>
 					<div id="avvisi">
+					<br>
 						<h1>Cambia materie ai docenti</h1>
 						<p>Scegli il professore a cui assegnare una materia differente</p>
 						<form method="post" action="admin_cambia_materia_docenti_dettagli.php" name="professore-materia" >
 							
-						
-						<select class="selectpicker">
+						<div class="col-md-4">
+						<select class="form-control">
 						<?php
 								$sqlProfessori="SELECT a.Nome, a.Cognome, d.Id_anagrafe FROM anagrafe AS a, docenti AS d WHERE d.Id_anagrafe=a.Id";
 								$resProf=$connessione->query($sqlProfessori);
@@ -46,18 +47,14 @@
 								}
 							?>
 							</select>
-								<select class="selectpicker">
-								<option> Opzione 1 </option>
-								<option> Opzione 2 </option>
-								<option> Opzione 3 </option>
-								<option> Opzione 4 </option>
-							</select>
-						
-							
-							
-							
-							<input  type="submit" value="Vedi dettagli/Modifica materia assegnata">
+						</div>	
+						<div class="col-md-5">
+						<a href="#" class="btn btn-primary btn-md btn-block" role="button" aria-pressed="true">Vedi dettagli/Modifica materia assegnata</a>
+							</div>
+							<div class="col-md-3">
+							</div>
 						</form>
+						
 					
 				</div>
 			</div>
