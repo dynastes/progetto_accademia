@@ -1,4 +1,5 @@
 <?php @include_once 'menu.php';
+//header('Content-type: text/html; charset=UTF-8');
 if($_SESSION['materia']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
 	$_SESSION['materia']=0;
@@ -7,8 +8,7 @@ if($_SESSION['materia']===1){
 ?>
 <html>
 	<head>
-		
-		<link href="css/style_nuovo.css" rel="stylesheet" />
+		<?php @include_once 'shared/head_inclusions.php';?>
 
 	</head>
 	<body>
@@ -33,6 +33,7 @@ if($_SESSION['materia']===1){
 					//qui estraggo le info riguardo il professore scelto e la sua materia/materie
 					$idDocente=$_POST["nome-professore"];
 					$sqlNomeCognome="SELECT a.Nome, a.Cognome, d.Id_anagrafe FROM anagrafe AS a, docenti AS d WHERE d.Id_anagrafe=a.Id";
+					//$connessione->mysql_query("SET NAMES UTF8");
 					$res=$connessione->query($sqlNomeCognome);
 					$resNomeCognome=$res->fetch_assoc();
 					?>
@@ -50,15 +51,17 @@ if($_SESSION['materia']===1){
 									<select name="materia-da-modificare">
 									<?php
 										$materiePresenti=0;
-										$sqlMateriaDocente="SELECT a.Nome, a.Cognome, d.Id_anagrafe, m.Id, m.Nome_materia, m.Anno
-															FROM anagrafe AS a, docenti AS d, materie AS m
-															WHERE m.Id_docente =".$resNomeCognome["Id_anagrafe"]."
-															AND a.Id =".$resNomeCognome["Id_anagrafe"]."
-															AND d.Id_anagrafe =".$resNomeCognome["Id_anagrafe"];
+										//~ $sqlMateriaDocente="SELECT a.Nome, a.Cognome, d.Id_anagrafe, m.Id, m.Nome_materia, m.Anno
+															//~ FROM anagrafe AS a, docenti AS d, materie AS m
+															//~ WHERE m.Id_docente =".$resNomeCognome["Id_anagrafe"]."
+															//~ AND a.Id =".$resNomeCognome["Id_anagrafe"]."
+															//~ AND d.Id_anagrafe =".$resNomeCognome["Id_anagrafe"];
+										$sqlMateriaDocente="SELECT m.Id, m.Nome_materia
+															FROM materie_anagrafica AS m";
 										$res=$connessione->query($sqlMateriaDocente);
 										while($resMateriaDocente=$res->fetch_assoc()){
 											$materiePresenti=1;//per identificare se nella listbox deve comparire la frase "nessuna materia presente"
-											echo '<option value="'.$resMateriaDocente["Id"].'">'.$resMateriaDocente["Nome_materia"].' ('.$resMateriaDocente["Anno"].')'.'</option>';
+											echo '<option value="'.$resMateriaDocente["Id"].'">'.$resMateriaDocente["Nome_materia"]. /*' ('.$resMateriaDocente["Anno"].')'.*/'</option>';
 										}
 										if($materiePresenti==0){
 											echo '<option value="nessuna-materia">Nessuna materia per questo prof.</option>';

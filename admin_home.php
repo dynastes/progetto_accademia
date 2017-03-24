@@ -40,7 +40,7 @@
 						<?php //qui interrogo il DB per sapere la lista dei certificati richiesti dagli utenti
 						$stringasql="SELECT a.Nome, a.Cognome, sr.Data_invio, sr.Id, t.Tipo
 									FROM studenti_richieste AS sr, anagrafe AS a, tipo_richieste AS t
-									WHERE sr.Id_anagrafe=a.Id AND t.Id=sr.Tipo AND Stato_richiesta='Non letto'";
+									WHERE sr.Id_anagrafe=a.Id AND t.Id=sr.Tipo AND sr.Stato_richiesta='Non letto'";
 						$elencoCaricamenti=$connessione->query($stringasql);
 						while($res=$elencoCaricamenti->fetch_assoc()){
 							$nomeCognome=$res["Nome"]." ".$res["Cognome"];
