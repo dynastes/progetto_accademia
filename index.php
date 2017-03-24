@@ -98,11 +98,11 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
 	//echo "\nReindirizzamento in corso... l'utente è un: ".$ruoloUtente;
 	if($ruoloUtente==="studente"){
-		@header("location:studenti_home.php");
+		@header("location:studenti_home_bootstrap.php");
 	} else if ($ruoloUtente==="docente"){
-		@header("location:docenti_home.php");
+		@header("location:docenti_home_bootstrap.php");
 	} else if ($ruoloUtente==="admin"){
-		@header("location:admin_home.php");
+		@header("location:admin_home_bootstrap.php");
 	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
 	
