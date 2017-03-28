@@ -19,6 +19,8 @@ if (isset($_SESSION['modifica-orario']))
 		<script src='fullcalendar/js/jquery.min.js'></script>
 		<script src='fullcalendar/js/fullcalendar.min.js'></script>
 		<script src= 'fullcalendar/js/fullcalendar.js'></script>
+		<script src= 'fullcalendar/lang/it.js'></script>
+		
 		<script>
 			$(document).ready(function() {
 
@@ -30,6 +32,7 @@ if (isset($_SESSION['modifica-orario']))
 				oggi=anno+'-'+mese+'-'+giorno;
 
 				var calendar = $('#calendar').fullCalendar({
+					lang:'it',
 				header: {
 						left: 'prev,next today',
 						center: 'title',
