@@ -123,6 +123,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 <?php @include_once 'shared/head_inclusions.php';?>
 </head>
 <body>
+<div class="container">
 <div id="wrapper">
 	<section id="featured">
 	<!-- start header -->
@@ -139,7 +140,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 			</header>
 			<!-- end header -->
 	<!-- start slider -->
-		<div class="container">
+		
 			
 			<div class="row center-block">
 			<div class="col-md-4"> </div>	
@@ -206,7 +207,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 	</section>
 </div> <!-- CHIUSURA DIV WRAPPER -->
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
+<!--script src="js/jquery.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
@@ -216,6 +217,6 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 <script src="js/portfolio/setting.js"></script>
 <script src="js/jquery.flexslider.js"></script>
 <script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
+<script src="js/custom.js"></script-->
 </body>
 </html>

@@ -1,4 +1,4 @@
-	<?php @include_once 'menu.php'; 
+	<?php @include_once 'menu_bootstrap.php'; 
 	if($_SESSION['materia']===1){
 		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
 		$_SESSION['materia']=0;
@@ -12,17 +12,14 @@
 		
 		<body>
 	
-			<div class="container">
-			<div class="row">
-		<div id="testata"  class="col-md-4">
-				<img src="img/logo.png">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<!-- INIZIO CARICAMENTO MENU -->
 					<?php
 						menu();
 					?>
 				<!-- FINE MENU -->
-
 			</div>
+			
 			<div id="principale">
 				<div class="col-md-8">
 				
