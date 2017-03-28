@@ -10,26 +10,13 @@ if($_SESSION['richiesta-inviata']===1){
 
 	</head>
 	<body>
-			<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-
-      </button>
-      <img src="img/logo.png" width="30%">
-    </div>
-
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <?php
 					menu();
 				?>
-	</div>			
-  </div><!-- /.container-fluid -->
-</nav>
-			<div id="contenuto">
+	</div>		
+	
+  	<div id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?></b>
 				</div>

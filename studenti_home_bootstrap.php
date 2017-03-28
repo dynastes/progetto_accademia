@@ -12,26 +12,13 @@ non convertite
 	<?php @include_once 'shared/head_inclusions.php';?> 
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-
-      </button>
-      <img src="img/logo.png" width="30%">
-    </div>
 
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <?php
 					menu();
 				?>
 	</div>			
-  </div><!-- /.container-fluid -->
-</nav>
-
+  
 				<div id="avvisi">
 					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
 					<div id="elenco-avvisi">

@@ -5,21 +5,14 @@
 
 	</head>
 	<body>
-		<nav class="navbar navbar-default">
-  <div class="container-fluid">
-			<img src="img/logo.png">
-		
-		
+	
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
 					menu();
 				?>
 			</div> <!-- FINE MENU -->
-			</div>
-		</nav>
-
-
+		
 			<div id="contenuto">
 				<div id="benvenuto">
 					<h1>Carica Programma</h1>

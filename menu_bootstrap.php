@@ -15,6 +15,18 @@ function menu(){
 	} else {
 		$utente=$_SESSION['ut'];
 		$utente=unserialize($utente);
+		
+		$nav='<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        </button>
+        <img src="img/logo.png" width="30%">
+        </div>';
+		
+		
 		//identificazione dell'utente connesso e attribuzione del giusto menù ad esso
 		//admin, studente, docente
 		if($utente->get_ruolo()=="studente"){
@@ -79,7 +91,14 @@ function menu(){
 			<li><a href="logout.php">Disconnetti</a><!-- * --></li>
 		</ul>';
 	}
+	$chiusure=' </div><!-- /.container-fluid --></nav>';
+	
+	
+	
+	
+	echo $nav;
 	echo $menu;
+	echo $chiusure;
 	}
 }
 ?>

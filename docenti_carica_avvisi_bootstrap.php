@@ -12,20 +12,11 @@ if($_SESSION['query']===1){
 	</head>
 	<body>
 		
-		<nav class="navbar navbar-default">
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="testata">
-			<img src="img/logo.png">
-		</div>
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
 					menu();
 				?>
-			</div> <!-- FINE MENU -->
-</nav>
-
-
-		
+			
 			<div id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
