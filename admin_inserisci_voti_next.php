@@ -37,8 +37,11 @@ $idDocente=$_POST['id-docente'];
 								<td><label for="usermail">Materia:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
 								<td><select name="id-materia">
 									<?php
-									$sqlMateria="SELECT Id, Nome_materia, Anno
-												FROM materie  
+									/* La query necessita l'estrazione dell'ID Docente dalla tabella "materia_docente", in modo tale da capire 
+									 * da chi è insegnata questa determinata materia. Così facendo, verranno selezionate solo le materie che avranno
+									 * nella colonna Id_docente l'ID ricevuto tramite POST. */
+									$sqlMateria="SELECT Id, Nome_materia
+												FROM materie_anagrafica 
 												WHERE Id_docente=".$idDocente." ORDER BY Nome_materia";
 									$res=$connessione->query($sqlMateria);
 									while($resMateria=$res->fetch_assoc()){

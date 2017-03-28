@@ -39,7 +39,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				<div name="avvisi">
 				<h2>Inserisci voti</h2>
 				<label>Scegliere il professore che ha sostenuto l'esame:</label>
-					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
+					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php" accept-charset="utf-8">  <?php /* echo $_SERVER['PHP_SELF']; */ ?>
  						<br />
 						<table style="width:40%;">
 							<tr>

@@ -1,0 +1,2 @@
+### Pagina "admin_inserisci_voti_next.php
+La query necessita l'estrazione dell'ID Docente dalla tabella "materia_docente", in modo tale da capire a chi è insegnata questa determinata materia. Così facendo, verranno selezionate solo le materie che avranno alla colonna Id_docente l'ID ricevuto tramite POST.
