@@ -140,62 +140,69 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 			<!-- end header -->
 	<!-- start slider -->
 		<div class="container">
-				
-			<section class="loginform cf" style="float:left;">
+			
+			<div class="row center-block">
+			<div class="col-md-4"> </div>	
+			
 				<form name="login" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
-					<table align="center" >
-						<tr>
-							<td>
-								<label for="usermail">Email &nbsp;</label>
+					
 							
-							</td>
-							<td>
-								<input type="email" name="usermail" placeholder="yourname@email.com" required>
-							</td>
-						</tr>
-						<tr>
-							<td>
+								<div class="col-md-4">
+								<div class="row center-block">
+								
+									<label for="usermail">Email &nbsp;</label>
+								
+								
+							
+								<div class="row center-block">
+									<input type="email" name="usermail" class="form-control" placeholder="username" required>
+								</div>
+								</div>
+								
+								
+						
+						
+							
+								<div class="row center-block">
 								</br>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label for="password">Password  &nbsp;</label>
-							</td>
-							<td>
-								<input type="password" name="password" placeholder="password" required>
-							</td>
-						</tr>
-						<tr>
-							<td>
+									<label for="password">Password  &nbsp;</label>
+								
+							</div>
+								<div class="row center-block">
+									<input type="password" name="password" class="form-control" placeholder="password" required>
+								
+								</div>
+								
+							
+						
+						
+								<div class="row center-block">
 								</br>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="submit" value="Login">
-							</td>
-						</tr>
-						<tr>
-							<td>
+								<button type="button" class="btn btn-primary center-block" aria-haspopup="false">
+									Login
+								</button>
+								
+								</div>
 								</br>
-							</td>
-						</tr>
-						<tr>
-							<td>
+								
 								<a href="registrati.php">Registrati</a>
 								</br>
 								<a href="">Password dimenticata ? </a>
-							</td>
-						</tr>
-					</table>
+								
+							
+						
+						</div>
+					
+					
+					
+				</form>	
+					<div class="col-md-4"> </div>	
 					<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
 						<p align="center">Copyright © 2015 Accademia Di Belle Arti Kandinskij <a href="" rel="nofollow" target="_blank"></a>
 						</p>
 					</div>
-				</form>		
-			</section>
-		</div>	
+		
+		</div>
 	</section>
 </div> <!-- CHIUSURA DIV WRAPPER -->
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
