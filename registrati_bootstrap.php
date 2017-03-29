@@ -201,10 +201,9 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 		</div>	
 	</section>
 </div> <!-- CHIUSURA DIV WRAPPER -->
-<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
-		<p align="center">Copyright © 2015 Accademia Di Belle Arti Kandinskij <a href="" rel="nofollow" target="_blank"></a>
-		</p>
-	</div>
+
+<?php @include_once 'shared/footer.php'; ?>
+	
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>

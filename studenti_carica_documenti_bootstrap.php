@@ -12,17 +12,13 @@ $tipoFile=$_POST['tipoFile'];
 		
 <?php @include_once 'menu_bootstrap.php'; ?>
 
-      </button>
-      <img src="img/logo.png" width="30%">
-    </div>
-
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <?php
 					menu();
 				?>
 	</div>			
  
-			<div id="contenuto">
+			<div class="container">
 				<div id="benvenuto">
 					<h1>Carica Documenti</h1>
 					<b>Utente corrente: <?php echo $utente->nome; ?></b>
@@ -64,14 +60,8 @@ $tipoFile=$_POST['tipoFile'];
 					
 				</div>
 			</div>
-		</div>
-
-		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div> 
+		
+<?php @include_once 'shared/footer.php'; ?>
+	
 	</body>
 </html>
