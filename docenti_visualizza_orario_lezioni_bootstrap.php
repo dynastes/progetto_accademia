@@ -56,25 +56,15 @@
 		</style>
 	</head>
 	<body>
+	<div class="container">
 		<?php @include_once 'menu_bootstrap.php'; ?>
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   <?php
-					menu();
-				?>
+   <?php menu(); ?>
 	</div>			
-  
-
-				
-			</div>
-			<div id="calendar"  style="margin-top:100px; margin-bottom:50px;"></div>
+			<div id="calendar"  style="margin-top:10px; margin-bottom:50px;"></div>
 		</div>
+		
+<?php @include_once 'shared/footer.php'; ?>
 
-		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div> 
 	</body>
 </html>

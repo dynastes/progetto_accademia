@@ -167,27 +167,11 @@
 					<input type="button" value="Registrati">
 				</td>
 				
-			</tr>
-			
-			
-			
-			
-			
-		
-			
-			
+			</tr>			
 			</table>
-			<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
 		
-
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-
-
-
-			</div>
+		<?php @include_once 'shared/footer.php'; ?>
+		
 		</form>
 			
 	</section>

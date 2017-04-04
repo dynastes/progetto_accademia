@@ -8,7 +8,7 @@
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <?php menu();?>
 	</div>			 
-			<div id="contenuto">
+			<div id="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
 				</div>
@@ -56,11 +56,6 @@
 			</div>
 		</div>
 
-		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-					Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				</p>
-			</div> 
+	<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

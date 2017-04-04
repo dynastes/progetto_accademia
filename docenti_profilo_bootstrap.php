@@ -10,12 +10,10 @@
 
 
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   <?php
-					menu();
-				?>
+   <?php menu();?>
 	</div>			
  
-			<div id="contenuto">
+			<div id="container">
 				<div id="benvenuto">
 					<p><b>Nome: </b> <?php echo $utente->nome; ?></p>
 					<p><b>Cognome: </b> <?php echo $utente->cognome; ?></p>
@@ -27,14 +25,8 @@
 	 				</p>
 				</div>
 			</div>
-		</div>
+	
 
-		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div> 
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

@@ -13,18 +13,12 @@
 	</div>			
  
 
-<div id="contenuto">
-				<div id="benvenuto">
+				<div class="container">
 					<b>Benvenuto <?php echo $utente->nome;?>!</b>
 					<p>Qui sotto vengono elencati gli avvisi pubblicati da lei (sia alla segreteria che a studenti)</p>
 				</div>
 
-		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div> 
+		<?php @include_once 'shared/footer.php'; ?>
+		
 	</body>
 </html>

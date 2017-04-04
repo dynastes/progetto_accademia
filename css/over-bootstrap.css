@@ -1,9 +1,9 @@
-/*css in cui inserire solo gli elementi che non sono personalizzabili con bootstrap*/
-.footer{
-  width:100%;
-  background-color:black;
-  color:white;
-  height:40px;
-  font-size:14px;
-  float:left
+footer{
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:white;
+	height:40px;
+	font-size:14px;
+	float:left;
 }
