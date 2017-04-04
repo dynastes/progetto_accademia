@@ -14,7 +14,7 @@
 	</div>			
   
 
-			<div id="contenuto">
+			<div id="contenuto"  class="container">
 				<div id="benvenuto">
 
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
@@ -22,17 +22,22 @@
 				</div>
 				<div id="avvisi">
 				<p>QUi di seguito sono visualizzati gli avvisi pubblicati dagli utenti all'admin. Per poterli gestire, andate alla pagina <a href="admin_gestisci_certificati.php">Gestisci Richieste</a></p>
-					<table id="box-caricamenti-principale">
+					<table class="table table-striped">
 						<tr>
-							<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:20%;">
+							<th >
 								<b>Caricato da...</b>
-							</td>
-							<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:35%;">
+							</th>
+							<th >
 								<b>Tipo richiesta</b>
-							</td>
-							<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:15%;">
+							</th>
+							<th >
 								<b>Data Invio</b>
-							</td>
+							</th>
+						</tr>
+						<tr>
+							<td>sfgnd</td>
+							<td>skdjnvksdjvsd</td>
+							<td>skdjnvksdjvsd</td>
 						</tr>
 						<?php //qui interrogo il DB per sapere la lista dei certificati richiesti dagli utenti
 						$stringasql="SELECT a.Nome, a.Cognome, sr.Data_invio, sr.Id, t.Tipo
@@ -42,9 +47,9 @@
 						while($res=$elencoCaricamenti->fetch_assoc()){
 							$nomeCognome=$res["Nome"]." ".$res["Cognome"];
 							echo '<tr>';
-								echo '<td class="box-finanze-caricate">'.$nomeCognome.'</td>';
-								echo '<td class="box-finanze-caricate">'.$res["Tipo"].'</td>';
-								echo '<td class="box-finanze-caricate">'.$res["Data_invio"].'</td>';
+								echo '<td>'.$nomeCognome.'</td>';
+								echo '<td >'.$res["Tipo"].'</td>';
+								echo '<td >'.$res["Data_invio"].'</td>';
 							echo '</tr>';
 						}
 						?>
