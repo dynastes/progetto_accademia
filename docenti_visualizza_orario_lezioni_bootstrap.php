@@ -6,9 +6,7 @@
 
 	</head>
 	<body>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<?php menu(); ?>
-		</div>
 		<div class="container">
 			<div id="calendar"></div>
 		</div>
