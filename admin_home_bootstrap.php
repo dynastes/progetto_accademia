@@ -10,7 +10,7 @@
 			<?php
 				menu();
 			?>
-			
+
 
 
 			<div class="container">
@@ -59,7 +59,7 @@
 					</table>
 				</div>
 			</div>
-
+			
 <?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>
