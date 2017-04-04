@@ -14,19 +14,14 @@ $idMateria=$_POST['id-materia'];
 
 	</head>
 	<body>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="principale">
-				<div id="menu">
 				<!-- INIZIO CARICAMENTO MENU -->
 					<?php
 						menu();
 					?>
-				</div> <!-- FINE MENU -->
+				<!-- FINE MENU -->
 
 				<div class="container">
-					<div id="benvenuto">
-						<!--<b>Benvenuto <?php echo $utente->nome; ?>!</b>-->
-					</div>
+						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<div id="avvisi">
 						<br />
 						<h1>Cambia orario delle lezioni</h1>
@@ -48,8 +43,6 @@ $idMateria=$_POST['id-materia'];
 						</form>
 					</div>
 				</div>
-			</div>
-		</div>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php';?>
 	</body>

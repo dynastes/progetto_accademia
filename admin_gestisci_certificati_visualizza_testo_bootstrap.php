@@ -12,20 +12,16 @@ $idTestoRichiesta=$_GET['id'];
 
 	</head>
 	<body>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="principale">
-				<div id="menu">
 				<!-- INIZIO CARICAMENTO MENU -->
 					<?php
 						menu();
 					?>
-				</div> <!-- FINE MENU -->
+				<!-- FINE MENU -->
 
 				<div class="container">
-					<div id="benvenuto">
-						<!--<b>Benvenuto <?php echo $utente->nome; ?>!</b>-->
+						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 						<br />
-						<p>Di seguito verrà mostrato il contenuto della richiesta inviata dallo studente.</p>
+						<p>Di seguito verrà mostrato il contenuto della richiesta inviata dallo studente</p>
 						<p>
 						<?php  
 
@@ -43,11 +39,8 @@ $idTestoRichiesta=$_GET['id'];
 
 						?>
 						</p>
-					</div>
 					<a href="admin_gestisci_certificati.php">&lt;&lt; Torna indietro</a>
 				</div>
-			</div>
-		</div>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php';?>
 	</body>

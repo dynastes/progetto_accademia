@@ -12,19 +12,16 @@ if($_SESSION['materia']===1){
 
 	</head>
 	<body>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="principale">
-				<div id="menu">
-				<!-- INIZIO CARICAMENTO MENU -->
-					<?php
-						menu();
-					?>
-				</div> <!-- FINE MENU -->
-		</div>
+			<!-- INIZIO CARICAMENTO MENU -->
+				<?php
+					menu();
+				?>
+			<!-- FINE MENU -->
+				
 			<div class="container">
-				<div id="benvenuto">
-					<!--<b>Benvenuto <?php echo $utente->nome; ?>!</b>-->
-				</div>
+			
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
+				
 				<div id="avvisi">
 					<h1>Cambia docente alle materie</h1>
 					<?php
@@ -115,8 +112,8 @@ if($_SESSION['materia']===1){
 					</form>
 				</div>
 			</div>
-		</div>
-	<?php @include_once 'shared/head_inclusions.php';?> 
+		
+	<?php @include_once 'shared/footer.php';?> 
 </body>
 	
 </html>

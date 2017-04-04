@@ -107,7 +107,7 @@ if (isset($_SESSION['modifica-orario']))
 			});
 
 		</script>
-		<style>
+		<!--<style>
 
 			body {
 				margin: 40px 10px;
@@ -121,22 +121,17 @@ if (isset($_SESSION['modifica-orario']))
 				margin: 0 auto;
 			}
 
-		</style>
+		</style>-->
 	</head>
 	<body>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="principale">
-				<div id="menu">
 				<!-- INIZIO CARICAMENTO MENU -->
 					<?php
 						menu();
 					?>
-				</div> <!-- FINE MENU -->
+				<!-- FINE MENU -->
 
 				<div class="container">
-					<div id="benvenuto">
-						<!--<b>Benvenuto <?php echo $utente->nome; ?>!</b>-->
-					</div>
+						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<div id="avvisi">
 						<br />
 						<h1>Mostra/inserisci eventi al calendario</h1>
@@ -164,12 +159,7 @@ if (isset($_SESSION['modifica-orario']))
 						</select>
 					</div>
 				</div>
-				<div>
-					
-				</div>
 				<div id="calendar" style="margin-top:100px; margin-bottom:50px;"></div>
-			</div>
-		</div>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php';?>
 	</body>

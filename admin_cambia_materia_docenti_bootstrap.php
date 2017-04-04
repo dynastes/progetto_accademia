@@ -12,18 +12,16 @@
 		
 		<body>
 	
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<!-- INIZIO CARICAMENTO MENU -->
 					<?php
 						menu();
 					?>
 				<!-- FINE MENU -->
-			</div>
 			
-			<div id="principale">
+			
 				<div class="col-md-8">
 				
-				<div id="contenuto">
+				<div class="container">
 					<div id="benvenuto" >
 						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					</div>
@@ -44,10 +42,14 @@
 								}
 							?>
 							</select>
+							<br />
+							<a href="#" class="btn btn-primary btn-md btn-block" role="button" aria-pressed="true">Vedi dettagli <br /> Modifica materia assegnata</a>
+
 						</div>	
-						<div class="col-md-5">
-						<a href="#" class="btn btn-primary btn-md btn-block" role="button" aria-pressed="true">Vedi dettagli/Modifica materia assegnata</a>
-							</div>
+						
+							<div class="col-md-5">
+								<!-- <a href="#" class="btn btn-primary btn-md btn-block" role="button" aria-pressed="true">Vedi dettagli <br /> Modifica materia assegnata</a> -->
+							</div> 
 							<div class="col-md-3">
 							</div>
 						</form>
@@ -56,15 +58,7 @@
 				</div>
 			</div>
 		</div> 
-		</div> <!-- /row -->
 			<!-- INIZIO FOOTER -->
-			<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-					<p align="center">
-					Copyright © 2015 Accademia Di Belle Arti Kandinskij
-					<a href="" rel="nofollow" target="_blank"></a>
-					</p>
-				</div> 
-				</div>
-				</div>
+			<?php @include_once 'shared/footer.php'; ?>
 		</body>
 	</html>

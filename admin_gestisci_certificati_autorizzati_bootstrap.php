@@ -10,37 +10,31 @@ if($_SESSION["autorizzato"]===1){
 
 	</head>
 	<body>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="principale">
-				<div id="menu">
 				<!-- INIZIO CARICAMENTO MENU -->
 					<?php
 						menu();
 					?>
-				</div> <!-- FINE MENU -->
+				<!-- FINE MENU -->
 
 				<div class="container">
-					<div id="benvenuto">
-						<br />
-						<!--<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>-->
+						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 						<p>Qui verranno elencate le richieste inviate dagli studenti</p>
 						<div >
 							<b><a href="admin_gestisci_certificati.php" >&lt;&lt; Visualizza richieste ancora da autorizzare</a></b>
 						</div>
 						<br />
-					</div>
-					<table class="table" id="box-caricamenti-principale">
+					<table class="table table-striped">
 						<tr>
-							<td class="box-finanze-caricate">
+							<td>
 								<b>Caricato da...</b>
 							</td>
-							<td class="box-finanze-caricate">
+							<td>
 								<b>Tipo richiesta</b>
 							</td>
-							<td class="box-finanze-caricate">
+							<td>
 								<b>Data Invio</b>
 							</td>
-							<td class="box-finanze-caricate">
+							<td>
 								<b>Opzioni</b>
 							</td>
 						</tr>
@@ -52,21 +46,19 @@ if($_SESSION["autorizzato"]===1){
 						while($res=$elencoCaricamenti->fetch_assoc()){
 							$nomeCognome=$res["Nome"]." ".$res["Cognome"];
 							echo '<tr>';
-								echo '<td class="box-finanze-caricate">'.$nomeCognome.'</td>';
-								echo '<td class="box-finanze-caricate">'.$res["Tipo"].'</td>';
-								echo '<td class="box-finanze-caricate">'.$res["Data_invio"].'</td>';
+								echo '<td>'.$nomeCognome.'</td>';
+								echo '<td>'.$res["Tipo"].'</td>';
+								echo '<td>'.$res["Data_invio"].'</td>';
 								if($res['Tipo']==="Modifica piano di studi"){
-									echo '<td class="box-finanze-caricate"><a href="admin_gestisci_certificati_visualizza_testo.php?id='.$res["Id"].'&action=visualizza">Visualizza Richiesta</a> &nbsp <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>';
+									echo '<td><a href="admin_gestisci_certificati_visualizza_testo.php?id='.$res["Id"].'&action=visualizza">Visualizza Richiesta</a> &nbsp <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>';
 								} else {
-									echo '<td class="box-finanze-caricate"></td>';
+									echo '<td></td>';
 								}
 							echo '</tr>';
 						}
 						?>
 					</table>
 				</div>
-			</div>
-		</div>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php';?>
 	</body>

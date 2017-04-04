@@ -7,21 +7,24 @@
 	</head>
 	<body>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   <?php
-					menu();
-				?>
-	</div>
+			<?php
+				menu();
+			?>
+			
 
 
-			<div id="contenuto"  class="container">
+			<div class="container">
 				<div id="benvenuto">
 
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
+					<br />
+					<br />
 					<p><b>Tipo utente: <?php echo $utente->ruolo; ?></b></p>
 				</div>
 				<div id="avvisi">
-				<p>QUi di seguito sono visualizzati gli avvisi pubblicati dagli utenti all'admin. Per poterli gestire, andate alla pagina <a href="admin_gestisci_certificati.php">Gestisci Richieste</a></p>
+				<p>Qui di seguito sono visualizzati gli avvisi pubblicati dagli utenti all'admin. Per poterli gestire, andate alla pagina</p> <a class="btn btn-info" href="studenti_carica_documenti.php" type="button">Gestisci richieste</a>
+					<br />
+					<br />
 					<table class="table table-striped">
 						<tr>
 							<th >
