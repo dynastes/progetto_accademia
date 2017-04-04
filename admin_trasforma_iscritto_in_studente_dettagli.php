@@ -1,6 +1,8 @@
-<?php @include_once 'menu.php'; 
+<?php @include_once 'menu.php';
 $idStudente=$_GET["Id"];
-$sqlCercaStudente="SELECT a.Nome, a.Cognome, s.Matricola, s.Diploma FROM anagrafe AS a, studenti AS s WHERE a.Id=".$idStudente." AND s.Id_anagrafe=".$idStudente;
+$sqlCercaStudente="SELECT a.Nome, a.Cognome, s.Matricola, s.Diploma
+										FROM anagrafe AS a, studenti AS s
+										WHERE a.Id=".$idStudente." AND s.Id_anagrafe=".$idStudente;
 $res=$connessione->query($sqlCercaStudente);
 $resStudente=$res->fetch_assoc();
 
@@ -82,6 +84,6 @@ $resStudente=$res->fetch_assoc();
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+			</div>
 	</body>
 </html>

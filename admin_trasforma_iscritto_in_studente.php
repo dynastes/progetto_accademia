@@ -1,4 +1,4 @@
-<?php @include_once 'menu.php'; 
+<?php @include_once 'menu.php';
 if($_SESSION['studente-inserito']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Studente aggiunto correttamente</div>";
 	$_SESSION['studente-inserito']=0;
@@ -66,7 +66,7 @@ if($_SESSION['cancellazione-iscritto']===1){
 							echo $res["Cognome"];
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
-							echo '<a href="admin_trasforma_iscritto_in_studente_dettagli.php?Id='.$res["Id"].'">Converti iscritto in Studente</a>';
+							echo '<a href="admin_trasforma_iscritto_in_studente_query.php?Id='.$res["Id"].'">Converti iscritto in Studente</a>';
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
 							echo '<a href="admin_trasforma_iscritto_in_studente_cancella.php?Id='.$res["Id"].'"><b>X</b></a>';
@@ -75,7 +75,7 @@ if($_SESSION['cancellazione-iscritto']===1){
 				}
 				echo "</table>";
 				?>
-				
+
 			</div>
 		</div>
 
@@ -85,6 +85,6 @@ if($_SESSION['cancellazione-iscritto']===1){
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+			</div>
 	</body>
 </html>

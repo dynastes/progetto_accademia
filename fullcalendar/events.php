@@ -1,19 +1,19 @@
 <?php
-// liste des événements
+// liste des ï¿½vï¿½nements
  $json = array();
- // requête qui récupère les événements
+ // requï¿½te qui rï¿½cupï¿½re les ï¿½vï¿½nements
  $requete = "SELECT * FROM evenement ORDER BY id";
- 
- // connexion à la base de données
+
+ // connexion ï¿½ la base de donnï¿½es
  try {
- $bdd = new PDO('mysql:host=localhost;dbname=fullcalendar', 'root', '');
+ $bdd = new PDO('mysql:host=localhost;dbname=fullcalendar', 'root', 'Jumala91');
  } catch(Exception $e) {
- exit('Impossible de se connecter à la base de données.');
+ exit('Impossible de se connecter ï¿½ la base de donnï¿½es.');
  }
- // exécution de la requête
+ // exï¿½cution de la requï¿½te
  $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
- 
- // envoi du résultat au success
+
+ // envoi du rï¿½sultat au success
  echo json_encode($resultat->fetchAll(PDO::FETCH_ASSOC));
- 
+
 ?>
