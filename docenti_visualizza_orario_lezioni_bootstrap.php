@@ -54,14 +54,15 @@
 			}
 
 		</style>
+		
 	</head>
 	<body>
-	<div class="container">
+	
 		<?php @include_once 'menu_bootstrap.php'; ?>
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   <?php menu(); ?>
-	</div>			
+		  <?php menu(); ?>
+			<div class="container">
 			<div id="calendar"  style="margin-top:10px; margin-bottom:50px;"></div>
+			
 		</div>
 		
 <?php @include_once 'shared/footer.php'; ?>

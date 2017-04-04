@@ -9,11 +9,9 @@
 <?php @include_once 'menu_bootstrap.php'; ?>
 
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   <?php
-					menu();
-				?>
-	</div>			
+
+   <?php menu(); ?>
+	
   <div class="container">
 				<div>
 					<p>Qui verranno elencati tutti gli avvisi da Lei caricati attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Carica Avvisi</a></p>

@@ -12,11 +12,10 @@ $tipoFile=$_POST['tipoFile'];
 		
 <?php @include_once 'menu_bootstrap.php'; ?>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <?php
 					menu();
 				?>
-	</div>			
+		
  
 			<div class="container">
 				<div id="benvenuto">

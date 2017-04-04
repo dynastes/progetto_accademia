@@ -13,11 +13,11 @@ non convertite
 </head>
 <body>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	
    <?php
 					menu();
 				?>
-	</div>			
+		
   
 				<div id="avvisi">
 					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
