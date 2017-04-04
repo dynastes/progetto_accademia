@@ -12,8 +12,8 @@ non convertite
 	<?php @include_once 'shared/head_inclusions.php';?> 
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<nav class="nav navbar-nav">
+ 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -24,14 +24,11 @@ non convertite
       <img src="img/logo.png" width="30%">
     </div>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   <?php
-					menu();
-				?>
-	</div>			
-  </div><!-- /.container-fluid -->
+   <?php menu(); ?>
+		
+  
 </nav>
-
+ <div class="container-fluid">
 
 		<!-- INIZIO FOOTER -->
 		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
@@ -40,5 +37,6 @@ non convertite
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
 			</div> 
+			</div><!-- /.container-fluid -->
 </body>
 </html>

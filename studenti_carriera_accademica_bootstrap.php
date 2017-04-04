@@ -5,9 +5,9 @@
 
 	</head>
 	<body>
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
    <?php menu();?>
-	</div>			 
+	 
 			<div id="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>

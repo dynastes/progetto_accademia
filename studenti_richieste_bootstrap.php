@@ -10,11 +10,11 @@ if($_SESSION['richiesta-inviata']===1){
 
 	</head>
 	<body>
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
    <?php
 					menu();
 				?>
-	</div>		
+	
 	
   	<div id="container">
 				<div id="benvenuto">

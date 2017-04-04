@@ -6,12 +6,12 @@
 	</head>
 	<body>
 	
-			<div id="menu">
+			
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
 					menu();
 				?>
-			</div> <!-- FINE MENU -->
+			<!-- FINE MENU -->
 		
 			<div id="container">
 				<div id="benvenuto">

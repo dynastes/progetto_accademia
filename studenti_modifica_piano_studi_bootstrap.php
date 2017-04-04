@@ -17,9 +17,9 @@ function coloraRighe($a){
 	</head>
 	<body>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	
    <?php menu();?>
-	</div>			
+	
 
 			<div id="container">
 				<div id="benvenuto">
