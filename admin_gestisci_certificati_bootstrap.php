@@ -51,7 +51,7 @@ if($_SESSION["autorizzato"]===1){
 								echo '<td>'.$res["Tipo"].'</td>';
 								echo '<td>'.$res["Data_invio"].'</td>';
 								if($res['Tipo']==="Modifica piano di studi"){
-									echo '<td><a href="admin_gestisci_certificati_visualizza_testo.php?id='.$res["Id"].'&action=visualizza">Visualizza Richiesta</a> | <a href="admin_autorizza_certificati.php?Id='.$res["Id"].'">Autorizza richiesta</a></td>';
+									echo '<td><a href="admin_gestisci_certificati_visualizza_testo.php?id='.$res["Id"].'&action=visualizza">Visualizza Richiesta</a> | <a href="admin_autorizza_certificati.php?Id='.$res["Id"].'">Autorizza richiesta</a> &nbsp <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </td>';
 								} else {
 									echo '<td><a href="admin_autorizza_certificati.php?Id='.$res["Id"].'">Autorizza certificato</a></td>';
 								}
