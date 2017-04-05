@@ -6,7 +6,7 @@
 	</head>
 	<body>
 	
-<?php @include_once 'menu_bootstrap.php'; ?>
+<?php @include_once 'shared/menu_bootstrap.php'; ?>
 
    <?php menu();?>
 		

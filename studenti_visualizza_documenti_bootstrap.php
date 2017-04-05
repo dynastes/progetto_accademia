@@ -1,4 +1,4 @@
-<?php @include_once 'menu_bootstrap.php'; ?>
+<?php @include_once 'shared/menu_bootstrap.php'; ?>
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
