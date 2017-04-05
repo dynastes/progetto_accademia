@@ -88,3 +88,4 @@ if($_SESSION['cancellazione-iscritto']===1){
 			</div>
 	</body>
 </html>
+
