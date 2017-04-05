@@ -43,7 +43,7 @@
 							?>
 							</select>
 							<br />
-							<a href="#" class="btn btn-primary btn-md btn-block" role="button" aria-pressed="true">Vedi dettagli <br /> Modifica materia assegnata</a>
+							<a href="admin_cambia_materia_docenti_dettagli_bootstrap.php" class="btn btn-primary btn-md btn-block" role="button" aria-pressed="true">Vedi dettagli <br /> Modifica materia assegnata</a>
 
 						</div>	
 						
