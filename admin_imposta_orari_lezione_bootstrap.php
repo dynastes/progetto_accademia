@@ -1,4 +1,4 @@
-<?php @include_once 'menu_bootstrap.php'; 
+<?php @include_once 'shared/menu_bootstrap.php'; 
 if (isset($_SESSION['modifica-orario']))
 {
 	if($_SESSION['modifica-orario']===1){
