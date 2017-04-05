@@ -22,7 +22,7 @@
 					<p><b>Tipo utente: <?php echo $utente->ruolo; ?></b></p>
 				</div>
 				<div id="avvisi">
-				<p>Qui di seguito sono visualizzati gli avvisi pubblicati dagli utenti all'admin. Per poterli gestire, andate alla pagina "Gestisci richieste"</p> <a class="btn btn-info" href="studenti_carica_documenti.php" type="button">Gestisci richieste</a>
+				<p>Qui di seguito sono visualizzati gli avvisi pubblicati dagli utenti all'admin. Per poterli gestire, andate alla pagina "Gestisci richieste"</p> <a class="btn btn-info" href="admin_gestisci_certificati.php" type="button">Gestisci richieste</a>
 					<br />
 					<br />
 					<table class="table table-striped">
@@ -59,7 +59,7 @@
 					</table>
 				</div>
 			</div>
-			
+
 <?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

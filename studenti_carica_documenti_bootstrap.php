@@ -1,4 +1,4 @@
-<?php @include_once 'shared/menu_bootstrap.php'; ?>
+<?php @include_once 'shared/menu_bootstrap.php';
 $tipoFile=$_POST['tipoFile'];
 
 ?>
@@ -8,21 +8,18 @@ $tipoFile=$_POST['tipoFile'];
 		<?php @include_once 'shared/head_inclusions.php';?>
 	</head>
 	<body>
-		
-<?php @include_once 'menu_bootstrap.php'; ?>
+		<?php
+			menu();
+		?>
 
-   <?php
-					menu();
-				?>
-		
- 
+
 			<div class="container">
 				<div id="benvenuto">
 					<h1>Carica Documenti</h1>
 					<b>Utente corrente: <?php echo $utente->nome; ?></b>
 				</div>
 				<div id="avvisi">
-					<?php 
+					<?php
 						if(isset($_FILES['FileUtente'])){
 							$directory="./caricamenti/studenti/".$utente->id . $utente->nome."/";
 							if (!file_exists($directory)) {
@@ -40,11 +37,11 @@ $tipoFile=$_POST['tipoFile'];
 									</div>';
 							}
 							echo 'Per caricare un ulteriore file, <a href="studenti_carica_documenti.php">cliccare qui</a>';
-						}else{ 
+						}else{
 							echo '<p>Carica i documenti (in formato immagine o PDF) come ricevute di bonifico, bollettini regionali ecc...).
 							I file caricati devono essere del formato <b>.jpg, png, pdf</b> o <b>bmp</b>. Altri formati potrebbero non essere caricati.</p>
 							<form width:60%;" action="studenti_carica_documenti.php" enctype="multipart/form-data" method="POST">
-								<input style="float:left;" type="file" name="FileUtente">
+								<input style="float:left;" class="btn btn-default" type="file" name="FileUtente">
 								<label style="float:left; margin-right:10px;">Scegli quale tipo di file stai caricando</label>
 								<select name="tipoFile" style="float:left; margin-right:30px;">
 								    <option value="1">Bollettino</option>
@@ -55,11 +52,11 @@ $tipoFile=$_POST['tipoFile'];
 							</form>';
 						}
 					?>
-					
+
 				</div>
 			</div>
-		
+
 <?php @include_once 'shared/footer.php'; ?>
-	
+
 	</body>
 </html>

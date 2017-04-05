@@ -1,4 +1,5 @@
-<?php @include_once 'menu_bootstrap.php';<?php @include_once 'shared/menu_bootstrap.php';
+<?php @include_once 'shared/menu_bootstrap.php';
+
 if($_SESSION['inserimento']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
 	$_SESSION['inserimento']=0;
@@ -23,7 +24,7 @@ function coloraRighe($a){
 
 
    <?php menu(); ?>
-		
+
 
 			<div class="container">
 				<div id="benvenuto">
@@ -56,15 +57,15 @@ function coloraRighe($a){
 							$Id_corso=$Id_corso->fetch_assoc(); //0:id_corso;	1: Anno_accademico
 							//$QUERY="SELECT m.Codice_materia AS MATERTIA_codice_materia, m.Nome_materia AS MATERIA_nome_materia, m.Anno AS MATERIA_anno, mc.Cfa AS MAT_COR_cfa, mc.Tipo AS MAT_COR_tipo, c.Nome_corso AS CORSI_nome_corso FROM materie AS m, materie_corsi AS mc, corsi AS c WHERE mc.Id_corso=2";
 							//$sqlPianoStudiVECCHIO="SELECT m.Codice_materia, m.Nome_materia, m.Anno, mc.Cfa, mc.Tipo, c.Nome_corso FROM materie AS m, materie_corsi AS mc, corsi AS c WHERE mc.Id_corso=".$Id_corso["Id_corso"]; //aggiungere pure la CONVALIDA
-							
-							$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, mc.Cfa, mc.Tipo, mc.Descrizione 
-											FROM materie AS m, materie_corsi AS mc, corsi AS c 
+
+							$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, mc.Cfa, mc.Tipo, mc.Descrizione
+											FROM materie AS m, materie_corsi AS mc, corsi AS c
 											WHERE m.Anno=1 AND mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia ORDER BY m.Anno";
 
-							
+
 							/*$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, m.Anno, mc.Cfa, mc.Tipo, c.Nome_corso, ms.Convalida
 											FROM materie AS m, materie_corsi AS mc, corsi AS c, materie_studenti AS ms
-											WHERE mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia AND 
+											WHERE mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia AND
 											ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";*/
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
@@ -88,14 +89,14 @@ function coloraRighe($a){
 							echo "</table>";
 
 							//################### ANNO 2
-							$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, mc.Cfa, mc.Tipo, mc.Descrizione 
-											FROM materie AS m, materie_corsi AS mc, corsi AS c 
+							$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, mc.Cfa, mc.Tipo, mc.Descrizione
+											FROM materie AS m, materie_corsi AS mc, corsi AS c
 											WHERE m.Anno=2 AND mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia ORDER BY m.Anno";
 
-							
+
 							/*$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, m.Anno, mc.Cfa, mc.Tipo, c.Nome_corso, ms.Convalida
 											FROM materie AS m, materie_corsi AS mc, corsi AS c, materie_studenti AS ms
-											WHERE mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia AND 
+											WHERE mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia AND
 											ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";*/
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
@@ -118,14 +119,14 @@ function coloraRighe($a){
 							echo "</table>";
 
 							//########################Anno 3
-							$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, mc.Cfa, mc.Tipo, mc.Descrizione 
-											FROM materie AS m, materie_corsi AS mc, corsi AS c 
+							$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, mc.Cfa, mc.Tipo, mc.Descrizione
+											FROM materie AS m, materie_corsi AS mc, corsi AS c
 											WHERE m.Anno=3 AND mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia ORDER BY m.Anno";
 
-							
+
 							/*$sqlPianoStudi="SELECT m.Codice_materia, m.Nome_materia, m.Anno, mc.Cfa, mc.Tipo, c.Nome_corso, ms.Convalida
 											FROM materie AS m, materie_corsi AS mc, corsi AS c, materie_studenti AS ms
-											WHERE mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia AND 
+											WHERE mc.Id_corso=".$Id_corso["Id_corso"]." AND mc.Id_corso = c.Id AND m.Id = mc.Id_materia AND
 											ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";*/
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
@@ -155,7 +156,7 @@ function coloraRighe($a){
 					</div>
 				</div>
 			</div>
-	
+
 
 	<?php @include_once 'shared/footer.php'; ?>
 	</body>
