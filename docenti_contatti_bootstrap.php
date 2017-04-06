@@ -9,8 +9,6 @@
 	
    <?php menu(); ?>
 		
- 
-
 				<div class="container">
 					<b>Benvenuto <?php echo $utente->nome;?>!</b>
 					<p>Qui sotto vengono elencati gli avvisi pubblicati da lei (sia alla segreteria che a studenti)</p>

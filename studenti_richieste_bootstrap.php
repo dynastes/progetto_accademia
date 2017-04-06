@@ -11,9 +11,7 @@ if($_SESSION['richiesta-inviata']===1){
 	</head>
 	<body>
 
-   <?php
-					menu();
-				?>
+   <?php menu(); ?>
 	
 	
   	<div id="container">
@@ -35,11 +33,11 @@ if($_SESSION['richiesta-inviata']===1){
 						<input  type="submit" value="Richiedi certificato">
 					</form>
 					<div>
-						<table style="width:100%;">
+						<table class="table">
 							<tr>
-								<td class="box-avvisi-home" style="width:33%;"><b>Data invio richiesta</b></td>
-								<td class="box-avvisi-home" style="width:33%;"><b>Stato richiesta</b></td>
-								<td class="box-avvisi-home" style="width:33%;"><b>Tipo richiesta</b></td>
+								<td><b>Data invio richiesta</b></td>
+								<td><b>Stato richiesta</b></td>
+								<td><b>Tipo richiesta</b></td>
 							</tr>
 							<?php
 								$sqlElencoCertificati="SELECT sr.Data_invio, sr.Stato_richiesta, t.Tipo 
@@ -48,9 +46,9 @@ if($_SESSION['richiesta-inviata']===1){
 								$res=$connessione->query($sqlElencoCertificati);
 								while($elencoCertificati=$res->fetch_assoc()){
 									echo '<tr>';
-										echo '<td class="lista-avvisi-home">'.$elencoCertificati["Data_invio"].'</td>';//data invio richiesta
-										echo '<td class="lista-avvisi-home">'.$elencoCertificati["Stato_richiesta"].'</td>';//stato richiesta (non ancora letta; letta e confermata)
-										echo '<td class="lista-avvisi-home">'.$elencoCertificati["Tipo"].'</td>';
+										echo '<td>'.$elencoCertificati["Data_invio"].'</td>';//data invio richiesta
+										echo '<td>'.$elencoCertificati["Stato_richiesta"].'</td>';//stato richiesta (non ancora letta; letta e confermata)
+										echo '<td>'.$elencoCertificati["Tipo"].'</td>';
 									echo '</tr>';
 								}
 							?>

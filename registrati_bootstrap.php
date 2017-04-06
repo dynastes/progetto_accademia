@@ -38,7 +38,7 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 			<section class="loginform cf" style="float:left;">
 				<form name="register" action="registrati_query.php" method="post" accept-charset="utf-8">
 					<h2 align="center">Registrati</h2>
-					<table align="center">
+					<table class="table">
 						<tr>
 							<td>
 								<label>Nome &nbsp; </label>

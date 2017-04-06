@@ -26,19 +26,19 @@ non convertite
 						<?php
 							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE av.Id_docente=an.Id ";//AND Visibilita='pubblico'
 							$avvisiLista=$connessione->query($sqlavvisi);
-							echo '<table id="box-caricamenti-principale">';
+							echo '<table class="table">';
 							echo '<tr>';
-								echo '<td style="width:17%;" class="box-avvisi-home"><b>Nome</b></td>';
-								echo '<td style="width:17%;" class="box-avvisi-home"><b>Cognome</b></td>';
-								echo '<td style="width:46%;" class="box-avvisi-home"><b>Testo</b></td>';
-								echo '<td style="width:20%;" class="box-avvisi-home"><b>Data Pubblicazione</b></td>';
+								echo '<td><b>Nome</b></td>';
+								echo '<td><b>Cognome</b></td>';
+								echo '<td><b>Testo</b></td>';
+								echo '<td><b>Data Pubblicazione</b></td>';
 							echo '</tr>';
 							while($resAvvisi=$avvisiLista->fetch_assoc()){
 								echo '<tr>';
-									echo '<td style="width:17%;" class="lista-avvisi-home">'.$resAvvisi["Nome"].'</td>';
-									echo '<td style="width:17%;" class="lista-avvisi-home">'.$resAvvisi["Cognome"].'</td>';
-									echo '<td style="width:46%;" class="lista-avvisi-home">'.$resAvvisi["Testo"].'</td>';
-									echo '<td style="width:20%;" class="lista-avvisi-home">'.$resAvvisi["Data_pubblicazione"].'</td>';
+									echo '<td>'.$resAvvisi["Nome"].'</td>';
+									echo '<td>'.$resAvvisi["Cognome"].'</td>';
+									echo '<td>'.$resAvvisi["Testo"].'</td>';
+									echo '<td>'.$resAvvisi["Data_pubblicazione"].'</td>';
 								echo '</tr>';
 							}
 							echo "</table>";

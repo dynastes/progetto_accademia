@@ -17,12 +17,12 @@
 					<p>Qui verranno elencati tutti gli avvisi da Lei caricati attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Carica Avvisi</a></p>
 				</div>
 				
-				<table id="box-caricamenti-principale">
+				<table class="table">
 				<tr>
-					<td class="box-programmi-caricati"><b>Data pubblicazione</b></td>
-					<td class="box-programmi-caricati"><b>Testo dell'avviso</b></td>
-					<td class="box-programmi-caricati"><b>Opzioni</b></td>
-					<td class="box-programmi-caricati"><b>Visibilità</b></td>
+					<td><b>Data pubblicazione</b></td>
+					<td><b>Testo dell'avviso</b></td>
+					<td><b>Opzioni</b></td>
+					<td><b>Visibilità</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
@@ -31,16 +31,16 @@
 				$elencoCaricamenti=$connessione->query($stringasql);
 				while($res=$elencoCaricamenti->fetch_assoc()){
 					echo "<tr>";
-						echo '<td class="box-programmi-caricati">';
+						echo '<td>';
 							echo $res["Data_pubblicazione"];
 						echo '</td>';
-						echo '<td class="box-programmi-caricati">';
+						echo '<td>';
 							echo $res["Testo"];
 						echo '</td>';
-						echo '<td class="box-programmi-caricati">';
+						echo '<td>';
 							echo '<a href="#">Cancella Avviso (non funzionante)</a>';
 						echo '</td>';
-						echo '<td class="box-programmi-caricati">';
+						echo '<td>';
 							if($res["Visibilita"]==="pubblico"){
 								echo '<span style="color:green;">'.$res["Visibilita"].'</span>';
 							} else {

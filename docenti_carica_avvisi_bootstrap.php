@@ -13,9 +13,7 @@ if($_SESSION['query']===1){
 	<body>
 		
 			<!-- INIZIO CARICAMENTO MENU -->
-				<?php
-					menu();
-				?>
+				<?php menu(); ?>
 			
 			<div id="container">
 				<div id="benvenuto">

@@ -32,21 +32,21 @@
 											WHERE ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
-							echo '<table id="box-caricamenti-principale">';
+							echo '<table class="table">';
 							echo '<tr>';
-								echo '<td style="width:10%;" class="box-avvisi-home"><b>Codice Materia</b></td>';
-								echo '<td style="width:35%;" class="box-avvisi-home"><b>Materia</b></td>';
-								echo '<td style="width:5%;" class="box-avvisi-home"><b>Anno</b></td>';
-								echo '<td style="width:5%;" class="box-avvisi-home"><b>Voto</b></td>';
-								echo '<td style="width:5%;" class="box-avvisi-home"><b>Data</b></td>';
+								echo '<td><b>Codice Materia</b></td>';
+								echo '<td><b>Materia</b></td>';
+								echo '<td><b>Anno</b></td>';
+								echo '<td><b>Voto</b></td>';
+								echo '<td><b>Data</b></td>';
 							echo '</tr>';
 							while($riga=$PianoDiStudi->fetch_assoc()){
 								echo '<tr>';
-									echo '<td style="width:10%;" class="lista-avvisi-home">'.$riga["Codice_materia"].'</td>';
-									echo '<td style="width:35%;" class="lista-avvisi-home">'.ucfirst(strtolower($riga["Nome_materia"])).'</td>';
-									echo '<td style="width:5%;" class="lista-avvisi-home">'.$riga["Anno"].'</td>';
-									echo '<td style="width:15%;" class="lista-avvisi-home">'.$riga["Convalida"].'</td>';
-									echo '<td style="width:15%;" class="lista-avvisi-home">'.$riga["Data"].'</td>';
+									echo '<td>'.$riga["Codice_materia"].'</td>';
+									echo '<td>'.ucfirst(strtolower($riga["Nome_materia"])).'</td>';
+									echo '<td>'.$riga["Anno"].'</td>';
+									echo '<td>'.$riga["Convalida"].'</td>';
+									echo '<td>'.$riga["Data"].'</td>';
 								echo '</tr>';
 							}
 							echo "</table>";

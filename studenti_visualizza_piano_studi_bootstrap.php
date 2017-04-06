@@ -32,20 +32,20 @@ function coloraRighe($a){
 				</div>
 				<div id="avvisi">
 					<p>Qui di seguito saranno elencate tutte le materie del corso in cui sei iscritto.</p>
-					<table>
-						<tr style="border: 2px solid #FCFCFC;">
+					<table class="table">
+						<tr>
 							<td colspan="2"><b>Legenda colori</b></td>
 						</tr>
-						<tr style="border: 2px solid #FCFCFC;">
-							<td style="background-color:#AACCFF; width:30px;"></td>
+						<tr>
+							<td></td>
 							<td>Attività Formative di Base</td>
 						</tr>
-						<tr style="border: 2px solid #FCFCFC;">
-							<td style="background-color:#F2FFAA; width:30px;"></td>
+						<tr>
+							<td></td>
 							<td>Attività Formative Caratterizzanti</td>
 						</tr>
-						<tr style="border: 2px solid #FCFCFC;">
-							<td style="background-color:#EEAAFF; width:30px;"></td>
+						<tr>
+							<td></td>
 							<td>Attività Integrative o Affini</td>
 						</tr>
 					</table>
@@ -69,13 +69,13 @@ function coloraRighe($a){
 											ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";*/
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
-							echo '<table id="box-caricamenti-principale">';
+							echo '<table class="table">';
 							echo '<h2 style="text-align:center;">1° anno</h2>';
 							echo '<tr>';
-								echo '<td style="width:10%;" class="box-avvisi-home"><b>Codice Materia</b></td>';
-								echo '<td style="width:35%;" class="box-avvisi-home"><b>Materia</b></td>';
-								echo '<td style="width:5%;" class="box-avvisi-home"><b>CFA</b></td>';
-								echo '<td style="width:20%;" class="box-avvisi-home"><b>Tipo materia</b></td>';
+								echo '<td><b>Codice Materia</b></td>';
+								echo '<td><b>Materia</b></td>';
+								echo '<td><b>CFA</b></td>';
+								echo '<td><b>Tipo materia</b></td>';
 							echo '</tr>';
 							while($riga=$PianoDiStudi->fetch_assoc()){
 								//inizio creazione riga colorata
@@ -100,13 +100,13 @@ function coloraRighe($a){
 											ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";*/
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
-							echo '<table id="box-caricamenti-principale">';
+							echo '<table class="table">';
 							echo '<h2 style="text-align:center;">2° anno</h2>';
 							echo '<tr>';
-								echo '<td style="width:10%;" class="box-avvisi-home"><b>Codice Materia</b></td>';
-								echo '<td style="width:35%;" class="box-avvisi-home"><b>Materia</b></td>';
-								echo '<td style="width:5%;" class="box-avvisi-home"><b>CFA</b></td>';
-								echo '<td style="width:20%;" class="box-avvisi-home"><b>Tipo materia</b></td>';
+								echo '<td><b>Codice Materia</b></td>';
+								echo '<td><b>Materia</b></td>';
+								echo '<td><b>CFA</b></td>';
+								echo '<td><b>Tipo materia</b></td>';
 							echo '</tr>';
 							while($riga=$PianoDiStudi->fetch_assoc()){
 								echo '<tr>';
@@ -130,13 +130,13 @@ function coloraRighe($a){
 											ms.Id_studente=".$utente->id." AND m.Id=ms.Id_materia";*/
 
 							$PianoDiStudi=$connessione->query($sqlPianoStudi);
-							echo '<table id="box-caricamenti-principale">';
+							echo '<table class="table">';
 							echo '<h2 style="text-align:center;">3° anno</h2>';
 							echo '<tr>';
-								echo '<td style="width:10%;" class="box-avvisi-home"><b>Codice Materia</b></td>';
-								echo '<td style="width:35%;" class="box-avvisi-home"><b>Materia</b></td>';
-								echo '<td style="width:5%;" class="box-avvisi-home"><b>CFA</b></td>';
-								echo '<td style="width:20%;" class="box-avvisi-home"><b>Tipo materia</b></td>';
+								echo '<td><b>Codice Materia</b></td>';
+								echo '<td><b>Materia</b></td>';
+								echo '<td><b>CFA</b></td>';
+								echo '<td><b>Tipo materia</b></td>';
 							echo '</tr>';
 							while($riga=$PianoDiStudi->fetch_assoc()){
 								echo '<tr>';

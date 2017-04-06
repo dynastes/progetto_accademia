@@ -27,7 +27,7 @@
 		<section class="registerform cf">
 		<form name="register" action="index_submit" method="get" accept-charset="utf-8">
 		<h2 align="center">Registrati</h2>
-		<table align="center">
+		<table class="table">
 			<tr>
 				<td>
 					<label>Nome &nbsp; </label>
