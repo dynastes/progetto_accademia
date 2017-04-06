@@ -13,15 +13,15 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
 					<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina <a href="studenti_carica_documenti.php">Carica documenti</a></p>
 				</div>
-				<table id="box-caricamenti-principale">
+				<table class = "table table-striped">
 					<tr>
-						<td class="box-documenti-caricati" style="background-color:#D0D0D0;">
+						<td >
 							<b>Nome file</b>
 						</td>
-						<td class="box-documenti-caricati" style="background-color:#D0D0D0;">
+					<td >
 							<b>Data caricamento</b>
 						</td>
-						<td class="box-documenti-caricati" style="background-color:#D0D0D0;">
+					<td >
 							<b>Link di download</b>
 						</td>
 					</tr>
@@ -30,9 +30,9 @@
 					$elencoCaricamenti=$connessione->query($stringasql);
 					while($res=$elencoCaricamenti->fetch_assoc()){
 						echo '<tr>';
-							echo '<td class="box-documenti-caricati">'.$res["Nome_file"].'</td>';
-							echo '<td class="box-documenti-caricati">'.$res["Data_caricamento"].'</td>';
-							echo '<td class="box-documenti-caricati">';
+							echo '<td>'.$res["Nome_file"].'</td>';
+							echo '<td>'.$res["Data_caricamento"].'</td>';
+							echo '<td>';
 								echo '<a href="'.$res["Percorso_file"].$res["Nome_file"].'">Scarica File</a>';
 							echo '</td>';
 						echo '</tr>';
