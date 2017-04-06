@@ -66,7 +66,7 @@ if($_SESSION['cancellazione-iscritto']===1){
 							echo $res["Cognome"];
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
-							echo '<a href="admin_trasforma_iscritto_in_studente_converti.php?Id='.$res["Id"].'">Converti iscritto in Studente</a>';
+							echo '<a href="admin_trasforma_iscritto_in_studente_matricola.php?Id='.$res["Id"].'">Converti iscritto in Studente</a>';
 						echo '</td>';
 						echo '<td class="box-programmi-caricati">';
 							echo '<a href="admin_trasforma_iscritto_in_studente_cancella.php?Id='.$res["Id"].'"><b>X</b></a>';

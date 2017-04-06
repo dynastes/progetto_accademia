@@ -1,17 +1,14 @@
-<?php @include_once 'menu.php';
-$idStudente=$_POST["id-studente"];
-$matricolaStudente=$_POST["matricola-studente"];
-$diplomaStudente=$_POST["diploma-studente"];
-$idCorso=$_POST["corso-studente"];
+<?php 
+@include_once 'menu.php';
+$idUtente=$_POST["idUtente"];
+$matricolaStudente=$_POST["matricolaStudente"];
 
-echo $idStudente;
+echo $idUtente;
 echo $matricolaStudente;
-echo $diplomaStudente;
-echo $idCorso;
 
-
-$sqlInserisciStudente='UPDATE studenti SET Anno_accademico=1, Matricola="'.$matricolaStudente.'", Diploma="'.$diplomaStudente.'", Id_corso='.$idCorso.' WHERE Id_anagrafe='.$idStudente;
-//$sqlInserisciStudente='UPDATE studenti SET Anno_accademico=0, Matricola="$matricolaStudente", Diploma="$diplomaStudente", Id_corso=$idCorso WHERE Id_anagrafe='.$idStudente;
+//Id_anagrafe, Matricola, Attivo
+$sqlInserisciStudente="INSERT INTO studenti (Id_anagrafe, Matricola, Attivo) VALUES('" . $idUtente . "', '" . $matricolaStudente  . "', '1')";
+echo $sqlInserisciStudente;
 
 $res=$connessione->query($sqlInserisciStudente);
 
