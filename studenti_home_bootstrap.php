@@ -14,11 +14,9 @@ non convertite
 <body>
 
 	
-   <?php
-					menu();
-				?>
+   <?php menu(); ?>
 		
-  
+  <div class="container">
 				<div id="avvisi">
 					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
 					<div id="elenco-avvisi">
@@ -44,7 +42,6 @@ non convertite
 						?>
 					</div>
 				</div>
-			</div>
 		</div>
 
 	<?php @include_once 'shared/footer.php'; ?>

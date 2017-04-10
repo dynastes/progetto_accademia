@@ -2,14 +2,9 @@
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-
 	</head>
 	<body>
 		
-<?php @include_once 'shared/menu_bootstrap.php'; ?>
-
-
-
    <?php menu(); ?>
 	
   <div class="container">
@@ -24,7 +19,6 @@
 					<td><b>Opzioni</b></td>
 					<td><b>Visibilità</b></td>
 				</tr>
-
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
 				$stringasql="SELECT Testo, Data_pubblicazione, Visibilita FROM avvisi WHERE Id_docente=".$utente->id;
