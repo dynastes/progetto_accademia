@@ -14,16 +14,17 @@ if($_SESSION['richiesta-inviata']===1){
    <?php menu(); ?>
 	
 	
-  	<div id="container">
+  	<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?></b>
 				</div>
-				<div name="avvisi">
+				
 					<h2>Richieste</h2>
 					<p>Da questa pagina si possono inviare le richieste per i certificati direttamente alla segreteria.</p>
 					<p>Una volta trattata la richiesta, lo stato passerà a "confermato" e si potrà andare a ritirare la versione cartacea.</p>
 					<!-- ### FORM richiedi certificato ###-->
 					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8"> 
+						<div class="form-group">
 						<label>Seleziona il certificato da richiedere:&nbsp;</label>
 						<select name="tipo-certificato">
 							<option value="1">Certificato di frequenza</option>
@@ -31,8 +32,9 @@ if($_SESSION['richiesta-inviata']===1){
 							<option value="3">Certificato per materie sostenute</option>
 						</select>
 						<input  type="submit" value="Richiedi certificato">
+					</div>
 					</form>
-					<div>
+					
 						<table class="table">
 							<tr>
 								<td><b>Data invio richiesta</b></td>
@@ -53,8 +55,8 @@ if($_SESSION['richiesta-inviata']===1){
 								}
 							?>
 						</table>
-					</div>
-				</div>
+					
+				
 			</div>
 	
 <?php @include_once 'shared/footer.php'; ?>

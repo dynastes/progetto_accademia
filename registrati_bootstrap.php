@@ -5,9 +5,7 @@
 
 
 if(	$_SESSION['iscritto-aggiunto']==1){
-	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">
-	La richiesta di iscrizione è stata inoltrata alla segreteria dell'Accademia
-	</div>";
+	echo "La richiesta di iscrizione è stata inoltrata alla segreteria dell'Accademia";
 	$_SESSION['iscritto-aggiunto']=0;
 }
 ?>
@@ -19,57 +17,49 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 <?php @include_once 'shared/head_inclusions.php';?>
 </head>
 <body>
-<div id="wrapper" style="margin-bottom:5%;">
-	<section id="featured">
+
+
 	<!-- start header -->
 			<header>
-		        <div class="navbar navbar-default navbar-static-top">
-		            <div class="container">
-					<a href="index.html">		               		        
-							<img src="logo.png" alt="" />
-		                </div>
-		             </a>
-		        </div>
+		      
+		           
+		        
 			</header>
 			<!-- end header -->
 	<!-- start slider -->
 		<div class="container">	
+		 <a href="index.html"><img src="logo.png" height="20%" alt="" ></a>
 		<p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
 			<section class="loginform cf" style="float:left;">
 				<form name="register" action="registrati_query.php" method="post" accept-charset="utf-8">
-					<h2 align="center">Registrati</h2>
+					<h2>Registrati</h2>
 					<table class="table">
 						<tr>
 							<td>
 								<label>Nome &nbsp; </label>
 							</td>
 							<td>
-								<input name ="nome"  type="text" required>
+								<input type="text" class="form-control" name ="nome" required>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>Cognome &nbsp;</label>
 							</td>
 							<td>
-								<input name ="cognome" type="text" required>
+								<input type="text" class="form-control" name ="cognome" required>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+					
 						<tr>
 							<td>
 								<label>Data di nascita &nbsp; </label>
 							</td>
 							<td>
+							<div class="form-group">
 								<select name="giorno-nascita">
 										<?php
 										for ($i=1; $i < 32; $i++) { 
@@ -77,6 +67,7 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 										 } 
 										?>
 									</select>
+								
 									<select name="mese-nascita">
 										<option value="01">Gennaio</option>
 										<option value="02">Febbraio</option>
@@ -91,6 +82,7 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 										<option value="11">Novembre</option>
 										<option value="12">Dicembre</option>
 									</select>
+									
 									<select name="anno-nascita">
 										<?php
 										$anno=date("Y");
@@ -99,108 +91,80 @@ if(	$_SESSION['iscritto-aggiunto']==1){
 										 } 
 										?>
 									</select>
+									</div>
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>E-mail &nbsp;</label>
 							</td>
 							<td>
-								<input name ="email" type="text" required>
+								<input type="text" class="form-control" name ="email" required>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>Codice fiscale &nbsp; </label>
 							</td>
 							<td>
-								<input name ="cf" type="text" required>	
+								<input type="text" class="form-control" name ="cf" required>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>Indirizzo &nbsp; </label>
 							</td>
 							<td>
-								<input name ="indirizzo" type="text" required>
+								<input type="text" class="form-control" name ="indirizzo" required>
+								
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>Residenza &nbsp;</label>
 							</td>
 							<td>
-								<input name ="residenza" type="text" required>
+							<input type="text" class="form-control" name ="residenza" required>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>Telefono &nbsp;</label>
 							</td>
 							<td>
-								<input name ="telefono" type="text" required>
+							 <input type="text" class="form-control" name ="telefono" required>
+								
 							</td>
 						</tr>
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
+						
 						<tr>
 							<td>
 								<label>Password &nbsp;</label>
 							</td>
 							<td>
-								<input name ="password" type="text" required>
+							<input type="text" class="form-control" name ="password" required>
 							</td>
 						</tr>
+			
 						<tr>
 							<td>
-								</br>
-							</td>	
-						</tr>
-						
-						<tr>
-							<td>
-								</br>
-							</td>	
-						</tr>
-						<tr>
-							<td>
-								<input type="submit" value="Registrati">
+								<input type="submit" class="form-control" value="Registrati">
 							</td>
 						</tr>
 					</table>
 				</form>		
 			</section>
 		</div>	
-	</section>
-</div> <!-- CHIUSURA DIV WRAPPER -->
+
+
 
 <?php @include_once 'shared/footer.php'; ?>
 	
