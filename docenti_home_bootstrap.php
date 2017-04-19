@@ -1,26 +1,26 @@
-<?php @include_once 'menu_bootstrap.php'; ?>
+<?php @include_once 'shared/menu_bootstrap.php'; ?>
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 
 	</head>
 	<body>
-		
+
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
 					menu();
 				?>
 
 			<div class="container">
-				
+
 					<b>Benvenuto <?php echo $utente->nome;?>!</b>
 					<p>Qui sotto vengono elencati gli avvisi pubblicati da lei (sia alla segreteria che a studenti)</p>
-			
+
 				<div id="elenco-avvisi">
 						<?php
 							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE av.Id_docente=an.Id ";//AND Visibilita='pubblico'
 							$avvisiLista=$connessione->query($sqlavvisi);
-							echo '<table id="box-caricamenti-principale">';
+							echo '<table class="table table-striped" id="box-caricamenti-principale">';
 							echo '<tr>';
 								echo '<td style="width:17%;" class="box-avvisi-home"><b>Nome</b></td>';
 								echo '<td style="width:17%;" class="box-avvisi-home"><b>Cognome</b></td>';
