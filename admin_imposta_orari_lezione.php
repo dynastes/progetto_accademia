@@ -1,9 +1,10 @@
-<?php @include_once 'menu.php'; 
+<?php @include_once 'menu.php';
 if (isset($_SESSION['modifica-orario']))
 {
 	if($_SESSION['modifica-orario']===1){
 		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
 		$_SESSION['modifica-orario']=0;
+
 
 
 	}
@@ -20,7 +21,7 @@ if (isset($_SESSION['modifica-orario']))
 		<script src='fullcalendar/js/fullcalendar.min.js'></script>
 		<script src= 'fullcalendar/js/fullcalendar.js'></script>
 		<script src= 'fullcalendar/lang/it.js'></script>
-		
+
 		<script>
 			$(document).ready(function() {
 
@@ -29,6 +30,8 @@ if (isset($_SESSION['modifica-orario']))
 				var mese=data.getMonth()+1;
 				var anno=data.getFullYear();
 				var oggi;
+				
+
 				oggi=anno+'-'+mese+'-'+giorno;
 
 				var calendar = $('#calendar').fullCalendar({
@@ -49,12 +52,12 @@ if (isset($_SESSION['modifica-orario']))
 					 var color = document.getElementById("colore_evento").value;
 					 var text_color = document.getElementById("colore_testo").value;
 					 if (title) {
-					  
+
 					 start: start.unix();
 						start = moment(start).format("YYYY-MM-DD HH:mm:ss");
 						end: end.unix();
 						end = moment(end).format("YYYY-MM-DD HH:mm:ss");﻿
-						
+
 					 $.ajax({
 					 url: "http://localhost/progetto_accademia/fullcalendar/add_events.php",
 					 data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color +'&text_color='+text_color,
@@ -63,11 +66,11 @@ if (isset($_SESSION['modifica-orario']))
 					 alert('OK AGGIUNTO');
 					  window.location.reload();
 					 }
-					 
+
 					 });
 					 calendar.fullCalendar('renderEvent',
 					 {
-					
+
 					 title: title,
 					 start: start,
 					 end: end,
@@ -84,7 +87,7 @@ if (isset($_SESSION['modifica-orario']))
 		eventDrop: function(event, delta) {
 		  start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
 		 end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
-	
+
 		 $.ajax({
 		 url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
 		 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
@@ -105,12 +108,12 @@ if (isset($_SESSION['modifica-orario']))
 		 alert("OK DIVERSO");
 		 }
 		 });
-		 
+
 		}
-					
-					
+
+
 				});
-				
+
 			});
 
 		</script>
@@ -177,12 +180,12 @@ if (isset($_SESSION['modifica-orario']))
 					<select id="colore_testo">
 						<option value="white" style="background-color:grey;color: white;">Bianco</option>
 						<option value="black" style="background-color:grey; color: black;">Nero</option>
-						
+
 					</select>
 				</div>
 			</div>
 			<div>
-				
+
 			</div>
 			<div id="calendar" style="margin-top:100px; margin-bottom:50px;"></div>
 		</div>
@@ -193,6 +196,6 @@ if (isset($_SESSION['modifica-orario']))
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+			</div>
 	</body>
 </html>
