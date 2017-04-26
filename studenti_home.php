@@ -1,4 +1,3 @@
-
 <?php @include_once 'menu.php'; ?>
 <html>
 	<head>
@@ -53,6 +52,6 @@
 				<p align="center">
 					Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				</p>
-			</div> 
+			</div>
 	</body>
 </html>
