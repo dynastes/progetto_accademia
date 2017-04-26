@@ -11,7 +11,7 @@
    <?php menu();?>
 		
  
-			<div id="container">
+			<div class="container">
 				<div id="benvenuto">
 					<p><b>Nome: </b> <?php echo $utente->nome; ?></p>
 					<p><b>Cognome: </b> <?php echo $utente->cognome; ?></p>
