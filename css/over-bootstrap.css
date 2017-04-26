@@ -1,0 +1,36 @@
+footer{
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:white;
+	height:40px;
+	font-size:14px;
+	float:left;
+}
+
+/*VECCHIO CSS PER IL FOOTER FISSO*/
+/*body {
+	margin-bottom:70px;
+}*/
+
+
+/* ### INIZIO ### NUOVO CSS PER IL FOOTER MOBILE*/
+html, body {
+	height:100%;
+}
+
+.container{
+	min-height: 80%;
+    height: auto !important;
+    height: 100%;
+	margin: 0 auto -40px;
+}
+
+.push{
+	height:20px;
+}
+
+footer{
+    height: 40px; 
+}
+/* ### FINE ### NUOVO CSS PER IL FOOTER MOBILE*/

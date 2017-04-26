@@ -16,36 +16,36 @@
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			<div class="container" id="contenuto">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
 					<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina <a href="studenti_carica_documenti.php">Carica documenti</a></p>
 				</div>
-				<table id="box-caricamenti-principale">
-					<tr>
-						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:20%;">
+				<table id="box-caricamenti-principale" class="table-striped">
+					<th>
+						<td class="box-finanze-caricate" >
 							<b>Caricato da...</b>
 						</td>
-						<td class="box-finanze-caricate" style="background-color:#D0D0D0;">
+						<td class="box-finanze-caricate">
 							<b>Nome file</b>
 						</td>
-						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:20%;">
+						<td class="box-finanze-caricate" >
 							<b>Data caricamento</b>
 						</td>
-						<td class="box-finanze-caricate" style="background-color:#D0D0D0; width:20%;">
+						<td class="box-finanze-caricate" s>
 							<b>Link di download</b>
 						</td>
-					</tr>
+					</th>
 					<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 					$stringasql="SELECT a.Nome, a.Cognome, s.Nome_file, s.Data_caricamento, s.Percorso_file, s.Nome_file FROM studenti_documenti_caricati AS s, anagrafe AS a WHERE s.Id_studente=a.Id";
 					$elencoCaricamenti=$connessione->query($stringasql);
 					while($res=$elencoCaricamenti->fetch_assoc()){
 						$nomeCognome=$res["Nome"]." ".$res["Cognome"];
 						echo '<tr>';
-							echo '<td class="box-finanze-caricate">'.$nomeCognome.'</td>';
-							echo '<td class="box-finanze-caricate">'.$res["Nome_file"].'</td>';
-							echo '<td class="box-finanze-caricate">'.$res["Data_caricamento"].'</td>';
-							echo '<td class="box-finanze-caricate">';
+							echo '<td>'.$nomeCognome.'</td>';
+							echo '<td >'.$res["Nome_file"].'</td>';
+							echo '<td >'.$res["Data_caricamento"].'</td>';
+							echo '<td >';
 								echo '<a href="'.$res["Percorso_file"].$res["Nome_file"].'">Scarica File</a>';
 							echo '</td>';
 						echo '</tr>';

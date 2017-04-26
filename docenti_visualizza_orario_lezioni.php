@@ -72,45 +72,7 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p></p>
 				</div>
-				<!--div class="box-programmi-caricati">
-					<p><b>Data Pubblicazione</b></p>
-				</div>
-				<div class="box-programmi-caricati">
-					<p><b>Testo dell'avviso</b></p>
-				</div>
-				<div class="box-programmi-caricati">
-					<p><b>Opzioni</b></p>
-				</div>
-				<div class="box-programmi-caricati">
-					<p><b>Visibilità</b></p>
-				</div-->
-				<!--table id="box-caricamenti-principale">
-				<tr>
-					<td class="box-programmi-caricati"><b>Nome materia</b></td>
-					<td class="box-programmi-caricati"><b>Inizio orario lezione</b></td>
-					<td class="box-programmi-caricati"><b>Fine orario lezione</b></td>
-				</tr-->
-
-				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
-				//INIZIO TABELLA CONTENUTI
-				/*$stringasql="SELECT Nome_materia, Orario_inizio, Orario_fine FROM materie WHERE Id_docente=".$utente->id;
 				
-				$elencoMaterie=$connessione->query($stringasql);
-				while($res=$elencoMaterie->fetch_assoc()){
-					echo "<tr>";
-						echo '<td class="box-programmi-caricati">';
-							echo $res["Nome_materia"];
-						echo '</td>';
-						echo '<td class="box-programmi-caricati">';
-							echo $res["Orario_inizio"];
-						echo '</td>';
-						echo '<td class="box-programmi-caricati">';
-							echo $res["Orario_fine"];
-						echo '</td>';
-					echo "</tr>";
-				}
-				echo "</table>";*/
-				?>
 				
 			</div>
 			<div id="calendar"  style="margin-top:100px; margin-bottom:50px;"></div>
