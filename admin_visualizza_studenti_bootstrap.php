@@ -10,7 +10,7 @@
 				<?php
 					menu();
 				?>
-			</div> <!-- FINE MENU -->
+			<!-- FINE MENU -->
 
 				
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
@@ -56,7 +56,7 @@
 				?>
 				
 			</div>
-		</div>
+		
 
 <!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php';?>

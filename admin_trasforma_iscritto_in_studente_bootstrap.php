@@ -11,7 +11,7 @@
 				<?php
 					menu();
 				?>
-			</div> <!-- FINE MENU -->
+			<!-- FINE MENU -->
 
 				
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
