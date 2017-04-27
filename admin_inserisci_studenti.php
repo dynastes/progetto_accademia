@@ -71,9 +71,9 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 								<td>
 									<select name="giorno-nascita">
 										<?php
-										for ($i=1; $i < 32; $i++) { 
+										for ($i=1; $i < 32; $i++) {
 											echo '<option value="'.$i.'">'.$i.'</option>';
-										 } 
+										 }
 										?>
 									</select>
 									<select name="mese-nascita">
@@ -93,9 +93,9 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 									<select name="anno-nascita">
 										<?php
 										$anno=date("Y");
-										for ($i=1950; $i < $anno; $i++) { 
+										for ($i=1950; $i < $anno; $i++) {
 											echo '<option value="'.$i.'">'.$i.'</option>';
-										 } 
+										 }
 										?>
 									</select>
 								</td>
@@ -135,6 +135,6 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+			</div>
 	</body>
 </html>
