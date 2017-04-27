@@ -19,6 +19,7 @@
 				<div id="elenco-avvisi">
 						<?php
 							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE av.Id_docente=an.Id ";//AND Visibilita='pubblico'
+				
 							$avvisiLista=$connessione->query($sqlavvisi);
 							echo '<table class="table table-striped" id="box-caricamenti-principale">';
 							echo '<tr>';
