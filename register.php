@@ -25,7 +25,7 @@
 	<div class="container">
 	
 		<section class="registerform cf">
-		<form name="register" action="index_submit" method="get" accept-charset="utf-8">
+		<form name="register" action="index_submit.php" method="get" accept-charset="utf-8">
 		<h2 align="center">Registrati</h2>
 		<table align="center">
 			<tr>
@@ -164,7 +164,7 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="button" value="Registrati">
+					<input type="submit" value="Registrati">
 				</td>
 				
 			</tr>
