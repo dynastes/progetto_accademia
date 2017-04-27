@@ -1,4 +1,4 @@
-<?php @include_once 'shared/menu_bootstrap.php';
+<?php @include_once 'shared/menu.php';
 if($_SESSION['richiesta-inviata']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Richiesta inviata correttamente all'Admin</div>";
 	$_SESSION['richiesta-inviata']=0;
