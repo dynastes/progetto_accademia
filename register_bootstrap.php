@@ -11,19 +11,20 @@
 	<header>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
-			<a href="index.php">
-                <div class="navbar-header">
-                  
-					<img src="logo.png" alt="" />
-                </div>
-             </a>
-        </div>
+				<a href="index.php">
+	                <div class="navbar-header">
+
+						<img src="logo.png" alt="" />
+	                </div>
+	             </a>
+        	</div>
+		</div>
 	</header>
 	<!-- end header -->
 	<section id="featured">
 	<!-- start slider -->
 	<div class="container">
-	
+
 		<section class="registerform cf">
 		<form name="register" action="index_submit" method="get" accept-charset="utf-8">
 		<h2 align="center">Registrati</h2>
@@ -39,7 +40,7 @@
 			<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -52,7 +53,7 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -65,7 +66,7 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -78,20 +79,20 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
 					<label>Codice fiscale &nbsp; </label>
 				</td>
 				<td>
-					<input name ="cf" type="text">	
+					<input name ="cf" type="text">
 				</td>
 			</tr>
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -104,7 +105,7 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -117,7 +118,7 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -130,7 +131,7 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -143,7 +144,7 @@
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -153,37 +154,37 @@
 					<select name="tipo_utente" >
 					  <option>Studente</option>
 					  <option>Docente</option>
-					
+
 					</select>
 				</td>
 			</tr>
 				<tr>
 				<td>
 					</br>
-				</td>	
+				</td>
 			</tr>
 			<tr>
 				<td>
 					<input type="button" value="Registrati">
 				</td>
-				
-			</tr>			
+
+			</tr>
 			</table>
-		
+
 		<?php @include_once 'shared/footer.php'; ?>
-		
+
 		</form>
-			
-	</section>
-
-	
-	</div>	
 
 	</section>
-	
-	
-	
-</div>
+
+
+	</div>
+
+	</section>
+
+
+
+
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>

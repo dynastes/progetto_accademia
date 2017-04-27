@@ -7,7 +7,7 @@ if($_SESSION['materia']===1){
 ?>
 <html>
 	<head>
-		
+
 		<?php @include_once 'shared/head_inclusions.php';?>
 
 	</head>
@@ -17,11 +17,11 @@ if($_SESSION['materia']===1){
 					menu();
 				?>
 			<!-- FINE MENU -->
-				
+
 			<div class="container">
-			
+
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
-				
+
 				<div id="avvisi">
 					<h1>Cambia docente alle materie</h1>
 					<?php
@@ -35,33 +35,33 @@ if($_SESSION['materia']===1){
 					<p>Ecco i dettagli del professor: <?php echo $resNomeCognome["Cognome"]." ".$resNomeCognome["Nome"] ?></p>
 					<form method="post" action="admin_cambia_materia_query.php">
 								<!--label>ID Professore:</label-->
-								<div class="col-md-9"> 
+								<div class="row">
 									<input type="text" value="<?php echo $resNomeCognome['Id_anagrafe'];?>" name="id-docente" hidden />
-									<div class="col-md-1">
+									<div class="col-md-3">
 										<label>Materie:</label>
 									</div>
-									<div class="col-md-2">
+									<div class="col-md-6">
 										<select class="form-control" name="materia-da-modificare">
 										<?php
 											$materiePresenti=0;
-											$sqlMateriaDocente="SELECT a.Nome, a.Cognome, d.Id_anagrafe, m.Id, m.Nome_materia, m.Anno
-																FROM anagrafe AS a, docenti AS d, materie AS m
-																WHERE m.Id_docente =".$resNomeCognome["Id_anagrafe"]."
-																AND a.Id =".$resNomeCognome["Id_anagrafe"]."
-																AND d.Id_anagrafe =".$resNomeCognome["Id_anagrafe"];
+											$sqlMateriaDocente="SELECT m.Id, m.Nome_materia
+																FROM materie_anagrafica AS m";
 											$res=$connessione->query($sqlMateriaDocente);
 											while($resMateriaDocente=$res->fetch_assoc()){
 												$materiePresenti=1;//per identificare se nella listbox deve comparire la frase "nessuna materia presente"
-												echo '<option value="'.$resMateriaDocente["Id"].'">'.$resMateriaDocente["Nome_materia"].' ('.$resMateriaDocente["Anno"].')'.'</option>';
+												echo '<option value="'.$resMateriaDocente["Id"].'">'.$resMateriaDocente["Nome_materia"].'</option>';
 											}
 											if($materiePresenti==0){
 												echo '<option value="nessuna-materia">Nessuna materia per questo prof.</option>';
 											}
 											?>
-											
+
 										</select>
 									</div>
-								</div>
+									<div class="col-md-3">
+										<button class="btn btn-info">Aggiungi materia al docente</button>
+									</div>
+								</div> <!-- /row -->
 								<!--tr style="margin-top:20px; background-color:#d0d0d0;">
 								<td><label>Cosa vuoi fare?</label></td>
 								<td><input type="radio" name="opzioni-materia" value="sostituisci" checked>Sostituisci con un'altra materia:</td>
@@ -73,12 +73,12 @@ if($_SESSION['materia']===1){
 										$res=$connessione->query($sqlMaterie);
 										while($resMaterie=$res->fetch_assoc()){
 											echo '<option value="'.$resMaterie["Id"].'">'.$resMaterie["Nome_materia"].' ('.$resMaterie["Anno"].')'.'</option>';
-										} 
+										}
 										?>
 									</select>
 								</td>
 							</tr-->
-								<input type="radio" name="opzioni-materia" value="aggiungi"/>Aggiungi una nuova materia:
+								<!--input type="radio" name="opzioni-materia" value="aggiungi"/>Aggiungi una nuova materia:
 									<select name="materia-aggiuntiva">
 										<?php
 										//elenco materie per menù
@@ -86,7 +86,7 @@ if($_SESSION['materia']===1){
 										$res=$connessione->query($sqlMaterie);
 										while($resMaterie=$res->fetch_assoc()){
 											echo '<option value="'.$resMaterie["Id"].'">'.$resMaterie["Nome_materia"].' ('.$resMaterie["Anno"].')'.'</option>';
-										} 
+										}
 										?>
 									</select>
 								<input type="radio" name="opzioni-materia" value="elimina"/>Rimuovi materia
@@ -108,12 +108,12 @@ if($_SESSION['materia']===1){
 										}
 										?>
 									</select>
-								<input  type="submit" value="Salva"/>
+								<input  type="submit" value="Salva"/-->
 					</form>
 				</div>
 			</div>
-		
-	<?php @include_once 'shared/footer.php';?> 
+
+	<?php @include_once 'shared/footer.php';?>
 </body>
-	
+
 </html>

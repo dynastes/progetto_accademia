@@ -13,6 +13,7 @@
 
 				<div class="container">
 						<b>Benvenuto <?php echo $utente->nome; ?>!</b>
+						<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina <a href="http://localhost/progetto_accademia/studenti_carica_documenti.php">Carica documenti</a></p>
 						<!--<br />
 						<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina</p> <a class="btn btn-info" href="studenti_carica_documenti.php" type="button">Carica documenti</a>
 					<br />
@@ -49,7 +50,7 @@
 						?>
 					</table>
 				</div>
-		
+
 
 			<!-- INIZIO FOOTER -->
 			<?php @include_once 'shared/footer.php';?>
