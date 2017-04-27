@@ -1,5 +1,5 @@
 <!-- 
-<?php @include_once 'shared/menu_bootstrap.php'; ?>
+<?php @include_once 'shared/menu.php'; ?>
 convertita la grafica in bootstrap ma i link fanno riferimento alle vecchie pagine 
 non convertite
 
@@ -21,7 +21,7 @@ non convertite
         <span class="icon-bar"></span>
 
       </button>
-      <img src="img/logo.png" width="30%">
+      <img src="img/img/logo.png" width="30%">
     </div>
 
    <?php menu(); ?>

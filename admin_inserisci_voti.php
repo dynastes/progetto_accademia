@@ -4,16 +4,25 @@ if($_SESSION['inserimento']===1 && $_SESSION['inserimento2']===1){
 	$_SESSION['inserimento']=0;
 	$_SESSION['inserimento2']=0;
 }
-$idDocente=$_POST['id-docente'];
+if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
+	//echo "Avviso settato!!!! ".$_POST['avviso'];
+	/*$insert=$_POST['avviso'];
+	if ($connessione->query($insert) === TRUE) {
+		 echo "New record created successfully";
+	} else {
+		 echo "Error: " . $sql . "<br>" . $conn->error;
+	}*/
+}
 ?>
 <html>
 	<head>
-		<?php @include_once 'shared/head_inclusions.php';?>>
+		<meta charset="utf-8">
+		<?php @include_once 'shared/head_inclusions.php';?>
 
 	</head>
 	<body>
 		<div id="testata">
-			<img src="img/img/logo.png">
+			<img src="img/logo.png">
 		</div>
 		<div id="principale">
 			<div id="menu">
@@ -29,23 +38,20 @@ $idDocente=$_POST['id-docente'];
 				</div>
 				<div name="avvisi">
 				<h2>Inserisci voti</h2>
-				<label>Scegliere la materia:</label>
-					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next_2.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
+				<label>Scegliere il professore che ha sostenuto l'esame:</label>
+					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php" accept-charset="utf-8">  <?php /* echo $_SERVER['PHP_SELF']; */ ?>
  						<br />
-						<table style="width:30%;">
+						<table style="width:40%;">
 							<tr>
-								<td><label for="usermail">Materia:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
-								<td><select name="id-materia">
+								<td><label for="usermail">Professore:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
+								<td><select name="id-docente">
 									<?php
-									/* La query necessita l'estrazione dell'ID Docente dalla tabella "materia_docente", in modo tale da capire 
-									 * da chi è insegnata questa determinata materia. Così facendo, verranno selezionate solo le materie che avranno
-									 * nella colonna Id_docente l'ID ricevuto tramite POST. */
-									$sqlMateria="SELECT Id, Nome_materia
-												FROM materie_anagrafica 
-												WHERE Id_docente=".$idDocente." ORDER BY Nome_materia";
-									$res=$connessione->query($sqlMateria);
-									while($resMateria=$res->fetch_assoc()){
-										echo '<option value="'.$resMateria["Id"].'">'.$resMateria["Nome_materia"].' ('.$resMateria['Anno'].')'.'</option>';
+									$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome 
+												FROM docenti AS d, anagrafe AS a 
+												WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
+									$resDocenti=$connessione->query($sqlDocenti);
+									while($docenti=$resDocenti->fetch_assoc()){
+										echo '<option value="'.$docenti["Id_anagrafe"].'">'.$docenti["Cognome"].' '.$docenti['Nome'].'</option>';
 									}
 									?>
 									</select>

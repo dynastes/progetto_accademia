@@ -1,4 +1,4 @@
-<?php @include_once 'shared/menu_bootstrap.php'; 
+<?php @include_once 'shared/menu.php'; 
 if($_SESSION['query']===1){
 	$_SESSION['query']=0;
 }

@@ -1,5 +1,5 @@
 <!-- 
-<?php @include_once 'shared/menu_bootstrap.php'; ?>
+<?php @include_once 'shared/menu.php'; ?>
 convertita la grafica in bootstrap ma i link fanno riferimento alle vecchie pagine 
 non convertite
 

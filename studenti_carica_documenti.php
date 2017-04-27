@@ -1,4 +1,4 @@
-<?php @include_once 'shared/menu_bootstrap.php';
+<?php @include_once 'shared/menu.php';
 $tipoFile=$_POST['tipoFile'];
 
 ?>

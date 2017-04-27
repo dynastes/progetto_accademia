@@ -23,7 +23,7 @@ function menu(){
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         </button>
-        <img src="img/logo.png" width="30%">
+        <img src="img/img/logo.png" width="30%">
         </div>';
 		
 		
@@ -31,7 +31,7 @@ function menu(){
 		//admin, studente, docente
 		if($utente->get_ruolo()=="studente"){
 			$menu='<ul class="nav navbar-nav" >
-        <li class="active"><a href="studenti_home_bootstrap.php">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="studenti_home.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Profilo</a></li>
 		<li><a href="#">Piano di studi</a></li>
 		<li><a href="studenti_visualizza_piano_studi.php">Visualizza piano di studi</a></li>

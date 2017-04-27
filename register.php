@@ -11,7 +11,7 @@
 				<a href="index.php">
 	                <div class="navbar-header">
 
-						<img src="logo.png" alt="" />
+						<img src="img/logo.png" alt="" />
 	                </div>
 	             </a>
         	</div>

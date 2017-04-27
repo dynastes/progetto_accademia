@@ -21,7 +21,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 	</head>
 	<body>
 		<div id="testata">
-			<img src="img/logo.png">
+			<img src="img/img/logo.png">
 		</div>
 		<div id="principale">
 			<div id="menu">

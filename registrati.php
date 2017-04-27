@@ -26,7 +26,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
             <div class="container">
 				<a href="index.php">
 					<div class="navbar-header">
-						<img src="logo.png" alt="" />
+						<img src="img/logo.png" alt="" />
 					</div>
 				 </a>
 			</div>		
@@ -34,7 +34,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 	<!-- end header -->
 	<!-- start slider -->
 		<div class="container">	
-		 <!-- <a href="index.html"><img src="logo.png" height="20%" alt="" ></a>-->
+		 <!-- <a href="index.html"><img src="img/logo.png" height="20%" alt="" ></a>-->
 		<p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
 			<section class="loginform cf" style="float:left;">
 				<form name="register" action="registrati_query.php" method="post" accept-charset="utf-8">
