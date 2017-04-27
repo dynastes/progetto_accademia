@@ -5,8 +5,8 @@
 
 	</head>
 	<body>
-	
-			
+		
+		<script type="text/javascript" src="js/bootstrap-filestyle.js"> </script>	
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
 					menu();
@@ -42,30 +42,14 @@
 							I file caricati devono essere del formato <b>.zip, doc, ppt, jpg</b>. Altri formati potrebbero non essere caricati.
 							Dimensione massima consentita: 1MB</p>
 							<form width:60%;" action="docenti_carica_programma.php" enctype="multipart/form-data" method="POST">
-								<div class="fileinput fileinput-new" data-provides="fileinput">
-									<span class="btn btn-default btn-file">
-										<span>Choose file</span>
-											<input type="hidden">
-											<input type="file">
-										</span>
-									<span class="fileinput-filename"> 
-										
-									</span><span class="fileinput-new">No file chosen</span>
-								</div>
-								
-								<br />
+									<input type="file" class="filestyle" data-placeholder="Nessun file selezionato">
+							<br />
 								<input class="btn btn-info" type="submit" value="Invia file/documento">
 							</form>';
 						}
 					?>
-					<div class="fileinput fileinput-new" data-provides="fileinput">
-    <span class="btn btn-default btn-file">
-		<span>Choose file</span>
-		<input type="hidden">
-		<input type="file">
-		</span>
-    <span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>
-</div>
+					
+					
 				</div>
 			</div>
 	

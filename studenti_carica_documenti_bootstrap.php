@@ -8,6 +8,8 @@ $tipoFile=$_POST['tipoFile'];
 		<?php @include_once 'shared/head_inclusions.php';?>
 	</head>
 	<body>
+	
+	<script type="text/javascript" src="js/bootstrap-filestyle.js"> </script>
 		<?php
 			menu();
 		?>
@@ -41,14 +43,16 @@ $tipoFile=$_POST['tipoFile'];
 							echo '<p>Carica i documenti (in formato immagine o PDF) come ricevute di bonifico, bollettini regionali ecc...).
 							I file caricati devono essere del formato <b>.jpg, png, pdf</b> o <b>bmp</b>. Altri formati potrebbero non essere caricati.</p>
 							<form width:60%;" action="studenti_carica_documenti.php" enctype="multipart/form-data" method="POST">
-								<input style="float:left;" class="btn btn-default" type="file" name="FileUtente">
-								<label style="float:left; margin-right:10px;">Scegli quale tipo di file stai caricando</label>
-								<select name="tipoFile" style="float:left; margin-right:30px;">
+								<input type="file" class="filestyle" data-placeholder="Nessun file selezionato">
+								<br />
+								<label>Scegli quale tipo di file stai caricando</label>
+								<select class="form-control" name="tipoFile">
 								    <option value="1">Bollettino</option>
 								    <option value="2">Bonifico</option>
 								    <option value="3">Foto</option>
 								 </select>
-								<input style="float:left;" type="submit" value="Invia file/documento">
+								 <br />
+								<input class="btn btn-info" type="submit" value="Invia file/documento">
 							</form>';
 						}
 					?>

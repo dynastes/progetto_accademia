@@ -16,7 +16,7 @@ if($_SESSION['richiesta-inviata']===1){
 	
   	<div class="container">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?></b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				
 					<h2>Richieste</h2>
@@ -26,16 +26,17 @@ if($_SESSION['richiesta-inviata']===1){
 					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8"> 
 						<div class="form-group">
 						<label>Seleziona il certificato da richiedere:&nbsp;</label>
-						<select name="tipo-certificato">
+						<select class="form-control" name="tipo-certificato">
 							<option value="1">Certificato di frequenza</option>
 							<option value="2">Certificato di iscrizione</option>
 							<option value="3">Certificato per materie sostenute</option>
 						</select>
-						<input  type="submit" value="Richiedi certificato">
+						<br />
+						<input class="btn btn-info" type="submit" value="Richiedi certificato">
 					</div>
 					</form>
 					
-						<table class="table">
+						<table class="table table-striped">
 							<tr>
 								<td><b>Data invio richiesta</b></td>
 								<td><b>Stato richiesta</b></td>
