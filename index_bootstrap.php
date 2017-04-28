@@ -8,6 +8,7 @@
 
 /*Verifico che la sessione sia disponibile. Se lo è, vuol dire che l'utente si è già loggato e quindi che possiede già un OGGETTO UTENTE da serializzare*/
 if(isset($_SESSION['login'])){
+
 	$utente=$_SESSION['ut'];
 	$utente=unserialize($utente);
 	/*se si è qui, l'utente era già loggato. Mostrare chi è*/
@@ -39,11 +40,12 @@ if(isset($_POST['usermail'])){
 }
 if(empty($risultato)){
 	//ciao
+	$_SESSION['login'] = false;
 }
 
 elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	//echo "Login In Corso............";
-	if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
+	if(isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
 		//echo "Creazione SESSIONE:......";
 		$res=$risultato->fetch_assoc(); //mette i risultati in un array
 		//echo "Risultato= " . $res["Nome"];
@@ -98,11 +100,11 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
 	//echo "\nReindirizzamento in corso... l'utente è un: ".$ruoloUtente;
 	if($ruoloUtente==="studente"){
-		@header("location:studenti_home_bootstrap.php");
+		@header("location:studenti_home.php");
 	} else if ($ruoloUtente==="docente"){
-		@header("location:docenti_home_bootstrap.php");
+		@header("location:docenti_home.php");
 	} else if ($ruoloUtente==="admin"){
-		@header("location:admin_home_bootstrap.php");
+		@header("location:admin_home.php");
 	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
 
@@ -133,7 +135,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 				<div class="col-md-2">
 					<a href="index.php">
 						<!-- <div class="navbar-header"> -->
-						<img src="logo.png" alt="" />
+						<img src="img/logo.png" alt="" />
 						<!-- </div> -->
 					</a>
 				</div>
@@ -164,7 +166,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 					</div>
 					<div class="row center-block">
 						<br />
-						<button type="button" class="btn btn-primary center-block" aria-haspopup="false">
+						<button type="submit" class="btn btn-primary center-block" aria-haspopup="false">
 							Login
 						</button>
 					</div>
