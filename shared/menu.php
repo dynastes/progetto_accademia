@@ -36,15 +36,24 @@ function menu(){
 			$menu='<ul class="nav navbar-nav" >
         <li class="active"><a href="studenti_home.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Profilo</a></li>
-		<li><a href="#">Piano di studi</a></li>
-		<li><a href="studenti_visualizza_piano_studi.php">Visualizza piano di studi</a></li>
-		<li><a href="studenti_carriera_accademica.php">Mostra Carriera accademica</a></li>
+		<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Piano di studi<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="studenti_visualizza_piano_studi.php">Visualizza piano di studi</a></li>
+					<li><a href="studenti_carriera_accademica.php">Mostra Carriera accademica</a></li>
+					<li><a href="#">Modifica piano studi</a></li>
+				</ul>
+		</li>
 		<li><a href="studenti_visualizza_orario_lezione.php">Orario lezioni</a></li>
-		<li><a href="#">Documenti</a></li>
-		<li><a href="studenti_visualizza_documenti.php">Visualizza Documenti</a></li>
-		<li><a href="studenti_carica_documenti.php">Carica documenti</a></li>
-		<li><a href="studenti_richieste.php">Richiedi documenti</a></li>
-		<li><a href="#">Richiedi certificati</a></li>
+		<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documenti/Certificati<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="studenti_visualizza_documenti.php">Visualizza Documenti</a></li>
+					<li><a href="studenti_carica_documenti.php">Carica documenti</a></li>
+					<li><a href="studenti_richieste.php">Richiedi documenti</a></li>
+					<li><a href="#">Richiedi certificati</a></li>
+				</ul>
+		</li>
 		<!--li><a href="logout.php">Disconnetti</a></li>
    </ul-->';
 		}

@@ -1,13 +1,11 @@
-<?php @include_once 'menu.php'; ?>
+<?php @include_once 'shared/menu.php'; ?>
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 
 	</head>
 	<body>
-		<div id="testata">
-			<img src="img/img/logo.png">
-		</div>
+
 		<div id="principale">
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
@@ -16,7 +14,7 @@
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti i docenti che sono iscritti all'accademia</p>
@@ -33,13 +31,13 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table id="box-caricamenti-principale">
+				<table  class="table">
 				<tr>
-					<td class="box-elenco-studenti" style="width:20%"><b>Nome</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Cognome</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Email</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Indirizzo</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Telefono</b></td>
+					<td ><b>Nome</b></td>
+					<td ><b>Cognome</b></td>
+					<td><b>Email</b></td>
+					<td ><b>Indirizzo</b></td>
+					<td ><b>Telefono</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
@@ -48,35 +46,30 @@
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
-						echo '<td class="box-elenco-studenti">';
+						echo '<td >';
 							echo $res["Nome"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td >';
 							echo $res["Cognome"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td >';
 							echo $res["Email"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td >';
 							echo $res["Indirizzo"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td >';
 							echo $res["Telefono"];
 						echo '</td>';
 					echo "</tr>";
 				}
 				echo "</table>";
 				?>
-				
+
 			</div>
 		</div>
-
+	</div>
 		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div> 
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

@@ -8,19 +8,24 @@
 
 /*Verifico che la sessione sia disponibile. Se lo è, vuol dire che l'utente si è già loggato e quindi che possiede già un OGGETTO UTENTE da serializzare*/
 if(isset($_SESSION['login'])){
-
+	echo "isset(SESSION[LOGIN])\n";
+	echo "nome utente: ".$_SESSION['ut']->nome;
 	$utente=$_SESSION['ut'];
-	$utente=unserialize($utente);
 	/*se si è qui, l'utente era già loggato. Mostrare chi è*/
-	//echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
+	$utente=unserialize($utente);
 	//se l'utente era già collegato, sarà possibile reindirizzarlo alla sua home page appena cerca di ritornare al log in
 	if($utente->ruolo==="studente"){
-		@header("location:studenti_home.php");
+		echo "sono uno studente";
+		//@header("location:studenti_home.php");
 	} else if ($utente->ruolo==="docente"){
-		@header("location:docenti_home.php");
+		echo "sono un procione";
+		//@header("location:docenti_home.php");
 	} else if ($utente->ruolo==="admin"){
-		@header("location:admin_home.php");
+		echo "sono un admin";
+		//@header("location:admin_home.php");
 	}
+
+	echo "Utente già loggato in precedenza. E' uno ".$utente->ruolo;
 }
 
 
@@ -38,19 +43,15 @@ if(isset($_POST['usermail'])){
 	//echo "### Il login è: ".$loginString." ###\n";
 	$risultato=$connessione->query($loginString);
 }
+
 if(empty($risultato)){
-	//ciao
-	$_SESSION['login'] = false;
-}
-
-elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
+	echo "Risultato VUOTO";
+} elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	//echo "Login In Corso............";
-
 	if(isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
-
 		//echo "Creazione SESSIONE:......";
 		$res=$risultato->fetch_assoc(); //mette i risultati in un array
-		//echo "Risultato= " . $res["Nome"];
+		echo "Risultato= " . $res["Nome"];
 		$_SESSION['login'] = true;
 
 		//popolo l'oggetto UTENTE
@@ -81,6 +82,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 		}
 		//#ADMIN
 		$controllaRuolo="SELECT Id_anagrafe FROM amministratori WHERE Id_anagrafe=". $utente->id;
+		echo "controlla ruolo: " .$controllaRuolo;
 		$risultato="";
 		$risultato=$connessione->query($controllaRuolo);
 		$res=$risultato->fetch_assoc();
@@ -124,79 +126,95 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 <html lang="en">
 <head>
 
-	<?php @include_once 'shared/head_inclusions.php';?>
+<?php @include_once 'shared/head_inclusions.php';?>
 </head>
 <body>
-	<div class="container">
-		<!-- start header -->
-		<header class="row">
-			<div class="col-md-5"></div>
+<div id="wrapper">
+	<section id="featured">
+	<!-- start header -->
+			<header>
+		        <div class="navbar navbar-default navbar-static-top">
+		            <div class="container">
+					<a href="index.html">
+		                <div class="navbar-header" style="padding-left:70px;">
 
-			<!-- <div class="navbar navbar-default navbar-static-top"> -->
-				<!-- <div class="container"> -->
-				<div class="col-md-2">
-					<a href="index.php">
-						<!-- <div class="navbar-header"> -->
-						<img src="img/logo.png" alt="" />
-						<!-- </div> -->
-					</a>
-				</div>
+							<img src="logo.png" alt="" />
+		                </div>
+		             </a>
+		        </div>
+			</header>
+			<!-- end header -->
+	<!-- start slider -->
+		<div class="container">
 
-				<div class="col-md-5"></div>
-			<!-- </div> -->
-		</header>
+			<section class="loginform cf" style="float:left;">
+				<form name="login" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
+					<table align="center" >
+						<tr>
+							<td>
+								<label for="usermail">Email &nbsp;</label>
 
-
-		<div class="row center-block">
-			<div class="col-md-4">
-			</div>
-
-			<form name="login" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
-				<div class="col-md-4">
-					<div class="row center-block">
-						<label for="usermail">Email &nbsp;</label>
-						<div class="row center-block">
-							<input type="email" name="usermail" class="form-control" placeholder="username" required>
-						</div>
+							</td>
+							<td>
+								<input type="email" name="usermail" placeholder="yourname@email.com" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								</br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="password">Password  &nbsp;</label>
+							</td>
+							<td>
+								<input type="password" name="password" placeholder="password" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								</br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" value="Login">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								</br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="registrati.php">Registrati</a>
+								</br>
+								<a href="">Password dimenticata ? </a>
+							</td>
+						</tr>
+					</table>
+					<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
+						<p align="center">Copyright © 2015 Accademia Di Belle Arti Kandinskij <a href="" rel="nofollow" target="_blank"></a>
+						</p>
 					</div>
-					<div class="row center-block">
-						<br />
-						<label for="password">Password  &nbsp;</label>
-					</div>
-					<div class="row center-block">
-						<input type="password" name="password" class="form-control" placeholder="password" required>
-					</div>
-					<div class="row center-block">
-						<br />
-						<button type="submit" class="btn btn-primary center-block" aria-haspopup="false">
-							Login
-						</button>
-					</div>
-					<br />
-					<a href="registrati.php">Registrati</a>
-					<br />
-					<a href="">Password dimenticata ? </a>
-				</div>
-			</form>
-			<div class="col-md-4"> </div>
-			<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
-				<p align="center">Copyright © 2015 Accademia Di Belle Arti Kandinskij <a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div>
-
-		</div> <!-- /row center-block -->
-	</div> <!-- /container -->
-	<!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
-	<!--script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.fancybox-media.js"></script>
-	<script src="js/google-code-prettify/prettify.js"></script>
-	<script src="js/portfolio/jquery.quicksand.js"></script>
-	<script src="js/portfolio/setting.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script-->
+				</form>
+			</section>
+		</div>
+	</section>
+</div> <!-- CHIUSURA DIV WRAPPER -->
+<!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/google-code-prettify/prettify.js"></script>
+<script src="js/portfolio/jquery.quicksand.js"></script>
+<script src="js/portfolio/setting.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>
