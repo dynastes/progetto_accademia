@@ -1,4 +1,4 @@
-<?php @include_once 'menu.php';
+<?php @include_once 'shared/menu.php';
 if($_SESSION['studente-inserito']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Studente aggiunto correttamente</div>";
 	$_SESSION['studente-inserito']=0;
