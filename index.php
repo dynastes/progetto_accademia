@@ -45,7 +45,8 @@ if(empty($risultato)){
 
 elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	//echo "Login In Corso............";
-	if(!isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
+	if(isset($_SESSION['login']))
+	{ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
 		//echo "Creazione SESSIONE:......";
 		$res=$risultato->fetch_assoc(); //mette i risultati in un array
 		//echo "Risultato= " . $res["Nome"];
