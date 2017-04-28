@@ -5,11 +5,7 @@
 
 	</head>
 	<body>
-		<div class="container">
 
-		<div id="testata">
-			<img src="img/img/logo.png">
-		</div>
 		<div id="principale">
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
@@ -18,7 +14,7 @@
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti i docenti che sono iscritti all'accademia</p>
