@@ -21,9 +21,6 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 
 	</head>
 	<body>
-		<div id="testata">
-			<img src="img/logo.png">
-		</div>
 		<div id="principale">
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
@@ -32,19 +29,22 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			
+			<div class="container">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
+					<b>&nbsp;&nbsp;&nbsp;&nbsp;Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div name="avvisi">
+				<div class="col-md-8">
 				<h2>Inserisci voti</h2>
 				<label>Scegliere il professore che ha sostenuto l'esame:</label>
 					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php" accept-charset="utf-8">  <?php /* echo $_SERVER['PHP_SELF']; */ ?>
  						<br />
-						<table style="width:40%;">
-							<tr>
-								<td><label for="usermail">Professore:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
-								<td><select name="id-docente">
+									<div class="col-md-4">
+									<label for="usermail">Professore:</label> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
+									<br />
+									
+									<select class="form-control" name="id-docente">
 									<?php
 									$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome
 												FROM docenti AS d, anagrafe AS a
@@ -55,23 +55,15 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 									}
 									?>
 									</select>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2"><input  type="submit" value="Avanti" style="margin-top:40px;"></td>
-							</tr>
-						</table>
+									<br />
+									<input class="btn btn-info" type="submit" value="Avanti">
+									</div>
 					</form>
 				</div>
 			</div>
 		</div>
-
+		</div>
 		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div>
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>
