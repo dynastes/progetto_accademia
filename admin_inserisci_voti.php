@@ -1,4 +1,4 @@
-<?php @include_once 'menu.php';
+<?php @include_once 'shared/menu.php';
 if($_SESSION['inserimento']===1 && $_SESSION['inserimento2']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
 	$_SESSION['inserimento']=0;
@@ -46,8 +46,8 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 								<td><label for="usermail">Professore:&nbsp;</label></td> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
 								<td><select name="id-docente">
 									<?php
-									$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome 
-												FROM docenti AS d, anagrafe AS a 
+									$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome
+												FROM docenti AS d, anagrafe AS a
 												WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
 									$resDocenti=$connessione->query($sqlDocenti);
 									while($docenti=$resDocenti->fetch_assoc()){
@@ -72,6 +72,6 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				Copyright © 2015 Accademia Di Belle Arti Kandinskij
 				<a href="" rel="nofollow" target="_blank"></a>
 				</p>
-			</div> 
+			</div>
 	</body>
 </html>
