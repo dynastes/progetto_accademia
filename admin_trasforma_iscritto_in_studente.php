@@ -26,9 +26,9 @@
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			<div class="container">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>In questa pagina sarà possibile cambiare lo status di un iscritto in studente effettivo dell'accademia. Ecco qui sotto l'elenco degli studenti che ancora non sono stati immatricolati</p>
 				</div>
 				<!--div class="box-programmi-caricati">
@@ -43,12 +43,12 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table id="box-caricamenti-principale">
+				<table class="table table-striped">
 				<tr>
-					<td class="box-programmi-caricati"><b>Nome</b></td>
-					<td class="box-programmi-caricati"><b>Cognome</b></td>
-					<td class="box-programmi-caricati"><b>Trasforma in studente</b></td>
-					<td class="box-programmi-caricati"><b>Cancella iscritto</b></td>
+					<td><b>Nome</b></td>
+					<td><b>Cognome</b></td>
+					<td><b>Trasforma in studente</b></td>
+					<td><b>Cancella iscritto</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
@@ -78,11 +78,6 @@
 		</div>
 
 		<!-- INIZIO FOOTER -->
-		<div class="footer"  id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div>
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

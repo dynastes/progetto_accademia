@@ -5,9 +5,6 @@
 
 	</head>
 	<body>
-		<div id="testata">
-			<img src="img/logo.png">
-		</div>
 		<div id="principale">
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
@@ -16,7 +13,7 @@
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti gli studenti che sono iscritti all'accademia</p>
@@ -33,14 +30,14 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table id="box-caricamenti-principale">
+				<table class="table table-striped">
 				<tr>
-					<td class="box-elenco-studenti" style="width:20%"><b>Nome</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Cognome</b></td>
-					<td class="box-elenco-studenti" style="width:10%"><b>Matricola</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Email</b></td>
-					<td class="box-elenco-studenti" style="width:20%"><b>Indirizzo</b></td>
-					<td class="box-elenco-studenti" style="width:10%"><b>Telefono</b></td>
+					<td><b>Nome</b></td>
+					<td><b>Cognome</b></td>
+					<td><b>Matricola</b></td>
+					<td><b>Email</b></td>
+					<td><b>Indirizzo</b></td>
+					<td><b>Telefono</b></td>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
@@ -76,11 +73,6 @@
 		</div>
 
 		<!-- INIZIO FOOTER -->
-		<div id="footer" style="bottom:0px;left:0px;width:100%;background-color:black;color:white;height:40px;font-size:14px;float:left">
-				<p align="center">
-				Copyright © 2015 Accademia Di Belle Arti Kandinskij
-				<a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div>
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

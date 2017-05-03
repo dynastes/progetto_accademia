@@ -31,7 +31,7 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table  class="table">
+				<table  class="table table-striped">
 				<tr>
 					<td ><b>Nome</b></td>
 					<td ><b>Cognome</b></td>
