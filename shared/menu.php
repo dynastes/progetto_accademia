@@ -106,7 +106,7 @@ function menu(){
 			<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Docenti <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="admin_cambia_materia_docenti.php">Imposta/cambia materia docenti</a></li>
+            <li><a href="admin_imposta_materia_docenti.php">Imposta/cambia materia docenti</a></li>
             <li><a href="admin_visualizza_docenti.php">Visualizza Docenti</a></li>
           </ul>
         </li>
