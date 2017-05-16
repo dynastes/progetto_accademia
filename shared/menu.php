@@ -98,7 +98,8 @@ function menu(){
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materie<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 							<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
-							<li><a href="admin_inserisci_materia.php">Inserisci materia</a></li>
+							<li><a href="admin_crea_piano_di_studi.php">Crea piano di studi</a></li>
+							<li><a href="admin_modifica_piano_di_studi.php">Modifica piano di studi</a></li>
 					</ul>
 			</li>
 
