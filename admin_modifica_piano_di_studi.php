@@ -35,75 +35,47 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 			<div class="page-header">
 				<h1>Modifica piano di studi</h1>
 			</div>
+			<ul class="nav nav-tabs">
+				<li class="active col-md-4 schede"><a href="#triennio" data-toggle="tab">Triennio</a></li>
+				<li class="col-md-4 schede"><a href="#biennio" data-toggle="tab">Biennio</a></li>
+				<li class="col-md-4 schede"><a href="#unico" data-toggle="tab">Ciclo unico</a></li>
+			</ul>
+			<div class="tab-content container">
+				<div class="tab-pane active" id="triennio">
+					<form action="admin_crea_piano_di_studi_query.php" method="post">
+						<div class="row">
+							<div class="form-group">
+								
+								<table class="table">
+									<tr><th colspan="7">Elenco piani di studio</th></tr>
+									<tr><td>Corso</td><td>Materia</td><td>Modula</td><td>Anno</td><td>CFA</td><td>Categoria</td><td>Tipologia</td></tr>
+<?php 
+ $sql_carica_piani="SELECT * FROM materie_piano";
+ $res_piani=$connessione->query($sql_carica_piani);
+ while($res=$res_piani->fetch_assoc()) {
+	$Id_corso=$res['Id_corso'];
+	$Id_materia=$res['Id_materia'];
 
-			<form action="admin_crea_piano_di_studi_query.php" method="post">
-				<div class="row">
-					<div class="col-md-4"> </div>
+	$sql_carica_id="SELECT Nome_corso FROM corsi WHERE Id='".$Id_corso."'";
+	$res_id_corso=$connessione->query($sql_carica_id);
+	$res_id=$res_id_corso->fetch_assoc();
 
-					<div class="col-md-4">
-						<div class=" form-group">
-							<label for="corso">Id corso</label>
-							<select id="corso" name="corso" class="form-control">
-								<option value="" selected disabled>Scegli...</option>
-<?php
-while($res=$res_settore->fetch_assoc()) {
+	$sql_carica_materia="SELECT Nome_materia FROM materie_anagrafica WHERE Id='".$Id_materia."'";
+	$res_materia_corso=$connessione->query($sql_carica_materia);
+	$res_materia=$res_materia_corso->fetch_assoc();	
 ?>
-								<option value="<?php echo $res['Id']; ?>"><?php echo $res['Nome_corso']; }?></option>
-							</select>
-						</div>
-						<label for="materia">Nome materie</label><br>
-<?php
-$sql_carica_materia="SELECT * FROM materie_anagrafica ORDER BY Nome_materia";
-$res_materia=$connessione->query($sql_carica_materia);
-
-?>
-						<div class="row form-group">
-							
-							<div class="col-md-12">
-								<select id="materia" name="materia" class="form-control">
-									<option value="" selected disabled>Scegli...</option>
-<?php
-while($res2=$res_materia->fetch_assoc()) {
-?>
-									<option value="<?php echo $res2['Id']; ?>"><?php echo $res2['Nome_materia']; }?></option>
-								</select>
+									<tr>
+										<td><?php //echo $res_id['Nome_corso']; ?></td><td><?php //echo $res_materia['Nome_materia']; ?></td>
+										<td><?php //echo $res['Modulo']; ?></td><td><?php //echo $res['Anno']; ?></td>
+										<td><?php //echo $res['Cfa']; ?></td>	<td><?php //echo $res['Categoria']; ?></td>
+										<td><?php //echo $res['Tipologia']; }?></td>
+									</tr>
+								</table>
 							</div>
-							
 						</div>
-						<label for="materia">Anno</label><br>
-						<div class="row form-group">
-							<div class="col-md-12">
-								<select id="anno" name="anno" class="form-control">
-									<option value="" selected disabled>Scegli...</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
-							</div>
-							
-						</div>
-						<label for="materia">Tipo</label><br>
-						<div class="row form-group">
-							<div class="col-md-12">
-								<select id="tipo" name="tipo" class="form-control">
-									<option value="" selected disabled>Scegli...</option>
-									<option value="1">Base</option>
-									<option value="2">Caratterizzante</option>
-									<option value="3">Integrativa o affine</option>
-								</select>
-							</div>
-							
-						</div>
-						<div class="row text-center">
-							<input type="submit" value="Inserisci materia" class="btn btn-info">
-						</div>
-
-					</div>
-					<div class="col-md-4"> </div>
+					</form>
 				</div>
-			</form>
+			</div><!-- tab-content clearfix -->
 
 		</div>
 	</body>

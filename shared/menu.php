@@ -99,7 +99,7 @@ function menu(){
 					<ul class="dropdown-menu">
 							<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
 							<li><a href="admin_crea_piano_di_studi.php">Crea piano di studi</a></li>
-							<li><a href="admin_modifica_piano_di_studi.php">Modifica piano di studi</a></li>
+							<li><a href="admin_visualizza_piano_di_studi.php">Visualizza piano di studi</a></li>
 					</ul>
 			</li>
 

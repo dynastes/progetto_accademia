@@ -34,3 +34,15 @@ footer{
     height: 40px; 
 }
 /* ### FINE ### NUOVO CSS PER IL FOOTER MOBILE*/
+table  { 
+    border:1px solid black;
+}
+td{
+	padding:8px;
+}
+.schede{
+	text-align:center;
+}
+.tab-content {
+	margin-top:15px !important;
+}
