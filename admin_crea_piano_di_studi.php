@@ -26,7 +26,8 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-			<?php @include_once 'shared/menu.php';?>
+		<?php @include_once 'shared/menu.php';?>
+
 	</head>
 
 	<body>
@@ -43,7 +44,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 					<div class="col-md-4">
 						<div class=" form-group">
 							<label for="corso">Corso</label>
-							<select id="corso" name="corso" class="form-control">
+							<select id="corso" name="corso" class="form-control" required>
 								<option value="" selected disabled>Scegli...</option>
 <?php
 while($res=$res_settore->fetch_assoc()) {
@@ -58,9 +59,9 @@ $res_materia=$connessione->query($sql_carica_materia);
 
 ?>
 						<div class="row form-group">
-							
+
 							<div class="col-md-12">
-								<select id="materia" name="materia" class="form-control">
+								<select id="materia" name="materia" class="form-control" required>
 									<option value="" selected disabled>Scegli...</option>
 <?php
 while($res2=$res_materia->fetch_assoc()) {
@@ -68,11 +69,11 @@ while($res2=$res_materia->fetch_assoc()) {
 									<option value="<?php echo $res2['Id']; ?>"><?php echo $res2['Nome_materia']; }?></option>
 								</select>
 							</div>
-							
+
 						</div>
 						<label for="modulo">Modulo</label><br>
 						<div class="row form-group">
-							
+
 							<div class="col-md-12">
 								<select id="modulo" name="modulo" class="form-control">
 									<option value="" selected disabled>Scegli...</option>
@@ -82,13 +83,13 @@ while($res2=$res_materia->fetch_assoc()) {
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-							</div>	
+							</div>
 						</div>
-						
+
 						<label for="materia">Anno</label><br>
 						<div class="row form-group">
 							<div class="col-md-12">
-								<select id="anno" name="anno" class="form-control">
+								<select id="anno" name="anno" class="form-control" required>
 									<option value="" selected disabled>Scegli...</option>
 									<option value="1">Triennio - 1</option>
 									<option value="2">Triennio - 2</option>
@@ -97,33 +98,33 @@ while($res2=$res_materia->fetch_assoc()) {
 									<option value="5">Biennio - 2</option>
 								</select>
 							</div>
-							
+
 						</div>
 						<label for="cfa">CFA</label><br>
 						<div class="row form-group">
 							<div class="col-md-12">
-								<input type="number" id="cfa" name="cfa" class="form-control"/>
+								<input type="number" id="cfa" name="cfa" class="form-control" required/>
 							</div>
-							
+
 						</div>
 						<label for="categoria">Categoria</label><br>
 						<div class="row form-group">
-							
+
 							<div class="col-md-12">
-								<select id="categoria" name="categoria" class="form-control">
+								<select id="categoria" name="categoria" class="form-control" required>
 									<option value="" selected disabled>Scegli...</option>
 									<option value="Base">Base</option>
 									<option value="Caratterizzante">Caratterizzante</option>
 									<option value="Integrativa">Integrativa</option>
 								</select>
 							</div>
-							
+
 						</div>
-						
+
 						<label for="tipo">Tipo</label><br>
 						<div class="row form-group">
 							<div class="col-md-12">
-								<select id="tipo" name="tipo" class="form-control">
+								<select id="tipo" name="tipo" class="form-control" required>
 									<option value="" selected disabled>Scegli...</option>
 									<option value="Teorioco">Teorioco</option>
 									<option value="Teorico pratico">Teorico pratico</option>
@@ -131,16 +132,32 @@ while($res2=$res_materia->fetch_assoc()) {
 								</select>
 							</div>
 						</div>
-						
+
 						<div class="row text-center">
 							<input type="submit" value="Inserisci materia" class="btn btn-info">
 						</div>
-						
+
 					</div>
 					<div class="col-md-4"> </div>
 				</div>
 			</form>
 
 		</div>
+
+		<!-- Javascript -->
+		<script>
+			/*controlla tutti i campi del form*/
+			/*var nControlliSelezionati=0;
+			//CFA
+			$(".container").bind('input', function(){
+				var controllo=$(this).val();
+				if ($(this).text!=''){
+					nControlliSelezionati+=1;
+					alert("Cambio di valore");
+				}
+				alert(nControlliSelezionati);
+			});*/
+
+		</script>
 	</body>
 </html>
