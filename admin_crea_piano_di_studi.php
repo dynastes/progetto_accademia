@@ -70,10 +70,11 @@ while($res2=$res_materia->fetch_assoc()) {
 							</div>
 							
 						</div>
-						<label for="materia">Anno</label><br>
+						<label for="modulo">Modulo</label><br>
 						<div class="row form-group">
+							
 							<div class="col-md-12">
-								<select id="anno" name="anno" class="form-control">
+								<select id="modulo" name="modulo" class="form-control">
 									<option value="" selected disabled>Scegli...</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -81,25 +82,60 @@ while($res2=$res_materia->fetch_assoc()) {
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-							</div>
-							
+							</div>	
 						</div>
-						<label for="materia">Tipo</label><br>
+						
+						<label for="materia">Anno</label><br>
 						<div class="row form-group">
 							<div class="col-md-12">
-								<select id="tipo" name="tipo" class="form-control">
+								<select id="anno" name="anno" class="form-control">
 									<option value="" selected disabled>Scegli...</option>
-									<option value="1">Base</option>
-									<option value="2">Caratterizzante</option>
-									<option value="3">Integrativa o affine</option>
+									<option value="1">Triennio - 1</option>
+									<option value="2">Triennio - 2</option>
+									<option value="3">Triennio - 3</option>
+									<option value="4">Biennio - 1</option>
+									<option value="5">Biennio - 2</option>
 								</select>
 							</div>
 							
 						</div>
+						<label for="cfa">CFA</label><br>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<input type="number" id="cfa" name="cfa" class="form-control"/>
+							</div>
+							
+						</div>
+						<label for="categoria">Categoria</label><br>
+						<div class="row form-group">
+							
+							<div class="col-md-12">
+								<select id="categoria" name="categoria" class="form-control">
+									<option value="" selected disabled>Scegli...</option>
+									<option value="Base">Base</option>
+									<option value="Caratterizzante">Caratterizzante</option>
+									<option value="Integrativa">Integrativa</option>
+								</select>
+							</div>
+							
+						</div>
+						
+						<label for="tipo">Tipo</label><br>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<select id="tipo" name="tipo" class="form-control">
+									<option value="" selected disabled>Scegli...</option>
+									<option value="Teorioco">Teorioco</option>
+									<option value="Teorico pratico">Teorico pratico</option>
+									<option value="Laboratorio">Laboratorio</option>
+								</select>
+							</div>
+						</div>
+						
 						<div class="row text-center">
 							<input type="submit" value="Inserisci materia" class="btn btn-info">
 						</div>
-
+						
 					</div>
 					<div class="col-md-4"> </div>
 				</div>
