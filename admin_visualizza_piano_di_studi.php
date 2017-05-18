@@ -46,30 +46,30 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 						<div class="form-group">
 							<h4>Dipartimento di Arti Visive</h4>
 							<ul>
-								<li><a href="#">Pittura</a></li>
-								<li><a href="#">Scultura</a></li>
-								<li><a href="#">Decorazione</a></li>
-								<li><a href="#">Grafica</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=1&offerta=1">Pittura</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=2&offerta=1">Scultura</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=3&offerta=1">Decorazione</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=4&offerta=1">Grafica</a></li>
 							</ul>
 							<h4>Dipartimento di Progettazione e Arti Applicate</h4>
 							<ul>
-								<li><a href="#">Scenografia</a></li>
-								<li><a href="#">Fashion Design</a></li>
-								<li><a href="#">Graphic Design</a></li>
-								<li><a href="#">Nuove Tecnologie dell’Arte</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=5&offerta=1">Scenografia</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=6&offerta=1">Fashion Design</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=7&offerta=1">Graphic Design</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=8&offerta=1">Nuove Tecnologie dell’Arte</a></li>
 								<ul>
-									<li><a href="#">Indirizzo Foto, Cinema e Televisione</a></li>
+									<li><a href="admin_modifica_piano_di_studi.php">Indirizzo Foto, Cinema e Televisione</a></li>
 								</ul>
 							</ul>
 							<h4>Dipartimento di Comunicazione e Didattica dell’Arte</h4>
 							<ul>
-								<li><a href="#">Valorizzazione Dei Beni Culturali</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=9&offerta=1">Valorizzazione Dei Beni Culturali</a></li>
 								<ul>
-									<li><a href="#">Indirizzo Archeologia</a></li>
+									<li><a href="admin_modifica_piano_di_studi.php">Indirizzo Archeologia</a></li>
 								</ul>
-								<li><a href="#">Comunicazione e Didattica dell’Arte</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=10&offerta=1">Comunicazione e Didattica dell’Arte</a></li>
 								<ul>
-									<li><a href="#">Indirizzo Arte Terapia</a></li>
+									<li><a href="admin_modifica_piano_di_studi.php">Indirizzo Arte Terapia</a></li>
 								</ul>
 							</ul>
 						</div>
@@ -80,27 +80,27 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 						<div class=" form-group">
 						<h4>Dipartimento di Arti Visive</h4>
 							<ul>
-								<li><a href="#">Pittura</a></li>
-								<li><a href="#">Scultura</a></li>
-								<li><a href="#">Decorazione</a></li>
-								<li><a href="#">Grafica</a></li>
-								<li><a href="#">Terapeutica Artistica</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=1&offerta=2">Pittura</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=2&offerta=2">Scultura</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=3&offerta=2">Decorazione</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=4&offerta=2">Grafica</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=11&offerta=2">Terapeutica Artistica</a></li>
 							</ul>
 							<h4>Dipartimento di Progettazione e Arti Applicate</h4>
 							<ul>
-								<li><a href="#">Scenografia Progettazione Plastica</a></li>
-								<li><a href="#">Fashion Design</a></li>
-								<li><a href="#">Product Design</a></li>
-								<li><a href="#">Arti Multimediali del Cinema e del Video</a></li>
-								<li><a href="#">Fotografia</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=12&offerta=2">Scenografia Progettazione Plastica</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=6&offerta=2">Fashion Design</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=13&offerta=2">Product Design</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=14&offerta=2">Arti Multimediali del Cinema e del Video</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=15&offerta=2">Fotografia</a></li>
 							</ul>
 							<h4>Dipartimento di Comunicazione e Didattica dell’Arte</h4>
 							<ul>
-								<li><a href="#">Applicazioni Digitali per i Beni Culturali</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=16&offerta=2">Applicazioni Digitali per i Beni Culturali</a></li>
 								<ul>
-									<li><a href="#">Indirizzo Archeologico</a></li>
+									<li><a href="admin_modifica_piano_di_studi.php">Indirizzo Archeologico</a></li>
 								</ul>
-								<li><a href="#">Didattica Multimediale</a></li>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=17&offerta=2">Didattica Multimediale</a></li>
 							</ul>
 						
 						</div>
@@ -109,8 +109,10 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 				<div class="tab-pane" id="unico">
 					<div class="row">
 						<div class=" form-group">
-							//////////////
-							
+							<h4>Dipartimento di Progettazione e arti applicate</h4>
+							<ul>
+								<li><a href="admin_modifica_piano_di_studi.php?corso=18&offerta=3">Restauro</a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
