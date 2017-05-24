@@ -89,9 +89,14 @@ $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unic
 		while ($res_corsi=$query_corsi->fetch_assoc()) {
 			?>
 								<li>
-			<?php echo "
-									<a href='admin_modifica_piano_di_studi.php?corso=&offerta=1'>".
-										$res_corsi['Id_corso']."
+			<?php
+			//prendo il nome del corso tramite l'ID
+			$sql_corso_nome="SELECT Nome_corso FROM corsi WHERE Id=".$res_corsi['Id_corso'];
+			$query_corso_nome=$connessione->query($sql_corso_nome);
+			$res_corso_nome=$query_corso_nome->fetch_assoc();
+			echo "
+									<a href='admin_modifica_piano_di_studi.php?corso=".$res_corsi['Id_corso']."&offerta=".$res_offerta_id["Id"]."'>".
+										$res_corso_nome['Nome_corso']."
 									</a>";
 			?>
 								</li>
