@@ -73,7 +73,7 @@ $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unic
 						Id_dipartimento=".$res_dipartimenti_triennio["Id_dipartimento"]." AND Nome='Triennio'";
 		$query_offerta_id=$connessione->query($sql_offerta_id);
 		$res_offerta_id=$query_offerta_id->fetch_assoc();
-		echo "Offerta ID=".$res_offerta_id["Id"];
+		
 		//prendo il nome del dipartimento in cui siamo ora
 		$sql_dipartimento_nome="SELECT Id, Nome_dipartimento FROM dipartimenti WHERE Id=".$res_dipartimenti_triennio["Id_dipartimento"]." LIMIT 1";
 		$query_dipartimento_nome=$connessione->query($sql_dipartimento_nome);
@@ -83,7 +83,7 @@ $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unic
 							<ul>
 		<?php
 		//qui stampo tutti i corsi che fanno parte: di questo dipartimento; di questa offerta formativa
-		$sql_corsi="SELECT Id_corso FROM materie_piano WHERE Id_offerta_formativa=".$res_offerta_id["Id"];
+		$sql_corsi="SELECT Id_corso FROM materie_piano WHERE Id_offerta_formativa=".$res_offerta_id["Id"]." GROUP BY Id_corso";
 		//$sql_corsi="SELECT Id, Nome_corso FROM corsi WHERE Id_dipartimento=".$res_dipartimento_nome["Id"];
 		$query_corsi=$connessione->query($sql_corsi);
 		while ($res_corsi=$query_corsi->fetch_assoc()) {
