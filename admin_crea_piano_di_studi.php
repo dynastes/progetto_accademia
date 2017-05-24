@@ -35,10 +35,6 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 			<div class="page-header">
 				<h1>Crea piano di studi</h1>
 			</div>
-			<ul class="nav nav-tabs nav.justified">
-				<li role="presentation" class="active"><a href="#">Triennio</a></li>
-				<li role="presentation" ><a href="#">Biennio</a></li>
-			</ul>
 			<form action="admin_crea_piano_di_studi_query.php" method="post">
 				<div class="row">
 					<div class="col-md-4"> </div>
@@ -80,6 +76,7 @@ $res_materia=$connessione->query($sql_carica_materia);
 									<span class="input-group-addon" id="basic-addon1">Modulo</span>
 									<select id="modulo" name="modulo" class="form-control">
 										<option value="" selected disabled>Scegli...</option>
+										<option value="0">Unico</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -106,13 +103,22 @@ $res_materia=$connessione->query($sql_carica_materia);
 								</div>
 							</div>
 						</div>
+						<!-- <label for="cfa">Ore</label><br> -->
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Ore</span>
+									<input type="number" min="1" max="250" id="ore" name="ore" class="form-control" required/>
+								</div>
+							</div>
+						</div>
 						
 						<!-- <label for="cfa">CFA</label><br> -->
 						<div class="row form-group">
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">CFA</span>
-									<input type="number" min="1" max="10" id="cfa" name="cfa" class="form-control" required/>
+									<input type="number" min="1" max="20" id="cfa" name="cfa" class="form-control" required/>
 								</div>
 							</div>
 						</div>
@@ -139,9 +145,9 @@ $res_materia=$connessione->query($sql_carica_materia);
 									<span class="input-group-addon" id="basic-addon1">Tipo</span>
 									<select id="tipo" name="tipo" class="form-control" required>
 										<option value="" selected disabled>Scegli...</option>
-										<option value="Teorioco">Teorioco</option>
-										<option value="Teorico pratico">Teorico pratico</option>
-										<option value="Laboratorio">Laboratorio</option>
+										<option value="T">Teorioco</option>
+										<option value="TP">Teorico pratico</option>
+										<option value="L">Laboratorio</option>
 									</select>
 								</div>
 							</div>

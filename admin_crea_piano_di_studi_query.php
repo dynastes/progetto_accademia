@@ -6,10 +6,14 @@
 }*/
 $idCorso=$_POST["corso"];
 $idMateria=$_POST["materia"];
-$modulo=$_POST["modulo"];
+
+if (isset($_POST["modulo"])){$modulo=$_POST["modulo"];}else{$modulo="";}
 $anno=$_POST["anno"];
+if($anno==1 or $anno==2 or $anno==3){$offerta=1;}
+elseif($anno==4 or $anno==5){$offerta=2;}
 $categoria=$_POST["categoria"];
 $tipo=$_POST["tipo"];
+$ore=$_POST["ore"];
 $cfa=$_POST["cfa"];
 
 
@@ -21,7 +25,7 @@ echo "Categoria: ".$categoria."<br>";
 echo "Tipo: ".$tipo."<br>";
 echo "CFA: ".$cfa."<br>";
 
-	$sqlAggiungiMateriaCorso="INSERT INTO materie_piano (Id_corso, Id_materia, Modulo, Anno, Cfa, Categoria, Tipologia) values ('".$idCorso."','".$idMateria."','".$modulo."','".$anno."','".$cfa."','".$categoria."','".$tipo."')";
+	$sqlAggiungiMateriaCorso="INSERT INTO materie_piano (Id_corso, Id_materia, Modulo, Id_offerta_formativa, Anno, Ore, Cfa, Categoria, Tipologia) values ('".$idCorso."','".$idMateria."','".$modulo."','".$offerta."','".$anno."','".$ore."','".$cfa."','".$categoria."','".$tipo."')";
 	echo "Query: ".$sqlAggiungiMateriaCorso;
 	$res=$connessione->query($sqlAggiungiMateriaCorso);
 
