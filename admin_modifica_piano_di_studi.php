@@ -57,16 +57,17 @@ $sql_id_offerta_formativa="SELECT Id FROM offerta_formativa WHERE Id_dipartiment
 					<div class="row">
 						<div class="form-group">
 							<table class="table">
-								<tr><th colspan="6" style="background-color:#c00000; color:white; text-align:center">DIPARTIMENTO DI <?php echo strtoupper($nome_dipartimento); ?></th></tr>
-								<tr><th colspan="6" style="text-align:center">CORSO<?php echo $testo_corso; ?></th></tr>
-								<tr><th colspan="6" style="background-color:#c00000; color:white; text-align:center"><?php echo strtoupper($nome_corso); ?></th></tr>
-								<tr><th colspan="6" style="text-align:center">Piano di Studi Consigliato</th></tr>
+								<tr><th colspan="8" style="background-color:#c00000; color:white; text-align:center">DIPARTIMENTO DI <?php echo strtoupper($nome_dipartimento); ?></th></tr>
+								<tr><th colspan="8" style="text-align:center">CORSO<?php echo $testo_corso; ?></th></tr>
+								<tr><th colspan="8" style="background-color:#c00000; color:white; text-align:center"><?php echo strtoupper($nome_corso); ?></th></tr>
+								<tr><th colspan="8" style="text-align:center">Piano di Studi Consigliato</th></tr>
 								<tr style="background-color:#c00000; color:white;"><th>Codice</th><th>Settore</th><th>Campo Disciplinare</th><th style="text-align:center">Ore</th><th style="text-align:center">CFA</th>
-								<th style="text-align:center">Tipo</th></tr>
-								<tr><th colspan="6" style="background-color:#00b0f0; color:white; text-align:center;">ANNO 1</th></tr>
-								<tr><th colspan="6" style="background-color:#0070c0; text-align:center;">Attività Formative di Base</th></tr>
+								<th style="text-align:center">Tipo</th><th></th><th></th></tr>
+								<tr><th colspan="8" style="background-color:#00b0f0; color:white; text-align:center;">ANNO 1</th></tr>
+								<tr><th colspan="8" style="background-color:#0070c0; text-align:center;">Attività Formative di Base</th></tr>
 <?php
 $crediti_anno=0;
+$crediti_totali=0;
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=1 AND Categoria='Base' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
  while($res=$res_piani->fetch_assoc()) {
@@ -98,9 +99,11 @@ $crediti_anno=0;
 								<tr>
 									<td> <?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
-									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;}}}?></td>
+									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
+									<td><a>Modifica</a></td>
+									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
-								<tr><th colspan="6" style="background-color:#ffff00;text-align:center;">Attività Formative Caratterizzanti</th></tr>
+								<tr><th colspan="8" style="background-color:#ffff00;text-align:center;">Attività Formative Caratterizzanti</th></tr>
 <?php
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=1 AND Categoria='Caratterizzante' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
@@ -128,9 +131,11 @@ $crediti_anno=0;
 								<tr>
 									<td> <?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
-									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;}}}?></td>
+									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
+									<td><a>Modifica</a></td>
+									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
-								<tr><th colspan="6" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr>
+								<tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr>
 <?php
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=1 AND Categoria='Integrativa' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
@@ -158,16 +163,18 @@ $crediti_anno=0;
 								<tr>
 									<td> <?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
-									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;}}}?></td>
+									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
+									<td><a>Modifica</a></td>
+									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
 								<tr>
 									<td></td><td></td><td style="background-color:#00ff00; text-align:right">Crediti</td>
 									<td style="background-color:#00ff00;"></td>
-									<td style="background-color:#00ff00; text-align:center"><?php echo $crediti_anno; ?></td>
-									<td style="background-color:#00ff00;"></td>
+									<td style="background-color:#00ff00; text-align:center"><?php $crediti_totali+=$crediti_anno; echo $crediti_anno; ?></td>
+									<td colspan="3" style="background-color:#00ff00;"></td>
 								</tr>
-							<tr><th colspan="6" style="background-color:#00b0f0; color:white;text-align:center;">ANNO 2</th></tr>
-							<tr><th colspan="6" style="background-color:#0070c0;text-align:center;">Attività Formative di Base</th></tr>
+							<tr><th colspan="8" style="background-color:#00b0f0; color:white;text-align:center;">ANNO 2</th></tr>
+							<tr><th colspan="8" style="background-color:#0070c0;text-align:center;">Attività Formative di Base</th></tr>
 <?php
 $crediti_anno=0;
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=2 AND Categoria='Base' AND Id_corso=".$id_corso;
@@ -196,9 +203,11 @@ $crediti_anno=0;
 								<tr>
 									<td> <?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
-									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;}}}?></td>
+									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
+									<td><a>Modifica</a></td>
+									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
-								<tr><th colspan="6" style="background-color:#ffff00;text-align:center;">Attività Formative Caratterizzanti</th></tr>
+								<tr><th colspan="8" style="background-color:#ffff00;text-align:center;">Attività Formative Caratterizzanti</th></tr>
 <?php
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=2 AND Categoria='Caratterizzante' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
@@ -226,9 +235,11 @@ $crediti_anno=0;
 								<tr>
 									<td> <?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
-									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;}}}?></td>
+									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
+									<td><a>Modifica</a></td>
+									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
-								<tr><th colspan="6" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr>
+								<tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr>
 <?php
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=2 AND Categoria='Integrativa' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
@@ -256,13 +267,21 @@ $crediti_anno=0;
 								<tr>
 									<td> <?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
-									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;}}}?></td>
+									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
+									<td><a>Modifica</a></td>
+									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
 								<tr>
 									<td></td><td></td><td style="background-color:#00ff00; text-align:right">Crediti</td>
 									<td style="background-color:#00ff00;"></td>
-									<td style="background-color:#00ff00; text-align:center"><?php echo $crediti_anno; ?></td>
+									<td style="background-color:#00ff00; text-align:center"><?php $crediti_totali+=$crediti_anno; echo $crediti_anno; ?></td>
+									<td colspan="3" style="background-color:#00ff00;"></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="background-color:#00ff00; text-align:right">Totale Crediti Formativi previsti nel Triennio </td>
 									<td style="background-color:#00ff00;"></td>
+									<td style="background-color:#00ff00; text-align:center"><?php echo $crediti_totali; ?></td>
+									<td colspan="3" style="background-color:#00ff00; text-align:center"></td>
 								</tr>
 							</table>
 						</div>
