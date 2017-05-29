@@ -99,6 +99,7 @@ $res_materia=$connessione->query($sql_carica_materia);
 										<option value="3">Triennio - 3</option>
 										<option value="4">Biennio - 1</option>
 										<option value="5">Biennio - 2</option>
+										<option value="6">Ciclo Unico</option>
 									</select>
 								</div>
 							</div>
