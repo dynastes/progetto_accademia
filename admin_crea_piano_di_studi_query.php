@@ -10,7 +10,7 @@ $idMateria=$_POST["materia"];
 if (isset($_POST["modulo"])){$modulo=$_POST["modulo"];}else{$modulo="";}
 $anno=$_POST["anno"];
 
-$sql_select_dipartimento="SELECT Id_dipartimento FROM corsi WHERE Id=".$idCorso." LIMIT 1";
+$sql_select_dipartimento="SELECT Id_dipartimento FROM corsi WHERE Id=".$idCorso." LIMIT 1"; 
 echo "Query select dipartimento:".$sql_select_dipartimento;
 $query_dipartimento=$connessione->query($sql_select_dipartimento);
 $res_dipartimento=$query_dipartimento->fetch_assoc();

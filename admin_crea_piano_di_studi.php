@@ -134,6 +134,7 @@ $res_materia=$connessione->query($sql_carica_materia);
 										<option value="Base">Base</option>
 										<option value="Caratterizzante">Caratterizzante</option>
 										<option value="Integrativa">Integrativa</option>
+										<option value="Obbligatoria">Obbligatoria</option> 
 									</select>
 								</div>
 							</div>
