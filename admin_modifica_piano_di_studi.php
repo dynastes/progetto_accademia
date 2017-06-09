@@ -4,27 +4,27 @@
 
 $id_corso=$_GET['corso'];
 $offerta=$_GET['offerta'];
-echo "offerta:".$offerta;
+//echo "offerta:".$offerta;
 
 $sql_id_dipartimento_e_Nome_corso="SELECT Id_dipartimento, Nome_corso FROM corsi WHERE Id='".$id_corso."'";
-echo $sql_id_dipartimento_e_Nome_corso."<br>";
+//echo $sql_id_dipartimento_e_Nome_corso."<br>";
 
 $res_id_dipartimento_e_Nome_corso=$connessione->query($sql_id_dipartimento_e_Nome_corso);
 $id_dip_e_nom_cor=$res_id_dipartimento_e_Nome_corso->fetch_assoc();
 
 $id_dipartimento=$id_dip_e_nom_cor['Id_dipartimento'];
 $nome_corso=$id_dip_e_nom_cor['Nome_corso'];
-echo $id_dipartimento."<br>";
-echo $nome_corso."<br>";
+//echo $id_dipartimento."<br>";
+//echo $nome_corso."<br>";
 
 $sql_nome_dipartimento="SELECT Nome_dipartimento FROM dipartimenti WHERE Id='".$id_dipartimento."'";
-echo $sql_nome_dipartimento."<br>";
+//echo $sql_nome_dipartimento."<br>";
 
 $res_nome_dipartimento=$connessione->query($sql_nome_dipartimento);
 $nome_dip=$res_nome_dipartimento->fetch_assoc();
 
 $nome_dipartimento=$nome_dip['Nome_dipartimento'];
-echo $nome_dipartimento."<br>";
+//echo $nome_dipartimento."<br>";
 
 ////////////////////////Da Spostare in visualizza_piano_di_studi/////////////////////////////
 $livello="";
@@ -32,7 +32,7 @@ if($offerta==1 or $offerta==2 or $offerta==3){$livello="Triennio"; $testo_corso=
 else if($offerta==4 or $offerta==5 or $offerta==6){$livello="Biennio"; $testo_corso=" DI DIPLOMA ACCADEMICO DI II LIVELLO IN";$anni=2;}
 else if($offerta==7){$livello="Ciclo_unico"; $testo_corso="ciao";$anni=5;}
 
-echo "livello:".$livello." anno:".$anni;
+//echo "livello:".$livello." anno:".$anni;
 ////////////////////////Da Spostare in visualizza_piano_di_studi/////////////////////////////
 
 $sql_id_offerta_formativa="SELECT Id FROM offerta_formativa WHERE Id_dipartimento='".$id_dipartimento."' AND Nome='".$livello."'";
@@ -173,7 +173,7 @@ $sql_esistenza_obbligatorie="SELECT * FROM materie_piano WHERE Anno=".$i." AND C
 $res_obbligatorie=$connessione->query($sql_esistenza_obbligatorie);
 $res=$res_obbligatorie->fetch_assoc();
 if($res!=false){
-	echo "<tr><th colspan=\"8\" style=\"background-color:orange;text-align:center;\">Attività Formative Obbligatoria</th></tr>";
+	echo "<tr><th colspan=\"8\" style=\"background-color:orange;text-align:center;\">Attività Formative Obbligatorie</th></tr>";
 	$sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Obbligatoria' AND Id_corso=".$id_corso;
 	$res_piani=$connessione->query($sql_carica_piani);
 	while($res=$res_piani->fetch_assoc()) {
@@ -197,13 +197,14 @@ if($res!=false){
 			while($res=$res_nec_settore->fetch_assoc()) {
 				$codice_settore=$res['Codice'];
 				$nome_settore=$res['Settore'];
-				echo "<tr>";
-					echo "<td>".$codice_settore."</td><td>".$nome_settore."</td>";
-					echo "<td>".$nome_materia." ".$modulo."</td><td style=\"text-align:center\">".$ore."</td>";
-					echo "<td style=\"text-align:center\">".$cfa."</td><td style=\"text-align:center\">".$tipo."</td>";
-					echo "<td><a>Modifica</a></td>";
-					echo "<td><a>Elimina</a></td>";
-				echo"</tr>";
+								//Parte della tabella che riguarda le "Attività Formative Obbligatorie"
+								echo "<tr>";
+									echo "<td>".$codice_settore."</td><td>".$nome_settore."</td>";
+									echo "<td>".$nome_materia." ".$modulo."</td><td style=\"text-align:center\">".$ore."</td>";
+									echo "<td style=\"text-align:center\">".$cfa."</td><td style=\"text-align:center\">".$tipo."</td>";
+									echo "<td><a>Modifica</a></td>";
+									echo "<td><a>Elimina</a></td>";
+								echo"</tr>";
 			}
 		}
 	}

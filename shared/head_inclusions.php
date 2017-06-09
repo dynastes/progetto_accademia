@@ -2,7 +2,8 @@
 //per includere questo file, usare il seguente codice:
 /*<?php @include_once 'shared/head_inclusions.php';?>*/
 ?>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!-- <meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
+<meta charset="utf-8" />
 <title>Area Riservata Kandinskij</title>
 
 <!-- BOOTSTRAP  -->
