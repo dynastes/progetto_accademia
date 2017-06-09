@@ -106,7 +106,7 @@ for ($i = 1; $i <= $anni; ++$i) {
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Caratterizzante' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
  while($res=$res_piani->fetch_assoc()) {
-	$crediti_anno+=$cfa;
+	
 	$id_materia=$res['Id_materia'];
 	if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
 	$cfa=$res['Cfa'];
@@ -123,6 +123,7 @@ for ($i = 1; $i <= $anni; ++$i) {
 		$sql_nome_settore_e_codice="SELECT Codice, Settore FROM settore WHERE Id=".$id_settore;
 		$res_nec_settore=$connessione->query($sql_nome_settore_e_codice);
 		while($res=$res_nec_settore->fetch_assoc()) {
+			$crediti_anno+=$cfa;
 			$codice_settore=$res['Codice'];
 			$nome_settore=$res['Settore'];
 ?>
@@ -133,12 +134,12 @@ for ($i = 1; $i <= $anni; ++$i) {
 									<td><a>Modifica</a></td>
 									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
-<tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr>
+								<tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr>
 <?php
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Integrativa' AND Id_corso=".$id_corso;
  $res_piani=$connessione->query($sql_carica_piani);
  while($res=$res_piani->fetch_assoc()) {
-	$crediti_anno+=$cfa;
+	
 	$id_materia=$res['Id_materia'];
 	if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
 	$cfa=$res['Cfa'];
@@ -155,6 +156,7 @@ for ($i = 1; $i <= $anni; ++$i) {
 		$sql_nome_settore_e_codice="SELECT Codice, Settore FROM settore WHERE Id=".$id_settore;
 		$res_nec_settore=$connessione->query($sql_nome_settore_e_codice);
 		while($res=$res_nec_settore->fetch_assoc()) {
+			$crediti_anno+=$cfa;
 			$codice_settore=$res['Codice'];
 			$nome_settore=$res['Settore'];
 ?>
@@ -165,6 +167,48 @@ for ($i = 1; $i <= $anni; ++$i) {
 									<td><a>Modifica</a></td>
 									<td><a>Elimina<?php }}}?></a></td>
 								</tr>
+								<!--Inserire qui attività obbligatorie per il secondo anno -->
+<?php
+$sql_esistenza_obbligatorie="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Obbligatoria' AND Id_corso=".$id_corso;
+$res_obbligatorie=$connessione->query($sql_esistenza_obbligatorie);
+$res=$res_obbligatorie->fetch_assoc();
+if($res!=false){
+	echo "<tr><th colspan=\"8\" style=\"background-color:orange;text-align:center;\">Attività Formative Obbligatoria</th></tr>";
+	$sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Obbligatoria' AND Id_corso=".$id_corso;
+	$res_piani=$connessione->query($sql_carica_piani);
+	while($res=$res_piani->fetch_assoc()) {
+		
+		$id_materia=$res['Id_materia'];
+		if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
+		$cfa=$res['Cfa'];
+		$tipo=$res['Tipologia'];
+		$ore=$res['Ore'];
+
+		$sql_carica_materia_e_settore="SELECT Nome_materia, Id_settore FROM materie_anagrafica WHERE Id='".$id_materia."'";
+		$res_materia_corso_e_settore=$connessione->query($sql_carica_materia_e_settore);
+		//$res_materia=$res_materia_corso_e_settore->fetch_assoc();	
+		while($res=$res_materia_corso_e_settore->fetch_assoc()) {
+			$crediti_anno+=$cfa;
+			$nome_materia=$res['Nome_materia']; 
+			$id_settore=$res['Id_settore'];
+
+			$sql_nome_settore_e_codice="SELECT Codice, Settore FROM settore WHERE Id=".$id_settore;
+			$res_nec_settore=$connessione->query($sql_nome_settore_e_codice);
+			while($res=$res_nec_settore->fetch_assoc()) {
+				$codice_settore=$res['Codice'];
+				$nome_settore=$res['Settore'];
+				echo "<tr>";
+					echo "<td>".$codice_settore."</td><td>".$nome_settore."</td>";
+					echo "<td>".$nome_materia." ".$modulo."</td><td style=\"text-align:center\">".$ore."</td>";
+					echo "<td style=\"text-align:center\">".$cfa."</td><td style=\"text-align:center\">".$tipo."</td>";
+					echo "<td><a>Modifica</a></td>";
+					echo "<td><a>Elimina</a></td>";
+				echo"</tr>";
+			}
+		}
+	}
+}
+?>
 								<tr>
 									<td></td><td></td><td style="background-color:#00ff00; text-align:right">Crediti</td>
 									<td style="background-color:#00ff00;"></td>

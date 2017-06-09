@@ -36,7 +36,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 				<h1>Inserisci materia</h1>
 			</div>
 
-			<form action="f_inserisci_materia.php" method="post">
+			<form action="admin_inserisci_materia_anagrafe_query.php" method="post">
 				<div class="row">
 					<div class="col-md-4"> </div>
 
