@@ -37,7 +37,6 @@ $sql_carica_materie="SELECT * FROM materie_anagrafica";
 $res_materie=$connessione->query($sql_carica_materie);
 while($res=$res_materie->fetch_assoc()) {
 	$sql_carica_settore="SELECT * FROM settore WHERE ID=".$res['Id_settore'];
-	if ($_GET['sort'] == 'Settore'){$sql_carica_settore .= " ORDER BY Settore";}
 	//echo "Query: ".$sql_carica_settore;
 $res_settore=$connessione->query($sql_carica_settore);
 while($res2=$res_settore->fetch_assoc()) {
