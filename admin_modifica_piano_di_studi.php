@@ -39,7 +39,7 @@ $sql_id_offerta_formativa="SELECT Id FROM offerta_formativa WHERE Id_dipartiment
 
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html lang="it">
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 			<?php @include_once 'shared/menu.php';?>
