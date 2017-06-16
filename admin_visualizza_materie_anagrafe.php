@@ -24,7 +24,7 @@
 		<table class="sortable" class="table">
 			<tr>
 				<!-- <th style="text-align:center">ID</th> -->
-				<th style="text-align:center">Codice Settore</th>
+				<th style="text-align:center"> <!--class="sorttable_nosort"-->Codice Settore</th>
 				<th style="text-align:center">Settore</th>
 				<th style="text-align:center">Nome</th>
 				<th class="sorttable_nosort" style="text-align:center"><!-- Modifica --></th>
@@ -44,11 +44,11 @@ while($res2=$res_settore->fetch_assoc()) {
 ?>
 			<tr>
 				<!-- <td style="text-align:center"><?php //echo $res['Id']; ?></td> -->
-				<td style="text-align:center" contenteditable="true"><?php echo $res2['Codice']; ?></td>
+				<td style="text-align:center"><?php echo $res2['Codice']; ?></td>
 				<td><?php echo $res2['Settore']; ?></td>
 				<td><?php echo $res['Nome_materia']; ?></td>
 				<td><a href="admin_modifica_materia_anagrafe.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-				<td><a href="#">Elimina<?php }}?></a></td>
+				<td><a href="admin_elimina_materia_anagrafe_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }}?></a></td>
 			</tr>
 		</table>
 			</div>

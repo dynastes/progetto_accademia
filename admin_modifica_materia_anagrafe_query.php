@@ -6,7 +6,7 @@ $nuovo_settore=$_POST['nuovo_settore'];
 $nuovo_nome_materia=$_POST['nuovo_nome_materia'];
 
 echo "Id materia: ".$id_materia; 
-echo "<br>Nome nuovo settore: ".$nuovo_settore;
+echo "<br>Nuovo settore: ".$nuovo_settore;
 echo "<br>Nome nuova materia: ".$nuovo_nome_materia;
 
 $sql_update_materia="UPDATE materie_anagrafica SET Nome_materia='$nuovo_nome_materia', Id_settore='$nuovo_settore' WHERE Id='$id_materia'";
