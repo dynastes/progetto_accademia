@@ -34,9 +34,9 @@ footer{
     height: 40px; 
 }
 /* ### FINE ### NUOVO CSS PER IL FOOTER MOBILE*/
-table  { 
+/*table  { 
     border:1px solid black;
-}
+}*/
 td{
 	padding:8px;
 }
@@ -45,4 +45,10 @@ td{
 }
 .tab-content {
 	margin-top:15px !important;
+}
+table.sortable  { 
+    border:0px;
+}
+table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25B4\25BE" 
 }
