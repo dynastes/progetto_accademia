@@ -36,13 +36,15 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 				<h1>Inserisci materia</h1>
 			</div>
 
-			<form action="f_inserisci_materia.php" method="post">
+			<form action="admin_inserisci_materia_anagrafe_query.php" method="post">
 				<div class="row">
 					<div class="col-md-4"> </div>
 
 					<div class="col-md-4">
-						<div class=" form-group">
-							<label for="settore">Settore </label>
+						<!--<div class=" form-group">
+							<label for="settore">Settore</label>-->
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">Settore</span>
 							<select id="settore" name="settore" class="form-control">
 								<?php
 								while($res=$res_settore->fetch_assoc()) {
@@ -61,15 +63,62 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 						</div>
 						<label for="nome_materia">Nome materie </label><br>
 						<div class="row form-group">
-							<div class="col-md-1">
-								<label>1</label>
-							</div>
-
-							<div class="col-md-11">
-								<input type="text" id="nome_materia1" name="nome_materia1" class="form-control">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">1</span>
+									<input type="text" id="nome_materia1" name="nome_materia1" class="form-control">
+								</div>
 							</div>
 						</div>
 						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">2</span>
+									<input type="text" id="nome_materia2" name="nome_materia2" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">3</span>
+									<input type="text" id="nome_materia3" name="nome_materia3" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">4</span>
+									<input type="text" id="nome_materia4" name="nome_materia4" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">5</span>
+									<input type="text" id="nome_materia5" name="nome_materia5" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">6</span>
+									<input type="text" id="nome_materia6" name="nome_materia6" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">7</span>
+									<input type="text" id="nome_materia7" name="nome_materia7" class="form-control">
+								</div>
+							</div>
+						</div>
+						<!-- <div class="row form-group">
 							<div class="col-md-1"><label>2</label></div>
 							<div class="col-md-11">
 								<input type="text" id="nome_materia2" name="nome_materia2" class="form-control">
@@ -104,9 +153,9 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-11">
 								<input type="text" id="nome_materia7" name="nome_materia7" class="form-control">
 							</div>
-						</div>
+						</div> -->
 						<div class="row text-center">
-							<input type="submit" value="Inserisci materia" class="btn btn-info">
+							<input type="submit" value="Inserisci materia/e" class="btn btn-info">
 						</div>
 
 					</div>
