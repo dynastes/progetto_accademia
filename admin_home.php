@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php'; ?>
-
-
+		<meta charset="utf-8">
 	</head>
 	<body>
-
+<div id="principale">
+<div id="menu">
 			<?php
 				menu();
 			?>
-
+		</div> <!-- FINE MENU -->
 
 
 			<div class="container">
@@ -22,6 +22,7 @@
 					<p><b>Tipo utente: <?php echo $utente->ruolo; ?></b></p>
 				</div>
 				<div id="avvisi">
+				<div class="col-md-8">
 				<p>Qui di seguito sono visualizzati gli avvisi pubblicati dagli utenti all'admin. Per poterli gestire, andate alla pagina "Gestisci richieste"</p> <a class="btn btn-info" href="admin_gestisci_certificati.php" type="button">Gestisci richieste</a>
 					<br />
 					<br />
@@ -57,9 +58,15 @@
 						}
 						?>
 					</table>
+					
 				</div>
+				
 			</div>
-
+			
+			</div>
+			
+			</div>
+			<br><br>
 <?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>
