@@ -24,7 +24,7 @@
 		<table class="sortable" class="table">
 			<tr>
 				<!-- <th style="text-align:center">ID</th> -->
-				<th style="text-align:center"> <!--class="sorttable_nosort"-->Codice Settore</th>
+				<th style="text-align:center" class="sorttable_nosort">Codice Settore</th>
 				<th style="text-align:center">Settore</th>
 				<th style="text-align:center">Nome</th>
 				<th class="sorttable_nosort" style="text-align:center"><!-- Modifica --></th>

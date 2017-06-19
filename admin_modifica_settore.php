@@ -9,11 +9,11 @@ $res_settore=$settore->fetch_assoc();
 
 <html>
 	<head>
-		<?php @include_once 'shared/head_inclusions.php';?>
-		<?php @include_once 'shared/menu.php';?>
+<?php @include_once 'shared/head_inclusions.php';?>
+<?php @include_once 'shared/menu.php';?>
 	</head>
 	<body>
-		<?php menu(); ?>
+<?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
 				<h1>Modifica settore</h1>
@@ -22,25 +22,18 @@ $res_settore=$settore->fetch_assoc();
 			<form action="admin_modifica_settore_query.php" method="post">
 				<div class="row">
 					<div class="col-md-4"> </div>
-					<div class="row form-group">
 					<div class="col-md-4">
-					
 						<div class="row form-group">
-							<div class="col-md-12">
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">Codice</span>
-									<input type="text" name="nuovo_codice"  class="form-control" value="<?php echo $res_settore['Codice']; ?>">
-								</div>
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Codice</span>
+								<input type="text" name="nuovo_codice"  class="form-control" value="<?php echo $res_settore['Codice']; ?>">
 							</div>
 						</div>
-						<!-- <label for="nome_materia">Nome materie</label><br> -->
 						<div class="row form-group">
-							<div class="col-md-12">
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">Nome</span>
-									<input type="hidden" name="id_settore" value="<?php echo $_GET['ID']; ?>">
-									<input type="text" name="nuovo_nome_settore" class="form-control" value="<?php echo $res_settore['Settore']; ?>">
-								</div>
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Nome</span>
+								<input type="hidden" name="id_settore" value="<?php echo $_GET['ID']; ?>">
+								<input type="text" name="nuovo_nome_settore" class="form-control" value="<?php echo $res_settore['Settore']; ?>">
 							</div>
 						</div>
 						<div class="row text-center">
@@ -48,9 +41,9 @@ $res_settore=$settore->fetch_assoc();
 						</div>
 					</div>
 					<div class="col-md-4"> </div>
-				
+				</div>
 			</form>
-			</div>
+			
 		</div>
 	</body>
 </html>
