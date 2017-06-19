@@ -50,7 +50,7 @@
 						?>
 					</table>
 				</div>
-
+<br><br>
 
 			<!-- INIZIO FOOTER -->
 			<?php @include_once 'shared/footer.php';?>

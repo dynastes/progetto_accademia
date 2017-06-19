@@ -3,12 +3,9 @@
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
 //@include_once 'menu.php';
-
-
-
 /*Verifico che la sessione sia disponibile. Se lo è, vuol dire che l'utente si è già loggato e quindi che possiede già un OGGETTO UTENTE da serializzare*/
+$password_verificata= false;
 if(isset($_SESSION['login'])){
-
 	$utente=$_SESSION['ut'];
 	$utente=unserialize($utente);
 	/*se si è qui, l'utente era già loggato. Mostrare chi è*/
@@ -22,42 +19,43 @@ if(isset($_SESSION['login'])){
 		@header("location:admin_home.php");
 	}
 }
-
-
-
-
 $risultato="";
 $ruoloUtente="";//serve per poter prelevare da utente->ruolo il ruolo dell'utente e poterlo reinirizzare nella homepage corretta
-
 //inizio controllo per il login:
 if(isset($_POST['usermail'])){
 	//echo "email SETTATA";
 	$usermail=$_POST['usermail'];
 	$password=$_POST['password'];
-	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\" AND Password=\"" . $password . "\"";
+	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\"";
 	//echo "### Il login è: ".$loginString." ###\n";
+	$risultato=$connessione->query($loginString);
+	//verifichiamo se la password inserita corrisponde all'hash memorizzato nel campo pasword della tabella anagrafe del dabatabase
+	$res=$risultato->fetch_assoc();
+		if(password_verify($password,$res['Password']))
+		{
+			$password_verificata=true;
+		}
+	//chiudiamo la prima query svolta per la selezione dell'utente
+	$risultato->close();
+	//riapriamo una query per le prossime operazioni (trovare il tipo utente)
 	$risultato=$connessione->query($loginString);
 }
 if(empty($risultato)){
 	//ciao
 	$_SESSION['login'] = false;
+	$password_verificata=true;
 }
-
-elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel database, allora esegui qui giù
+elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un valore corrispondente nel database, allora esegui qui giù
 	//echo "Login In Corso............";
-
 	if(isset($_SESSION['login'])){ //se la variabile di SESSIONE non è stata creata, salterà questo passaggio. Se c'è, ne aggiunge il valore "login=true"
-
 		//echo "Creazione SESSIONE:......";
 		$res=$risultato->fetch_assoc(); //mette i risultati in un array
 		//echo "Risultato= " . $res["Nome"];
 		$_SESSION['login'] = true;
-
 		//popolo l'oggetto UTENTE
 		$utente = new utenteLoggato();
 		$utente->set_parameter($res["Id"],$res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"]);
 		//finito di popolare l'utente
-
 		//IDENTIFICO se l'utente è un DOCENTE, STUDENTE, ADMIN
 		//echo "Id dell'UTENTE: ".$utente->id;
 		//#DOCENTE
@@ -88,10 +86,7 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 			$utente->set_ruolo("admin");
 			//echo "utente ADMIN";
 		}
-
-
 		//FINE IDENTIFICAZIONE
-
 		//echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
 		//echo " NOME UTENTE= ".$utente->nome;
 		//echo " RUOLO= ".$utente->ruolo;
@@ -109,7 +104,6 @@ elseif($risultato->num_rows==1){ //se vi è un valore corrispondente nel databas
 		@header("location:admin_home.php");
 	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
-
 	//reindirizzamento alla pagina HOME PAGE dell'utente
 } else { //se non vi sono valori nel database (o vi sono più valori restituiti, anche se improbabile) allora esegui l'ELSE
 	if(isset($_POST['usermail'])){
