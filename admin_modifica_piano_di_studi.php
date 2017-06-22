@@ -28,9 +28,9 @@ $nome_dipartimento=$nome_dip['Nome_dipartimento'];
 
 ////////////////////////Da Spostare in visualizza_piano_di_studi/////////////////////////////
 $livello="";
-if($offerta==1 or $offerta==2 or $offerta==3){$livello="Triennio"; $testo_corso=" TRIENNALE DI PRIMO LIVELLO";$anni=3;}
-else if($offerta==4 or $offerta==5 or $offerta==6){$livello="Biennio"; $testo_corso=" DI DIPLOMA ACCADEMICO DI II LIVELLO IN";$anni=2;}
-else if($offerta==7){$livello="Ciclo_unico"; $testo_corso="ciao";$anni=5;}
+if($offerta==1 or $offerta==2 or $offerta==3){$livello="Triennio"; $livello_testo="Triennio"; $testo_corso=" TRIENNALE DI PRIMO LIVELLO";$anni=3;}
+else if($offerta==4 or $offerta==5 or $offerta==6){$livello="Biennio"; $livello_testo="Biennio"; $testo_corso=" DI DIPLOMA ACCADEMICO DI II LIVELLO IN";$anni=2;}
+else if($offerta==7){$livello="Ciclo_unico"; $livello_testo="Ciclo Unico"; $testo_corso="ciao";$anni=5;}
 
 //echo "livello:".$livello." anno:".$anni;
 ////////////////////////Da Spostare in visualizza_piano_di_studi/////////////////////////////
@@ -241,7 +241,7 @@ if($Conta_attivita_obbligatorie==0){echo "<th rowspan=".$rowspan_obbligatorie." 
 	}
 }
 ?>
-								<tr>
+								<tr class="crediti">
 									<td></td>
 									<td></td><td></td><th style="background-color:#55FD51; text-align:right">Crediti</th>
 									<td style="background-color:#55FD51;"></td>
@@ -249,12 +249,13 @@ if($Conta_attivita_obbligatorie==0){echo "<th rowspan=".$rowspan_obbligatorie." 
 									<td colspan="3" style="background-color:#55FD51;"></td>
 								</tr>
 								
+								
 <?php 
 }//Chiusura ciclo for "anni"
 ?>
-								<tr>
+								<tr class="crediti_totali">
 									<td></td>
-									<th colspan="3" style="background-color:#55FD51; text-align:right">Totale Crediti Formativi previsti nel Triennio </th>
+									<th colspan="3" style="background-color:#55FD51; text-align:right">Totale Crediti Formativi previsti nel <?php echo $livello_testo;?></th>
 									<td style="background-color:#55FD51;"></td>
 									<th style="background-color:#55FD51; text-align:center"><?php echo $crediti_totali; ?></th>
 									<td colspan="3" style="background-color:#55FD51; text-align:center"></td>

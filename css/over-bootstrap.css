@@ -111,8 +111,23 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 }
 
 tr.anno :first-child{
-    border-radius: 10px 10px 10px 10px;
+    //border-radius: 10px 10px 10px 10px;
 }
+
+/* SEZIONE CREDITI */
+.crediti td:last-child{
+	border-radius: 0 0 10px 0px;
+}
+.crediti th:nth-child(4){
+	border-radius:  0 0 0 10px;
+}
+.crediti_totali td:last-child{
+	border-radius:  0 0 10px 0;
+}
+.crediti_totali th:nth-child(2){
+	border-radius:  0 0 0 10px;
+}
+/* SEZIONE CREDITI (FINE) */
 
 .table-curved th:first-child {
     border-radius: 10px 0 0 10px;
@@ -126,6 +141,7 @@ tr.anno :first-child{
 .table-curved tr:last-child td:first-child {
     border-radius: 10px 0 0 10px;
 }
-.table-curved tr:last-child td:last-child {
+.table-curved tr:last-child /*td:last-child */{
     border-radius: 0 10px 10px 0;
 }
+
