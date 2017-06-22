@@ -30,7 +30,7 @@
 							</tr>
 
 <?php
-$sql_carica_settori="SELECT * FROM settore";
+$sql_carica_settori="SELECT * FROM settore WHERE NOT Id=100";
 //echo "Query: ".$sql_carica_settori;
 $res_settori=$connessione->query($sql_carica_settori);
 while($res=$res_settori->fetch_assoc()) {  
@@ -40,7 +40,7 @@ while($res=$res_settori->fetch_assoc()) {
 								<td style="text-align:center" contenteditable="true"><?php echo $res['Codice']; ?></td>
 								<td><?php echo $res['Settore']; ?></td>
 								<td><a href="admin_modifica_settore.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="admin_elimina_materia_anagrafe_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }?></a></td>
+								<td><a href="admin_elimina_settore_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }?></a></td>
 							</tr>
 						</table>
 					</div>

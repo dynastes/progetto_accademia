@@ -40,7 +40,7 @@ while($res=$res_dipartimenti->fetch_assoc()) {
 								<!-- <td style="text-align:center" contenteditable="true"><?php //echo $res['Codice']; ?></td> -->
 								<td><?php echo $res['Nome_dipartimento']; ?></td>
 								<td><a href="admin_modifica_dipartimento.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="#admin_elimina_materia_anagrafe_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }?></a></td>
+								<td><a href="admin_elimina_dipartimento_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }?></a></td>
 							</tr>
 						</table>
 					</div>
