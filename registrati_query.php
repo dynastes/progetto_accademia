@@ -15,7 +15,8 @@ $cf=$_POST['cf'];
 $indirizzo=$_POST['indirizzo'];
 $residenza=$_POST['residenza'];
 $telefono=$_POST['telefono'];
-$password=$_POST['password'];
+//PASSIAMO IN HASH LA PASSWORD
+$password=password_hash($_POST['password'],PASSWORD_BCRYPT);
 echo "salvataggio POST effettuato";
 
 
@@ -27,7 +28,7 @@ $username=strtolower($username);
 
 
 //inserimento nella tabella ANAGRAFE
-	$sqlIscrizione="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Email, Codice_fiscale, Indirizzo, Residenza, Telefono, Username, Password) VALUES 
+	$sqlIscrizione="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Email, Codice_fiscale, Indirizzo, Residenza, Telefono, Username, Password) VALUES
 				('$nomeStudente', '$cognomeStudente', '$dataNascita', '$email', '$cf', '$indirizzo', '$residenza', '$telefono', '$username', '$password')";
 	echo $sqlIscrizione;
 $resIscrizione=$connessione->query($sqlIscrizione);
@@ -38,7 +39,7 @@ $resIscrizione=$connessione->query($sqlIscrizione);
 	//ricerco l'ID anagrafe per prima
 	$sqlIdAnagrafe="SELECT * FROM anagrafe WHERE Nome='".$nomeStudente."' AND Cognome='".$cognomeStudente."' ORDER BY Id DESC";
 	$res=$connessione->query($sqlIdAnagrafe);
-	
+
 	if ($res){
 		echo "(!!!) UTENTE TROVATO. Inserimento nella tabella STUDENTI in corso";
 	}

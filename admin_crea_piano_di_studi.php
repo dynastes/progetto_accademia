@@ -166,20 +166,7 @@ $res_materia=$connessione->query($sql_carica_materia);
 			
 
 		</div>
-
-		<!-- Javascript -->
-		<script>
-			/*controlla tutti i campi del form*/
-			/*var nControlliSelezionati=0;
-			//CFA
-			$(".container").bind('input', function(){
-				var controllo=$(this).val();
-				if ($(this).text!=''){
-					nControlliSelezionati+=1;
-					alert("Cambio di valore");
-				}
-				alert(nControlliSelezionati);
-			});*/
+<?php @include_once 'shared/footer.php';?>
 
 		</script>
 	</body>
