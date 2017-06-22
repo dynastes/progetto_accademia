@@ -57,11 +57,11 @@ $sql_id_offerta_formativa="SELECT Id FROM offerta_formativa WHERE Id_dipartiment
 						<div class="form-group">
 							<table class="table table-curved">
 							<!-- <table class="table">							 -->
-								<tr><th class="title" colspan="9" style="background-color:#c00000; color:white; text-align:center">DIPARTIMENTO DI <?php echo strtoupper($nome_dipartimento); ?></th></tr>
+								<tr><th class="title" colspan="9" style="background-color:#FF3535; color:white; text-align:center">DIPARTIMENTO DI <?php echo strtoupper($nome_dipartimento); ?></th></tr>
 								<tr><th class="title" colspan="9" style="text-align:center">CORSO<?php echo $testo_corso; ?></th></tr>
-								<tr><th class="title" colspan="9" style="background-color:#c00000; color:white; text-align:center"><?php echo strtoupper($nome_corso); ?></th></tr>
+								<tr><th class="title" colspan="9" style="background-color:#FF3535; color:white; text-align:center"><?php echo strtoupper($nome_corso); ?></th></tr>
 								<tr><th class="title" colspan="9" style="text-align:center">Piano di Studi Consigliato</th></tr>
-								<tr style="background-color:#c00000; color:white;"><th></th><th style="text-align:center;">Codice</th><th>Settore</th><th>Campo Disciplinare</th><th style="text-align:center">Ore</th><th style="text-align:center">CFA</th>
+								<tr style="background-color:#FF3535; color:white;"><th></th><th style="text-align:center;">Codice</th><th>Settore</th><th>Campo Disciplinare</th><th style="text-align:center">Ore</th><th style="text-align:center">CFA</th>
 								<th style="text-align:center">Tipo</th><th></th><th></th></tr>
 <?php
 $crediti_totali=0;
@@ -72,7 +72,7 @@ for ($i = 1; $i <= $anni; ++$i) {
 	$Conta_attivita_obbligatorie=0;
 	$crediti_anno=0; 
 ?>
-								<tr><th colspan="9" style="background-color:#00b0f0; color:white; text-align:center;">ANNO <?php echo $i;?></th></tr>
+								<tr><th colspan="9" style="background-color:#0393FC; color:white; text-align:center;">ANNO <?php echo $i;?></th></tr>
 								<!-- <tr><th colspan="8" style="background-color:#0070c0; text-align:center;">Attività Formative di Base</th></tr> -->
 <?php
  $sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Base' AND Id_corso=".$id_corso;
@@ -243,10 +243,10 @@ if($Conta_attivita_obbligatorie==0){echo "<th rowspan=".$rowspan_obbligatorie." 
 ?>
 								<tr>
 									<td></td>
-									<td></td><td></td><th style="background-color:#00ff00; text-align:right">Crediti</th>
-									<td style="background-color:#00ff00;"></td>
-									<th style="background-color:#00ff00; text-align:center"><?php $crediti_totali+=$crediti_anno; echo $crediti_anno; ?></th>
-									<td colspan="3" style="background-color:#00ff00;"></td>
+									<td></td><td></td><th style="background-color:#55FD51; text-align:right">Crediti</th>
+									<td style="background-color:#55FD51;"></td>
+									<th style="background-color:#55FD51; text-align:center"><?php $crediti_totali+=$crediti_anno; echo $crediti_anno; ?></th>
+									<td colspan="3" style="background-color:#55FD51;"></td>
 								</tr>
 								
 <?php 
@@ -254,10 +254,10 @@ if($Conta_attivita_obbligatorie==0){echo "<th rowspan=".$rowspan_obbligatorie." 
 ?>
 								<tr>
 									<td></td>
-									<th colspan="3" style="background-color:#00ff00; text-align:right">Totale Crediti Formativi previsti nel Triennio </th>
-									<td style="background-color:#00ff00;"></td>
-									<th style="background-color:#00ff00; text-align:center"><?php echo $crediti_totali; ?></th>
-									<td colspan="3" style="background-color:#00ff00; text-align:center"></td>
+									<th colspan="3" style="background-color:#55FD51; text-align:right">Totale Crediti Formativi previsti nel Triennio </th>
+									<td style="background-color:#55FD51;"></td>
+									<th style="background-color:#55FD51; text-align:center"><?php echo $crediti_totali; ?></th>
+									<td colspan="3" style="background-color:#55FD51; text-align:center"></td>
 								</tr>
 							</table>
 						</div>
