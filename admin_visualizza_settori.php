@@ -1,6 +1,13 @@
 <?php
 @include_once 'dbconnection.php';
 ?>
+
+<script type="text/javascript"> 
+function sicuro(settore){ 
+return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
+} 
+</script> 
+
 <!DOCTYPE html>
 <html lang="it">
 	<head>
@@ -12,7 +19,8 @@
 <?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
-				<h1> Modifca settore</h1>
+				<h1> Settori</h1>
+				<p><a href="admin_inserisci_settore.php">Inserisci nuovo settore</a></p>
 			</div>
 			
 
@@ -37,10 +45,10 @@ while($res=$res_settori->fetch_assoc()) {
 ?>
 							<tr>
 								<!-- <td style="text-align:center"><?php //echo $res['Id']; ?></td> -->
-								<td style="text-align:center" contenteditable="true"><?php echo $res['Codice']; ?></td>
+								<td style="text-align:center"><?php echo $res['Codice']; ?></td>
 								<td><?php echo $res['Settore']; ?></td>
 								<td><a href="admin_modifica_settore.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="admin_elimina_settore_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }?></a></td>
+								<td><a href="admin_elimina_settore_query.php?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Settore']; ?>')">Elimina<?php }?></a></td>
 							</tr>
 						</table>
 					</div>

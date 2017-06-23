@@ -13,7 +13,7 @@ echo "<br>Query: ".$sql_delete_dipartimento_from_offerta_formativa;
 $connessione->query($sql_delete_dipartimento);
 $connessione->query($sql_delete_dipartimento_from_offerta_formativa);
 
-//@header('location:admin_visualizza_dipartimenti.php');
+@header('location:admin_visualizza_dipartimenti.php');
 
 ?>
 

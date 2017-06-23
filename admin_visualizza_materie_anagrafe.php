@@ -15,7 +15,8 @@
 		<?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
-				<h1>Modifica anagrafica materie</h1>
+				<h1>Materie</h1>
+				<p><a href="admin_inserisci_materia_anagrafe.php">Inserisci materia/e</a></p>
 			</div>
 			<div class="row">
 				<div class="form-group">

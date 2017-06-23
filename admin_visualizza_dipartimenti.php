@@ -1,6 +1,13 @@
 <?php
 @include_once 'dbconnection.php';
 ?>
+
+<script type="text/javascript"> 
+function sicuro(dipartimento){ 
+return confirm("Sei sicuro di voler cancellare il dipartimento di \""+dipartimento+"\"?");
+} 
+</script> 
+
 <!DOCTYPE html>
 <html lang="it">
 	<head>
@@ -12,7 +19,8 @@
 <?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
-				<h1> Modifca dipartimento</h1>
+				<h1>Dipartimenti</h1>
+				<p><a href="admin_inserisci_dipartimento.php">Inserisci nuovo dipartimento</a></p>
 			</div>
 			
 
@@ -30,7 +38,7 @@
 							</tr>
 
 <?php
-$sql_carica_dipartimenti="SELECT * FROM dipartimenti";
+$sql_carica_dipartimenti="SELECT * FROM dipartimenti WHERE NOT Id=100";
 //echo "Query: ".$sql_carica_dipartimenti;
 $res_dipartimenti=$connessione->query($sql_carica_dipartimenti);
 while($res=$res_dipartimenti->fetch_assoc()) {  
@@ -40,7 +48,7 @@ while($res=$res_dipartimenti->fetch_assoc()) {
 								<!-- <td style="text-align:center" contenteditable="true"><?php //echo $res['Codice']; ?></td> -->
 								<td><?php echo $res['Nome_dipartimento']; ?></td>
 								<td><a href="admin_modifica_dipartimento.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="admin_elimina_dipartimento_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }?></a></td>
+								<td><a href="admin_elimina_dipartimento_query.php?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Nome_dipartimento']; ?>')">Elimina<?php }?></a></td>
 							</tr>
 						</table>
 					</div>

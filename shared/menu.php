@@ -97,12 +97,13 @@ function menu(){
 			<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materie<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-							<li><a href="admin_visualizza_dipartimenti.php">Modifica dipartimenti</a></li>
-							<li><a href="admin_visualizza_settori.php">Modifica settore</a></li>
-							<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
-							<li><a href="admin_visualizza_materie_anagrafe.php">Modifica materie (anagrafe)</a></li>
-							<li><a href="admin_crea_piano_di_studi.php">Crea piano di studi</a></li>
-							<li><a href="admin_visualizza_piano_di_studi.php">Visualizza piano di studi</a></li>
+							<li><a href="admin_visualizza_offerta_formativa.php">Offerta formativa</a></li>
+							<li><a href="admin_visualizza_dipartimenti.php">Dipartimenti</a></li>
+							<li><a href="admin_visualizza_settori.php">Settori</a></li>
+							'//<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
+							.'<li><a href="admin_visualizza_materie_anagrafe.php">Materie</a></li>
+							'//<li><a href="admin_crea_piano_di_studi.php">Crea piano di studi</a></li>
+							.'<li><a href="admin_visualizza_piano_di_studi.php">Piani di studio</a></li>
 					</ul>
 			</li>
 

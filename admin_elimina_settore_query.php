@@ -13,7 +13,7 @@ echo "<br>Query: ".$sql_delete_settore_from_piano;
 $connessione->query($sql_delete_settore);
 $connessione->query($sql_delete_settore_from_piano);
 
-//@header('location:admin_visualizza_settori.php');
+@header('location:admin_visualizza_settori.php');
 
 ?>
 
