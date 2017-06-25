@@ -33,7 +33,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 		<?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
-				<h1>Inserisci materia</h1>
+				<h1>Inserisci materia/e</h1>
 			</div>
 
 			<form action="admin_inserisci_materia_anagrafe_query.php" method="post">
@@ -61,7 +61,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 								?>
 							</select>
 						</div>
-						<label for="nome_materia">Nome materie </label><br>
+						<br><label for="nome_materia">Nome materia/e </label><br>
 						<div class="row form-group">
 							<div class="col-md-12">
 								<div class="input-group">

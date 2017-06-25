@@ -4,6 +4,8 @@
 $id_settore=$_POST['id_settore'];
 $nuovo_nome_codice=$_POST['nuovo_codice'];
 $nuovo_nome_settore=$_POST['nuovo_nome_settore'];
+$nuovo_nome_settore=addslashes($nuovo_nome_settore);//Returns a string with backslashes before characters that need to be escaped. 
+													//These characters are single quote ('), double quote ("), backslash (\) and NUL (the NULL byte).
 
 echo "Id settore: ".$id_settore; 
 echo "<br>Nuovo codice: ".$nuovo_nome_codice; 

@@ -4,6 +4,8 @@
 $id_materia=$_POST['id_materia'];
 $nuovo_settore=$_POST['nuovo_settore'];
 $nuovo_nome_materia=$_POST['nuovo_nome_materia'];
+$nuovo_nome_materia=addslashes($nuovo_nome_materia);//Returns a string with backslashes before characters that need to be escaped. 
+													//These characters are single quote ('), double quote ("), backslash (\) and NUL (the NULL byte).
 
 echo "Id materia: ".$id_materia; 
 echo "<br>Nuovo settore: ".$nuovo_settore;
@@ -13,7 +15,7 @@ $sql_update_materia="UPDATE materie_anagrafica SET Nome_materia='$nuovo_nome_mat
 echo "<br>Query: ".$sql_update_materia;
 $update_materia=$connessione->query($sql_update_materia);
 
-@header('location:admin_visualizza_materie_anagrafe.php');
+//@header('location:admin_visualizza_materie_anagrafe.php');
 
 ?>
 
