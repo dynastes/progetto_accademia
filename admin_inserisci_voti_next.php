@@ -12,9 +12,6 @@ $idDocente=$_POST['id-docente'];
 
 	</head>
 	<body>
-		<div id="testata">
-			<img src="img/img/logo.png">
-		</div>
 		<div id="principale">
 			<div id="menu">
 			<!-- INIZIO CARICAMENTO MENU -->
@@ -23,7 +20,7 @@ $idDocente=$_POST['id-docente'];
 				?>
 			</div> <!-- FINE MENU -->
 
-			<div id="contenuto">
+			<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>

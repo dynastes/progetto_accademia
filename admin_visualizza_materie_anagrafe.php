@@ -21,7 +21,7 @@
 				
 					<div class="row">
 						<div class="form-group">
-		<table class="sortable" class="table">
+		<table class="sortable table-striped">
 			<tr>
 				<!-- <th style="text-align:center">ID</th> -->
 				<th style="text-align:center"> <!--class="sorttable_nosort"-->Codice Settore</th>
@@ -56,5 +56,7 @@ while($res2=$res_settore->fetch_assoc()) {
 				
 			</div><!-- tab-content clearfix -->
 		</div>
+		<!-- INIZIO FOOTER -->
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>
