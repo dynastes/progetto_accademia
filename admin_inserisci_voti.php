@@ -32,7 +32,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 			
 			<div class="container">
 				<div id="benvenuto">
-					<b>&nbsp;&nbsp;&nbsp;&nbsp;Benvenuto <?php echo $utente->nome; ?>!</b>
+					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 				</div>
 				<div name="avvisi">
 				<div class="col-md-8">
@@ -41,27 +41,26 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php" accept-charset="utf-8">  <?php /* echo $_SERVER['PHP_SELF']; */ ?>
  						<br />
 									<div class="col-md-4">
-									<label for="usermail">Professore:</label> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
-									<br />
-									
-									<select class="form-control" name="id-docente">
-									<?php
-									$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome
-												FROM docenti AS d, anagrafe AS a
-												WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
-									$resDocenti=$connessione->query($sqlDocenti);
-									while($docenti=$resDocenti->fetch_assoc()){
-										echo '<option value="'.$docenti["Id_anagrafe"].'">'.$docenti["Cognome"].' '.$docenti['Nome'].'</option>';
-									}
-									?>
-									</select>
-									<br />
-									<input class="btn btn-info" type="submit" value="Avanti">
+										<label for="usermail">Professore:</label> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
+										<br />
+										
+										<select class="form-control" name="id-docente">
+										<?php
+										$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome
+													FROM docenti AS d, anagrafe AS a
+													WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
+										$resDocenti=$connessione->query($sqlDocenti);
+										while($docenti=$resDocenti->fetch_assoc()){
+											echo '<option value="'.$docenti["Id_anagrafe"].'">'.$docenti["Cognome"].' '.$docenti['Nome'].'</option>';
+										}
+										?>
+										</select>
+										<br />
+										<input class="btn btn-info" type="submit" value="Avanti">
 									</div>
 					</form>
 				</div>
 			</div>
-		</div>
 		</div>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php'; ?>

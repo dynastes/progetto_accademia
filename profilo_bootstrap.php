@@ -45,8 +45,8 @@ Le tue attuali credenziali sono:</br>
 							</div>
 							
 </form>
-
+<footer class="navbar-fixed-bottom">
 <?php @include_once 'shared/footer.php'; ?>
-
+</footer>	
 </body>
 </html>

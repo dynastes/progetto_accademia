@@ -1,4 +1,4 @@
-<?php @include_once 'shared/menu.php'; 
+<?php @include_once 'shared/menu.php';
 if (isset($_SESSION['modifica-orario']))
 {
 	if($_SESSION['modifica-orario']===1){
@@ -29,14 +29,15 @@ if (isset($_SESSION['modifica-orario']))
 						<br />
 						<p>Clicca nel calendario per inserire un nuovo evento</p>
 						<!--form method="post" action="admin_imposta_orari_lezione_dettagli.php" name="professore-materia">
-							<select name="id-materia">
-							<?php
+							<select name="id-materia"> -->
+							<?php /*
 								$sqlMaterie="SELECT Id, Nome_materia FROM materie ORDER BY Nome_materia DESC";
 								$res=$connessione->query($sqlMaterie);
 								while($resMaterie=$res->fetch_assoc()){
 									echo '<option value="'.$resMaterie["Id"].'">'.$resMaterie["Nome_materia"].'</option>';
-								}
+								}*/
 							?>
+							<!--
 							</select>
 							<input  type="submit" value="Cambia orario per questa lezione">
 						</form-->
@@ -50,8 +51,8 @@ if (isset($_SESSION['modifica-orario']))
 						</select>
 					</div>
 				</div>
-				<div id="calendar" style="margin-top:100px; margin-bottom:50px;"></div>
+				<div id="calendar"></div>
 		<!-- INIZIO FOOTER -->
-		<?php @include_once 'shared/footer.php';?>
+			<?php @include_once 'shared/footer.php';?>
 	</body>
 </html>

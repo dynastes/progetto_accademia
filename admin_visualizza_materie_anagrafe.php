@@ -10,18 +10,19 @@
 		<?php @include_once 'shared/menu.php';?> 
 		<script src="sorttable.js"></script>
 	</head>
-	
+
 	<body>
-	<?php menu(); ?>
+		<?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
-				<h1>Modifica anagrafica materie</h1>
+				<h1>Materie</h1>
+				<p><a href="admin_inserisci_materia_anagrafe.php">Inserisci materia/e</a></p>
 			</div>
-			<div class="container">
+
 				
 					<div class="row">
 						<div class="form-group">
-		<table class="sortable" class="table">
+		<table class="sortable table-striped">
 			<tr>
 				<!-- <th style="text-align:center">ID</th> -->
 				<th style="text-align:center"> <!--class="sorttable_nosort"-->Codice Settore</th>
@@ -30,7 +31,6 @@
 				<th class="sorttable_nosort" style="text-align:center"><!-- Modifica --></th>
 				<th class="sorttable_nosort" style="text-align:center"><!-- Elimina --></th>
 			</tr>
-			
 <?php
 $sql_carica_materie="SELECT * FROM materie_anagrafica";
 //echo "Query: ".$sql_carica_materie;
@@ -42,6 +42,7 @@ $res_settore=$connessione->query($sql_carica_settore);
 while($res2=$res_settore->fetch_assoc()) {
   
 ?>
+
 			<tr>
 				<!-- <td style="text-align:center"><?php //echo $res['Id']; ?></td> -->
 				<td style="text-align:center"><?php echo $res2['Codice']; ?></td>
@@ -51,10 +52,14 @@ while($res2=$res_settore->fetch_assoc()) {
 				<td><a href="admin_elimina_materia_anagrafe_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }}?></a></td>
 			</tr>
 		</table>
+
+			
+				</div>
+
 			</div>
-					</div>
-				
-			</div><!-- tab-content clearfix -->
 		</div>
+	
+		<!-- INIZIO FOOTER -->
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>
