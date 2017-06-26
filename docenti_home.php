@@ -42,6 +42,9 @@
 			</div>
 		</div>
 
-	<?php @include_once 'shared/footer.php'; ?>
+<footer class="navbar-fixed-bottom">
+<?php @include_once 'shared/footer.php'; ?>
+</footer>	
+
 	</body>
 </html>

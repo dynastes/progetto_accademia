@@ -47,6 +47,9 @@
 				?>
 				
 			</div>
-		<?php @include_once 'shared/footer.php'; ?>
+
+<?php @include_once 'shared/footer.php'; ?>
+
+		
 	</body>
 </html>
