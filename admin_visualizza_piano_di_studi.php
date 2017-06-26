@@ -220,5 +220,8 @@ $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unic
 			</div><!-- tab-content clearfix -->
 
 		</div>
+		</br></br>
+<?php @include_once 'shared/footer.php'; ?>
 	</body>
+	
 </html>

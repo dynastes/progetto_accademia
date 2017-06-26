@@ -82,5 +82,7 @@ if($Conta_dipartimenti_triennio==0){echo "<th rowspan=".$rowspan_triennio." styl
 				<div class="col-md-2"></div>
 			</div>
 		</div>
+		</br></br>
+		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

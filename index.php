@@ -191,6 +191,8 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	<script src="js/custom.js"></script-->
 	
 	<!-- INIZIO FOOTER -->
-	<?php @include_once 'shared/footer.php'; ?>
+<footer class="navbar-fixed-bottom">
+<?php @include_once 'shared/footer.php'; ?>
+</footer>	
 </body>
 </html>

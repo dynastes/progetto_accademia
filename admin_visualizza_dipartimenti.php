@@ -57,4 +57,6 @@ while($res=$res_dipartimenti->fetch_assoc()) {
 			</div>
 		</div>
 	</body>
+	</br></br>
+		<?php @include_once 'shared/footer.php'; ?>
 </html>

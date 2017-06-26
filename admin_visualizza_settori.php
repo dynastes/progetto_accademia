@@ -55,6 +55,7 @@ while($res=$res_settori->fetch_assoc()) {
 				</div>
 				<div class="col-md-2"></div>
 			</div>
-		</div>
-	</body>
+		</div>		
+		<?php @include_once 'shared/footer.php'; ?>
+	</body>	
 </html>
