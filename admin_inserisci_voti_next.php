@@ -30,7 +30,7 @@ $idDocente=$_POST['id-docente'];
 				<div name="avvisi">
 				<h2>Inserisci voti</h2>
 				<label>Scegliere la materia:</label>
-					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next_2.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8">
+					<form id="caricaquery" name="caricaquery" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
  						<br />
 						<table style="width:30%;">
 							<tr>
