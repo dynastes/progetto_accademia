@@ -173,10 +173,7 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 				</div>
 			</form>
 			<div class="col-md-4"> </div>
-			<div class="footer" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:black;color:white;">
-				<p align="center">Copyright © 2015 Accademia Di Belle Arti Kandinskij <a href="" rel="nofollow" target="_blank"></a>
-				</p>
-			</div>
+			
 
 		</div> <!-- /row center-block -->
 	</div> <!-- /container -->
@@ -192,5 +189,8 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	<script src="js/jquery.flexslider.js"></script>
 	<script src="js/animate.js"></script>
 	<script src="js/custom.js"></script-->
+	
+	<!-- INIZIO FOOTER -->
+	<?php @include_once 'shared/footer.php'; ?>
 </body>
 </html>
