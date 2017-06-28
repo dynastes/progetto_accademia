@@ -1,6 +1,6 @@
-<!-- 
+<!--
 <?php @include_once 'shared/menu.php'; ?>
-convertita la grafica in bootstrap ma i link fanno riferimento alle vecchie pagine 
+convertita la grafica in bootstrap ma i link fanno riferimento alle vecchie pagine
 non convertite
 
 -->
@@ -9,19 +9,19 @@ non convertite
 
 <html>
 <head>
-	<?php @include_once 'shared/head_inclusions.php';?> 
+	<?php @include_once 'shared/head_inclusions.php';?>
 </head>
 <body>
 
-	
+
    <?php menu(); ?>
-		
+
   <div class="container">
 				<div id="avvisi">
 					<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>
 					<div id="elenco-avvisi">
 						<?php
-							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE Visibilita='pubblico'"; //av.Id_docente=an.Id AND
+							$sqlavvisi="SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE Visibilita='pubblico' AND an.Id = av.Id_docente ORDER BY av.Data_pubblicazione DESC"; //av.Id_docente=an.Id AND
 							$avvisiLista=$connessione->query($sqlavvisi);
 							echo '<table class="table">';
 							echo '<tr>';
@@ -45,6 +45,6 @@ non convertite
 		</div>
 
 	<?php @include_once 'shared/footer.php'; ?>
-	
+
 </body>
 </html>

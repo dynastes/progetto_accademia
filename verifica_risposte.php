@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Visualizza questioanri </title>
+    <title>Verifica rispostes</title>
   </head>
   <body>
     <?php
@@ -13,7 +13,7 @@
      <div class="container text-center">
 
 
-    <h1>Visualizza questionari </h1>
+    <h1>Verifica preferenze  </h1>
     <br />
     <br />
     <br />
@@ -26,15 +26,11 @@
               <b>Nome questionario </b>
               </p>
             </td>
-            <td>
-              <p>
-              <b>Numero domande </b>
-              </p>
-            </td>
+
             <td>
                 <p>
                   <b>
-                    Gestisci
+                    Visualizza rispsote
                   </b>
                 </p>
             </td>
@@ -43,17 +39,14 @@
 
       <?php
       while($res=$elenco_questionari->fetch_assoc()){
-        echo('  <form action="gestisci_questionario.php" method="post">
+        echo('  <form action="analizza_risposte.php" method="post">
           <tr>
           <td>
           <p>
           '.$res["Nome"].'
           </p>
           </td>
-          <td>
-          <p>
-          '.$res["Numero_domande"].'
-          </p>
+
           </td>
           <td>
                 <input type="hidden" id ="codice" name="codice" value = "'.$res['Id'].'" />

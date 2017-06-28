@@ -1,4 +1,4 @@
-<?php @include_once 'menu.php'; 
+<?php @include_once 'shared/menu.php';
 $testo=$_POST['avviso'];
 $visibilita=$_POST['visibility'];
 echo "###Inserimento dell'avviso: \n".$testo." scritto da: ".$utente->nome." e con visibilità ".$visibilita."\n\n";
@@ -13,4 +13,3 @@ if ($connessione->query($insert) === TRUE) {
 	echo "Error: " . $sql . "<br>" . $connessione->error;
 }
 ?>
-

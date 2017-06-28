@@ -2,7 +2,7 @@
   <head>
     <title>Aggiungi questionario per feedback </title>
     <?php
-        include "shared/head_inclusion.php";
+        include "shared/head_inclusions.php";
      ?>
   </head>
   <body style="padding-bottom: 70px;">
