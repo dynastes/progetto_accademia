@@ -28,7 +28,7 @@ return confirm("Sei sicuro di voler cancellare il dipartimento di \""+dipartimen
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<table  class="table sortable">
+						<table  class="sortable table-striped">
 							<tr>
 								<!-- <th style="text-align:center">ID</th> -->
 								<!-- <th style="text-align:center" class="sorttable_nosort">Codice </th> -->
