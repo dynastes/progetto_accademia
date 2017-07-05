@@ -19,16 +19,15 @@ return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
 <?php menu(); ?>
 		<div class="container">
 			<div class="page-header">
-				<h1> Settori</h1>
-				<p><a href="admin_inserisci_settore.php">Inserisci nuovo settore</a></p>
+				<h1>Settori</h1>
+				<p class="text-center" ><a class="btn btn-info" href="admin_inserisci_settore.php">Inserisci nuovo settore</a></p>
 			</div>
 			
-
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
 					<div class="form-group">
-						<table  class="sortable table-striped">
+						<table  class="table sortable table-striped">
 							<tr>
 								<!-- <th style="text-align:center">ID</th> -->
 								<th style="text-align:center" class="sorttable_nosort">Codice </th>

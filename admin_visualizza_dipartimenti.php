@@ -20,7 +20,7 @@ return confirm("Sei sicuro di voler cancellare il dipartimento di \""+dipartimen
 		<div class="container">
 			<div class="page-header">
 				<h1>Dipartimenti</h1>
-				<p><a href="admin_inserisci_dipartimento.php">Inserisci nuovo dipartimento</a></p>
+				<p class="text-center"><a class="btn btn-info" href="admin_inserisci_dipartimento.php">Inserisci nuovo dipartimento</a></p>
 			</div>
 			
 
@@ -28,7 +28,7 @@ return confirm("Sei sicuro di voler cancellare il dipartimento di \""+dipartimen
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<table  class="sortable table-striped">
+						<table  class="table sortable table-striped">
 							<tr>
 								<!-- <th style="text-align:center">ID</th> -->
 								<!-- <th style="text-align:center" class="sorttable_nosort">Codice </th> -->

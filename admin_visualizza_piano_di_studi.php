@@ -28,7 +28,7 @@ $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unic
 		<div class="container">
 			<div class="page-header">
 				<h1>Piani di studio</h1>
-				<p><a href="admin_crea_piano_di_studi.php">Crea nuovo piano di studi</a></p>
+				<p class="text-center"><a class="btn btn-info" href="admin_crea_piano_di_studi.php">Crea nuovo piano di studi</a></p>
 			</div>
 			<ul class="nav nav-tabs">
 				<li class="active col-md-4 schede"><a href="#triennio" data-toggle="tab">Triennio</a></li>

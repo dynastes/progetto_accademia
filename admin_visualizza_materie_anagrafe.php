@@ -16,13 +16,13 @@
 		<div class="container">
 			<div class="page-header">
 				<h1>Materie</h1>
-				<p><a href="admin_inserisci_materia_anagrafe.php">Inserisci materia/e</a></p>
+				<p class="text-center"><a class="btn btn-info" href="admin_inserisci_materia_anagrafe.php">Inserisci materia/e</a></p>
 			</div>
 
 				
 					<div class="row">
 						<div class="form-group">
-		<table class="sortable table-striped">
+		<table class="table sortable table-striped">
 			<tr>
 				<!-- <th style="text-align:center">ID</th> -->
 				<th style="text-align:center"> <!--class="sorttable_nosort"-->Codice Settore</th>
