@@ -8,6 +8,8 @@
       <h1>Analizza risposte </h1>
       <br />
       <form class="text-left" method="post" action="query_inserisci_risposte.php">
+        <script src="https://cdnjs.com/libraries/Chart.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
       <?php
         session_start();
         include"dbconnection.php";
@@ -19,17 +21,62 @@
         $id_domanda_vecchio = 0;
         $giro = 0;
         $risposte_totali = 0;
+        $labels;;
         while($res = $dati -> fetch_assoc())
         {
           $id_domanda = $res['Id_domanda'];
           if($id_domanda != $id_domanda_vecchio)
           {
+
             if ($giro ==0)
             {
               echo("<h3> ".$res['Nome']."</h3>");
             }
+            else {
+              $labels = $labels."],";
 
+                $data = $data."],";
+
+                echo("
+                  <canvas id='myChart".$giro."' width='400' height='400'></canvas>
+                <script>
+                var ctx = document.getElementById('myChart".$giro."').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+
+                        datasets: [{
+                            ".$data."
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 255, 255, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(153, 159, 64, 0.2)'
+                            ]
+
+                        }],
+                            ".$labels."
+
+
+                    },
+
+
+
+                });
+                </script>
+                ");
+
+            }
+            $labels = "labels: [";
+              $data = "data: [";
             $id_domanda_vecchio = $id_domanda;
+
+            $labels = $labels."'".$res['Nome_risposta']."'";
+
+            $data = $data.$res['Numero_risposte_utenti'];
             echo("");
             echo("
               </fieldset>
@@ -38,23 +85,60 @@
               <legend>
               ".$res['Nome_domanda']." <br />
               </legend>
-              <p>
-                ".$res['Nome_risposta']." : ".$res['Numero_risposte_utenti']."
-              </p>
 
 
           ");
+
+
         }
           else {
-            echo("
-            <p>
-              ".$res['Nome_risposta']." : ".$res['Numero_risposte_utenti']."
-            </p>");
+            $labels = $labels.", '".$res['Nome_risposta']."'";
+            $data = $data.", ".$res['Numero_risposte_utenti'];
+
+
+
           }
           $giro = $giro+1;
         }
+        $labels = $labels."],";
+
+          $data = $data."],";
+
+          echo("
+            <canvas id='myChart".$giro."' width='400' height='400'></canvas>
+          <script>
+          var ctx = document.getElementById('myChart".$giro."').getContext('2d');
+          var myChart = new Chart(ctx, {
+              type: 'pie',
+              data: {
+
+                  datasets: [{
+                      ".$data."
+                      backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(255, 206, 86, 0.2)',
+                          'rgba(75, 255, 255, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(255, 159, 64, 0.2)',
+                          'rgba(153, 159, 64, 0.2)'
+                      ]
+
+                  }],
+                      ".$labels."
+
+
+              },
+
+
+
+          });
+          </script>
+          ");
 
       ?>
+
+
       <br />
 
     </form>

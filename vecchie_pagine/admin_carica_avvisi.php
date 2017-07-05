@@ -13,4 +13,3 @@ if ($connessione->query($insert) === TRUE) {
 	echo "Error: " . $sql . "<br>" . $connessione->error;
 }
 ?>
-
