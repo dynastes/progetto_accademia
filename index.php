@@ -169,7 +169,7 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 					<br />
 					<a href="registrati.php">Registrati</a>
 					<br />
-					<a href="">Password dimenticata ? </a>
+					<a href="ripristina_password.php">Password dimenticata ? </a>
 				</div>
 			</form>
 			<div class="col-md-4"> </div>
