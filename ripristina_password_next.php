@@ -55,7 +55,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 						</div> <!-- /row form-group (1) -->
 						
 						<div class="row form-group">	
-							<input type="submit" class="btn btn-info" value="Modifica">
+							<input type="submit" class="btn btn-info" value="Conferma">
 						</div> <!-- /row form-group (12) -->
 				</form>		
 			</section>
