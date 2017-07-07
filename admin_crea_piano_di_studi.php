@@ -105,14 +105,14 @@ $res_materia=$connessione->query($sql_carica_materia);
 							</div>
 						</div>
 						<!-- <label for="cfa">Ore</label><br> -->
-						<div class="row form-group">
+						<!-- <div class="row form-group">
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">Ore</span>
 									<input type="number" min="1" max="250" id="ore" name="ore" class="form-control" required/>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						
 						<!-- <label for="cfa">CFA</label><br> -->
 						<div class="row form-group">
@@ -120,6 +120,21 @@ $res_materia=$connessione->query($sql_carica_materia);
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">CFA</span>
 									<input type="number" min="1" max="20" id="cfa" name="cfa" class="form-control" required/>
+								</div>
+							</div>
+						</div>
+						
+							<!-- <label for="tipo">Tipo</label><br> -->
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Tipo</span>
+									<select id="tipo" name="tipo" class="form-control" required>
+										<option value="" selected disabled>Scegli...</option>
+										<option value="T">Teorioco</option>
+										<option value="TP">Teorico pratico</option>
+										<option value="L">Laboratorio</option>
+									</select>
 								</div>
 							</div>
 						</div>
@@ -135,21 +150,6 @@ $res_materia=$connessione->query($sql_carica_materia);
 										<option value="Caratterizzante">Caratterizzante</option>
 										<option value="Integrativa">Integrativa</option>
 										<option value="Obbligatoria">Obbligatoria</option> 
-									</select>
-								</div>
-							</div>
-						</div>
-
-						<!-- <label for="tipo">Tipo</label><br> -->
-						<div class="row form-group">
-							<div class="col-md-12">
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">Tipo</span>
-									<select id="tipo" name="tipo" class="form-control" required>
-										<option value="" selected disabled>Scegli...</option>
-										<option value="T">Teorioco</option>
-										<option value="TP">Teorico pratico</option>
-										<option value="L">Laboratorio</option>
 									</select>
 								</div>
 							</div>

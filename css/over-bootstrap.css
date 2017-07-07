@@ -24,6 +24,7 @@ html, body {
     height: auto !important;
     height: 100%;
 	margin: 0 auto -40px;
+	padding-bottom: 60px;
 }
 
 .push{

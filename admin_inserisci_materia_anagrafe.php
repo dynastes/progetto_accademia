@@ -26,7 +26,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-			<?php @include_once 'shared/menu.php';?>
+		<?php @include_once 'shared/menu.php';?>
 	</head>
 
 	<body>
