@@ -52,7 +52,9 @@ $sql_id_offerta_formativa="SELECT Id FROM offerta_formativa WHERE Id_dipartiment
 				<h1>Modifica piano di studi</h1>
 			</div>
 			<div class="container">
-				<form action="admin_crea_piano_di_studi_query.php" method="post">
+				<!-- <form action="admin_crea_piano_di_studi_query.php" method="post">--> 
+				<!-- Che ci dovevo fare con questo reindirizzamento???? -->
+				<form action="#" method="post">
 					<div class="row">
 						<div class="form-group">
 							<table class="table table-curved">
@@ -80,6 +82,7 @@ for ($i = 1; $i <= $anni; ++$i) {
 $rowspan_base=mysqli_num_rows($res_piani);
 //echo "num:".$rowspan_base;
  while($res=$res_piani->fetch_assoc()) {
+	$id_materia_in_piano=$res['Id'];
 	//$Id_corso=$res['Id_corso'];
 	$id_materia=$res['Id_materia'];
 	if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
@@ -111,7 +114,7 @@ $rowspan_base=mysqli_num_rows($res_piani);
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
 									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
 									<td><a>Modifica</a></td>
-									<td><a>Elimina<?php }}}?></a></td>
+									<td><a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina<?php }}}?></a></td>
 								</tr>
 								<!-- <tr><th colspan="8" style="background-color:#ffff00;text-align:center;">Attività Formative Caratterizzanti</th></tr> -->
 <?php
@@ -120,7 +123,7 @@ $res_piani=$connessione->query($sql_carica_piani);
 $rowspan_caratterizzante=mysqli_num_rows($res_piani);
 //echo "num:".$rowspan_caratterizzante;
  while($res=$res_piani->fetch_assoc()) {
-	
+	$id_materia_in_piano=$res['Id'];
 	$id_materia=$res['Id_materia'];
 	if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
 	$cfa=$res['Cfa'];
@@ -150,7 +153,7 @@ if($Conta_attivita_caratterizzante==0){echo "<th rowspan=".$rowspan_caratterizza
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
 									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
 									<td><a>Modifica</a></td>
-									<td><a>Elimina<?php }}}?></a></td>
+									<td><a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina<?php }}}?></a></td>
 								</tr>
 								<!-- <tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr> -->
 <?php
@@ -159,7 +162,7 @@ $res_piani=$connessione->query($sql_carica_piani);
 $rowspan_integrativa=mysqli_num_rows($res_piani);
 //echo "num:".$rowspan_integrativa;
  while($res=$res_piani->fetch_assoc()) {
-	
+	$id_materia_in_piano=$res['Id'];
 	$id_materia=$res['Id_materia'];
 	if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
 	$cfa=$res['Cfa'];
@@ -189,7 +192,7 @@ if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." st
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>
 									<td style="text-align:center"><?php echo $cfa; ?></td><td style="text-align:center"><?php echo $tipo;?></td>
 									<td><a>Modifica</a></td>
-									<td><a>Elimina<?php }}}?></a></td>
+									<td><a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina<?php }}}?></a></td>
 								</tr>
 								<!--Inserire qui attività obbligatorie per il secondo anno -->
 <?php
@@ -203,7 +206,7 @@ if($res!=false){
 	$sql_carica_piani="SELECT * FROM materie_piano WHERE Anno=".$i." AND Categoria='Obbligatoria' AND Id_corso=".$id_corso;
 	$res_piani=$connessione->query($sql_carica_piani);
 	while($res=$res_piani->fetch_assoc()) {
-		
+		$id_materia_in_piano=$res['Id'];
 		$id_materia=$res['Id_materia'];
 		if($res['Modulo']!="0"){$modulo=$res['Modulo'];}else{$modulo=" ";}
 		$cfa=$res['Cfa'];
@@ -234,7 +237,7 @@ if($Conta_attivita_obbligatorie==0){echo "<th rowspan=".$rowspan_obbligatorie." 
 									echo "<td>".$nome_materia." ".$modulo."</td><td style=\"text-align:center\">".$ore."</td>";
 									echo "<td style=\"text-align:center\">".$cfa."</td><td style=\"text-align:center\">".$tipo."</td>";
 									echo "<td><a>Modifica</a></td>";
-									echo "<td><a>Elimina</a></td>";
+									echo "<td><a href=\"admin_modifica_piano_di_studi_elimina_materia_query.php?Id=".$id_materia_in_piano."\">Elimina</a></td>";
 								echo"</tr>";
 			}
 		}
