@@ -152,6 +152,6 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 <script src="js/jquery.flexslider.js"></script>
 <script src="js/animate.js"></script>
 <script src="js/custom.js"></script> -->
-<?php //@include_once 'shared/footer.php'; ?>
+	<?php @include_once 'shared/footer.php'; ?>
 </body>
 </html>
