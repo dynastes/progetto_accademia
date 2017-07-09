@@ -86,6 +86,21 @@ $res_materia=$connessione->query($sql_carica_materia);
 								</div>
 							</div>
 						</div>
+						
+						<!-- <label for="materia">Periodo</label><br> -->
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Periodo</span>
+									<select id="periodo" name="periodo" class="form-control" required>
+										<option value="" selected disabled>Scegli...</option>
+										<option value="1">Triennio</option>
+										<option value="2">Biennio</option>
+										<option value="3">Ciclo Unico</option>
+									</select>
+								</div>
+							</div>
+						</div>
 
 						<!-- <label for="materia">Anno</label><br> -->
 						<div class="row form-group">
@@ -94,12 +109,11 @@ $res_materia=$connessione->query($sql_carica_materia);
 									<span class="input-group-addon" id="basic-addon1">Anno</span>
 									<select id="anno" name="anno" class="form-control" required>
 										<option value="" selected disabled>Scegli...</option>
-										<option value="1">Triennio - 1</option>
-										<option value="2">Triennio - 2</option>
-										<option value="3">Triennio - 3</option>
-										<option value="4">Biennio - 1</option>
-										<option value="5">Biennio - 2</option>
-										<option value="6">Ciclo Unico</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
 									</select>
 								</div>
 							</div>
