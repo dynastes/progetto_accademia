@@ -27,6 +27,8 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 		<?php @include_once 'shared/menu.php';?>
+		<script language="javascript" type="text/javascript">
+		</script>
 	</head>
 
 	<body>
@@ -111,9 +113,9 @@ $res_materia=$connessione->query($sql_carica_materia);
 										<option value="" selected disabled>Scegli...</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
-										<option value="3">3</option>
+										<!-- <option value="3">3</option>
 										<option value="4">4</option>
-										<option value="5">5</option>
+										<option value="5">5</option> -->
 									</select>
 								</div>
 							</div>

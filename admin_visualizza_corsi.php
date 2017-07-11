@@ -45,15 +45,15 @@ while($res=$res_corsi->fetch_assoc()) {
 							<tr>
 								<!-- <td style="text-align:center"><?php //echo $res['Id']; ?></td> -->
 <?php
-$sql_carica_nome_dipartimento="SELECT * FROM dipartimenti WHERE Id=";
+$sql_carica_nome_dipartimento="SELECT * FROM dipartimenti WHERE Id=".$res['Id_dipartimento'];
 //echo "Query: ".$sql_carica_corsi;
-$res_corsi=$connessione->query($sql_carica_corsi);
-while($res=$res_corsi->fetch_assoc()) {  
+$res_dipartimento=$connessione->query($sql_carica_nome_dipartimento);
+while($res2=$res_dipartimento->fetch_assoc()) {  
 ?>
-								<td style="text-align:center"><?php echo $res['Id_dipartimento']; ?></td>
+								<td style="text-align:center"><?php echo $res2['Nome_dipartimento']; ?></td>
 								<td><?php echo $res['Nome_corso']; ?></td>
 								<td><a href="#?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="#?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')">Elimina<?php }?></a></td>
+								<td><a href="#?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')">Elimina<?php }}?></a></td>
 							</tr>
 						</table>
 					</div>
