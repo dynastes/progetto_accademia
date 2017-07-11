@@ -4,7 +4,7 @@
 
 <script type="text/javascript"> 
 function sicuro(corso){ 
-return confirm("Sei sicuro di voler cancellare il settore \""+corso+"\"?");
+return confirm("Sei sicuro di voler cancellare il corso \""+corso+"\"? Così facendo eliminerai anche qualsiasi piano di studi associato ad esso!");
 } 
 </script> 
 
@@ -20,7 +20,7 @@ return confirm("Sei sicuro di voler cancellare il settore \""+corso+"\"?");
 		<div class="container">
 			<div class="page-header">
 				<h1>Corsi</h1>
-				<p class="text-center" ><a class="btn btn-info" href="admin_inserisci_settore.php">Inserisci nuovo corso</a></p>
+				<p class="text-center" ><a class="btn btn-info" href="admin_inserisci_corso.php">Inserisci nuovo corso</a></p>
 			</div>
 			
 			<div class="row">
@@ -52,8 +52,8 @@ while($res2=$res_dipartimento->fetch_assoc()) {
 ?>
 								<td style="text-align:center"><?php echo $res2['Nome_dipartimento']; ?></td>
 								<td><?php echo $res['Nome_corso']; ?></td>
-								<td><a href="#?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="#?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')">Elimina<?php }}?></a></td>
+								<td><a href="admin_modifica_corso.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
+								<td><a href="admin_elimina_corso_query.php?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')">Elimina<?php }}?></a></td>
 							</tr>
 						</table>
 					</div>

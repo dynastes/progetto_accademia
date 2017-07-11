@@ -38,7 +38,7 @@ return confirm("Sei sicuro di voler cancellare il dipartimento di \""+dipartimen
 							</tr>
 
 <?php
-$sql_carica_dipartimenti="SELECT * FROM dipartimenti WHERE NOT Id=100";
+$sql_carica_dipartimenti="SELECT * FROM dipartimenti WHERE NOT Id=1";
 //echo "Query: ".$sql_carica_dipartimenti;
 $res_dipartimenti=$connessione->query($sql_carica_dipartimenti);
 while($res=$res_dipartimenti->fetch_assoc()) {  
