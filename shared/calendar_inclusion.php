@@ -20,7 +20,7 @@
       defaultDate: oggi,
       editable: true,
       allDaySlot: false,
-      events: "http://localhost/progetto_accademia/fullcalendar/events.php",
+      events: "fullcalendar/events.php",
       selectable: true,
       selectHelper: true,
       select: function(start, end, allDay) {
@@ -35,7 +35,7 @@
         end = moment(end).format("YYYY-MM-DD HH:mm:ss");﻿
 
        $.ajax({
-       url: "http://localhost/progetto_accademia/fullcalendar/add_events.php",
+       url: "fullcalendar/add_events.php",
        data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color +'&text_color='+text_color,
        type: "POST",
        success: function(json) {
@@ -65,7 +65,7 @@ eventDrop: function(event, delta) {
  end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
 
  $.ajax({
- url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
+ url: 'fullcalendar/update_events.php',
  data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
  type: "POST",
  success: function(json) {
@@ -77,7 +77,7 @@ eventResize: function(event) {
  start = $.fullCalendar.moment(event.start).format("YYYY-MM-DD HH:mm:ss");
  end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
  $.ajax({
- url: 'http://localhost/progetto_accademia/fullcalendar/update_events.php',
+ url: 'fullcalendar/update_events.php',
  data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
  type: "POST",
  success: function(json) {
