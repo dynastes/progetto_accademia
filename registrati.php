@@ -124,16 +124,16 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 
 						<div class="row form-group">
 							<label>Scegli domanda di recupero: &nbsp;</label>
-							<select class="form-control" >
-								 <option>Nome di un tuo parente</option>
-								 <option>Nome del tuo posto preferito</option>
-								 <option>Nome di un oggetto a te caro</option>
+							<select id="domanda" name="domanda" class="form-control" >
+								 <option value="Nome di un tuo parente">Nome di un tuo parente</option>
+								 <option value="Nome del tuo posto preferito">Nome del tuo posto preferito</option>
+								 <option value="Nome di un oggetto a te caro">Nome di un oggetto a te caro</option>
 							</select>
 						</div> <!-- /row form-group (10) -->
 
 						<div class="row form-group">
 							<label>Risposta di recupero: &nbsp;</label>
-							<input type="text" class="form-control">
+							<input name="risposta"  type="text" class="form-control">
 						</div> <!-- /row form-group (11) -->
 						<div class="row form-group">
 							<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>

@@ -37,6 +37,8 @@ if ($_POST["g-recaptcha-response"]) {
 		$telefono=$_POST['telefono'];
 		//PASSIAMO IN HASH LA PASSWORD
 		$password=password_hash($_POST['password'],PASSWORD_BCRYPT);
+				$domanda=$_POST['domanda'];
+			$risposta=password_hash($_POST['risposta'],PASSWORD_BCRYPT);
 		echo "salvataggio POST effettuato";
 
 
@@ -48,8 +50,8 @@ if ($_POST["g-recaptcha-response"]) {
 
 
 		//inserimento nella tabella ANAGRAFE
-			$sqlIscrizione="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Email, Codice_fiscale, Indirizzo, Residenza, Telefono, Username, Password) VALUES
-						('$nomeStudente', '$cognomeStudente', '$dataNascita', '$email', '$cf', '$indirizzo', '$residenza', '$telefono', '$username', '$password')";
+			$sqlIscrizione="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Email, Codice_fiscale, Indirizzo, Residenza, Telefono, Username, Password,Domanda,Risposta) VALUES
+						('$nomeStudente', '$cognomeStudente', '$dataNascita', '$email', '$cf', '$indirizzo', '$residenza', '$telefono', '$username', '$password','$domanda','$risposta')";
 			echo $sqlIscrizione;
 		$resIscrizione=$connessione->query($sqlIscrizione);
 
@@ -75,7 +77,37 @@ if ($_POST["g-recaptcha-response"]) {
 		} else {
 			$_SESSION["iscritto-aggiunto"]=-1;
 		}
-		@header('location:registrati.php');
+		//set POST variables
+		$url = 'http://localhost/progetto_accademia/index.php';
+		$fields = array(
+		                        'usermail' => urlencode($email),
+		                        'password' => urlencode($password)
+		                );
+
+		//url-ify the data for the POST
+		$fields_string = "";
+		foreach($fields as $key=>$value)
+		{
+			$fields_string .= $key.'='.$value.'&';
+		}
+		rtrim($fields_string, '&');
+
+		//open connection
+		$ch = curl_init();
+
+		//set the url, number of POST vars, POST data
+		curl_setopt($ch,CURLOPT_URL, $url);
+		curl_setopt($ch,CURLOPT_POST, count($fields));
+		curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+		//execute post
+		$result = curl_exec($ch);
+
+		//close connection
+		curl_close($ch);
+
+
+
 	}else {
 		echo("chapta non valido");
 		echo("<br /><a href='registrati.php'>Torna indietro</a>");
