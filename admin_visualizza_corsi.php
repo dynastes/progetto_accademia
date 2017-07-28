@@ -30,14 +30,14 @@ return confirm("Sei sicuro di voler cancellare il corso \""+corso+"\"? Così fac
 						<table  class="table sortable table-striped">
 							<tr>
 								<!-- <th style="text-align:center">ID</th> -->
-								<th style="text-align:center" class="sorttable_nosort">Dipartimento</th>
+								<th style="text-align:center">Dipartimento</th>
 								<th style="text-align:center">Nome</th>
 								<th class="sorttable_nosort"><!-- Modifica --></th>
 								<th class="sorttable_nosort"><!-- Elimina --></th>
 							</tr>
 
 <?php
-$sql_carica_corsi="SELECT * FROM corsi";
+$sql_carica_corsi="SELECT * FROM corsi ORDER BY Id_dipartimento";
 //echo "Query: ".$sql_carica_corsi;
 $res_corsi=$connessione->query($sql_carica_corsi);
 while($res=$res_corsi->fetch_assoc()) {  

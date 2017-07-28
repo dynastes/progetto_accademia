@@ -13,6 +13,7 @@
 		<div class="container">
 			<div class="page-header">
 				<h1> Offerta formativa</h1>
+				<p class="text-center" ><a class="btn btn-info" href="admin_inserisci_offerta_formativa.php">Inserisci nuova offerta formativa</a></p>
 			</div>
 			<div class="row">
 				<div class="col-md-2"></div>
@@ -68,7 +69,7 @@ if($Conta_dipartimenti_triennio==0){echo "<th rowspan=".$rowspan_triennio." styl
 ?>
 								<td><?php echo $res2['Nome_dipartimento']; ?></td>
 								<td style="text-align:center"><?php echo $attivo; ?></td>
-								<td><a href="#?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
+								<td><a href="admin_modifica_offerta_formativa.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
 								<td><a href="#?ID=<?php echo $res['Id']; ?>">Dissocia<?php }}?></a></td>
 							</tr>
 <?php
