@@ -15,7 +15,7 @@ $sql_update_materia="UPDATE materie_anagrafica SET Nome_materia='$nuovo_nome_mat
 echo "<br>Query: ".$sql_update_materia;
 $update_materia=$connessione->query($sql_update_materia);
 
-//@header('location:admin_visualizza_materie_anagrafe.php');
+@header('location:admin_visualizza_materie_anagrafe.php');
 
 ?>
 

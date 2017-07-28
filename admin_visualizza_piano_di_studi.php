@@ -6,13 +6,13 @@ $sql_carica_settore="SELECT * FROM corsi";
 $res_settore=$connessione->query($sql_carica_settore);
 
 //...prendo la lista di dipartimenti per ogni Offerta formativa esistente
-$sql_dipartimenti_triennio="SELECT Id_dipartimento FROM offerta_formativa WHERE Nome='Triennio'"; //1, 2, 3
+$sql_dipartimenti_triennio="SELECT Id_dipartimento FROM offerta_formativa WHERE Nome='Triennio'"; //2, 3, 4
 $query_dipartimenti_triennio=$connessione->query($sql_dipartimenti_triennio);
 
-$sql_dipartimenti_biennio="SELECT Id_dipartimento FROM offerta_formativa WHERE Nome='Biennio'"; //1, 2 ,3
+$sql_dipartimenti_biennio="SELECT Id_dipartimento FROM offerta_formativa WHERE Nome='Biennio'"; //2, 3 ,4
 $query_dipartimenti_biennio=$connessione->query($sql_dipartimenti_biennio);
 
-$sql_dipartimenti_ciclo_unico="SELECT Id_dipartimento FROM offerta_formativa WHERE Nome='Ciclo_unico'"; //2
+$sql_dipartimenti_ciclo_unico="SELECT Id_dipartimento FROM offerta_formativa WHERE Nome='Ciclo_unico'"; //3
 $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unico);
 ?>
 

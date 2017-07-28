@@ -46,7 +46,7 @@ $lista_settori=$connessione->query($sql_carica_lista_settori);
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">Settore</span>
-							<select id="settore" name="nuovo_settore" class="form-control">
+									<select id="settore" name="nuovo_settore" class="form-control">
 								
 						
 						
@@ -61,8 +61,8 @@ while($res_lista_settori=$lista_settori->fetch_assoc()) {
 }//chiusura else					
 }//chiusura while
 ?>
-							</select>
-						</div>
+									</select>
+								</div>
 							</div>
 						</div>
 						<!-- <label for="nome_materia">Nome materie</label><br> -->

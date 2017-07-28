@@ -185,8 +185,8 @@ $rowspan_integrativa=mysqli_num_rows($res_piani);
 ?>
 								<tr>
 <?php 
-if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"background-color:#ff99ff; vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_integrative=1;}
-//if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_integrative=1;}
+if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"background-color:#ff99ff; vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
+//if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
 ?>
 									<td style="text-align:center;"><?php echo $codice_settore; ?></td><td><?php echo $nome_settore; ?> </td>
 									<td><?php echo $nome_materia." ".$modulo; ?></td><td style="text-align:center"><?php echo $ore; ?></td>

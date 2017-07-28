@@ -37,7 +37,7 @@ return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
 							</tr>
 
 <?php
-$sql_carica_settori="SELECT * FROM settore WHERE NOT Id=100";
+$sql_carica_settori="SELECT * FROM settore WHERE NOT Id=1";
 //echo "Query: ".$sql_carica_settori;
 $res_settori=$connessione->query($sql_carica_settori);
 while($res=$res_settori->fetch_assoc()) {  

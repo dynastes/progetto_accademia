@@ -27,6 +27,40 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 		<?php @include_once 'shared/menu.php';?>
+		<script language="javascript">
+			/*Questa funzione legga il valore passato come parametro e dato il valore, aggiunge delle opzioni al secondo campo*/
+			function selezionaOpzioni(scelta) {
+				/*Resetto le opzioni precedenti del campo*/
+				var campo_anno = document.form.campo_anno;
+				campo_anno.options.length = 0;
+				/*verifico la scelta e aggiungo i campi*/
+				if (scelta == "1") {
+					campo_anno.options[campo_anno.options.length] = new Option('1');
+					campo_anno.options[campo_anno.options.length] = new Option('2');
+					campo_anno.options[campo_anno.options.length] = new Option('3');
+					document.getElementById("anno").disabled=false;
+				}
+				if (scelta == "2") {
+					campo_anno.options[campo_anno.options.length] = new Option('1');
+					campo_anno.options[campo_anno.options.length] = new Option('2');
+					document.getElementById("anno").disabled=false;
+				}
+				if (scelta == "3") {
+					campo_anno.options[campo_anno.options.length] = new Option('1');
+					campo_anno.options[campo_anno.options.length] = new Option('2');
+					campo_anno.options[campo_anno.options.length] = new Option('3');
+					campo_anno.options[campo_anno.options.length] = new Option('4');
+					campo_anno.options[campo_anno.options.length] = new Option('5');
+					document.getElementById("anno").disabled=false;
+				}
+			}
+			function aggiornaAnni(scelta){
+				var selezionato = document.form.campo_periodo.selectedIndex;
+				var campo = document.form.campo_periodo.options;
+				selezionaOpzioni(campo[selezionato].value);
+			}
+		</script>
+
 	</head>
 
 	<body>
@@ -35,7 +69,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 			<div class="page-header">
 				<h1>Crea piano di studi</h1>
 			</div>
-			<form action="admin_crea_piano_di_studi_query.php" method="post">
+			<form name="form" action="admin_crea_piano_di_studi_query.php" method="post">
 				<div class="row">
 					<div class="col-md-4"> </div>
 
@@ -86,20 +120,34 @@ $res_materia=$connessione->query($sql_carica_materia);
 								</div>
 							</div>
 						</div>
+						
+						<!-- <label for="materia">Periodo</label><br> -->
+						<div class="row form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Periodo</span>
+									<select name="campo_periodo" size="1" class="form-control" onchange="aggiornaAnni();" required>
+										<option value="" selected disabled>Scegli...</option>
+										<option value="1">Triennio</option>
+										<option value="2">Biennio</option>
+										<option value="3">Ciclo Unico</option>
+									</select>
+								</div>
+							</div>
+						</div>
 
 						<!-- <label for="materia">Anno</label><br> -->
 						<div class="row form-group">
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">Anno</span>
-									<select id="anno" name="anno" class="form-control" required>
-										<option value="" selected disabled>Scegli...</option>
-										<option value="1">Triennio - 1</option>
-										<option value="2">Triennio - 2</option>
-										<option value="3">Triennio - 3</option>
-										<option value="4">Biennio - 1</option>
-										<option value="5">Biennio - 2</option>
-										<option value="6">Ciclo Unico</option>
+									<select id="anno" name="campo_anno"  size="1" class="form-control" required disabled>
+										<!-- <option value="" selected disabled>Scegli...</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option> -->
 									</select>
 								</div>
 							</div>

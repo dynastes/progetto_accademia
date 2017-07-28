@@ -100,6 +100,7 @@ function menu(){
 					<ul class="dropdown-menu">
 							<li><a href="admin_visualizza_offerta_formativa.php">Offerta formativa</a></li>
 							<li><a href="admin_visualizza_dipartimenti.php">Dipartimenti</a></li>
+							<li><a href="admin_visualizza_corsi.php">Corsi</a></li>
 							<li><a href="admin_visualizza_settori.php">Settori</a></li>
 							'//<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
 							.'<li><a href="admin_visualizza_materie_anagrafe.php">Materie</a></li>
