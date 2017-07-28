@@ -2,10 +2,12 @@
 <link href='fullcalendar/css/fullcalendar.css' rel='stylesheet' />
 <link href='fullcalendar/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='fullcalendar/js/moment.min.js'></script>
+<script src='fullcalendar/js/jquery.min.js'></script>
 <script src='fullcalendar/js/fullcalendar.min.js'></script>
 <script src= 'fullcalendar/js/fullcalendar.js'></script>
+<script src= 'fullcalendar/lang/it.js'></script>
 
-<script>
+<!--script>
 	$(document).ready(function() {
 		//creazione della stringa giorno
 		var data = new Date();
@@ -23,15 +25,15 @@
 			},
 			defaultDate: oggi,
 			editable: false,
-			
-			events: "http://localhost/Accademia/fullcalendar/events.php",
+
+			events: "fullcalendar/events.php", // http://localhost/progetto_accademia/fullcalendar/events.php
 			selectable: false,
 			selectHelper: false,
 			editable: false
-			
-			
+
+
 		});
-		
+
 	});
 
-</script>
+</script -->
