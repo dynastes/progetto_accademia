@@ -2,8 +2,10 @@
 <link href='fullcalendar/css/fullcalendar.css' rel='stylesheet' />
 <link href='fullcalendar/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='fullcalendar/js/moment.min.js'></script>
+<script src='fullcalendar/js/jquery.min.js'></script>
 <script src='fullcalendar/js/fullcalendar.min.js'></script>
 <script src= 'fullcalendar/js/fullcalendar.js'></script>
+<script src= 'fullcalendar/lang/it.js'></script>
 
 <script>
 	$(document).ready(function() {
