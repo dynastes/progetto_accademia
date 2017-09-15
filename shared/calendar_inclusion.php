@@ -17,7 +17,7 @@
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      defaultDate: oggi,
+      
       editable: true,
       allDaySlot: false,
       events: "fullcalendar/events.php",

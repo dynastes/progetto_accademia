@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // liste des �v�nements
  $json = array();
  // requ�te qui r�cup�re les �v�nements
@@ -6,7 +6,7 @@
 
  // connexion � la base de donn�es
  try {
- $bdd = new PDO('mysql:host=localhost;dbname=fullcalendar', 'root', 'Jumala91');
+ $bdd = new PDO('mysql:host=localhost;dbname=fullcalendar', 'root', '');
  } catch(Exception $e) {
  exit('Impossible de se connecter � la base de donn�es.');
  }

@@ -67,8 +67,9 @@ if ($_POST["g-recaptcha-response"]) {
 			}
 			$idAnagrafe=$res->fetch_assoc();
 
-			$sqlStudenti="INSERT INTO studenti (Id_anagrafe, Anno_accademico, Matricola, Diploma, Id_corso) VALUES (".$idAnagrafe['Id'].", 0, 0, '', 0)";
-			echo $sqlStudenti;
+			// query vecchia -> $sqlStudenti="INSERT INTO studenti (Id_anagrafe, Anno_accademico, Matricola, Diploma, Id_corso) VALUES (".$idAnagrafe['Id'].", 0, 0, '', 0)";
+			$sqlStudenti="INSERT INTO studenti (Id_anagrafe,  Matricola, Attivo) VALUES (".$idAnagrafe['Id'].", 0, 1)";
+			echo "<br />".$sqlStudenti;
 			$resStud=$connessione->query($sqlStudenti);
 
 
@@ -101,7 +102,7 @@ if ($_POST["g-recaptcha-response"]) {
 		curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 
 		//execute post
-		$result = curl_exec($ch);
+		//$result = curl_exec($ch);
 
 		//close connection
 		curl_close($ch);
