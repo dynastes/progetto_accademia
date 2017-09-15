@@ -71,10 +71,10 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <ul class="pager">
+                <!--<ul class="pager">
                     <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Pagina precedente</a></li>
                     <li class="next"><a href="#">Pagina successiva <span aria-hidden="true">&rarr;</span></a></li>
-                </ul>
+                </ul>-->
 
 
                 <?php
@@ -85,11 +85,12 @@
                             <p>Il tuo profilo <b>non è ancora completo</b>. Ti chiediamo gentilmente di aggiungere i
                                 dati
                                 mancanti</p>
+                            <br>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
                                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
                                      style="width: <?php echo $perc_compl ?>%">
-                                    <!--<span class="sr-only">--><?php echo $perc_compl ?>%<!--</span>-->
+                                    <?php echo $perc_compl ?>%
                                 </div>
                             </div>
                         </div>
@@ -100,6 +101,7 @@
                 ?>
 
                 <!--<div class="row">-->
+                <!-- INIZIO TABELLA -->
                     <div class="panel panel-default">
                         <div class="panel-heading">I tuoi dati personali</div>
                         <div class="panel-body">
@@ -108,7 +110,7 @@
                                     <td><b>Nome</b></td>
                                     <td><?php echo $utente->nome; ?></td>
                                     <td>
-                                        <a href="#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=nome&value=<?php echo $utente->nome; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
@@ -117,7 +119,7 @@
                                     <td><b>Cognome</b></td>
                                     <td><?php echo $utente->cognome; ?></td>
                                     <td>
-                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=cognome&value=<?php echo $utente->cognome; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
@@ -126,7 +128,7 @@
                                     <td><b>Email</b></td>
                                     <td><?php echo $utente->email; ?></td>
                                     <td>
-                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=email&value=<?php echo $utente->email; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
@@ -135,7 +137,7 @@
                                     <td><b>Codice Fiscale</b></td>
                                     <td><?php echo $utente->cf; ?></td>
                                     <td>
-                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=cf&value=<?php echo $utente->cf; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
@@ -144,7 +146,7 @@
                                     <td><b>Indirizzo</b></td>
                                     <td><?php echo $utente->indirizzo; ?></td>
                                     <td>
-                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=indirizzo&value=<?php echo $utente->indirizzo; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
@@ -153,7 +155,7 @@
                                     <td><b>Residenza</b></td>
                                     <td><?php echo $utente->residenza; ?></td>
                                     <td>
-                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=residenza&value=<?php echo $utente->residenza; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
@@ -162,7 +164,7 @@
                                     <td><b>Telefono</b></td>
                                     <td><?php echo $utente->telefono; ?></td>
                                     <td>
-                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=telefono&value=<?php echo $utente->telefono; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
                                         </a>
                                     </td>
