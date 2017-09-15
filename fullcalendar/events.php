@@ -8,7 +8,7 @@
  try {
  $bdd = new PDO('mysql:host=localhost;dbname=fullcalendar', 'root', '');
  } catch(Exception $e) {
- exit('Impossible de se connecter � la base de donn�es.');
+ exit('Impossibile connettersi al DB');
  }
  // ex�cution de la requ�te
  $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));

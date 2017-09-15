@@ -1,5 +1,5 @@
 <?php
-echo ?>
+/*echo*/ ?>
 <link href='css/fullcalendar.css' rel='stylesheet' />
 <link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='js/moment.min.js'></script>

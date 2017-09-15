@@ -1,0 +1,194 @@
+<?php @include_once 'shared/menu.php'; ?>
+<html>
+<head>
+    <?php @include_once 'shared/head_inclusions.php'; ?>
+    <meta charset="utf-8">
+</head>
+<body>
+<div id="principale">
+    <div id="menu">
+        <?php
+        menu();
+        ?>
+    </div> <!-- FINE MENU -->
+
+    <div class="container">
+
+        <div class="row"> <!--page-header-->
+            <!--<div class="col-md-1 col-xs-2">
+                <div class="thumbnail">
+                    <div class="glyphicon glyphicon-user"></div>
+                </div>
+
+            </div>-->
+
+            <div class="col-md-11 col-xs-10">
+                <h1>Profilo</h1>
+            </div>
+        </div>
+        <hr>
+
+        <?php
+        /* Da qui in poi si calcola quanti elementi del profilo dell'utente non sono ancora stati completati.
+        Gli elementi da visualizzare sono:
+            1. Nome
+            2. Cognome
+            3. Data di Nascita
+            4. email
+            5. Codice Fiscale
+            6. Indirizzo
+            7. Residenza
+            8. Telefono
+             */
+        $dettagli_completati=0;
+        if ($utente->nome!=''){
+            $dettagli_completati++;
+        }
+        if ($utente->cognome!=''){
+            $dettagli_completati++;
+        }
+        if ($utente->email!=''){
+            $dettagli_completati++;
+        }
+        if ($utente->cf!=''){
+            $dettagli_completati++;
+        }
+        if ($utente->indirizzo!=''){
+            $dettagli_completati++;
+        }
+        if ($utente->residenza!=''){
+            $dettagli_completati++;
+        }
+        if ($utente->telefono!=''){
+            $dettagli_completati++;
+        }
+
+        //Ora calcolo la percentuale di completamento del profilo:
+        $perc_compl=round(100*$dettagli_completati/7);
+        ?>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <ul class="pager">
+                    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Pagina precedente</a></li>
+                    <li class="next"><a href="#">Pagina successiva <span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+
+
+                <?php
+                if ($perc_compl<100) {
+                    ?>
+                    <div class="row">
+                        <div class="alert alert-danger" role="alert">
+                            <p>Il tuo profilo <b>non è ancora completo</b>. Ti chiediamo gentilmente di aggiungere i
+                                dati
+                                mancanti</p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                     style="width: <?php echo $perc_compl ?>%">
+                                    <!--<span class="sr-only">--><?php echo $perc_compl ?>%<!--</span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php
+                }
+                ?>
+
+                <!--<div class="row">-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">I tuoi dati personali</div>
+                        <div class="panel-body">
+                            <table class="table table-responsive">
+                                <tr>
+                                    <td><b>Nome</b></td>
+                                    <td><?php echo $utente->nome; ?></td>
+                                    <td>
+                                        <a href="#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Cognome</b></td>
+                                    <td><?php echo $utente->cognome; ?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Email</b></td>
+                                    <td><?php echo $utente->email; ?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Codice Fiscale</b></td>
+                                    <td><?php echo $utente->cf; ?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Indirizzo</b></td>
+                                    <td><?php echo $utente->indirizzo; ?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Residenza</b></td>
+                                    <td><?php echo $utente->residenza; ?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Telefono</b></td>
+                                    <td><?php echo $utente->telefono; ?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <td><b>Ruolo</b></td>
+                                    <td><?php /*echo $utente->ruolo; */?></td>
+                                    <td>
+                                        <a href=#" type="button" class="btn btn-default btn-info btn-xs">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                        </button>
+                                    </td>
+                                </tr>-->
+                            </table>
+                        </div>
+                    </div>
+                <!--</div>-->
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<br><br>
+<?php @include_once 'shared/footer.php'; ?>
+</body>
+</html>
