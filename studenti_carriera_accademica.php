@@ -19,7 +19,7 @@
 							//acquisisco il corso di cui fa parte l'utente
 							$sqlCorso="SELECT Id_corso, Anno_accademico FROM studenti WHERE Id_anagrafe=".$utente->id;
 							$Id_corso=$connessione->query($sqlCorso);
-							$Id_corso=$Id_corso->fetch_assoc(); //0:id_corso;	1: Anno_accademico
+							//$Id_corso=$Id_corso->fetch_assoc(); //0:id_corso;	1: Anno_accademico
 							//$QUERY="SELECT m.Codice_materia AS MATERTIA_codice_materia, m.Nome_materia AS MATERIA_nome_materia, m.Anno AS MATERIA_anno, mc.Cfa AS MAT_COR_cfa, mc.Tipo AS MAT_COR_tipo, c.Nome_corso AS CORSI_nome_corso FROM materie AS m, materie_corsi AS mc, corsi AS c WHERE mc.Id_corso=2";
 							//$sqlPianoStudiVECCHIO="SELECT m.Codice_materia, m.Nome_materia, m.Anno, mc.Cfa, mc.Tipo, c.Nome_corso FROM materie AS m, materie_corsi AS mc, corsi AS c WHERE mc.Id_corso=".$Id_corso["Id_corso"]; //aggiungere pure la CONVALIDA
 							

@@ -47,4 +47,5 @@ $sqlAggiungiMateriaCorso="INSERT INTO materie_piano (Id_corso, Id_materia, Modul
 echo "Query: ".$sqlAggiungiMateriaCorso;
 $res=$connessione->query($sqlAggiungiMateriaCorso);
 
+@header('location:admin_visualizza_piano_di_studi.php');
 ?>
