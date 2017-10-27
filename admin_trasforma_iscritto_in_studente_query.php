@@ -10,6 +10,9 @@ echo $matricolaStudente;
 //Id_anagrafe, Matricola, Attivo
 $sqlInserisciStudente="INSERT INTO studenti (Id_anagrafe, Matricola, Attivo) VALUES('" . $idUtente . "', '" . $matricolaStudente  . "', '1')";
 echo $sqlInserisciStudente;
+$sqlInserisciStudente="UPDATE studenti
+						SET Matricola= '".$matricolaStudente."', Attivo='". 1 ."' 
+						WHERE Id_anagrafe='" . $idUtente . "'";
 
 $res=$connessione->query($sqlInserisciStudente);
 

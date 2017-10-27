@@ -67,5 +67,5 @@ echo "##ID utente da inserire tra gli studenti: ".$idAnagrafe["Id"];
 	} else {
 		$_SESSION["studente-aggiunto"]=-1;
 	}
-	//@header('location:admin_inserisci_studenti.php');
+	@header('location:admin_inserisci_studenti.php');
 ?>

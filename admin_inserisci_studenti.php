@@ -1,5 +1,5 @@
 <?php @include_once 'shared/menu.php';
-if($_SESSION['studente-aggiunto']===1){
+if( @$_SESSION['studente-aggiunto']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Studente aggiunto correttamente</div>";
 	$_SESSION['studente-aggiunto']=0;
 }
@@ -12,6 +12,14 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 		 echo "Error: " . $sql . "<br>" . $conn->error;
 	}*/
 }
+
+//prendo l'ultima matricola inserita nel DB
+$queryLastMatricola="SELECT max(Matricola) AS Matricola
+					FROM studenti";
+/*$nomeUtente=($connessione->query($query))->fetch_assoc();*/
+$res=$connessione->query($queryLastMatricola);
+$matricolaUtente=$res->fetch_assoc();
+
 ?>
 <html>
 	<head>
@@ -42,7 +50,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 
 					<div class="col-md-4">
 						<label for="usermail">Matricola:</label>
-						<input class="form-control"  type="text" name="matricola-studente" required/>
+						<input class="form-control"  type="text" name="matricola-studente" required placeholder="(ultima matricola inserita: <?php echo $matricolaUtente["Matricola"]; ?>)"/>
 					</div>
 				</div> <!-- /row form-group (1) -->
 

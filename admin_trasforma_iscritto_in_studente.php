@@ -1,13 +1,13 @@
 <?php @include_once 'shared/menu.php';
 
-	if($_SESSION['studente-inserito']===1){
+	if( @$_SESSION['studente-inserito']===1){
 		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Studente aggiunto correttamente</div>";
 		$_SESSION['studente-inserito']=0;
-	} else if($_SESSION['studente-inserito']===-1){
+	} else if( @$_SESSION['studente-inserito']===-1){
 		echo "<div style=\"width:100%;color:red;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:red;background-color:#F78181;\">ATTENZIONE: studente non inserito</div>";
 		$_SESSION['studente-inserito']=0;
 	}
-	if($_SESSION['cancellazione-iscritto']===1){
+	if( @$_SESSION['cancellazione-iscritto']===1){
 		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Iscritto cancellato correttamente</div>";
 		$_SESSION['cancellazione-iscritto']=0;
 	}
@@ -53,7 +53,9 @@
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome, a.Id FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola=0";
+				$stringasql="SELECT a.Nome, a.Cognome, a.Id 
+                              FROM anagrafe AS a, studenti AS s
+                              WHERE s.Id_anagrafe=a.Id AND s.Matricola=0";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
