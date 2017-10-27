@@ -23,7 +23,7 @@
 							<tr>
 								<th style="text-align:center" class="sorttable_nosort">Offerta</th>
 								<th style="text-align:center" class="sorttable_nosort">Dipartimento</th>
-								<th style="text-align:center" class="sorttable_nosort">Attivo</th>
+								<!-- <th style="text-align:center" class="sorttable_nosort">Attivo</th> -->
 								<th class="sorttable_nosort"><!-- Modifica --></th>
 								<th class="sorttable_nosort"><!-- Dissocia --></th>
 							</tr>
@@ -68,9 +68,9 @@ while($res=$res_offerta_formativa->fetch_assoc()) {
 if($Conta_dipartimenti_triennio==0){echo "<th rowspan=".$rowspan_triennio." style=\"vertical-align:middle; text-align:center; \" class=\"sorttable_nosort\">".$nome."</th>"; $Conta_dipartimenti_triennio=1;}
 ?>
 								<td><?php echo $res2['Nome_dipartimento']; ?></td>
-								<td style="text-align:center"><?php echo $attivo; ?></td>
-								<td><a href="admin_modifica_offerta_formativa.php?ID=<?php echo $res['Id']; ?>">Modifica</a></td>
-								<td><a href="#?ID=<?php echo $res['Id']; ?>">Dissocia<?php }}?></a></td>
+								<td style="text-align:center"><?php //echo $attivo; ?></td>
+								<td><a href="admin_modifica_offerta_formativa.php?ID=<?php echo $res['Id']; ?>"><!-- Modifica--></a></td>
+								<td><a href="admin_elimina_offerta_formativa_query.php?ID=<?php echo $res['Id']; ?>">Elimina<?php }}?></a></td>
 							</tr>
 <?php
 	}//while select offerte
