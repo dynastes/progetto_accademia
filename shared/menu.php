@@ -61,7 +61,14 @@ function menu(){
 			$menu='<ul class="nav navbar-nav">
         <li><a href="docenti_home.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="profilo.php">Profilo</a></li>
-				<li><a href="feedback_home.php">Gestisci feedback</a></li>
+
+				<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci feedback<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+								<li><a href="aggiungi_questionario.php">Aggiungi questionario feedback</a></li>
+								<li><a href="verifica_risposte.php">Verifica risposte studenti</a></li>
+						</ul>
+				</li>
 		<li><a href="docenti_visualizza_orario_lezioni.php">Orario lezioni</a></li>
 		<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documenti<span class="caret"></span></a>
@@ -85,7 +92,13 @@ function menu(){
 			$menu='<ul class="nav navbar-nav" >
 			<li><a href="admin_home.php">Home</a><!-- * --></li>
 			<li><a href="profilo.php">Profilo</a></li>
-			<li><a href="feedback_home.php">Gestisci feedback</a></li>
+			<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci feedback<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+							<li><a href="aggiungi_questionario.php">Aggiungi questionario feedback</a></li>
+							<li><a href="verifica_risposte.php">Verifica risposte studenti</a></li>
+					</ul>
+			</li>
 			<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci<span class="caret"></span></a>
 					<ul class="dropdown-menu">

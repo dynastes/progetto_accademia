@@ -2,8 +2,8 @@
 include "dbconnection.php";
 $nome = $_POST['nome'];
 $numero = $_POST['numero'];
-$materia = $_POST['materia'];
-
+$materia = $_SESSION['materia'];
+echo($materia);
 
 echo($nome);
 echo($numero);

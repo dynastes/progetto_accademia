@@ -57,6 +57,9 @@ class utenteLoggato
     public function get_ruolo(){
         return $this->ruolo;
     }
+    public function get_id(){
+        return $this->id;
+    }
 
 
     public function reloadUser($connessione){

@@ -24,7 +24,7 @@
 	$username=$nomeStudente[0].$nomeStudente[1].$nomeStudente[2].".".$cognomeStudente[0].$cognomeStudente[1].$cognomeStudente[2];
 	$username=strtolower($username);
 	$password=$username;
-
+	$password_cript=password_hash($password,PASSWORD_BCRYPT);
 	//creazione data nascita
 	$dataNascita=$annoNascita."-".$meseNascita."-".$giornoNascita;
 
@@ -33,7 +33,7 @@
 
 
 	$sqlAnagrafe="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Codice_fiscale, Email, Indirizzo, Residenza, Telefono, Username, Password)
-					VALUES ('".$nomeStudente."', '".$cognomeStudente."', '".$dataNascita."', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password."')";
+					VALUES ('".$nomeStudente."', '".$cognomeStudente."', '".$dataNascita."', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password_cript."')";
 
 	echo "Query: ".$sqlAnagrafe;
 	$res=$connessione->query($sqlAnagrafe);

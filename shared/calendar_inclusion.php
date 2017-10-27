@@ -17,7 +17,7 @@
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      
+    
       editable: true,
       allDaySlot: false,
       events: "fullcalendar/events.php",

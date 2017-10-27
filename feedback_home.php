@@ -14,8 +14,6 @@
       <a href="aggiungi_questionario.php"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp Aggiungi questionario</a>
       <br />
       <br />
-      <a href="visualizza_questionari.php">Visualizza questionari</a>
-      <br />
       <a href="verifica_risposte.php">Visualizza risposte utenti</a>
 
 </div>

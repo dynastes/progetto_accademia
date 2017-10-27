@@ -1,5 +1,6 @@
-<?php 
+<?php
 @include_once 'menu.php';
+@include_once 'dbconnection.php';
 $idUtente=$_POST["idUtente"];
 $matricolaStudente=$_POST["matricolaStudente"];
 

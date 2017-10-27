@@ -35,12 +35,20 @@
                 <br />
                 <label for="materia">Nome materia</label>
                 <select class="form-control" name="materia" id="materia">
-                  <option value="1">
-                    italiano
-                  </option>
-                  <option value="2">
-                    Storia
-                  </option>
+                <?php
+                include"dbconnection.php";
+                include "shared/head_inclusions.php";
+                $id = $_POST['codice'];
+                //selezionare il numero di domande
+                $query = "SELECT * FROM materie_anagrafica";
+                $dati=$connessione->query($query);
+                while($res = $dati -> fetch_assoc())
+                    {
+                      echo("<option value='".$res['Id']."'>".$res['Nome_materia']." </option>");
+                    }
+                 ?>
+
+
                 </select>
                 <br />
 

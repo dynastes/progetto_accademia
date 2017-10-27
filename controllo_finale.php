@@ -1,8 +1,9 @@
 <?php
 session_start();
 $nome = str_replace("'","\'",$_SESSION['nome_questionario']);
+$materia = $_SESSION['materia_questionario'];
 include "dbconnection.php";
-$query="INSERT INTO questionari (Nome) VALUES('".$nome."')";
+$query="INSERT INTO questionari (Nome,Id_materia,Data_pub) VALUES('".$nome."','".$materia."',CURDATE())";
 $connessione->query($query);
 //ultimo id questionario
 $query="SELECT Id FROM questionari Order By Id Desc LIMIT 1";
@@ -45,6 +46,6 @@ for($i=1;$i<=$_SESSION['numero_domande'];$i++)
   }
 }
 session_destroy();
-//@header("location: index.php");
+@header("location: index.php");
 
  ?>
