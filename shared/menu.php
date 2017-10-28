@@ -34,14 +34,14 @@ function menu(){
 		//admin, studente, docente
 		if($utente->get_ruolo()=="studente"){
 			$menu='<ul class="nav navbar-nav" >
-        <li class="active"><a href="studenti_home.php">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="studenti_home.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="profilo.php">Profilo</a></li>
 		<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Piano di studi<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="studenti_visualizza_piano_studi.php">Visualizza piano di studi</a></li>
-					<li><a href="studenti_carriera_accademica.php">Mostra Carriera accademica</a></li>
-					<li><a href="#">Modifica piano studi</a></li>
+					<!--<li><a href="studenti_carriera_accademica.php">Mostra Carriera accademica</a></li>-->
+					<!--<li><a href="#">Modifica piano studi</a></li>-->
 				</ul>
 		</li>
 		<li><a href="studenti_visualizza_orario_lezione.php">Orario lezioni</a></li>

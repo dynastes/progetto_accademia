@@ -1,8 +1,9 @@
 <?php @include_once 'shared/menu.php'; ?>
 <html>
 	<head>
-		<?php @include_once 'shared/head_inclusions.php';?>
-		<?php @include_once 'shared/head_fullcalendar_inclusions.php';?>
+        <?php @include_once 'shared/head_inclusions.php'; ?>
+        <?php @include_once 'shared/head_fullcalendar_inclusions.php'; ?>
+        <?php @include_once 'shared/calendar_inclusion.php'; ?>
 
 	</head>
 	<body>
