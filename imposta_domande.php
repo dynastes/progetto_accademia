@@ -2,13 +2,13 @@
   <head>
     <title>Aggiungi questionario per feedback </title>
     <?php
-        include "headerinclusion.php";
+        include "shared/head_inclusions.php";
      ?>
   </head>
   <body style="padding-bottom: 70px;">
     <div class="container text-center">
         <h1 class="text-center"> Questionario feedback </h1>
-        <h3> <?php session_start(); echo($_SESSION['nome_questionario']); ?></h2>
+        <h2> <?php session_start(); echo($_SESSION['nome_questionario']); ?></h2>
           <p>
             Domanda n. <?php echo($_GET['domanda_corrente']); ?>
           </p>

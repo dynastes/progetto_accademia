@@ -48,7 +48,7 @@ $tipoFile=$_POST['tipoFile'];
 								    <option value="2">Bonifico</option>
 								    <option value="3">Foto</option>
 								 </select>
-								<input style="float:left;" type="submit" value="Invia file/documento">
+								<input class="btn btn-info" style="float:left;" type="submit" value="Invia file/documento">
 							</form>';
 						}
 					?>

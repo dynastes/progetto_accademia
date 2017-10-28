@@ -31,7 +31,7 @@ if(@$_SESSION['richiesta-inviata']===1){
 							<option value="2">Certificato di iscrizione</option>
 							<option value="3">Certificato per materie sostenute</option>
 						</select>
-						<input  type="submit" value="Richiedi certificato">
+						<input class="btn btn-info" type="submit" value="Richiedi certificato">
 					</div>
 					</form>
 					

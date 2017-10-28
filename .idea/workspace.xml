@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6d9b5b0d-9077-4767-84f9-808181141ffd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studenti_home.php" afterPath="$PROJECT_DIR$/studenti_home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_autorizza_certificati.php" afterPath="$PROJECT_DIR$/admin_autorizza_certificati.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imposta_domande.php" afterPath="$PROJECT_DIR$/imposta_domande.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imposta_risposte.php" afterPath="$PROJECT_DIR$/imposta_risposte.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studenti_carica_documenti.php" afterPath="$PROJECT_DIR$/studenti_carica_documenti.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studenti_carica_documenti_bootstrap.php" afterPath="$PROJECT_DIR$/studenti_carica_documenti_bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studenti_richieste.php" afterPath="$PROJECT_DIR$/studenti_richieste.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,52 +19,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin_imposta_orari_lezione.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_imposta_orari_lezione.php">
+      <file leaf-file-name="studenti_carica_documenti.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/studenti_carica_documenti.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="383">
+              <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
               <folding>
-                <marker date="1507916667993" expanded="true" signature="155:293" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="927:1149" ph="INSERT INTO studenti_documenti_caricati... " />
+                <marker date="1509199949590" expanded="true" signature="1279:1417" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="1418:1543" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="1707:1945" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="2080:3367" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="2115:2302" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="2171:2182" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="2398:3081" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="2613:2643" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="2666:3038" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="3177:3328" ph="..." />
+                <marker date="1509199949590" expanded="true" signature="3254:3265" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studenti_home.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/studenti_home.php">
+      <file leaf-file-name="admin_inserisci_materia_anagrafe.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_inserisci_materia_anagrafe.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="80" column="160" lean-forward="false" selection-start-line="80" selection-start-column="160" selection-end-line="80" selection-end-column="160" />
+            <state relative-caret-position="189">
+              <caret line="47" column="84" lean-forward="true" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="84" />
               <folding>
-                <marker date="1509176408004" expanded="true" signature="847:872" ph="SELECT * FRO... questionari" />
-                <marker date="1509176408004" expanded="true" signature="1414:1520" ph="SELECT sum(I... risposte_utenti" />
-                <marker date="1509176408004" expanded="true" signature="2037:2084" ph="SELECT * FRO... materie_piano" />
-                <marker date="1509176408004" expanded="true" signature="2433:2514" ph="SELECT * FRO... studente_piano" />
-                <marker date="1509176408004" expanded="true" signature="3535:3637" ph="SELECT * FRO... materie_scelta" />
-                <marker date="1509176408004" expanded="true" signature="4938:5121" ph="SELECT an.No... avvisi" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="studenti_visualizza_orario_lezione.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/studenti_visualizza_orario_lezione.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="studenti_home_bootstrap.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/studenti_home_bootstrap.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1507916644279" expanded="true" signature="567:688" ph="SELECT an.No... avvisi" />
+                <marker date="1507916667998" expanded="true" signature="174:195" ph="SELECT * FRO... settore" />
               </folding>
             </state>
           </provider>
@@ -73,6 +62,10 @@
       <find>scollega</find>
       <find>res_offerta_id</find>
       <find>modifica</find>
+      <find>richiedi</find>
+      <find>invia</find>
+      <find>richiedi certi</find>
+      <find>select</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -98,9 +91,17 @@
         <option value="$PROJECT_DIR$/studenti_visualizza_piano_studi_seleziona_corso.php" />
         <option value="$PROJECT_DIR$/admin_visualizza_piano_di_studi.php" />
         <option value="$PROJECT_DIR$/studenti_visualizza_piano_studi.php" />
-        <option value="$PROJECT_DIR$/shared/menu.php" />
         <option value="$PROJECT_DIR$/studenti_visualizza_orario_lezione.php" />
         <option value="$PROJECT_DIR$/studenti_home.php" />
+        <option value="$PROJECT_DIR$/studenti_richiedi_certificato_query.php" />
+        <option value="$PROJECT_DIR$/shared/menu.php" />
+        <option value="$PROJECT_DIR$/imposta_domande.php" />
+        <option value="$PROJECT_DIR$/imposta_risposte.php" />
+        <option value="$PROJECT_DIR$/admin_autorizza_certificati.php" />
+        <option value="$PROJECT_DIR$/studenti_richieste.php" />
+        <option value="$PROJECT_DIR$/studenti_carica_documenti_bootstrap.php" />
+        <option value="$PROJECT_DIR$/admin_inserisci_materia_anagrafe.php" />
+        <option value="$PROJECT_DIR$/studenti_carica_documenti.php" />
       </list>
     </option>
   </component>
@@ -131,7 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,6 +149,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -183,7 +184,8 @@
       <option name="presentableId" value="Default" />
       <updated>1509124246165</updated>
       <workItem from="1509124253032" duration="13361000" />
-      <workItem from="1509169180764" duration="7221000" />
+      <workItem from="1509169180764" duration="7749000" />
+      <workItem from="1509197593609" duration="1999000" />
     </task>
     <task id="LOCAL-00001" summary="Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico">
       <created>1509136046964</created>
@@ -206,11 +208,25 @@
       <option name="project" value="LOCAL" />
       <updated>1509175454959</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Risolto Bug nella home degli studenti: ora la pagina non crasha quando non ci sono materie sostitutive nel DB&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico">
+      <created>1509176459214</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1509176459214</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modificate alcune voci del menù che linkavano a pagine vecchie&#10;&#10;Rinominate delle pagine nuove che avevano ancora il nome _bootstrap, rendendole irragiungibili da alcuni link&#10;&#10;Risolto Bug nella pagina studenti_richiedi_certificato_query: il link a menu.php è quello vecchio&#10;&#10;Risolto Bug nella home degli studenti: ora la pagina non crasha quando non ci sono materie sostitutive nel DB&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico">
+      <created>1509176904891</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1509176904891</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20582000" />
+    <option name="totallyTimeSpent" value="23109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -220,7 +236,6 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -232,6 +247,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -245,13 +261,25 @@
     <MESSAGE value="Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
     <MESSAGE value="Bug fixed&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
     <MESSAGE value="Bug fixed&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixed&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
+    <MESSAGE value="Risolto Bug nella home degli studenti: ora la pagina non crasha quando non ci sono materie sostitutive nel DB&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
+    <MESSAGE value="Modificate alcune voci del menù che linkavano a pagine vecchie&#10;&#10;Rinominate delle pagine nuove che avevano ancora il nome _bootstrap, rendendole irragiungibili da alcuni link&#10;&#10;Risolto Bug nella pagina studenti_richiedi_certificato_query: il link a menu.php è quello vecchio&#10;&#10;Risolto Bug nella home degli studenti: ora la pagina non crasha quando non ci sono materie sostitutive nel DB&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificate alcune voci del menù che linkavano a pagine vecchie&#10;&#10;Rinominate delle pagine nuove che avevano ancora il nome _bootstrap, rendendole irragiungibili da alcuni link&#10;&#10;Risolto Bug nella pagina studenti_richiedi_certificato_query: il link a menu.php è quello vecchio&#10;&#10;Risolto Bug nella home degli studenti: ora la pagina non crasha quando non ci sono materie sostitutive nel DB&#10;&#10;Il calendario ora viene mostrato nelle pagine corrette&#10;&#10;Piano di studi:&#10;- Se lo studente è nuovo e non ha alcun piano di studi collegato al suo account, dalla pagina apposita può sceglierne uno&#10;- Ora il piano di studi è visualizzabile nel profilo dell'utente&#10;&#10;Risolto bug nella pagina admin_inserisci_studenti: ora, dopo l'operazione di inseirimento dello studente l'utente verrà reindirizzato nella pagina corretta&#10;&#10;Risulto bug nella pagina admin_trasforma_iscritto_in_studente.php e figlie.&#10;- Prima del fix: l'utente trasformato in studente non scompariva dall'elenco degli utenti da convertire e veniva inserito nel DB nel modo sbagliato&#10;&#10;Admin_imposta_materia_docenti: aggiustato aspetto grafico&#10;&#10;admin_imposta_materia_docenti_dettagli.php&#10;&#9;- aggiunta la tabella che mostra tutte le materie che insegna quel professore&#10;&#9;- Risolto bug che permetteva di inserire in elenco infinite volte una materia ad un professore.&#10;&#9;- risolto bug che reindirizzava ad una pagina sbagliata dopo aver assegnato una materia ad un professore specifico&#10;&#9;- Risolto bug che permetteva l'inserimento di una specifica materia a più di un professore&#10;&#9;- migliorato aspetto grafico" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin_imposta_orari_lezione.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1507916667993" expanded="true" signature="155:293" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin_home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -575,46 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <marker date="1507916668052" expanded="true" signature="351:460" ph="INSERT INTO evenement... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <marker date="1509174932612" expanded="true" signature="426:989" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="503:942" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="644:872" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="1180:2473" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="1349:1807" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="1546:1799" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="1910:2411" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="2114:2403" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="2419:2471" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="2556:4033" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="2726:3120" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="2930:3110" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="3222:3590" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="3414:3582" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="3614:3967" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="3803:3959" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="3976:4031" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="4121:7709" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="4249:4637" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="4451:4628" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="4662:5241" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="4855:5232" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="5345:6195" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="5537:6186" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="6222:6647" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="6434:6633" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="6674:7281" ph="..." />
-            <marker date="1509174932612" expanded="true" signature="6886:7267" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -674,16 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_imposta_orari_lezione.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <marker date="1507916667993" expanded="true" signature="155:293" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studenti_visualizza_orario_lezione.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -702,9 +680,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shared/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="44" column="21" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding>
+            <marker date="1509176716906" expanded="true" signature="426:989" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="503:942" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="644:872" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="1180:2492" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="1349:1807" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="1546:1799" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="1910:2430" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="2114:2422" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="2438:2490" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="2575:4052" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="2745:3139" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="2949:3129" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="3241:3609" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="3433:3601" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="3633:3986" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="3822:3978" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="3995:4050" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="4140:7728" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="4268:4656" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="4470:4647" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="4681:5260" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="4874:5251" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="5364:6214" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="5556:6205" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="6241:6666" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="6453:6652" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="6693:7300" ph="..." />
+            <marker date="1509176716906" expanded="true" signature="6905:7286" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studenti_richiedi_certificato_query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding>
+            <marker date="1509176667514" expanded="true" signature="111:273" ph="INSERT INTO studenti_richieste... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/studenti_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="1360">
           <caret line="80" column="160" lean-forward="false" selection-start-line="80" selection-start-column="160" selection-end-line="80" selection-end-column="160" />
           <folding>
             <marker date="1509176408004" expanded="true" signature="847:872" ph="SELECT * FRO... questionari" />
@@ -713,6 +738,102 @@
             <marker date="1509176408004" expanded="true" signature="2433:2514" ph="SELECT * FRO... studente_piano" />
             <marker date="1509176408004" expanded="true" signature="3535:3637" ph="SELECT * FRO... materie_scelta" />
             <marker date="1509176408004" expanded="true" signature="4938:5121" ph="SELECT an.No... avvisi" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_imposta_orari_lezione.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <marker date="1507916667993" expanded="true" signature="155:293" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imposta_domande.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_autorizza_certificati.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding>
+            <marker date="1509197783220" expanded="true" signature="51:119" ph="UPDATE stude... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imposta_risposte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studenti_carica_documenti_bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="50" column="44" lean-forward="true" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding>
+            <marker date="1509199426442" expanded="true" signature="874:1080" ph="INSERT INTO studenti_documenti_caricati... " />
+            <marker date="1509199426442" expanded="true" signature="1188:1326" ph="..." />
+            <marker date="1509199426442" expanded="true" signature="1327:1451" ph="..." />
+            <marker date="1509199426442" expanded="true" signature="1596:1834" ph="..." />
+            <marker date="1509199426442" expanded="false" signature="1967:1978" ph="..." />
+            <marker date="1509199426442" expanded="false" signature="2057:2087" ph="..." />
+            <marker date="1509199426442" expanded="false" signature="2177:2207" ph="..." />
+            <marker date="1509199426442" expanded="true" signature="2208:2369" ph="..." />
+            <marker date="1509199426442" expanded="true" signature="2414:2425" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studenti_richieste.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <marker date="1509199203200" expanded="true" signature="100:238" ph="..." />
+            <marker date="1509199203200" expanded="true" signature="1732:1932" ph="SELECT sr.Da... studenti_richieste" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_inserisci_materia_anagrafe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="47" column="84" lean-forward="true" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="84" />
+          <folding>
+            <marker date="1507916667998" expanded="true" signature="174:195" ph="SELECT * FRO... settore" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studenti_carica_documenti.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+          <folding>
+            <marker date="1509199949590" expanded="true" signature="927:1149" ph="INSERT INTO studenti_documenti_caricati... " />
+            <marker date="1509199949590" expanded="true" signature="1279:1417" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="1418:1543" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="1707:1945" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="2080:3367" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="2115:2302" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="2171:2182" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="2398:3081" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="2613:2643" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="2666:3038" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="3177:3328" ph="..." />
+            <marker date="1509199949590" expanded="true" signature="3254:3265" ph="..." />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,5 @@
 <?php
-@include('menu.php');
+@include('shared/menu.php');
 
 $sqlAutorizza="UPDATE studenti_richieste SET Stato_richiesta='Confermato' WHERE Id=".$_GET['Id'];
 
