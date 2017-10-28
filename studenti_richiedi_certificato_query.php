@@ -1,5 +1,5 @@
 <?php
-@include_once 'menu.php';
+@include_once 'shared/menu.php';
 
 $tipoCertificato=$_POST["tipo-certificato"];
 $sqlInserisciCertificato="INSERT INTO studenti_richieste 

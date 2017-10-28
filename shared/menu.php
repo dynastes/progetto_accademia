@@ -50,8 +50,8 @@ function menu(){
 				<ul class="dropdown-menu">
 					<li><a href="studenti_visualizza_documenti.php">Visualizza Documenti</a></li>
 					<li><a href="studenti_carica_documenti.php">Carica documenti</a></li>
-					<li><a href="studenti_richieste.php">Richiedi documenti</a></li>
-					<li><a href="#">Richiedi certificati</a></li>
+					<li><a href="studenti_richieste.php">Richiedi documenti/certificati</a></li>
+					<!--<li><a href="#">Richiedi certificati</a></li>-->
 				</ul>
 		</li>
 		<!--li><a href="logout.php">Disconnetti</a></li>

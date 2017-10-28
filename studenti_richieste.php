@@ -1,5 +1,5 @@
 <?php @include_once 'shared/menu.php';
-if($_SESSION['richiesta-inviata']===1){
+if(@$_SESSION['richiesta-inviata']===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Richiesta inviata correttamente all'Admin</div>";
 	$_SESSION['richiesta-inviata']=0;
 }
@@ -23,7 +23,7 @@ if($_SESSION['richiesta-inviata']===1){
 					<p>Da questa pagina si possono inviare le richieste per i certificati direttamente alla segreteria.</p>
 					<p>Una volta trattata la richiesta, lo stato passerà a "confermato" e si potrà andare a ritirare la versione cartacea.</p>
 					<!-- ### FORM richiedi certificato ###-->
-					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php<?php/* echo $_SERVER['PHP_SELF']; */?>" accept-charset="utf-8"> 
+					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php" accept-charset="utf-8"> <?php/* echo $_SERVER['PHP_SELF']; */?>
 						<div class="form-group">
 						<label>Seleziona il certificato da richiedere:&nbsp;</label>
 						<select name="tipo-certificato">
