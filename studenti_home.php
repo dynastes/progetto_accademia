@@ -53,6 +53,7 @@ non convertite
                 }
 
                 if ($compilato == false) {
+                    $idPianoStudente = "";
                     $sqlPianoStudi = "SELECT * FROM materie_piano WHERE Id_materia = " . $idMateria;
                     $pianoStudiLista = $connessione->query($sqlPianoStudi);
                     while ($resPianoStudi = $pianoStudiLista->fetch_assoc()) {
@@ -77,15 +78,17 @@ non convertite
                     //controllo per gli studenti che hanno la materia come materia a scelta
                     $sqlMateriaScelta = "SELECT * FROM materie_scelta WHERE Id_materia_piano_sost = " . $idMateria . " AND Id_studente_piano = " . $idPianoStudente;
                     $materiaSceltaLista = $connessione->query($sqlMateriaScelta);
-                    while ($resMateriaScelta = $materiaSceltaLista->fetch_assoc()) {
-                        echo '<form action="gestisci_questionario.php" method="post">';
-                        echo '<input type="hidden" value ="' . $idQuestionario . '" name="codice" />';
-                        echo '<tr>';
-                        echo '<td> ' . $nomeQuestionario . ' </td>';
-                        echo '<td> <button class="btn btn-default">Compila</button> </td>';
-                        echo '<td> ' . $dataQuestionario . ' </td>';
-                        echo '</tr>';
-                        echo '</form>';
+                    if (@mysqli_num_rows($materiaSceltaLista)) { //controlliamo che la query abbia restituito valori. Se non ne restituisce, la pagina da errore
+                        while ($resMateriaScelta = $materiaSceltaLista->fetch_assoc()) {
+                            echo '<form action="gestisci_questionario.php" method="post">';
+                            echo '<input type="hidden" value ="' . $idQuestionario . '" name="codice" />';
+                            echo '<tr>';
+                            echo '<td> ' . $nomeQuestionario . ' </td>';
+                            echo '<td> <button class="btn btn-default">Compila</button> </td>';
+                            echo '<td> ' . $dataQuestionario . ' </td>';
+                            echo '</tr>';
+                            echo '</form>';
+                        }
                     }
                 }
                 //selezioniamo ora l'id del piano di studi
