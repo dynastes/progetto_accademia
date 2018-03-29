@@ -1,4 +1,4 @@
-<?php @include_once 'shared/menu.php'; 
+<?php @include_once 'shared/menu.php';
 if($_SESSION["autorizzato"]===1){
 	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Autorizzazione effettuata correttamente</div>";
 	$_SESSION["autorizzato"]=0;
@@ -7,7 +7,7 @@ if($_SESSION["autorizzato"]===1){
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-
+		<script src="sorttable.js"></script>
 	</head>
 	<body>
 				<!-- INIZIO CARICAMENTO MENU -->
@@ -24,20 +24,20 @@ if($_SESSION["autorizzato"]===1){
 							<b><a href="admin_gestisci_certificati_autorizzati.php" >Visualizza richieste autorizzate &gt;&gt;</a></b>
 						</div>
 						<br />
-					<table class="table table-striped">
+					<table class="table sortable table-striped">
 						<tr>
-							<td>
-								<b>Caricato da...</b>
-							</td>
-							<td>
-								<b>Tipo richiesta</b>
-							</td>
-							<td>
-								<b>Data Invio</b>
-							</td>
-							<td>
-								<b>Opzioni</b>
-							</td>
+							<th>
+								Caricato da...
+							</th>
+							<th>
+								Tipo richiesta
+							</th>
+							<th>
+								Data Invio
+							</th>
+							<th>
+								Opzioni
+							</th>
 						</tr>
 						<?php //qui interrogo il DB per sapere la lista dei certificati richiesti dagli utenti
 						$stringasql="SELECT a.Nome, a.Cognome, sr.Data_invio, sr.Id, t.Tipo

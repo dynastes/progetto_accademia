@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-
+		<script src="sorttable.js"></script>
 	</head>
 	<body>
 		<div id="principale">
@@ -30,14 +30,14 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table class="table table-striped">
+				<table class="table sortable table-striped">
 				<tr>
-					<td><b>Nome</b></td>
-					<td><b>Cognome</b></td>
-					<td><b>Matricola</b></td>
-					<td><b>Email</b></td>
-					<td><b>Indirizzo</b></td>
-					<td><b>Telefono</b></td>
+					<th> Nome </th>
+					<th> Cognome </th>
+					<th> Matricola </th>
+					<th> Email </th>
+					<th> Indirizzo </th>
+					<th> Telefono </th>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-
+		<script src="sorttable.js"></script>
 	</head>
 	<body>
 				<!-- INIZIO CARICAMENTO MENU -->
@@ -18,20 +18,20 @@
 						<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina</p> <a class="btn btn-info" href="studenti_carica_documenti.php" type="button">Carica documenti</a>
 					<br />
 					<br />-->
-					<table class="table table-striped">
+					<table class="table sortable table-striped">
 						<tr>
-							<td>
-								<b>Caricato da...</b>
-							</td>
-							<td>
-								<b>Nome file</b>
-							</td>
-							<td>
-								<b>Data caricamento</b>
-							</td>
-							<td>
-								<b>Link di download</b>
-							</td>
+							<th>
+								Caricato da...
+							</th>
+							<th>
+								Nome file
+							</th>
+							<th>
+								Data caricamento
+							</th>
+							<th>
+								Link di download
+							</th>
 						</tr>
 						<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 						$stringasql="SELECT a.Nome, a.Cognome, s.Nome_file, s.Data_caricamento, s.Percorso_file, s.Nome_file FROM studenti_documenti_caricati AS s, anagrafe AS a WHERE s.Id_studente=a.Id";

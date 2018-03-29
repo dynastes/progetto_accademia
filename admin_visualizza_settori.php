@@ -2,17 +2,17 @@
 @include_once 'dbconnection.php';
 ?>
 
-<script type="text/javascript"> 
-function sicuro(settore){ 
+<script type="text/javascript">
+function sicuro(settore){
 return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
-} 
-</script> 
+}
+</script>
 
 <!DOCTYPE html>
 <html lang="it">
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-		<?php @include_once 'shared/menu.php';?> 
+		<?php @include_once 'shared/menu.php';?>
 		<script src="sorttable.js"></script>
 	</head>
 	<body>
@@ -22,7 +22,7 @@ return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
 				<h1>Settori</h1>
 				<p class="text-center" ><a class="btn btn-info" href="admin_inserisci_settore.php">Inserisci nuovo settore</a></p>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
@@ -30,7 +30,7 @@ return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
 						<table  class="table sortable table-striped">
 							<tr>
 								<!-- <th style="text-align:center">ID</th> -->
-								<th style="text-align:center" class="sorttable_nosort">Codice </th>
+								<th style="text-align:center">Codice </th>
 								<th style="text-align:center">Nome</th>
 								<th class="sorttable_nosort"><!-- Modifica --></th>
 								<th class="sorttable_nosort"><!-- Elimina --></th>
@@ -40,7 +40,7 @@ return confirm("Sei sicuro di voler cancellare il settore \""+settore+"\"?");
 $sql_carica_settori="SELECT * FROM settore WHERE NOT Id=1";
 //echo "Query: ".$sql_carica_settori;
 $res_settori=$connessione->query($sql_carica_settori);
-while($res=$res_settori->fetch_assoc()) {  
+while($res=$res_settori->fetch_assoc()) {
 ?>
 							<tr>
 								<!-- <td style="text-align:center"><?php //echo $res['Id']; ?></td> -->
@@ -54,7 +54,7 @@ while($res=$res_settori->fetch_assoc()) {
 				</div>
 				<div class="col-md-2"></div>
 			</div>
-		</div>		
+		</div>
 		<?php @include_once 'shared/footer.php'; ?>
-	</body>	
+	</body>
 </html>

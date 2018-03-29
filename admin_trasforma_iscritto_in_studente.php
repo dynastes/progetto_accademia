@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
-
+			<script src="sorttable.js"></script>
 	</head>
 	<body>
 		<div id="principale">
@@ -43,17 +43,17 @@
 				<div class="box-programmi-caricati">
 					<p><b>Visibilità</b></p>
 				</div-->
-				<table class="table table-striped">
+				<table class="table sortable table-striped">
 				<tr>
-					<td><b>Nome</b></td>
-					<td><b>Cognome</b></td>
-					<td><b>Trasforma in studente</b></td>
-					<td><b>Cancella iscritto</b></td>
+					<th>Nome</th>
+					<th>Cognome</th>
+					<th>Trasforma in studente</th>
+					<th>Cancella iscritto</th>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome, a.Id 
+				$stringasql="SELECT a.Nome, a.Cognome, a.Id
                               FROM anagrafe AS a, studenti AS s
                               WHERE s.Id_anagrafe=a.Id AND s.Matricola=0";
 				$elencoStudenti=$connessione->query($stringasql);
