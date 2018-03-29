@@ -145,7 +145,8 @@ $matricolaUtente=$res->fetch_assoc();
 					</div>
 
 					<div class="col-md-4">
-
+						<label for="password">Password:</label>
+						<input class="form-control"  type="password" name="password" required/>
 					</div>
 				</div> <!-- /row form-group (4) -->
 				<div class="row form-group pull-right">
