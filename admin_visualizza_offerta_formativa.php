@@ -4,8 +4,9 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<?php @include_once 'shared/head_inclusions.php';?>
-		<?php @include_once 'shared/menu.php';?> 
+		<?php @include_once 'shared/menu.php';?>
 		<script src="sorttable.js"></script>
 	</head>
 	<body>
@@ -40,11 +41,11 @@ else
 {
   // avvio un ciclo for che si ripete per il numero di occorrenze trovate
   for ($x = 0; $x < $num_offerte; $x++){
-    
+
     // recupero il contenuto di ogni record rovato
-    while($res=$res_select_offerte->fetch_assoc()) {	
+    while($res=$res_select_offerte->fetch_assoc()) {
     //echo $res['Nome'];
- 
+
 
 $Conta_dipartimenti_triennio=0;
 $sql_carica_offerta_formativa="SELECT * FROM offerta_formativa WHERE Nome='".$res['Nome']."'";
@@ -57,14 +58,14 @@ $nome = $res['Nome'];
 if($res['Nome']=="Ciclo_unico"){$nome = "Ciclo unico";}
 
 
-while($res=$res_offerta_formativa->fetch_assoc()) {		
+while($res=$res_offerta_formativa->fetch_assoc()) {
 		$sql_carica_dipartiementi="SELECT * FROM dipartimenti WHERE Id=".$res['Id_dipartimento'];
 		$res_dipartiementi=$connessione->query($sql_carica_dipartiementi);
 		if($res['Attivo']==1){$attivo="Si";}else{$attivo="No";}
 		while($res2=$res_dipartiementi->fetch_assoc()) {
 ?>
 							<tr>
-<?php 
+<?php
 if($Conta_dipartimenti_triennio==0){echo "<th rowspan=".$rowspan_triennio." style=\"vertical-align:middle; text-align:center; \" class=\"sorttable_nosort\">".$nome."</th>"; $Conta_dipartimenti_triennio=1;}
 ?>
 								<td><?php echo $res2['Nome_dipartimento']; ?></td>

@@ -11,7 +11,7 @@
 	$indirizzo=$_POST["indirizzo"];
 	$residenza=$_POST["residenza"];
 	$telefono=$_POST["telefono"];
-
+	$password = $_POST['password'];
 	$idAnagrafe=0;
 	$annoAccademico=1;
 	$matricolaStudente=$_POST["matricola-studente"];
@@ -23,7 +23,6 @@
 	//creazione username e password
 	$username=$nomeStudente[0].$nomeStudente[1].$nomeStudente[2].".".$cognomeStudente[0].$cognomeStudente[1].$cognomeStudente[2];
 	$username=strtolower($username);
-	$password=$username;
 	$password_cript=password_hash($password,PASSWORD_BCRYPT);
 	//creazione data nascita
 	$dataNascita=$annoNascita."-".$meseNascita."-".$giornoNascita;

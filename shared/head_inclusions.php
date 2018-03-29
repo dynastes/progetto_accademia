@@ -3,6 +3,7 @@
 /*<?php @include_once 'shared/head_inclusions.php';?>*/
 ?>
 <!-- <meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
+<meta http-equiv="Content-Language" content="it-it" />
 <meta charset="utf-8" />
 <title>Area Riservata Kandinskij</title>
 
