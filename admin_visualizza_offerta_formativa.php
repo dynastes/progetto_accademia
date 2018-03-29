@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
 		<?php @include_once 'shared/head_inclusions.php';?>
 		<?php @include_once 'shared/menu.php';?>
 		<script src="sorttable.js"></script>
