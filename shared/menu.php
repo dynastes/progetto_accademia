@@ -159,6 +159,7 @@ function menu(){
 	echo $nav;
 	echo $menu;
 	echo $chiusure;
+	
 	}
 }
 ?>
