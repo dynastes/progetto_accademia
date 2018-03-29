@@ -16,28 +16,19 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 <head>
 
     <?php @include_once 'shared/head_inclusions.php'; ?>
-	
+		<?php @include_once 'shared/menu.php';?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 <body>
 
 
-<!-- start header -->
-<header>
-    <div class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <a href="index.php">
-                <div class="navbar-header">
-                    <img src="img/logo.png" alt=""/>
-                </div>
-            </a>
-        </div>
-</header>
-<!-- end header -->
-<!-- start slider -->
-
-
+    <?php menu(); ?>
+		<?php
+				if($utente->get_ruolo()!="admin"){
+					@header('location:index.php');
+				}
+		 ?>
     <div class="container">
         <!-- <a href="index.html"><img src="img/logo.png" height="20%" alt="" ></a>-->
         <div class="page-header">
@@ -91,10 +82,10 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 							</select>
 						</div>
 					</div>
-			 
+
 			  </div>
 
-           
+
                 <div class="row form-group">
 				<div class="col-md-4">
                     <label>E-mail: &nbsp;</label>
@@ -106,7 +97,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
                     <label>Codice fiscale: &nbsp; </label>
                     <input type="text" class="form-control" name="cf" required>
 					</div>
-              
+
 				<div class="col-md-4">
                     <label>Indirizzo: &nbsp; </label>
                     <input type="text" class="form-control" name="indirizzo" required>
@@ -138,25 +129,25 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
                         <option value="Nome del tuo posto preferito">Nome del tuo posto preferito</option>
                         <option value="Nome di un oggetto a te caro">Nome di un oggetto a te caro</option>
                     </select>
-                </div> 
+                </div>
 
                 <div class="col-md-4">
-                     <label>Risposta di recupero: &nbsp;</label>	
+                     <label>Risposta di recupero: &nbsp;</label>
                     <input name="risposta" type="text" class="form-control">
-                    
-                </div> 
+
+                </div>
 					<div class="col-md-4">
                     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                 </div>
-				
+
 				</div>
            <div class="row form-group pull-right">
-					<div class="col-md-12">    
+					<div class="col-md-12">
 				  <label> &nbsp; </label>
-                  <input type="submit" class="btn btn-info" color="blue"  value="Registra un Professore">  
-                </div> 
-			
-               
+                  <input type="submit" class="btn btn-info" color="blue"  value="Registra un Professore">
+                </div>
+
+
 				</div>
 				</div>
             </form>
