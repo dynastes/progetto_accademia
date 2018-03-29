@@ -60,7 +60,9 @@ function menu(){
 		if($utente->get_ruolo()=="docente"){
 			$menu='<ul class="nav navbar-nav">
         <li><a href="docenti_home.php">Home <span class="sr-only">(current)</span></a></li>
+		
         <li><a href="profilo.php">Profilo</a></li>
+
 
 				<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci feedback<span class="caret"></span></a>
@@ -127,6 +129,7 @@ function menu(){
 			<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Docenti <span class="caret"></span></a>
           <ul class="dropdown-menu">
+			<li><a href="admin_registra_professori.php">Inserisci nuovo docente</a></li>
             <li><a href="admin_imposta_materia_docenti.php">Imposta/cambia materia docenti</a></li>
             <li><a href="admin_visualizza_docenti.php">Visualizza Docenti</a></li>
           </ul>
