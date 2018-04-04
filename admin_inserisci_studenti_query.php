@@ -49,8 +49,8 @@
 	$idAnagrafe=$res->fetch_assoc();
 
 echo "##ID utente da inserire tra gli studenti: ".$idAnagrafe["Id"];
-	$sqlStudenti="INSERT INTO studenti (Id_anagrafe, Matricola, Attivo) VALUES
-					(".$idAnagrafe["Id"].", '".$matricolaStudente."', 1)";
+	$sqlStudenti="INSERT INTO studenti (Id_anagrafe, Matricola, Id_corso,Attivo) VALUES
+					(".$idAnagrafe["Id"].", '".$matricolaStudente."',".$idCorso.", 1)";
 
 	$resStud=$connessione->query($sqlStudenti);
 
@@ -66,5 +66,5 @@ echo "##ID utente da inserire tra gli studenti: ".$idAnagrafe["Id"];
 	} else {
 		$_SESSION["studente-aggiunto"]=-1;
 	}
-	@header('location:admin_inserisci_studenti.php');
+	//@header('location:admin_inserisci_studenti.php');
 ?>

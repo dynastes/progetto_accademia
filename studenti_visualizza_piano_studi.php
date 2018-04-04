@@ -232,9 +232,9 @@ if (@$_SESSION['inserimento'] === 1) {
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
                                         <td style="text-align:center"><?php echo $tipo; ?></td>
                                         <td><!--<a>Modifica</a>--></td>
-                                        <td><a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina<?php }
+                                        <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a>--></td><?php }
                                 }
-                            } ?></a></td>
+                            } ?>
                             </tr>
                             <!-- <tr><th colspan="8" style="background-color:#ffff00;text-align:center;">Attività Formative Caratterizzanti</th></tr> -->
                             <?php
@@ -283,9 +283,9 @@ if (@$_SESSION['inserimento'] === 1) {
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
                                         <td style="text-align:center"><?php echo $tipo; ?></td>
                                         <td><!--<a>Modifica</a>--></td>
-                                        <td><a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina<?php }
+                                        <td><!-- <a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
                                 }
-                            } ?></a></td>
+                            } ?>
                             </tr>
                             <!-- <tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr> -->
                             <?php
@@ -334,9 +334,9 @@ if (@$_SESSION['inserimento'] === 1) {
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
                                         <td style="text-align:center"><?php echo $tipo; ?></td>
                                         <td><!--<a>Modifica</a>--></td>
-                                        <td><a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina<?php }
+                                        <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
                                 }
-                            } ?></a></td>
+                            } ?>
                             </tr>
                             <!--Inserire qui attività obbligatorie per il secondo anno -->
                             <?php
