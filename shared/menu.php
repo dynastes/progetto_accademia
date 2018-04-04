@@ -25,7 +25,7 @@ function menu(){
 								        <span class="icon-bar"></span>
 								        <span class="icon-bar"></span>
 						        </button>
-								    <img src="img/logo.png" width="50px;">
+								    <img src="img/logo.png" class="header-logo">
         				</div>
 								<div class="collapse navbar-collapse">';
 
@@ -60,7 +60,7 @@ function menu(){
 		if($utente->get_ruolo()=="docente"){
 			$menu='<ul class="nav navbar-nav">
         <li><a href="docenti_home.php">Home <span class="sr-only">(current)</span></a></li>
-		
+
         <li><a href="profilo.php">Profilo</a></li>
 
 
@@ -162,7 +162,7 @@ function menu(){
 	echo $nav;
 	echo $menu;
 	echo $chiusure;
-	
+
 	}
 }
 ?>

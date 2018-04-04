@@ -6,17 +6,19 @@
 /*Verifico che la sessione sia disponibile. Se lo è, vuol dire che l'utente si è già loggato e quindi che possiede già un OGGETTO UTENTE da serializzare*/
 $password_verificata= false;
 if(isset($_SESSION['login'])){
-	$utente=$_SESSION['ut'];
-	$utente=unserialize($utente);
-	/*se si è qui, l'utente era già loggato. Mostrare chi è*/
-	//echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
-	//se l'utente era già collegato, sarà possibile reindirizzarlo alla sua home page appena cerca di ritornare al log in
-	if($utente->ruolo==="studente"){
-		@header("location:studenti_home.php");
-	} else if ($utente->ruolo==="docente"){
-		@header("location:docenti_home.php");
-	} else if ($utente->ruolo==="admin"){
-		@header("location:admin_home.php");
+	if(isset($_SESSION['ut'])){
+		$utente=$_SESSION['ut'];
+		$utente=unserialize($utente);
+		/*se si è qui, l'utente era già loggato. Mostrare chi è*/
+		//echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
+		//se l'utente era già collegato, sarà possibile reindirizzarlo alla sua home page appena cerca di ritornare al log in
+		if($utente->ruolo==="studente"){
+			@header("location:studenti_home.php");
+		} else if ($utente->ruolo==="docente"){
+			@header("location:docenti_home.php");
+		} else if ($utente->ruolo==="admin"){
+			@header("location:admin_home.php");
+		}
 	}
 }
 $risultato="";
@@ -119,11 +121,12 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 <head>
 
 	<?php @include_once 'shared/head_inclusions.php';?>
+
 </head>
 <body>
 	<div class="container">
 		<!-- start header -->
-		<header class="row">
+		<header class="row logo-accademia">
 			<div class="col-md-5"></div>
 
 			<!-- <div class="navbar navbar-default navbar-static-top"> -->
@@ -131,7 +134,7 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 				<div class="col-md-2">
 					<a href="index.php">
 						<!-- <div class="navbar-header"> -->
-						<img src="img/logo.png" alt="" />
+						<img class="img-responsive" src="img/logo.png" alt="" />
 						<!-- </div> -->
 					</a>
 				</div>
@@ -173,7 +176,7 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 				</div>
 			</form>
 			<div class="col-md-4"> </div>
-			
+
 
 		</div> <!-- /row center-block -->
 	</div> <!-- /container -->
@@ -189,10 +192,10 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	<script src="js/jquery.flexslider.js"></script>
 	<script src="js/animate.js"></script>
 	<script src="js/custom.js"></script-->
-	
+
 	<!-- INIZIO FOOTER -->
 <footer class="navbar-fixed-bottom">
 <?php @include_once 'shared/footer.php'; ?>
-</footer>	
+</footer>
 </body>
 </html>

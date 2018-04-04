@@ -7,15 +7,15 @@
 
 }
 #contenuto{
-	
+
 	width:10px,auto;
 	height:auto;
 	margin-left:148px;
 	margin-right:20px;
-	
+
 }
 #avvisi{
-	
+
 	width:100%;
 	height:auto;
 	padding-left:50px;
@@ -32,19 +32,19 @@ body{
 	float:left;
 	height:100%;
 	width:148px;
-	
+
 	background-color:white;
 
 }
 #riquadro:hover{
 
 	background-color:white;
-	left:142px;	
+	left:142px;
 	width:182px;
 }
 
 .flyout:hover > #riquadro{
-	
+
 	background-color:white;
 	left:142px;
 	width:182px;
@@ -58,14 +58,14 @@ li{
 	width:180px;
 }
 /* Struttura menu */
- 
+
 .nav
 {
-  list-style:none; 
+  list-style:none;
   margin:0;
   padding: 0;
 }
- 
+
 .nav > li,
 .nav > li > a
 {
@@ -73,50 +73,50 @@ li{
   *display:inline; /* Per IE7 */
   zoom:1; /* Per IE 7 */
 }
- 
+
 .stacked > li
 {
   display:list-item;
 }
- 
-.stacked > li > a 
+
+.stacked > li > a
 {
   display:block;
 }
- 
+
 .flyout,
-.flyout-alt 
+.flyout-alt
 {
   position:relative;
 }
- 
-.flyout-content 
+
+.flyout-content
 {
   position:absolute;
   top:100%;
- 
-  /* Posizioniamo i sottomenu fuori dallo 
-     schermo; alternativa a display:none 
+
+  /* Posizioniamo i sottomenu fuori dallo
+     schermo; alternativa a display:none
    */
-  
- 
+
+
   height:0px;
   overflow:hidden;
 }
- 
-.flyout:hover > .flyout-content 
+
+.flyout:hover > .flyout-content
 {
   left:80px;
   top:-1.6px;
 
 }
- 
-.flyout-alt:hover > .flyout-content 
+
+.flyout-alt:hover > .flyout-content
 {
   top:0;
 
 }
- 
+
 .flyout:hover > .flyout-content,
 .flyout-alt:hover > .flyout-content
 {
@@ -191,7 +191,7 @@ li{
 	float:left;
 }
  /*FULLCALENDAR*/
-#calendar { 
+#calendar {
 	width: 800px;
 	margin: 0 auto;
 	margin-bottom:50px;
@@ -200,4 +200,3 @@ li{
 .fc-toolbar{
 	height: 60px;
 }
-

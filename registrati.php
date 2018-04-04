@@ -27,11 +27,18 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 <header>
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <a href="index.php">
-                <div class="navbar-header">
-                    <img src="img/logo.png" alt=""/>
-                </div>
-            </a>
+					<div class="row">
+						<div class="col-md-2">
+							<a href="index.php">
+	                <div class="navbar-header">
+	                    <img class="img-responsive" src="img/logo.png" alt=""/>
+	                </div>
+	            </a>
+						</div>
+						<div class="col-md-10">
+
+						</div>
+					</div>
         </div>
 </header>
 <!-- end header -->
@@ -91,10 +98,10 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 							</select>
 						</div>
 					</div>
-			 
+
 			  </div>
 
-           
+
                 <div class="row form-group">
 				<div class="col-md-4">
                     <label>E-mail: &nbsp;</label>
@@ -106,7 +113,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
                     <label>Codice fiscale: &nbsp; </label>
                     <input type="text" class="form-control" name="cf" required>
 					</div>
-              
+
 				<div class="col-md-4">
                     <label>Indirizzo: &nbsp; </label>
                     <input type="text" class="form-control" name="indirizzo" required>
@@ -138,25 +145,25 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
                         <option value="Nome del tuo posto preferito">Nome del tuo posto preferito</option>
                         <option value="Nome di un oggetto a te caro">Nome di un oggetto a te caro</option>
                     </select>
-                </div> 
+                </div>
 
                 <div class="col-md-4">
-                     <label>Risposta di recupero: &nbsp;</label>	
+                     <label>Risposta di recupero: &nbsp;</label>
                     <input name="risposta" type="text" class="form-control">
-                    
-                </div> 
+
+                </div>
 					<div class="col-md-4">
                     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                 </div>
-				
+
 				</div>
            <div class="row form-group pull-right">
-					<div class="col-md-12">    
+					<div class="col-md-12">
 				  <label> &nbsp; </label>
-                  <input type="submit" class="btn btn-info" color="blue"  value="Registrati">  
-                </div> 
-			
-               
+                  <input type="submit" class="btn btn-info" color="blue"  value="Registrati">
+                </div>
+
+
 				</div>
 				</div>
             </form>

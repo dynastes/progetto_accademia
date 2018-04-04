@@ -32,10 +32,10 @@ html, body {
 }
 
 footer{
-    height: 40px; 
+    height: 40px;
 }
 /* ### FINE ### NUOVO CSS PER IL FOOTER MOBILE*/
-/*table  { 
+/*table  {
     border:1px solid black;
 }*/
 td{
@@ -47,13 +47,13 @@ td{
 .tab-content {
 	margin-top:15px !important;
 }
-table.sortable  { 
+table.sortable  {
     border:0px;
-	
+
 }
 
-table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25B4\25BE" 
+table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+    content: " \25B4\25BE"
 }
 
 table {
@@ -121,3 +121,13 @@ tr.anno :first-child{
     border-radius: 0 10px 10px 0;
 }
 
+.logo-accademia{
+	margin-bottom:30px;
+	margin-top:40px;
+}
+
+.header-logo{
+	width:42px;
+	margin-top:4px;
+	margin-left:4px;
+}

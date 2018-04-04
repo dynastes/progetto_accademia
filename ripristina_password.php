@@ -23,17 +23,24 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 	<!-- start header -->
 	<header>
 		 <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-				<a href="index.php">
-					<div class="navbar-header">
-						<img src="img/logo.png" alt="" />
-					</div>
-				 </a>
-			</div>		
+    	 <div class="container">
+				 <div class="row">
+					 <div class="col-md-2">
+						 <a href="index.php">
+								 <div class="navbar-header">
+										 <img class="img-responsive" src="img/logo.png" alt=""/>
+								 </div>
+						 </a>
+					 </div>
+					 <div class="col-md-10">
+
+					 </div>
+				 </div>
+			</div>
 	</header>
 	<!-- end header -->
 	<!-- start slider -->
-						<div class="container">	
+						<div class="container">
 						 <!-- <a href="index.html"><img src="img/logo.png" height="20%" alt="" ></a>-->
 						 <div class="row form-group">
 							<p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
@@ -47,8 +54,8 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 						<div class="col-md-4">
 							<label>Email:</label>
 							<input type="text" class="form-control" name ="nome" value = "inserisci la tua email" required>
-						</div> <!-- /row form-group (1) -->	
-						
+						</div> <!-- /row form-group (1) -->
+
 						<div class="col-md-4">
 							<label>Scegli domanda di recupero: &nbsp;</label>
 							<select class="form-control" >
@@ -57,21 +64,21 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 								 <option>Nome di un oggetto a te caro</option>
 							</select>
 						</div> <!-- /row form-group (10) -->
-						
+
 						<div class="col-md-4">
 							<label>Risposta:</label>
 							<input type="text" class="form-control" name ="nome" value = "inserisci risposta qui" required>
-						</div> <!-- /row form-group (1) -->		
+						</div> <!-- /row form-group (1) -->
 						</div>
 						<div class="row form-group pull-right">
-						<div class="col-md-12">						
+						<div class="col-md-12">
 							<input type="submit" class="btn btn-info" value="Avanti">
 							</div>
 						</div> <!-- /row form-group (12) -->
-				</form>		
+				</form>
 			</section>
-		</div>	
-	
+		</div>
+
 
 <?php @include_once 'shared/footer.php'; ?>
 </body>
