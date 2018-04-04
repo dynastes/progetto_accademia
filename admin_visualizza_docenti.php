@@ -45,7 +45,7 @@
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono FROM anagrafe AS a, docenti AS d WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
+				$stringasql="SELECT a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono,d.Id_anagrafe FROM anagrafe AS a, docenti AS d WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
@@ -64,11 +64,14 @@
 						echo '<td >';
 							echo $res["Telefono"];
 						echo '</td>';
-					echo "</tr>";
-				}
-				echo "</table>";
+						echo '<td >';
+							echo $res["Id_anagrafe"];
+						echo '</td>';
+								
 				?>
-
+			<td><a href="admin_elimina_docente_query.php?ID=<?php echo $res['Id_anagrafe']; ?>" onclick="return sicuro('<?php echo $res['Id_anagrafe']; ?>')">Elimina<?php echo "</tr>";}echo "</table>";?></a></td>
+				
+			
 			</div>
 		</div>
 	</div>
