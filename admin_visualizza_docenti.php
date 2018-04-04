@@ -64,9 +64,7 @@
 						echo '<td >';
 							echo $res["Telefono"];
 						echo '</td>';
-						echo '<td >';
-							echo $res["Id_anagrafe"];
-						echo '</td>';
+					
 								
 				?>
 			<td><a href="admin_elimina_docente_query.php?ID=<?php echo $res['Id_anagrafe']; ?>" onclick="return sicuro('<?php echo $res['Id_anagrafe']; ?>')">Elimina<?php echo "</tr>";}echo "</table>";?></a></td>
