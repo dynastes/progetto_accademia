@@ -1,7 +1,9 @@
 <?php @include_once 'shared/menu.php';
-if($_SESSION["autorizzato"]===1){
-	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Autorizzazione effettuata correttamente</div>";
-	$_SESSION["autorizzato"]=0;
+if (isset($_SESSION["autorizzato"])){
+	if($_SESSION["autorizzato"]===1){
+		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Autorizzazione effettuata correttamente</div>";
+		$_SESSION["autorizzato"]=0;
+	}
 }
 ?>
 <html>
