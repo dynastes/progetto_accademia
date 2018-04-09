@@ -81,7 +81,7 @@ eventResize: function(event) {
  data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
  type: "POST",
  success: function(json) {
- alert("OK DIVERSO");
+ alert("EVENTO RIDIMENSIONATO CORRETTAMENTE");
  }
  });
 
