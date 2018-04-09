@@ -66,12 +66,12 @@ eventDrop: function(event, delta) {
  end = $.fullCalendar.moment(event.end).format("YYYY-MM-DD HH:mm:ss");
 
  $.ajax({
- url: 'fullcalendar/update_events.php',
- data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
- type: "POST",
- success: function(json) {
- alert("OK");
- }
+	 url: 'fullcalendar/update_events.php',
+	 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
+	 type: "POST",
+	 success: function(json) {
+	 alert("OK");
+	 }
  });
 },
 eventResize: function(event) {
@@ -86,7 +86,21 @@ eventResize: function(event) {
  }
  });
 
-}
+},
+eventRender: function(calEvent,element) {
+      element.bind('dblclick', function() {
+		  eventId = calEvent.id;	  
+		  $.ajax({
+			 url: 'fullcalendar/delete_events.php',
+			 data: 'id='+ eventId ,
+			 type: "POST",
+			 success: function(json) {
+			 alert("Evento cancellato correttamente");
+			  window.location.reload();
+			 }
+		 });
+      });
+   },
 
 
     });

@@ -27,8 +27,8 @@ menu();
         <br/>
         <h1>Mostra/inserisci eventi al calendario</h1>
         <br/>
-        <p>Clicca nel calendario per inserire un nuovo evento</p>
-
+        <p>* Clicca nel calendario per inserire un nuovo evento</p>
+        <p>* Fai doppio click su un evento del calendario per cancellarlo</p>
 
         <label>Scegli il colore con cui evidenziare l'evento che vuoi aggiungere:</label>
         <select id="colore_evento">
@@ -47,6 +47,7 @@ menu();
             <option value="black" style="background-color:grey; color: black;">Nero</option>
         </select>
     </div>
+	<br>
     <div class="row">
         <div class="col-md-12">
             <div id="calendar" style="margin-bottom:50px;"></div>
