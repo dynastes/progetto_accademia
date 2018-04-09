@@ -1,4 +1,5 @@
 <script>
+
   $(document).ready(function() {
 
     var data = new Date();
@@ -91,7 +92,6 @@ eventResize: function(event) {
     });
 
   });
-
 </script>
 <style>
 

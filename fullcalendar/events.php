@@ -15,5 +15,4 @@
 
  // envoi du r�sultat au success
  echo json_encode($resultat->fetchAll(PDO::FETCH_ASSOC));
-
 ?>
