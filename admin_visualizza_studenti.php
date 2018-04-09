@@ -18,18 +18,7 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti gli studenti che sono iscritti all'accademia</p>
 				</div>
-				<!--div class="box-programmi-caricati">
-					<p><b>Data Pubblicazione</b></p>
-				</div>
-				<div class="box-programmi-caricati">
-					<p><b>Testo dell'avviso</b></p>
-				</div>
-				<div class="box-programmi-caricati">
-					<p><b>Opzioni</b></p>
-				</div>
-				<div class="box-programmi-caricati">
-					<p><b>Visibilità</b></p>
-				</div-->
+		
 				<table class="table sortable table-striped">
 				<tr>
 					<th> Nome </th>
@@ -64,10 +53,9 @@
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Telefono"];
 						echo '</td>';
-					echo "</tr>";
-				}
-				echo "</table>";
 				?>
+					<td><a href="admin_elimina_studente_query.php?ID=<?php echo $res['Id_anagrafe']; ?>" onclick="return sicuro('<?php echo $res['Id_anagrafe']; ?>')">Elimina<?php echo "</tr>";}echo "</table>";?></a></td>
+		
 
 			</div>
 		</div>
