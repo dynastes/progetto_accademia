@@ -6,6 +6,7 @@
 	`title` varchar(255) COLLATE utf8_bin NOT NULL,
 	`start` datetime NOT NULL,
 	`end` datetime DEFAULT NULL,
-	`colore` varchar(10),
+	`color` varchar(10),
+	`textColor` varchar(10),
 	PRIMARY KEY (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

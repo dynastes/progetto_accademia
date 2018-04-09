@@ -8,7 +8,7 @@
 <script src= 'js/fullcalendar.js'></script>
 <script>
 	$(document).ready(function() {
-
+	
 		var calendar = $('#calendar').fullCalendar({
 		header: {
 				left: 'prev,next today',
