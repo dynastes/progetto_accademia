@@ -40,7 +40,7 @@
        data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color +'&text_color='+text_color,
        type: "POST",
        success: function(json) {
-       alert('OK AGGIUNTO');
+       alert('EVENTO AGGIUNTO NEL CALENDARIO');
         window.location.reload();
        }
 
@@ -70,7 +70,6 @@ eventDrop: function(event, delta) {
 	 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 	 type: "POST",
 	 success: function(json) {
-	 alert("OK");
 	 }
  });
 },
