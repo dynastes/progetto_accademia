@@ -18,7 +18,7 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti gli studenti che sono iscritti all'accademia</p>
 				</div>
-		
+				
 				<table class="table sortable table-striped">
 				<tr>
 					<th> Nome </th>
@@ -31,7 +31,7 @@
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
+				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
@@ -53,10 +53,12 @@
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Telefono"];
 						echo '</td>';
+				
+				
+				
 				?>
-					<td><a href="admin_elimina_studente_query.php?ID=<?php echo $res['Id_anagrafe']; ?>" onclick="return sicuro('<?php echo $res['Id_anagrafe']; ?>')">Elimina<?php echo "</tr>";}echo "</table>";?></a></td>
+	<td class="box-elenco-studenti"><a href="admin_elimina_studente_query.php?ID=<?php echo $res['Id_anagrafe']; ?>" onclick="return sicuro('<?php echo $res['Id_anagrafe']; ?>')">Elimina<?php echo "</tr>";}echo "</table>";?></a></td>
 		
-
 			</div>
 		</div>
 

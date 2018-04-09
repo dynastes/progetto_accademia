@@ -34,6 +34,7 @@
 	$sqlAnagrafe="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Codice_fiscale, Email, Indirizzo, Residenza, Telefono, Username, Password)
 					VALUES ('".$nomeStudente."', '".$cognomeStudente."', '".$dataNascita."', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password_cript."')";
 
+					echo "\n";
 	echo "Query: ".$sqlAnagrafe;
 	$res=$connessione->query($sqlAnagrafe);
 	echo "Utente inserito nella tabella ANAGRAFE.\n";
@@ -41,13 +42,14 @@
 
 	//ricerca Id anagrafe dell'utente appena inserito
 	$sqlIdAnagrafe="SELECT * FROM anagrafe WHERE Nome='".$nomeStudente."' AND Cognome='".$cognomeStudente."' AND Codice_fiscale='". $codiceFiscale ."' ORDER BY Id DESC";
-	echo " #Inserimento dell'utente nella tabella Studenti (studente con id estratto da qui: ".$sqlIdAnagrafe." _____\n";
+	echo "\n #Inserimento dell'utente nella tabella Studenti (studente con id estratto da qui: ".$sqlIdAnagrafe." _____\n";
 	$res=$connessione->query($sqlIdAnagrafe);
 	if ($res){
+		echo "\n";
 		echo "(!!!) UTENTE TROVATO. Inserimento nella tabella STUDENTI in corso";
 	}
 	$idAnagrafe=$res->fetch_assoc();
-
+echo "\n";
 echo "##ID utente da inserire tra gli studenti: ".$idAnagrafe["Id"];
 	$sqlStudenti="INSERT INTO studenti (Id_anagrafe, Matricola, Id_corso,Attivo) VALUES
 					(".$idAnagrafe["Id"].", '".$matricolaStudente."',".$idCorso.", 1)";
