@@ -3,6 +3,8 @@
     <title>Analizza risposte </title>
   </head>
   <body>
+  	   <?php @include_once 'shared/menu.php';?>
+  <?php menu() ?>
     <div class= "container text-center">
 
       <h1>Analizza risposte </h1>
@@ -11,7 +13,6 @@
         <script src="https://cdnjs.com/libraries/Chart.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
       <?php
-        session_start();
         include"dbconnection.php";
         include "shared/head_inclusions.php";
         $id = $_POST['codice'];

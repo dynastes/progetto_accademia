@@ -6,6 +6,8 @@
      ?>
   </head>
   <body style="padding-bottom: 70px;">
+  <?php @include_once 'shared/menu.php';?>
+  <?php menu() ?>
     <div class="container text-center">
         <h1 class="text-center"> Imposta il numero di domande</h1>
       <br />

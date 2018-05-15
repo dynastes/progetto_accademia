@@ -145,7 +145,75 @@ function menu(){
 						<li><a href="admin_inserisci_voti.php">Inserisci Voti Studenti</a><!-- * --></li>
           </ul>
         </li>
+		
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Editors <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="admin_inserisci_editor.php">Inserisci nuovo editor</a></li>
+            <li><a href="admin_visualizza_editor.php">Visualizza tutti gli editor</a></li>			
+          </ul>
+        </li>
 
+			<!--li><a href="admin_richieste_protocolli.php">Richieste Protocolli</a></li--> <!-- creare tabella che possa registrare i protocolli in entrata [richieste da parte degli studenti del foglio timbrato delle materie + protocolli generali al di fuori del sito gestionale che necessitano di registrazione] e in uscita [qualsiasi cosa esce dalla segreteria] -->
+			<!--li><a href="logout.php">Disconnetti</a><!-- * --></li-->
+		';
+	}
+	
+	if($utente->get_ruolo()=="editor"){//EDITOR
+			$menu='<ul class="nav navbar-nav" >
+			<li><a href="admin_home.php">Home</a><!-- * --></li>
+			<li><a href="profilo.php">Profilo</a></li>
+			<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci feedback<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+							<li><a href="aggiungi_questionario.php">Aggiungi questionario feedback</a></li>
+							<li><a href="verifica_risposte.php">Verifica risposte studenti</a></li>
+					</ul>
+			</li>
+			<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+							<li><a href="admin_gestione_finanze.php">Gestione Documenti</a><!--(mostrare i pagamenti caricati dagli utenti tramite la loro pagina "Carica Documenti")--></li>
+							<li><a href="admin_gestisci_certificati.php">Gestisci Richieste</a><!-- (viene visualizzata la lsita di certificati richiesti dagli utenti e in attesa di essere creati/autorizzati) --></li>
+					</ul>
+			</li>
+
+			<li><a href="admin_imposta_orari_lezione.php">Imposta Calendario</a></li>
+
+			<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materie<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+							<li><a href="admin_visualizza_offerta_formativa.php">Offerta formativa</a></li>
+							<li><a href="admin_visualizza_dipartimenti.php">Dipartimenti</a></li>
+							<li><a href="admin_visualizza_corsi.php">Corsi</a></li>
+							<li><a href="admin_visualizza_settori.php">Settori</a></li>
+							'//<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
+							.'<li><a href="admin_visualizza_materie_anagrafe.php">Materie</a></li>
+							'//<li><a href="admin_crea_piano_di_studi.php">Crea piano di studi</a></li>
+							.'<li><a href="admin_visualizza_piano_di_studi.php">Piani di studio</a></li>
+					</ul>
+			</li>
+
+
+			<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Docenti <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+			<li><a href="admin_registra_professori.php">Inserisci nuovo docente</a></li>
+            <li><a href="admin_imposta_materia_docenti.php">Imposta/cambia materia docenti</a></li>
+            <li><a href="admin_visualizza_docenti.php">Visualizza Docenti</a></li>
+          </ul>
+        </li>
+
+
+			<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Allievi <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="admin_inserisci_studenti.php">Inserisci nuovo utente</a></li>
+            <li><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto</a></li>
+            <li><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>
+						<li><a href="admin_inserisci_voti.php">Inserisci Voti Studenti</a><!-- * --></li>
+          </ul>
+        </li>
 			<!--li><a href="admin_richieste_protocolli.php">Richieste Protocolli</a></li--> <!-- creare tabella che possa registrare i protocolli in entrata [richieste da parte degli studenti del foglio timbrato delle materie + protocolli generali al di fuori del sito gestionale che necessitano di registrazione] e in uscita [qualsiasi cosa esce dalla segreteria] -->
 			<!--li><a href="logout.php">Disconnetti</a><!-- * --></li-->
 		';

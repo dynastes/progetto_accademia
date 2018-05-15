@@ -9,6 +9,11 @@ $res_dipartimenti=$connessione->query($sql_carica_dipartimenti);
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 			<?php @include_once 'shared/menu.php';?>
+				<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 	</head>
 
 	<body>

@@ -64,10 +64,15 @@
 						echo '<td >';
 							echo $res["Telefono"];
 						echo '</td>';
-					
-								
+						if($utente -> get_ruolo() == "admin"){
+							echo '<td>';
+								echo('<a href="admin_elimina_docente_query.php?ID='.$res['Id_anagrafe'].' onclick="return sicuro('.$res['Id_anagrafe'].')>  Elimina </a>');
+							echo '</td>';
+						}
+					echo '</tr>';
+				}
+				echo "</table>";
 				?>
-			<td><a href="admin_elimina_docente_query.php?ID=<?php echo $res['Id_anagrafe']; ?>" onclick="return sicuro('<?php echo $res['Id_anagrafe']; ?>')">Elimina<?php echo "</tr>";}echo "</table>";?></a></td>
 				
 			
 			</div>

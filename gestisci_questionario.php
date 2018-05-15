@@ -3,7 +3,11 @@
     <title>Gestisci questionario </title>
   </head>
   <body>
+	<?php @include_once 'shared/menu.php'; ?>
     <div class= "container text-center">
+		<?php
+			menu();
+		?>
       <script>
         var totale = 0;
       </script>

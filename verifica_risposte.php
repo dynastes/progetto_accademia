@@ -10,6 +10,8 @@
       $elenco_questionari=$connessione->query($query);
 
      ?>
+	   <?php @include_once 'shared/menu.php';?>
+  <?php menu() ?>
      <div class="container text-center">
 
 

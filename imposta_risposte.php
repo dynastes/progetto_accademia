@@ -6,10 +6,13 @@
     ?>
 </head>
 <body>
+  <?php @include_once 'shared/menu.php';?>
+  <?php menu() ?>
+
 <div class="container text-center">
     <h1 class="text-center"> Imoposta risposte</h1>
-
-    <h3> <?php session_start();
+	
+    <h3> <?php 
         echo($_SESSION['nome_questionario']);
         $domanda_corrente = $_GET['domanda_corrente']; ?></h3>
     <br/>

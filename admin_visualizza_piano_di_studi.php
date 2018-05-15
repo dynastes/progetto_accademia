@@ -22,7 +22,11 @@ $query_dipartimenti_ciclo_unico=$connessione->query($sql_dipartimenti_ciclo_unic
 		<?php @include_once 'shared/head_inclusions.php';?>
 			<?php @include_once 'shared/menu.php';?>
 	</head>
-
+	<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 	<body>
 		<?php menu(); ?>
 		<div class="container">

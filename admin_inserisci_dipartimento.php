@@ -2,11 +2,16 @@
 //@session_start();
 @include_once 'dbconnection.php';
 ?>
-
+	
 <html>
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 			<?php @include_once 'shared/menu.php';?>
+			<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 	</head>
 
 	<body>

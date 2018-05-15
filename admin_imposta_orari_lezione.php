@@ -1,4 +1,5 @@
 <?php @include_once 'shared/menu.php';
+
 if (isset($_SESSION['modifica-orario'])) {
     if ($_SESSION['modifica-orario'] === 1) {
         echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Modifica effettuata correttamente</div>";
@@ -8,6 +9,11 @@ if (isset($_SESSION['modifica-orario'])) {
     }
 }
 ?>
+	<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 <html>
 <head>
     <?php @include_once 'shared/head_inclusions.php'; ?>

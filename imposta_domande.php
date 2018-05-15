@@ -6,9 +6,11 @@
      ?>
   </head>
   <body style="padding-bottom: 70px;">
+    <?php @include_once 'shared/menu.php';?>
+  <?php menu() ?>
     <div class="container text-center">
         <h1 class="text-center"> Questionario feedback </h1>
-        <h2> <?php session_start(); echo($_SESSION['nome_questionario']); ?></h2>
+        <h2> <?php  echo($_SESSION['nome_questionario']); ?></h2>
           <p>
             Domanda n. <?php echo($_GET['domanda_corrente']); ?>
           </p>

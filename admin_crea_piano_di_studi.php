@@ -1,7 +1,7 @@
 <?php
 //@session_start();
 @include_once 'dbconnection.php';
-
+	
 /*prendere dalla tabella la lista di settori con questi campi:
 	- ID settore
 	- codice
@@ -22,11 +22,17 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 /*
 <meta charset="UTF-8">	*/
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<?php @include_once 'shared/head_inclusions.php';?>
 		<?php @include_once 'shared/menu.php';?>
+		<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 		<script language="javascript">
 			/*Questa funzione legga il valore passato come parametro e dato il valore, aggiunge delle opzioni al secondo campo*/
 			function selezionaOpzioni(scelta) {

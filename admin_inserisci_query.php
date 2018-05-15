@@ -14,6 +14,11 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 	}*/
 }
 ?>
+	<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 <html>
 	<head>
 		

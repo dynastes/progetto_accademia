@@ -88,6 +88,19 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 			$utente->set_ruolo("admin");
 			//echo "utente ADMIN";
 		}
+		
+		//#ADMIN
+		$controllaRuolo="SELECT Id_anagrafe FROM editor WHERE Id_anagrafe=". $utente->id;
+		$risultato="";
+		$risultato=$connessione->query($controllaRuolo);
+		$res=$risultato->fetch_assoc();
+		if($res["Id_anagrafe"]>0){
+			$utente->set_ruolo("editor");
+			//echo "utente ADMIN";
+		}
+		
+		
+		
 		//FINE IDENTIFICAZIONE
 		//echo " NOME UTENTE= ".$utente->nome.$utente->cognome.$utente->data_nascita.$utente->codice_fiscale.$utente->email.$utente->indirizzo.$utente->residenza.$utente->telefono;
 		//echo " NOME UTENTE= ".$utente->nome;
@@ -103,6 +116,8 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	} else if ($ruoloUtente==="docente"){
 		@header("location:docenti_home.php");
 	} else if ($ruoloUtente==="admin"){
+		@header("location:admin_home.php");
+	}else if ($ruoloUtente==="editor"){
 		@header("location:admin_home.php");
 	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
@@ -143,7 +158,7 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 			<!-- </div> -->
 		</header>
 
-
+	
 		<div class="row center-block">
 			<div class="col-md-4">
 			</div>

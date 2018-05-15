@@ -18,6 +18,11 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 	<head>
 		<meta charset="utf-8">
 		<?php @include_once 'shared/head_inclusions.php';?>
+			<?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
 
 	</head>
 	<body>
