@@ -12,6 +12,11 @@
      ?>
 	   <?php @include_once 'shared/menu.php';?>
   <?php menu() ?>
+  <?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
      <div class="container text-center">
 
 

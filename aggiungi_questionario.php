@@ -8,6 +8,11 @@
   <body style="padding-bottom: 70px;">
   <?php @include_once 'shared/menu.php';?>
   <?php menu() ?>
+  <?php
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
+				header("location: index.php");
+			}
+		?>
     <div class="container text-center">
         <h1 class="text-center"> Imposta il numero di domande</h1>
       <br />
