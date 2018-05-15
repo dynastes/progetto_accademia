@@ -1,7 +1,4 @@
 <?php @include_once 'shared/menu.php';
-<?php
-						menu();
-					?>
 
 if (isset($_SESSION["autorizzato"])){
 	if($_SESSION["autorizzato"]===1){
@@ -22,7 +19,9 @@ if (isset($_SESSION["autorizzato"])){
 	</head>
 	<body>
 				<!-- INIZIO CARICAMENTO MENU -->
-					
+					<?php
+						menu();
+					?>
 				<!-- FINE MENU -->
 
 				<div class="container">
