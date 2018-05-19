@@ -21,7 +21,7 @@
 				</tr>
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT Testo, Data_pubblicazione, Visibilita FROM avvisi WHERE Id_docente=".$utente->id;
+				$stringasql="SELECT Id,Testo, Data_pubblicazione, Visibilita FROM avvisi WHERE Id_docente=".$utente->id;
 				$elencoCaricamenti=$connessione->query($stringasql);
 				while($res=$elencoCaricamenti->fetch_assoc()){
 					echo "<tr>";
@@ -32,7 +32,11 @@
 							echo $res["Testo"];
 						echo '</td>';
 						echo '<td>';
-							echo '<a href="#">Cancella Avviso (non funzionante)</a>';
+							?>
+							
+				<a href="admin_elimina_avvisi_query.php?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Id']; ?>')">Elimina<?php ?></a>
+					
+					<?php
 						echo '</td>';
 						echo '<td>';
 							if($res["Visibilita"]==="pubblico"){
