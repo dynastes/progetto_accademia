@@ -31,8 +31,8 @@
 							//id_anagrafe, anno_accademico, matricola, diploma, id_corso
 
 
-	$sqlAnagrafe="INSERT INTO anagrafe (Nome, Cognome, Data_nascita, Codice_fiscale, Email, Indirizzo, Residenza, Telefono, Username, Password)
-					VALUES ('".$nomeStudente."', '".$cognomeStudente."', '".$dataNascita."', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password_cript."')";
+	$sqlAnagrafe="INSERT INTO anagrafe (Nome, Cognome,Diploma, Data_nascita, Codice_fiscale, Email, Indirizzo, Residenza, Telefono, Username, Password)
+					VALUES ('".$nomeStudente."', '".$cognomeStudente."','".$diplomaStudente."', '".$dataNascita."', '".$codiceFiscale."', '".$email."', '".$indirizzo."', '".$residenza."', '".$telefono."', '".$username."', '".$password_cript."')";
 
 					echo "\n";
 	echo "Query: ".$sqlAnagrafe;
