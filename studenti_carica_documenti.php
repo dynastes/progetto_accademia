@@ -1,7 +1,24 @@
 <?php @include_once 'shared/menu.php';
-@$tipoFile = $_POST['tipoFile'];
+
+if(isset($_POST['tipoFile'])){
+	$tipoFile=$_POST['tipoFile'];
+	$Altro="-";
+}
+
+if(isset($_POST['tipoFile']) AND isset($_POST['tipoFile'])){
+	$tipoFile=$_POST['tipoFile'];
+	$Altro=$_POST['Altro'];
+}
+
 
 ?>
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -46,16 +63,19 @@ menu();
                                         <input style="float:left;" class="btn btn-default" type="file" name="FileUtente"  class="form-control">
                                     </div>
                                     
+									
+									
                                     <div class="col-md-4">
+								
                                         <!--<label style="float:left; margin-right:10px;">Scegli quale tipo di file stai caricando</label>-->
-                                        <select name="tipoFile" style="float:left; margin-right:30px;"  class="form-control">
+                                        <select id="tipoFile" name="tipoFile" style="float:left; margin-right:30px;"  class="form-control">
                                             <option value="1">Pagamenti</option>
                                             <option value="2">Bonifico</option>
                                             <option value="3">Immagine</option>
-                                            <option value="4">Altro...</option>
+                                            <option value="4" onclick="showDiv1()">Altro...</option>
                                          </select>
                                     </div>
-                                    
+                                    	<textarea id="Altro" name="Altro" style="display:none">  </textarea>
                                     <div class="col-md-4">
                                         <input class="btn btn-info" style="float:left;" type="submit" value="Invia file/documento">
 								    </div>
@@ -67,7 +87,16 @@ menu();
 
     </div>
 </div>
-
+<script>
+    $('#tipoFile').change(function(){
+		if($('#tipoFile').val() == 4){
+			document.getElementById('Altro').style.display = "block";
+		}
+		else {
+			document.getElementById('Altro').style.display = "none";
+		}
+	});
+</script>
 <?php @include_once 'shared/footer.php'; ?>
 
 </body>
