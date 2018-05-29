@@ -40,12 +40,12 @@ $matricolaUtente=$res->fetch_assoc();
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Nome:</label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="nome-studente" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="nome-studente" required/>
 					</div>
 
 					<div class="col-md-4">
 						<label for="usermail">Cognome: </label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="cognome-studente" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="cognome-studente" required/>
 					</div>
 
 					<div class="col-md-4">
@@ -57,7 +57,7 @@ $matricolaUtente=$res->fetch_assoc();
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Diploma:</label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="diploma-studente" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="diploma-studente" required/>
 					</div>
 
 					<div class="col-md-4">

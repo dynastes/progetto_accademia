@@ -40,12 +40,12 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Nome:</label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="nome-editor" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="nome-editor" required/>
 					</div>
 
 					<div class="col-md-4">
 						<label for="usermail">Cognome: </label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="cognome-editor" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="cognome-editor" required/>
 					</div>
 					<div class="col-md-4">
 						<label for="usermail">Data Nascita:</label>
@@ -94,7 +94,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Codice Fiscale:</label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="codice-fiscale" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="codice-fiscale" required/>
 					</div>
 
 					<div class="col-md-4">
@@ -108,14 +108,14 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 
 					<div class="col-md-4">
 						<label for="usermail">Residenza:</label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="residenza" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="residenza" required/>
 					</div>
 				</div> <!-- /row form-group (3) -->
 
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Indirizzo:</label>
-						<input class="form-control"  type="text" pattern="[A-Za-z]" name="indirizzo" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]+" name="indirizzo" required/>
 					</div>
 
 					<div class="col-md-4">

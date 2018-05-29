@@ -22,13 +22,13 @@
 						<div class="row form-group">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Codice</span>
-								<input type="text" pattern="[A-Za-z]" name="codice_settore" class="form-control">
+								<input type="text" pattern="[A-Za-z]+" name="codice_settore" class="form-control">
 							</div>
 						</div>
 						<div class="row form-group">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Nome settore</span>
-								<input type="text" pattern="[A-Za-z]" name="nome_settore" class="form-control">
+								<input type="text" pattern="[A-Za-z]+" name="nome_settore" class="form-control">
 							</div>
 						</div>
 						<div class="row form-group">

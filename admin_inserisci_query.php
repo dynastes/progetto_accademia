@@ -53,10 +53,10 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 							?>
 						 </select>
  						<br />
-						<label for="usermail">ID Docente: &nbsp;</label><input style="color:black;" type="text" pattern="[A-Za-z]" name="id-docente" placeholder="0" value="0" required><br />
-						<label for="usermail">Codice Materia:&nbsp;</label><input style="color:black;" type="text" name="codice-materia" pattern="[A-Za-z]" placeholder="ABCDE" required><br />
-						<label for="usermail">Nome materia:&nbsp;</label><input type="text"  pattern="[A-Za-z]" name="nome-materia" placeholder="Scultura di Banane Nere" style="width:220px;" required><br />
-						<label for="usermail">Anno:&nbsp;</label><input type="text" pattern="[A-Za-z]" name="anno" placeholder="1, 2 oppure 3 (10 per le materie dove l'anno non è specificato)" style="width:420px;" required><br />
+						<label for="usermail">ID Docente: &nbsp;</label><input style="color:black;" type="text" pattern="[A-Za-z]{}" name="id-docente" placeholder="0" value="0" required><br />
+						<label for="usermail">Codice Materia:&nbsp;</label><input style="color:black;" type="text" name="codice-materia" pattern="[A-Za-z]{}" placeholder="ABCDE" required><br />
+						<label for="usermail">Nome materia:&nbsp;</label><input type="text"  pattern="[A-Za-z]{}" name="nome-materia" placeholder="Scultura di Banane Nere" style="width:220px;" required><br />
+						<label for="usermail">Anno:&nbsp;</label><input type="text" pattern="[A-Za-z]{}" name="anno" placeholder="1, 2 oppure 3 (10 per le materie dove l'anno non è specificato)" style="width:420px;" required><br />
 						<label for="usermail">ID Corso:&nbsp;</label><input type="number" name="id-corso" placeholder="1, 2 o 3" required><br />
 						<label for="usermail">CFA:&nbsp;</label><input type="number" name="cfa" placeholder="numero da 1 a +infinito" required><br />
 						<label for="usermail">Tipo di materia:&nbsp;</label>

@@ -71,7 +71,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">1</span>
-									<input type="text" id="nome_materia1" pattern="[A-Za-z]" name="nome_materia1" class="form-control">
+									<input type="text" id="nome_materia1" pattern="[A-Za-z]+" name="nome_materia1" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -79,7 +79,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">2</span>
-									<input type="text" id="nome_materia2" pattern="[A-Za-z]" name="nome_materia2" class="form-control">
+									<input type="text" id="nome_materia2" pattern="[A-Za-z]+" name="nome_materia2" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -87,7 +87,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">3</span>
-									<input type="text" id="nome_materia3" pattern="[A-Za-z]" name="nome_materia3" class="form-control">
+									<input type="text" id="nome_materia3" pattern="[A-Za-z]+" name="nome_materia3" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -95,7 +95,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">4</span>
-									<input type="text" id="nome_materia4" pattern="[A-Za-z]" name="nome_materia4" class="form-control">
+									<input type="text" id="nome_materia4" pattern="[A-Za-z]+" name="nome_materia4" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -103,7 +103,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">5</span>
-									<input type="text" id="nome_materia5" pattern="[A-Za-z]" name="nome_materia5" class="form-control">
+									<input type="text" id="nome_materia5" pattern="[A-Za-z]+" name="nome_materia5" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -111,7 +111,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">6</span>
-									<input type="text" id="nome_materia6" pattern="[A-Za-z]" name="nome_materia6" class="form-control">
+									<input type="text" id="nome_materia6" pattern="[A-Za-z]+" name="nome_materia6" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -119,7 +119,7 @@ Prendere inoltre i seguenti campi dalla tabella "materie_anagrafica":
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">7</span>
-									<input type="text" id="nome_materia7" pattern="[A-Za-z]" name="nome_materia7" class="form-control">
+									<input type="text" id="nome_materia7" pattern="[A-Za-z]+" name="nome_materia7" class="form-control">
 								</div>
 							</div>
 						</div>
