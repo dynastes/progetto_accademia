@@ -40,7 +40,7 @@
        data: 'title='+ title+'&start='+ start +'&end='+ end+'&color='+color +'&text_color='+text_color,
        type: "POST",
        success: function(json) {
-       alert('EVENTO AGGIUNTO NEL CALENDARIO');
+
         window.location.reload();
        }
 
@@ -81,7 +81,7 @@ eventResize: function(event) {
  data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
  type: "POST",
  success: function(json) {
- alert("EVENTO RIDIMENSIONATO CORRETTAMENTE");
+
  }
  });
 
@@ -94,7 +94,7 @@ eventRender: function(calEvent,element) {
 			 data: 'id='+ eventId ,
 			 type: "POST",
 			 success: function(json) {
-			 alert("Evento cancellato correttamente");
+
 			  window.location.reload();
 			 }
 		 });
