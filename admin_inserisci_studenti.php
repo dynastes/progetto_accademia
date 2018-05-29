@@ -40,24 +40,24 @@ $matricolaUtente=$res->fetch_assoc();
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Nome:</label>
-						<input class="form-control"  type="text" name="nome-studente" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]" name="nome-studente" required/>
 					</div>
 
 					<div class="col-md-4">
 						<label for="usermail">Cognome: </label>
-						<input class="form-control"  type="text" name="cognome-studente" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]" name="cognome-studente" required/>
 					</div>
 
 					<div class="col-md-4">
 						<label for="usermail">Matricola:</label>
-						<input class="form-control"  type="text" name="matricola-studente" required placeholder="(ultima matricola inserita: <?php echo $matricolaUtente["Matricola"]; ?>)"/>
+						<input class="form-control"  type="number" name="matricola-studente" required placeholder="(ultima matricola inserita: <?php echo $matricolaUtente["Matricola"]; ?>)"/>
 					</div>
 				</div> <!-- /row form-group (1) -->
 
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Diploma:</label>
-						<input class="form-control"  type="text" name="diploma-studente" required/>
+						<input class="form-control"  type="text" pattern="[A-Za-z]" name="diploma-studente" required/>
 					</div>
 
 					<div class="col-md-4">
@@ -112,7 +112,7 @@ $matricolaUtente=$res->fetch_assoc();
 				<div class="row form-group">
 					<div class="col-md-4">
 						<label for="usermail">Codice Fiscale:</label>
-						<input class="form-control"  type="text" name="codice-fiscale" required/>
+						<input class="form-control"  type="text"  name="codice-fiscale" required/>
 					</div>
 
 					<div class="col-md-4">
@@ -140,7 +140,7 @@ $matricolaUtente=$res->fetch_assoc();
 						<label for="usermail">Telefono: </label>
 						<div class="input-group">
 							<div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
-							<input class="form-control"  type="text" name="telefono" required/ />
+							<input class="form-control"  type="number"  name="telefono" required/ />
 						</div>
 					</div>
 

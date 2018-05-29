@@ -39,7 +39,7 @@ $res_dipartimenti=$connessione->query($sql_carica_dipartimenti);
 						<div class="row form-group">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Nome corso</span>
-								<input type="text" name="nome_corso" class="form-control">
+								<input type="text" name="nome_corso" pattern="[A-Za-z]" class="form-control">
 							</div>
 						</div>
 						<div class="row form-group">
