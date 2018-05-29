@@ -34,7 +34,11 @@
 					<a href="profilo.php" class="btn btn-default custom-button"> <i class="fas fa-user"> </i> &nbsp Profilo </a>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<a href="" class="btn btn-default custom-button"><i class="fas fa-check-square"> </i> &nbsp Feedback </a>
+				<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-check-square"> </i> &nbsp Feedback<span class="caret"></span></a>
+					<ul class="dropdown-menu custom-dropdown">
+							<li><a href="aggiungi_questionario.php">Aggiungi questionario feedback</a></li>
+							<li><a href="verifica_risposte.php">Verifica risposte studenti</a></li>
+					</ul>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 					<a href="admin_imposta_orari_lezione.php" class="btn btn-default custom-button"><i class="fas fa-calendar-alt"> </i> &nbsp Calendario </a>
@@ -43,13 +47,27 @@
 			<br>
 			<div class="row">
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<a class="btn btn-default custom-button"><i class="fas fa-book"> </i> &nbsp Materie </a>
+					<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"> </i> &nbsp Materie<span class="caret"></span></a>
+					<ul class="dropdown-menu custom-dropdown">
+							<li><a href="admin_visualizza_offerta_formativa.php">Offerta formativa</a></li>
+							<li><a href="admin_visualizza_dipartimenti.php">Dipartimenti</a></li>
+							<li><a href="admin_visualizza_corsi.php">Corsi</a></li>
+							<li><a href="admin_visualizza_settori.php">Settori</a></li>						
+							<li><a href="admin_visualizza_materie_anagrafe.php">Materie</a></li>							
+							<li><a href="admin_visualizza_piano_di_studi.php">Piani di studio</a></li>
+					</ul>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 					<a href="admin_gestione_finanze.php" class="btn btn-default custom-button"><i class="fas fa-file-alt"> </i> &nbsp Documenti </a>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<a class="btn btn-default custom-button"><i class="fas fa-chalkboard-teacher"> </i> &nbsp Docenti </a>
+				 <a href="#" class="dropdown-toggle btn btn-default custom-button
+				 " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher"> </i> &nbsp Gestisci Docenti <span class="caret"></span></a>
+					  <ul class="dropdown-menu custom-dropdown">
+						<li><a href="admin_registra_professori.php">Inserisci nuovo docente</a></li>
+						<li><a href="admin_imposta_materia_docenti.php">Imposta/cambia materia docenti</a></li>
+						<li><a href="admin_visualizza_docenti.php">Visualizza Docenti</a></li>
+					  </ul>
 				</div>
 			</div>
 			<br>
@@ -58,10 +76,20 @@
 					<a href="admin_gestisci_certificati.php" class="btn btn-default custom-button"><i class="fas fa-info"> </i> &nbsp Richieste </a>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<a class="btn btn-default custom-button"><i class="fas fa-user-graduate"> </i> &nbsp Allievi </a>
+					<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-graduate"> </i>  Allievi <span class="caret"></span></a>
+						  <ul class="dropdown-menu custom-dropdown">
+							<li><a href="admin_inserisci_studenti.php">Inserisci nuovo utente</a></li>
+							<li><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto</a></li>
+							<li><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>
+										<li><a href="admin_inserisci_voti.php">Inserisci Voti Studenti</a><!-- * --></li>
+						  </ul>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<a class="btn btn-default custom-button"><i class="fas fa-user-edit"> </i> &nbsp  Editors</a>
+					 <a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-edit"> </i> &nbsp Editors <span class="caret"></span></a>
+						  <ul class="dropdown-menu custom-dropdown">
+							<li><a href="admin_inserisci_editor.php">Inserisci nuovo editor</a></li>
+							<li><a href="admin_visualizza_editor.php">Visualizza tutti gli editor</a></li>			
+						  </ul>
 				</div>
 			</div>
 			<br>
@@ -74,8 +102,18 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		
 		<script>
 			$(".navbar").hide();
+			$(".caret").hide();
+				$('.custom-dropdown').css("width",$('.custom-button').css("width"));
+			$(window).resize(function(){
+				$('.custom-dropdown').css("width",$('.custom-button').css("width"));
+			});
+			
 		</script>
 	</body>
 </html>

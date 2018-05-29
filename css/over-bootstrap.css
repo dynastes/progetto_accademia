@@ -7,7 +7,12 @@ footer{
 	font-size:14px;
 	float:left;
 }
+.header-logo{
+	    width: 37px;
+    margin-top: 7px;
+    margin-left: 5px;
 
+}
 /*VECCHIO CSS PER IL FOOTER FISSO*/
 /*body {
 	margin-bottom:70px;
@@ -125,4 +130,5 @@ tr.anno :first-child{
 	margin-bottom:30px;
 	margin-top:40px;
 }
+
 
