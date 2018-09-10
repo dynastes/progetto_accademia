@@ -50,6 +50,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 							<h2>Ripristina password:</h2>
 						</div>
 
+						
 						<div class="row form-group">
 							<label>Inserisci nuova password:</label>
 							<input id="pass_1" type="password" name="password" class="form-control" placeholder="inserisci nuova password qui" required>
