@@ -46,19 +46,20 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 							<p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
 						 </div>
 						<section class="loginform cf" >
-						<form name="register" action="registrati_query.php" method="post" accept-charset="utf-8">
+						<form name="register" action="ripristina_password_query.php" method="post" accept-charset="utf-8">
 						<div class="row form-group">
 							<h2>Ripristina password:</h2>
 						</div>
 						<div class="row form-group">
+
 						<div class="col-md-4">
 							<label>Email:</label>
-							<input type="text" class="form-control" name ="nome" value = "inserisci la tua email" required>
+							<input type="text" class="form-control" name="email" placeholder = "inserisci la tua email" required>
 						</div> <!-- /row form-group (1) -->
 
 						<div class="col-md-4">
 							<label>Scegli domanda di recupero: &nbsp;</label>
-							<select class="form-control" >
+							<select class="form-control" name="domanda">
 								 <option>Nome di un tuo parente</option>
 								 <option>Nome del tuo posto preferito</option>
 								 <option>Nome di un oggetto a te caro</option>
@@ -67,7 +68,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 
 						<div class="col-md-4">
 							<label>Risposta:</label>
-							<input type="text" class="form-control" name ="nome" value = "inserisci risposta qui" required>
+							<input type="text" class="form-control" name ="risposta" placeholder = "inserisci risposta qui" required>
 						</div> <!-- /row form-group (1) -->
 						</div>
 						<div class="row form-group pull-right">

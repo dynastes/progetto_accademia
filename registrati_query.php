@@ -113,5 +113,5 @@ if ($_POST["g-recaptcha-response"]) {
 		echo("chapta non valido");
 		echo("<br /><a href='registrati.php'>Torna indietro</a>");
 	}
-@header('location:index.php');
+@header('location:conferma_iscrizione.php');
 ?>
