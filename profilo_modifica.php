@@ -48,7 +48,7 @@ $dataValue = $_GET['value'];
                                   echo('<td><input type="number" class="form-control" name="value" required></td>');
                             }else if($dataType == "indirizzo"){
                                   echo('<td><input type="text" class="form-control" name="value1" placeholder="Via" pattern="[A-Za-z]+" required></td>');
-                                  echo('<td><input type="text" class="form-control" name="value2" placeholder="Numero civico" required></td>');
+                                  echo('<td><input type="number" class="form-control" name="value2" placeholder="Numero civico" required></td>');
                             }else if($dataType == "email"){
                                 echo('<td><input type="email" class="form-control" name="value" pattern="[A-Za-z]+" required></td>');
                             }else{
