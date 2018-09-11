@@ -7,6 +7,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 	if(	$_SESSION['autorizza_modifica']==FALSE){
 		header("Location: index.php");
 	}
+	$_SESSION['autorizza_modifica'] = false;
 }
 ?>
 
@@ -15,6 +16,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 <head>
 
 <?php @include_once 'shared/head_inclusions.php';?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 
@@ -42,7 +44,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 						<div class="container">
 						 <!-- <a href="index.html"><img src="img/logo.png" height="20%" alt="" ></a>-->
 						 <div class="row form-group">
-							<p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
+							 	<a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a>
 						 </div>
 						<section class="loginform cf" style="float:left;">
 						<form name="register" action="ripristina_password_next_query.php" method="post" accept-charset="utf-8">
@@ -50,7 +52,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 							<h2>Ripristina password:</h2>
 						</div>
 
-						
+
 						<div class="row form-group">
 							<label>Inserisci nuova password:</label>
 							<input id="pass_1" type="password" name="password" class="form-control" placeholder="inserisci nuova password qui" required>
@@ -65,6 +67,9 @@ if (isset ($_SESSION['autorizza_modifica'])){
 								Le password non corrispondono o non è stata inserita la password di conferma
 							</div>
 						</div> <!-- /row form-group (1) -->
+						<div class="row form-group">
+							  <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"    data-callback="recaptchaCallback"></div>
+						</div>
 						<input type="hidden" name="id" value="<?php echo($_GET['id']); ?>">
 						<div class="row form-group">
 							<input id="bottone_invia" type="submit" class="btn btn-info" value="Conferma" disabled="true">
@@ -77,24 +82,36 @@ if (isset ($_SESSION['autorizza_modifica'])){
  	var pass_conf = $("#pass_conf");
 	pass_1.change(function(){
 		if((pass_1.val())==(pass_conf.val())){
-			$("#bottone_invia").prop("disabled",false);
 			$("#error").hide();
 		}
 		else {
-			$("#bottone_invia").prop("disabled",true);
+			pass_conf.val("");
 			$("#error").show();
 		}
 	});
 	pass_conf.change(function(){
 		if((pass_1.val())==(pass_conf.val())){
-			$("#bottone_invia").prop("disabled",false);
 			$("#error").hide();
 		}
 		else {
-			$("#bottone_invia").prop("disabled",true);
+			pass_conf.val("");
 			$("#error").show();
 		}
 	});
+</script>
+
+<script>
+function recaptchaCallback() {
+		alert("callback");
+		var captchResponse = $('#g-recaptcha-response').val();
+		if (captchResponse == "") {
+				$("#bottone_invia").prop("disabled",true);
+		}
+		else {
+			$("#bottone_invia").prop("disabled",false);
+		}
+
+};
 </script>
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
 <!-- <script src="js/jquery.js"></script>

@@ -128,10 +128,6 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	}
 	//@session_write_close();
 }
-if(isset($_SESSION['password_modificata'])){
-	echo "<div style=\"width:100%;background-color:green;text-align:center;\"><b>Password modificata con successo !</b></div>";
-	unset($_SESSION['password_modificata'] );
-}
 ?>
 
 
@@ -166,34 +162,9 @@ if(isset($_SESSION['password_modificata'])){
 		<div class="row center-block">
 			<div class="col-md-4">
 			</div>
-
-			<form name="login" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="utf-8">
-				<div class="col-md-4">
-					<div class="row center-block">
-						<label for="usermail">Email &nbsp;</label>
-						<div class="row center-block">
-							<input type="email" name="usermail" class="form-control" placeholder="username" required>
-						</div>
-					</div>
-					<div class="row center-block">
-						<br />
-						<label for="password">Password  &nbsp;</label>
-					</div>
-					<div class="row center-block">
-						<input type="password" name="password" class="form-control" placeholder="password" required>
-					</div>
-					<div class="row center-block">
-						<br />
-						<button type="submit" class="btn btn-primary center-block" aria-haspopup="false">
-							Login
-						</button>
-					</div>
-					<br />
-					<a href="registrati.php">Registrati</a>
-					<br />
-					<a href="ripristina_password.php">Password dimenticata ? </a>
-				</div>
-			</form>
+				<h2 align="center">Impossibile modificare password!</h2>
+				<h3 align="center">Controlla i dati inseriti e riprova </h3>
+				<h3 align="center"><a href="index.php">Torna alla home</a> </h3>
 			<div class="col-md-4"> </div>
 
 

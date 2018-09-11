@@ -21,5 +21,6 @@ if(password_verify($risposta,$res['Risposta'])){
 }else {
   $_SESSION['autorizza_modifica'] = FALSE;
   echo($_SESSION['autorizza_modifica']);
+  header("Location: errore_ripristino_password.php");
 }
 ?>

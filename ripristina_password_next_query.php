@@ -9,5 +9,6 @@ $res = $connessione->query($sql);
 echo($sql);
 // verifica se email, domanda e utente sono esatti
 $_SESSION['autorizza_modifica'] = false;
+$_SESSION['password_modificata'] = true;
 Header("Location: index.php");
 ?>

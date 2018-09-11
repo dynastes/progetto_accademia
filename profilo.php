@@ -1,10 +1,18 @@
 <?php @include_once 'shared/menu.php'; ?>
+<?php
+if(isset($_SESSION['profilo_modificato'])){
+    echo "<div style=\"width:100%;background-color:green;text-align:center;\"><b>Profilo modificato con successo</b></div>";
+    unset($_SESSION['profilo_modificato']);
+} ?>
 <html>
 <head>
     <?php @include_once 'shared/head_inclusions.php'; ?>
     <meta charset="utf-8">
 </head>
 <body>
+    <?php
+
+     ?>
 <div id="principale">
     <div id="menu">
         <?php
@@ -65,6 +73,8 @@
 
         //Ora calcolo la percentuale di completamento del profilo:
         $perc_compl=round(100*$dettagli_completati/7);
+
+
         ?>
 
 

@@ -35,13 +35,27 @@ $dataValue = $_GET['value'];
                 <form class="form-group" action="profilo_modifica_query.php" method="post">
                     <table class="table table-responsive">
                         <thead>
-                        <th>Valore precedente</th>
-                        <th>Nuovo valore</th>
+                        <th><?php echo ucfirst($dataType); ?> precedente</th>
+                        <th>Nuovo <?php echo $dataType; ?></th>
                         <th></th>
                         </thead>
                         <tr>
                             <td><?php echo $dataValue; ?><input type="hidden" name="data_type" value="<?php echo $dataType; ?>"></td>
-                            <td><input type="text" class="form-control" name="value"></td>
+                            <?php
+                              if($dataType == "cf"){
+                                echo('<td><input id="codice_fiscale" type="text" class="form-control" name="value" maxlength="16" pattern="[A-Za-z0-9]+" required></td>');
+                            }else if($dataType == "telefono"){
+                                  echo('<td><input type="number" class="form-control" name="value" required></td>');
+                            }else if($dataType == "indirizzo"){
+                                  echo('<td><input type="text" class="form-control" name="value1" placeholder="Via" pattern="[A-Za-z]+" required></td>');
+                                  echo('<td><input type="text" class="form-control" name="value2" placeholder="Numero civico" required></td>');
+                            }else if($dataType == "email"){
+                                echo('<td><input type="email" class="form-control" name="value" pattern="[A-Za-z]+" required></td>');
+                            }else{
+                                echo('<td><input type="text" class="form-control" name="value" pattern="[A-Za-z]+" required></td>');
+                            }
+                            ?>
+
                             <td>
                                 <button class="btn btn-info"><span class="glyphicon glyphicon-ok"></span> Salva</button>
                             </td>
@@ -59,3 +73,9 @@ $dataValue = $_GET['value'];
 <?php @include_once 'shared/footer.php'; ?>
 </body>
 </html>
+<script>
+  var cod_fisc = $("#codice_fiscale");
+  cod_fisc.change(function(){
+      cod_fisc.val($(this).val().toUpperCase());
+  })
+</script>
