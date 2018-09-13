@@ -128,9 +128,16 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	}
 	//@session_write_close();
 }
-if(isset($_SESSION['password_modificata'])){
-	echo "<div style=\"width:100%;background-color:green;text-align:center;\"><b>Password modificata con successo !</b></div>";
-	unset($_SESSION['password_modificata'] );
+if(isset($_SESSION['autorizza_modifica'])){
+	echo "<div style=\"width:100%;background-color:green;text-align:center;\"><b>Una nuova password è stata inviata all'email indicata</b></div>";
+	unset($_SESSION['autorizza_modifica'] );
+}
+if (isset ($_SESSION['iscritto-aggiunto'])) {
+    if ($_SESSION['iscritto-aggiunto'] == 1) {
+			echo "<div style=\"width:100%;background-color:green;text-align:center;\"><b>La richiesta di iscrizione è stata inoltrata alla segreteria dell'Accademia</b></div>";
+
+        $_SESSION['iscritto-aggiunto'] = 0;
+    }
 }
 ?>
 

@@ -12,13 +12,13 @@ if(@$_SESSION['richiesta-inviata']===1){
 	<body>
 
    <?php menu(); ?>
-	
-	
+
+
   	<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?></b>
 				</div>
-				
+
 					<h2>Richieste</h2>
 					<p>Da questa pagina si possono inviare le richieste per i certificati direttamente alla segreteria.</p>
 					<p>Una volta trattata la richiesta, lo stato passerà a "confermato" e si potrà andare a ritirare la versione cartacea.</p>
@@ -34,7 +34,7 @@ if(@$_SESSION['richiesta-inviata']===1){
 						<input class="btn btn-info" type="submit" value="Richiedi certificato">
 					</div>
 					</form>
-					
+
 						<table class="table">
 							<tr>
 								<td><b>Data invio richiesta</b></td>
@@ -42,8 +42,8 @@ if(@$_SESSION['richiesta-inviata']===1){
 								<td><b>Tipo richiesta</b></td>
 							</tr>
 							<?php
-								$sqlElencoCertificati="SELECT sr.Data_invio, sr.Stato_richiesta, t.Tipo 
-														FROM studenti_richieste AS sr, tipo_richieste AS t 
+								$sqlElencoCertificati="SELECT sr.Data_invio, sr.Stato_richiesta, t.Tipo
+														FROM studenti_richieste AS sr, tipo_richieste AS t
 														WHERE Id_anagrafe=".$utente->id." AND sr.Tipo=t.Id ORDER BY sr.Id DESC";
 								$res=$connessione->query($sqlElencoCertificati);
 								while($elencoCertificati=$res->fetch_assoc()){
@@ -55,11 +55,11 @@ if(@$_SESSION['richiesta-inviata']===1){
 								}
 							?>
 						</table>
-					
-				
+
+
 			</div>
-	
+
 <?php @include_once 'shared/footer.php'; ?>
-		
+
 	</body>
 </html>

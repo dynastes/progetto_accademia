@@ -2,13 +2,6 @@
 @session_start();
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
-
-if (isset ($_SESSION['iscritto-aggiunto'])){
-	if(	$_SESSION['iscritto-aggiunto']==1){
-		echo "La richiesta di iscrizione è stata inoltrata alla segreteria dell'Accademia";
-		$_SESSION['iscritto-aggiunto']=0;
-	}
-}
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +9,14 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 <head>
 
 <?php @include_once 'shared/head_inclusions.php';?>
+<?php
+if (isset ($_SESSION['autorizza_modifica'])) {
+		if  ($_SESSION['autorizza_modifica'] == 0) {
+			echo "<div style=\"width:100%;background-color:#ff3333;text-align:center;\"><b>Impossibile ripristinare password! - controlla i dati inseriti e riprova.</b></div>";
+			unset($_SESSION['autorizza_modifica']);
+		}
+}
+ ?>
 </head>
 <body>
 
@@ -54,7 +55,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])){
 
 						<div class="col-md-4">
 							<label>Email:</label>
-							<input type="text" class="form-control" name="email" placeholder = "inserisci la tua email" required>
+							<input type="email" class="form-control" name="email" placeholder = "inserisci la tua email" required>
 						</div> <!-- /row form-group (1) -->
 
 						<div class="col-md-4">

@@ -3,12 +3,7 @@
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
 
-if (isset ($_SESSION['iscritto-aggiunto'])) {
-    if ($_SESSION['iscritto-aggiunto'] == 1) {
-        echo "La richiesta di iscrizione è stata inoltrata alla segreteria dell'Accademia";
-        $_SESSION['iscritto-aggiunto'] = 0;
-    }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -159,9 +154,12 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 				</div>
            <div class="row form-group pull-right">
 					<div class="col-md-12">
-				  <label> &nbsp; </label>
+						<input type="checkbox" required />
+						<label>Dichiaro di aver letto l'informativa sui cookies <a href="https://www.accademiadibelleartikandinskij.it/privacy/" target="_blank">Link</a></label>
+
+								  <label> &nbsp; </label>
                   <input type="submit" class="btn btn-info" color="blue"  value="Registrati">
-                </div>
+          </div>
 
 
 				</div>
