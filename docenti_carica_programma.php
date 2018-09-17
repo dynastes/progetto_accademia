@@ -5,21 +5,21 @@
 
 	</head>
 	<body>
-	
-			
+
+		<div id="principale">
 			<!-- INIZIO CARICAMENTO MENU -->
 				<?php
 					menu();
 				?>
 			<!-- FINE MENU -->
-		
+
 			<div id="container">
 				<div id="benvenuto">
 					<h1>Carica Programma</h1>
 					<b>Utente corrente: <?php echo $utente->nome; ?></b>
 				</div>
 				<div id="avvisi">
-					<?php 
+					<?php
 						if(isset($_FILES['FileUtente'])){
 							$directory="./caricamenti/docenti/".$utente->id . $utente->nome."/";
 							if (!file_exists($directory)) {
@@ -37,7 +37,7 @@
 									</div>';
 							}
 							echo 'Per caricare un ulteriore file, <a href="docenti_carica_programma.php">cliccare qui</a>';
-						}else{ 
+						}else{
 							echo '<p>Carica i documenti contenenti il programma di studi del tuo corso.
 							I file caricati devono essere del formato <b>.zip, doc, ppt, jpg</b>. Altri formati potrebbero non essere caricati.
 							Dimensione massima consentita: 1MB</p>
@@ -47,10 +47,12 @@
 							</form>';
 						}
 					?>
-					
+
 				</div>
 			</div>
-	
+		</div>
+
+
 
 			<?php @include_once 'shared/footer.php'; ?>
 	</body>

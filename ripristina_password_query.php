@@ -22,7 +22,7 @@ $res = $risultato->fetch_assoc();
 if(password_verify($risposta,$res['Risposta'])){
   $_SESSION['autorizza_modifica'] = TRUE;
 	$uncripted_pass = generateRandomString();
-
+	echo($uncripted_pass);
 	$password = password_hash($uncripted_pass,PASSWORD_BCRYPT);
 	$id = $res['Id'];
 	$sql = "UPDATE anagrafe SET Password = '".$password."' WHERE Id = ".$id."";

@@ -13,11 +13,11 @@ if(isset($_SESSION['login'])){
 		//echo "!!!!! Utente già loggato in precedenza. E' uno ".$utente->ruolo;
 		//se l'utente era già collegato, sarà possibile reindirizzarlo alla sua home page appena cerca di ritornare al log in
 		if($utente->ruolo==="studente"){
-			@header("location:studenti_home.php");
+			@header("location:dashboard.php");
 		} else if ($utente->ruolo==="docente"){
-			@header("location:docenti_home.php");
+			@header("location:dashboard.php");
 		} else if ($utente->ruolo==="admin"){
-			@header("location:admin_home.php");
+			@header("location:dashboard.php");
 		}
 	}
 }
@@ -112,13 +112,13 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 	//IMMETTERE QUESTE DUE RIGHE DENTRO GLI "IF" delle identificazioni
 	//echo "\nReindirizzamento in corso... l'utente è un: ".$ruoloUtente;
 	if($ruoloUtente==="studente"){
-		@header("location:studenti_home.php");
+		@header("location:dashboard.php");
 	} else if ($ruoloUtente==="docente"){
-		@header("location:docenti_home.php");
+		@header("location:dashboard.php");
 	} else if ($ruoloUtente==="admin"){
-		@header("location:admin_home.php");
+		@header("location:dashboard.php");
 	}else if ($ruoloUtente==="editor"){
-		@header("location:admin_home.php");
+		@header("location:dashboard.php");
 	}
 	//FINE RIGHE DA IMMETTERE NELL'IF
 	//reindirizzamento alla pagina HOME PAGE dell'utente

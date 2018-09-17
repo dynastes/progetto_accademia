@@ -162,12 +162,10 @@ if (@$_SESSION['inserimento'] === 1) {
                         <tr style="background-color:#FF3535; color:white;">
                             <th></th>
                             <th style="text-align:center;">Codice</th>
-                            <th>Settore</th>
                             <th>Campo Disciplinare</th>
-                            <th style="text-align:center">Ore</th>
                             <th style="text-align:center">CFA</th>
-                            <th style="text-align:center">Tipo</th>
-                            <th></th>
+                            <th>Data esame</th>
+                            <th>Voto</th>
                             <th></th>
                         </tr>
                         <?php
@@ -226,11 +224,8 @@ if (@$_SESSION['inserimento'] === 1) {
                                         ?>
 
                                         <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_settore; ?> </td>
                                         <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $ore; ?></td>
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td style="text-align:center"><?php echo $tipo; ?></td>
                                         <td><!--<a>Modifica</a>--></td>
                                         <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a>--></td><?php }
                                 }
@@ -277,11 +272,8 @@ if (@$_SESSION['inserimento'] === 1) {
 //if($Conta_attivita_caratterizzante==0){echo "<th rowspan=".$rowspan_caratterizzante." style=\"vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_caratterizzante=1;}
                                         ?>
                                         <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_settore; ?> </td>
                                         <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $ore; ?></td>
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td style="text-align:center"><?php echo $tipo; ?></td>
                                         <td><!--<a>Modifica</a>--></td>
                                         <td><!-- <a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
                                 }
@@ -328,11 +320,8 @@ if (@$_SESSION['inserimento'] === 1) {
 //if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
                                         ?>
                                         <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_settore; ?> </td>
                                         <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $ore; ?></td>
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td style="text-align:center"><?php echo $tipo; ?></td>
                                         <td><!--<a>Modifica</a>--></td>
                                         <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
                                 }
@@ -399,9 +388,9 @@ if (@$_SESSION['inserimento'] === 1) {
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <th style="background-color:#55FD51; text-align:right">Crediti</th>
+                                <th style="background-color:#55FD51; text-align:right">Crediti acquisiti</th>
                                 <td style="background-color:#55FD51;"></td>
-                                <th style="background-color:#55FD51; text-align:center"><?php $crediti_totali += $crediti_anno;
+                                <th style="background-color:#55FD51; text-align:center"> 0/<?php $crediti_totali += $crediti_anno;
                                     echo $crediti_anno; ?></th>
                                 <td colspan="3" style="background-color:#55FD51;"></td>
                             </tr>

@@ -20,13 +20,13 @@
 			<div class="dashboard-header text-center">
 						<img src="img/logo.png" class="dashboard-logo">
 						<h1> Accademia di Belle Arti Kandinskij  </h1>
-						<h3>Dashboard<h3>
+						<h3>Dashboard - <?php echo($utente->get_ruolo()); ?> <h3>
 						<p>
 														<b>Benvenuto <?php echo $utente->nome; ?></b>
 						</p>
 			</div>
 			<?php
-			if($utente->get_ruolo() =="admin" and $utente->get_ruolo() == "editor"){
+			if($utente->get_ruolo() =="admin" or  $utente->get_ruolo() == "editor"){
 				echo('	<div class="row">
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<a href="profilo.php" class="btn btn-default custom-button"> <i class="fas fa-user"> </i> &nbsp Profilo </a>
@@ -104,22 +104,25 @@
 ');
 			}
 			if($utente->get_ruolo() =="studente"){
-				echo('	<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-exclamation"> </i> &nbsp Avvisi </a>	
-						</div>
+				echo('<div class="row">
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<a href="profilo.php" class="btn btn-default custom-button"> <i class="fas fa-user"> </i> &nbsp Profilo </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<a href="studenti_visualizza_piano_studi.php" class="btn btn-default custom-button"> <i class="fas fa-book"> </i> &nbsp Piano di studi </a>
 						</div>
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								<a href="studenti_visualizza_orario_lezione.php" class="btn btn-default custom-button"><i class="fas fa-calendar-alt"> </i> &nbsp Orario lezioni </a>
+
+							</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="studenti_visualizza_orario_lezione.php" class="btn btn-default custom-button"><i class="fas fa-calendar-alt"> </i> &nbsp Orario lezioni </a>
-
+							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-exclamation"> </i> &nbsp Avvisi </a>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-check-square"> </i> &nbsp Feedback </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"> </i> &nbsp Documenti/Certificati<span class="caret"></span></a>
@@ -129,6 +132,13 @@
 							<li><a href="studenti_richieste.php">Richiedi documenti/certificati</a></li>
 							<!--<li><a href="#">Richiedi certificati</a></li>-->
 						</ul>
+						</div>
+
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<a href="logout.php" class="btn btn-danger custom-button"><i class="fas fa-door-open"> </i> &nbsp Disconnetti </a>
