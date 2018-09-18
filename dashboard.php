@@ -25,6 +25,7 @@
 														<b>Benvenuto <?php echo $utente->nome; ?></b>
 						</p>
 			</div>
+			<?php echo($utente->get_ruolo()); ?>
 			<?php
 			if($utente->get_ruolo() =="admin" or  $utente->get_ruolo() == "editor"){
 				echo('	<div class="row">
@@ -77,7 +78,7 @@
 							<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-graduate"> </i>  Allievi <span class="caret"></span></a>
 								  <ul class="dropdown-menu custom-dropdown">
 									<li><a href="admin_inserisci_studenti.php">Inserisci nuovo utente</a></li>
-									<li><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto</a></li>
+									<li><a href="admin_trasforma_iscritto_in_studente.php">Immatricola iscritto</a></li>
 									<li><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>
 												<li><a href="admin_inserisci_voti.php">Inserisci Voti Studenti</a><!-- * --></li>
 								  </ul>
@@ -122,7 +123,7 @@
 							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-exclamation"> </i> &nbsp Avvisi </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-check-square"> </i> &nbsp Feedback </a>
+							<a href="studenti_home.php?tipo=questionari" class="btn btn-default custom-button"> <i class="fas fa-check-square"> </i> &nbsp Feedback </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"> </i> &nbsp Documenti/Certificati<span class="caret"></span></a>
@@ -152,19 +153,10 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<a href="profilo.php" class="btn btn-default custom-button"> <i class="fas fa-user"> </i> &nbsp Profilo </a>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-						<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-check-square"> </i> &nbsp Feedback<span class="caret"></span></a>
-							<ul class="dropdown-menu custom-dropdown">
-									<li><a href="aggiungi_questionario.php">Aggiungi questionario feedback</a></li>
-									<li><a href="verifica_risposte.php">Verifica risposte studenti</a></li>
-							</ul>
-						</div>
+
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<a href="docenti_visualizza_orario_lezioni.php" class="btn btn-default custom-button"><i class="fas fa-calendar-alt"> </i> &nbsp Orario Lezioni </a>
 						</div>
-					</div>
-					<br>
-					<div class="row">
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						 <a href="#" class="dropdown-toggle btn btn-default custom-button
 						 " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher"> </i> &nbsp Documenti <span class="caret"></span></a>
@@ -173,12 +165,16 @@
 								 <li><a href="docenti_carica_programma.php">Carica Documenti</a></li>
 						 </ul>
 						</div>
+					</div>
+					<br>
+					<div class="row">
+
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						 <a href="#" class="dropdown-toggle btn btn-default custom-button
-						 " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher"> </i> &nbsp Avvisi <span class="caret"></span></a>
+						 " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher"> </i> &nbsp Comunicazioni <span class="caret"></span></a>
 						 <ul class="dropdown-menu custom-dropdown">
-								<li><a href="docenti_visualizza_avvisi.php">Visualizza Avvisi</a></li>
-								<li><a href="docenti_carica_avvisi.php">Pubblica avvisi</a></li>
+								<li><a href="docenti_visualizza_avvisi.php">Visualizza Comunicazioni</a></li>
+								<li><a href="docenti_carica_avvisi.php">Nuova Comunicazione</a></li>
 							</ul>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">

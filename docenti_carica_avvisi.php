@@ -20,20 +20,19 @@ if(isset($_SESSION['query'])){
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
 				</div>
 				<div name="avvisi">
-				<h2>Pubblica avvisi </h2>
-					<p>Per visualizzare tutti gli avvisi pubblicati, cliccare sul seguente link: <a href="docenti_visualizza_avvisi.php">Visualizza Avvisi</a> </p>
+				<h2>Nuova comunicazione </h2>
+					<p>Per visualizzare tutte le comunicazioni, cliccare <a href="docenti_visualizza_avvisi.php">qui</a> </p>
 					<form id="carica_avvisi" name="carica-avvisi" method="post" action="carica-avvisi.php" accept-charset="utf-8">
 
 						<textarea name="avviso"  rows="15" cols="155"></textarea> <!-- funziona nei form e serve per scrivere testi su più linee -->
 						</br>
 						<div>
-							<label>Rendi l'avviso visibile a:</label>
+							<label>Rendi la comunicazione visibile a:</label>
 							<select name="visibility" id="visibility">
-								<option value="pubblico">Studenti, docenti e amministratori</option>
-								<option value="privato">Solo amministratori</option>
+								<option value="privato">Segreteria</option>
 							</select>
 						</div>
-						<input type="submit" class="btn btn-info" value="Pubblica Avviso">
+						<input type="submit" class="btn btn-info" value="Invia comunicazione">
 					</form>
 				</div>
 	</div>

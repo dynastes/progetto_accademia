@@ -4,7 +4,7 @@
 		<?php @include_once 'shared/head_inclusions.php';?>
 		<script src="sorttable.js"></script>
 		<?php
-			if($utente->get_ruolo() !="admin" or $utente->get_ruolo() != "editor"){
+			if($utente->get_ruolo() !="admin" and $utente->get_ruolo() != "editor"){
 				header("location: index.php");
 			}
 		?>
@@ -23,7 +23,7 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti gli studenti che sono iscritti all'accademia</p>
 				</div>
-				
+
 				<table class="table sortable table-striped">
 				<tr>
 					<th> Nome </th>
@@ -67,7 +67,7 @@
 				}
 				echo "</table>";
 				?>
-		
+
 			</div>
 		</div>
 

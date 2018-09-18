@@ -15,7 +15,7 @@ function menu(){
 	} else {
 		$utente=$_SESSION['ut'];
 		$utente=unserialize($utente);
-		
+
 		$nav='<nav class="navbar navbar-default">
 		<div class="container-fluid">
 		<div class="navbar-header">
@@ -25,8 +25,8 @@ function menu(){
         </button>
         <img src="img/logo.png" width="30%">
         </div>';
-		
-		
+
+
 		//identificazione dell'utente connesso e attribuzione del giusto menù ad esso
 		//admin, studente, docente
 		if($utente->get_ruolo()=="studente"){
@@ -65,26 +65,26 @@ function menu(){
 			<li><a href="admin_gestione_finanze.php">Gestione Documenti</a><!--(mostrare i pagamenti caricati dagli utenti tramite la loro pagina "Carica Documenti")--></li>
 			<li><a href="admin_imposta_orari_lezione.php">Imposta Calendario</a></li>
 			<li><a href="admin_inserisci_materia_anagrafe.php">Inserisci materie (anagrafe)</a></li>
-						
+
 			<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Docenti <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="admin_inserisci_materia.php">Inserisci materia</a></li>
             <li><a href="admin_cambia_materia_docenti.php">Imposta/cambia materia docenti</a></li>
-            <li><a href="admin_visualizza_docenti.php">Visualizza Docenti</a></li>    
+            <li><a href="admin_visualizza_docenti.php">Visualizza Docenti</a></li>
           </ul>
         </li>
-			
-			
+
+
 			<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestisci Allievi <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="admin_inserisci_studenti.php">Inserisci nuovo utente</a></li>
             <li><a href="admin_trasforma_iscritto_in_studente.php">Trasforma iscritto</a></li>
-            <li><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>    
+            <li><a href="admin_visualizza_studenti.php">Visualizza tutti gli studenti</a></li>
           </ul>
         </li>
-		
+
 			<li><a href="admin_inserisci_voti.php">Inserisci Voti Studenti</a><!-- * --></li>
 			<li><a href="admin_gestisci_certificati.php">Gestisci Richieste</a><!-- (viene visualizzata la lsita di certificati richiesti dagli utenti e in attesa di essere creati/autorizzati) --></li>
 			<!--li><a href="admin_richieste_protocolli.php">Richieste Protocolli</a></li--> <!-- creare tabella che possa registrare i protocolli in entrata [richieste da parte degli studenti del foglio timbrato delle materie + protocolli generali al di fuori del sito gestionale che necessitano di registrazione] e in uscita [qualsiasi cosa esce dalla segreteria] -->
@@ -92,15 +92,13 @@ function menu(){
 		</ul>';
 	}
 	$chiusure=' </div><!-- /.container-fluid --></nav>';
-	
-	
-	
-	
+
+
+
+
 	echo $nav;
 	echo $menu;
 	echo $chiusure;
 	}
 }
 ?>
-
-

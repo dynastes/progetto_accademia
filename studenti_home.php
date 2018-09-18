@@ -98,6 +98,8 @@ non convertite
                   echo '</table>';
                 }
 
+
+            }else{
                 echo("<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>");
                 $sqlavvisi = "SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE Visibilita='pubblico' AND an.Id = av.Id_docente ORDER BY av.Data_pubblicazione DESC"; //av.Id_docente=an.Id AND
                 $avvisiLista = $connessione->query($sqlavvisi);

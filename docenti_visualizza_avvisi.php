@@ -4,18 +4,18 @@
 		<?php @include_once 'shared/head_inclusions.php';?>
 	</head>
 	<body>
-		
+
    <?php menu(); ?>
-	
+
   <div class="container">
 				<div>
-					<p>Qui verranno elencati tutti gli avvisi da Lei caricati attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Carica Avvisi</a></p>
+					<p>Qui trovi tutte le comunicazioni inviate attraverso l'apposita pagina <a href="docenti_carica_avvisi.php">Nuova comunicazione</a></p>
 				</div>
-				
+
 				<table class="table">
 				<tr>
-					<td><b>Data pubblicazione</b></td>
-					<td><b>Testo dell'avviso</b></td>
+					<td><b>Data comunicazione</b></td>
+					<td><b>Contenuto</b></td>
 					<td><b>Opzioni</b></td>
 					<td><b>Visibilità</b></td>
 				</tr>
@@ -33,9 +33,9 @@
 						echo '</td>';
 						echo '<td>';
 							?>
-							
+
 				<a href="admin_elimina_avvisi_query.php?ID=<?php echo $res['Id']; ?>" onclick="return sicuro('<?php echo $res['Id']; ?>')">Elimina<?php ?></a>
-					
+
 					<?php
 						echo '</td>';
 						echo '<td>';
@@ -49,11 +49,11 @@
 				}
 				echo "</table>";
 				?>
-				
+
 			</div>
 
 <?php @include_once 'shared/footer.php'; ?>
 
-		
+
 	</body>
 </html>

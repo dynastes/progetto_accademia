@@ -6,12 +6,12 @@
 	</head>
 	<body>
 	<?php @include_once 'shared/menu.php'; ?>
-	
 
-	
+
+
    <?php menu(); ?>
-			
-  
+
+
 <div class="container">
 				<table class="table">
 					<tr>
@@ -22,27 +22,31 @@
 							<b>Data caricamento</b>
 						</td>
 						<td>
+							<b>Destinatario</b>
+						</td>
+						<td>
 							<b>Link di download</b>
 						</td>
 					</tr>
 					<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
-					$stringasql="SELECT Nome_file, Data_caricamento, Percorso_file, Nome_file FROM docenti_programmi_caricati WHERE Id_docente=".$utente->id;
+					$stringasql="SELECT Nome_file, Data_caricamento,Visibilita, Percorso_file, Nome_file FROM docenti_programmi_caricati WHERE Id_docente=".$utente->id;
 					$elencoCaricamenti=$connessione->query($stringasql);
 					while($res=$elencoCaricamenti->fetch_assoc()){
 						echo '<tr>';
 							echo '<td>'.$res["Nome_file"].'</td>';
 
 							echo '<td>'.$res["Data_caricamento"].'</td>';
+							echo '<td>'.$res["Visibilita"].'</td>';
 							echo '<td>';
 								echo '<a href="'.$res["Percorso_file"].$res["Nome_file"].'">Scarica File</a>';
 							echo '</td>';
 						echo '</tr>';
 					}
 					?>
-				</table>	
+				</table>
 			</div>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php'; ?>
-		
+
 	</body>
 </html>
