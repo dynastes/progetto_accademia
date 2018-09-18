@@ -132,3 +132,8 @@ tr.anno :first-child{
 }
 
 
+/* SEZIONE INSERIMENTO VOTI DA ADMIN */
+
+#container_voti{
+	width:90%;
+}

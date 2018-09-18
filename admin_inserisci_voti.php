@@ -1,5 +1,5 @@
 <?php @include_once 'shared/menu.php';
-if(isset($_SESSION['inserimento'])){	
+if(isset($_SESSION['inserimento'])){
 	if($_SESSION['inserimento']===1 && $_SESSION['inserimento2']===1){
 		echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
 		$_SESSION['inserimento']=0;
@@ -36,36 +36,57 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				?>
 			</div> <!-- FINE MENU -->
 
-			
+
 			<div class="container">
-				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
-				</div>
 				<div name="avvisi">
-				<div class="col-md-8">
+				<div class="col-md-12">
 				<h2>Inserisci voti</h2>
-				<label>Scegliere il professore che ha sostenuto l'esame:</label>
-					<form id="caricaquery" name="caricaquery" method="post" action="admin_inserisci_voti_next.php" accept-charset="utf-8">  <?php /* echo $_SERVER['PHP_SELF']; */ ?>
- 						<br />
-									<div class="col-md-4">
-										<label for="usermail">Professore:</label> <!--input type="text" name="id-corso" placeholder="1, 2 o 3" required-->
-										<br />
-										
-										<select class="form-control" name="id-docente">
-										<?php
-										$sqlDocenti="SELECT d.Id_anagrafe, a.Nome, a.Cognome
-													FROM docenti AS d, anagrafe AS a
-													WHERE d.Id_anagrafe=a.Id ORDER BY a.Cognome";
-										$resDocenti=$connessione->query($sqlDocenti);
-										while($docenti=$resDocenti->fetch_assoc()){
-											echo '<option value="'.$docenti["Id_anagrafe"].'">'.$docenti["Cognome"].' '.$docenti['Nome'].'</option>';
-										}
-										?>
-										</select>
-										<br />
-										<input class="btn btn-info" type="submit" value="Avanti">
-									</div>
-					</form>
+				<label>Selezionare l'alunno per il caricamento dei voti:</label>
+				<table class="table sortable table-striped">
+				<tr>
+					<th> Nome </th>
+					<th> Cognome </th>
+					<th> Matricola </th>
+					<th> Email </th>
+					<th> Indirizzo </th>
+					<th> Telefono </th>
+					<th>Aggiungi voto	</th>
+				</tr>
+
+				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
+				//INIZIO TABELLA CONTENUTI
+				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
+				$elencoStudenti=$connessione->query($stringasql);
+				while($res=$elencoStudenti->fetch_assoc()){
+					echo "<tr>";
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Nome"];
+						echo '</td>';
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Cognome"];
+						echo '</td>';
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Matricola"];
+						echo '</td>';
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Email"];
+						echo '</td>';
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Indirizzo"];
+						echo '</td>';
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Telefono"];
+						echo '</td>';
+						if($utente -> get_ruolo() == "admin"){
+							echo '<td>';
+								echo('<a href="admin_valutazione_studente.php?ID='.$res['Id_anagrafe'].'" onclick="return sicuro('.$res['Id_anagrafe'].'")>  Aggiungi </a>');
+							echo '</td>';
+						}
+					echo '</tr>';
+				}
+				echo "</table>";
+				?>
+
 				</div>
 			</div>
 		</div>
