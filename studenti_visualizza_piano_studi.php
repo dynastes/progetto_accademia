@@ -1,9 +1,5 @@
 <?php @include_once 'shared/menu.php';
 
-if (@$_SESSION['inserimento'] === 1) {
-    echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
-    $_SESSION['inserimento'] = 0;
-}
 
 /*function coloraRighe($a){
 	if($a==="Base"){
@@ -30,6 +26,7 @@ if (@$_SESSION['inserimento'] === 1) {
 
     <!-- SEZIONE 1-->
     <?php
+    $tot_crediti = 0;
     //controllo se l'utente ha un Id_corso>0 inserito nel suo profilo. Se così non è allora mostro la selezione del corso
     $sqlCheckCorso = "SELECT Id_corso FROM studenti WHERE Id_anagrafe=" . $utente->id;
     $resCheckCorso = $connessione->query($sqlCheckCorso);
@@ -221,13 +218,24 @@ if (@$_SESSION['inserimento'] === 1) {
                                             $Conta_attivita_base = 1;
                                         }
                                         //if($Conta_attivita_base==0){echo "<th rowspan=".$rowspan_base." style=\"vertical-align:middle; text-align:center;\">Attività Formative di Base</th>"; $Conta_attivita_base=1;}
+                                        $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia."";
+                                        $elencoEsami=$connessione->query($stringasql);
+                                        $voto ="";
+                                        $data ="";
+                                        while($res=$elencoEsami->fetch_assoc()){
+                                           $passato = 1;
+                                           $voto = $res['Voto'];
+                                           $data = $res['Data'];
+                                           $tot_crediti = $tot_crediti + $cfa;
+                                       }
+
                                         ?>
 
                                         <td style="text-align:center;"><?php echo $codice_settore; ?></td>
                                         <td><?php echo $nome_materia . " " . $modulo; ?></td>
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td><!--<a>Modifica</a>--></td>
-                                        <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a>--></td><?php }
+                                        <td><?php echo $data ?></td>
+                                        <td><?php echo $voto ?></td><?php }
                                 }
                             } ?>
                             </tr>
@@ -269,13 +277,25 @@ if (@$_SESSION['inserimento'] === 1) {
                                             echo "<th rowspan=" . $rowspan_caratterizzante . " style=\"background-color:#FFFF78; vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>";
                                             $Conta_attivita_caratterizzante = 1;
                                         }
-//if($Conta_attivita_caratterizzante==0){echo "<th rowspan=".$rowspan_caratterizzante." style=\"vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_caratterizzante=1;}
-                                        ?>
-                                        <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td><!--<a>Modifica</a>--></td>
-                                        <td><!-- <a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
+                                      //if($Conta_attivita_caratterizzante==0){echo "<th rowspan=".$rowspan_caratterizzante." style=\"vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_caratterizzante=1;}
+                                      $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia."";
+                                      $elencoEsami=$connessione->query($stringasql);
+                                      $voto = "";
+                                      $data = "";
+                                      while($res=$elencoEsami->fetch_assoc()){
+                                         $passato = 1;
+                                         $voto = $res['Voto'];
+                                         $data = $res['Data'];
+                                         $tot_crediti = $tot_crediti + $cfa;
+                                      }
+
+                                      ?>
+
+                                      <td style="text-align:center;"><?php echo $codice_settore; ?></td>
+                                      <td><?php echo $nome_materia . " " . $modulo; ?></td>
+                                      <td style="text-align:center"><?php echo $cfa; ?></td>
+                                      <td><?php echo $data ?></td>
+                                      <td><?php echo $voto ?></td><?php }
                                 }
                             } ?>
                             </tr>
@@ -317,13 +337,25 @@ if (@$_SESSION['inserimento'] === 1) {
                                             echo "<th rowspan=" . $rowspan_integrativa . " style=\"background-color:#ff99ff; vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>";
                                             $Conta_attivita_integrative = 1;
                                         }
-//if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
+                                        //if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
+                                        $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia."";
+                                        $elencoEsami=$connessione->query($stringasql);
+                                        $voto = "";
+                                        $data = "";
+                                        while($res=$elencoEsami->fetch_assoc()){
+                                        $passato = 1;
+                                        $voto = $res['Voto'];
+                                        $data = $res['Data'];
+                                        $tot_crediti = $tot_crediti + $cfa;
+                                        }
+
                                         ?>
-                                        <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td><!--<a>Modifica</a>--></td>
-                                        <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
+
+<td style="text-align:center;"><?php echo $codice_settore; ?></td>
+<td><?php echo $nome_materia . " " . $modulo; ?></td>
+<td style="text-align:center"><?php echo $cfa; ?></td>
+<td><?php echo $data ?></td>
+<td><?php echo $voto ?></td><?php }
                                 }
                             } ?>
                             </tr>
@@ -390,13 +422,14 @@ if (@$_SESSION['inserimento'] === 1) {
                                 <td></td>
                                 <th style="background-color:#55FD51; text-align:right">Crediti acquisiti</th>
                                 <td style="background-color:#55FD51;"></td>
-                                <th style="background-color:#55FD51; text-align:center"> 0/<?php $crediti_totali += $crediti_anno;
+                                <th style="background-color:#55FD51; text-align:center"> <?php echo($tot_crediti);?>/<?php $crediti_totali += $crediti_anno;
                                     echo $crediti_anno; ?></th>
                                 <td colspan="3" style="background-color:#55FD51;"></td>
                             </tr>
 
 
                             <?php
+                            $tot_crediti = 0;
                         }//Chiusura ciclo for "anni"
                         ?>
                         <tr class="crediti_totali">

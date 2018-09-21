@@ -1,9 +1,11 @@
 <?php @include_once 'shared/menu.php';
-
-if (@$_SESSION['inserimento'] === 1) {
-    echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Query pubblicata correttamente</div>";
-    $_SESSION['inserimento'] = 0;
+if(isset($_SESSION['inserimento_voti'])){
+    if ($_SESSION['inserimento-voto'] == 1) {
+        echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Voto caricato correttamente</div>";
+        $_SESSION['inserimento-voto'] = 0;
+    }
 }
+
 
 /*function coloraRighe($a){
 	if($a==="Base"){
@@ -35,6 +37,7 @@ if (@$_SESSION['inserimento'] === 1) {
     $sqlCheckCorso = "SELECT Id_corso FROM studenti WHERE Id_anagrafe=".$id;
     $resCheckCorso = $connessione->query($sqlCheckCorso);
     $checkCorso = $resCheckCorso->fetch_assoc();
+    $tot_crediti =0;
     if ($checkCorso['Id_corso'] == 0) {
         ?>
         <div class="row">
@@ -165,11 +168,10 @@ if (@$_SESSION['inserimento'] === 1) {
                             <th style="text-align:center;">Codice</th>
                             <th>Campo Disciplinare</th>
                             <th style="text-align:center">CFA</th>
-                            <th>Data esame</th>
-                            <th>Voto</th>
-                            <th>Lode</th>
-                            <th>Prof.</th>
-                            <th> Aggiungi</th>
+                            <th style="text-align:center">Data esame</th>
+                            <th style="text-align:center">Voto</th>
+                            <th style="text-align:center">Prof.</th>
+                            <th style="text-align:center"> Aggiungi</th>
                             <th>
 
                             </th>
@@ -221,35 +223,15 @@ if (@$_SESSION['inserimento'] === 1) {
                                         $nome_settore = $res['Settore'];
                                         ?>
                                         <tr>
-                                                <form action="aggiungi_voto_query.php" id="aggiungi_voto" method="post">
+
                                         <?php
                                         if ($Conta_attivita_base == 0) {
                                             echo "<th rowspan=" . $rowspan_base . " style=\"background-color:#93C9FF; vertical-align:middle; text-align:center;\">Attività Formative di Base</th>";
                                             $Conta_attivita_base = 1;
                                         }
                                         //if($Conta_attivita_base==0){echo "<th rowspan=".$rowspan_base." style=\"vertical-align:middle; text-align:center;\">Attività Formative di Base</th>"; $Conta_attivita_base=1;}
+                                        include "admin_inserisci_voti_smart_form.php";
                                         ?>
-
-                                            <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                            <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                            <td style="text-align:center"><?php echo $cfa; ?></td>
-                                            <input type="hidden" value = "<?php echo $id_materia ?>" name="id_materia">
-                                            <td><input class="form-control"type="date" name="data_esame" /></td>
-                                            <td><input class="form-control"type="number" max="30" min="18"  name="voto" /> </td>
-                                            <td>
-                                                <input class="form-control" type="checkbox" name="lode" />
-                                            </td>
-                                            <td>
-                                                <SELECT name="id_professore" class="form-control">
-                                                    <option>
-                                                        Domenico Messina
-                                                    </option>
-                                                </SELECT>
-                                            </td>
-                                            <td>
-                                                <input type="submit" class="btn btn-default" />
-                                            </td>
-                                        </form>
 
                                     <?php }
                                 }
@@ -294,12 +276,9 @@ if (@$_SESSION['inserimento'] === 1) {
                                             $Conta_attivita_caratterizzante = 1;
                                         }
 //if($Conta_attivita_caratterizzante==0){echo "<th rowspan=".$rowspan_caratterizzante." style=\"vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_caratterizzante=1;}
+                                        include "admin_inserisci_voti_smart_form.php";
                                         ?>
-                                        <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td><!--<a>Modifica</a>--></td>
-                                        <td><!-- <a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
+                                        <?php }
                                 }
                             } ?>
                             </tr>
@@ -342,12 +321,9 @@ if (@$_SESSION['inserimento'] === 1) {
                                             $Conta_attivita_integrative = 1;
                                         }
 //if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
+                                        include "admin_inserisci_voti_smart_form.php";
                                         ?>
-                                        <td style="text-align:center;"><?php echo $codice_settore; ?></td>
-                                        <td><?php echo $nome_materia . " " . $modulo; ?></td>
-                                        <td style="text-align:center"><?php echo $cfa; ?></td>
-                                        <td><!--<a>Modifica</a>--></td>
-                                        <td><!--<a href="admin_modifica_piano_di_studi_elimina_materia_query.php?Id=<?php echo $id_materia_in_piano; ?>">Elimina </a></td> --><?php }
+                                        <?php }
                                 }
                             } ?>
                             </tr>
@@ -414,13 +390,14 @@ if (@$_SESSION['inserimento'] === 1) {
                                 <td></td>
                                 <th style="background-color:#55FD51; text-align:right">Crediti acquisiti</th>
                                 <td style="background-color:#55FD51;"></td>
-                                <th style="background-color:#55FD51; text-align:center"> 0/<?php $crediti_totali += $crediti_anno;
+                                <th style="background-color:#55FD51; text-align:center"> <?php echo($tot_crediti) ?>/<?php $crediti_totali += $crediti_anno;
                                     echo $crediti_anno; ?></th>
                                 <td colspan="3" style="background-color:#55FD51;"></td>
                             </tr>
 
 <
                             <?php
+                            $tot_crediti = 0;
                         }//Chiusura ciclo for "anni"
                         ?>
                         <tr class="crediti_totali">
