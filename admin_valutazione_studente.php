@@ -70,7 +70,7 @@ if(isset($_SESSION['inserimento_voti'])){
                             <td style="text-align:center"><?php echo $res2['Nome_dipartimento']; ?></td>
                             <td><?php echo $res['Nome_corso']; ?></td>
                             <td><a class="btn btn-info"
-                                   href="studenti_visualizza_piano_studi_seleziona_corso.php?IdCorso=<?php echo $res['Id']; ?>&IdDipartimento=<?php echo $res['Id_dipartimento']; ?>"
+                                   href="admin_visualizza_piano_studi_seleziona_corso.php?idStudente=<?php echo $_GET['ID']; ?>&IdCorso=<?php echo $res['Id']; ?>&IdDipartimento=<?php echo $res['Id_dipartimento']; ?>"
                                    onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')">Seleziona<?php }
                                     } ?></a></td>
                         </tr>
@@ -385,6 +385,8 @@ if(isset($_SESSION['inserimento_voti'])){
                             }
                             ?>
                             <tr class="crediti">
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

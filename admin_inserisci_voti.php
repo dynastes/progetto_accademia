@@ -41,32 +41,43 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 				<div name="avvisi">
 				<div class="col-md-12">
 				<h2>Inserisci voti</h2>
+				<label>Cerca studenti</label>
+				<div class="row">
+					<div class="col-md-4">
+							<input type="text" class="form-control" id="cerca_criteri" placeholder="Nome,Cognome,Matricola,Indirizzo, ecc..." />
+					</div>
+					<div class="col-md-8">
+
+					</div>
+				</div>
+				<br />
 				<label>Selezionare l'alunno per il caricamento dei voti:</label>
 				<table class="table sortable table-striped">
 				<tr>
+					<th> Matricola </th>
 					<th> Nome </th>
 					<th> Cognome </th>
-					<th> Matricola </th>
 					<th> Email </th>
 					<th> Indirizzo </th>
 					<th> Telefono </th>
+					<th> Anno </th>
 					<th>Aggiungi voto	</th>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
+				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola, s.Anno FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY s.Anno, s.Matricola, a.Cognome";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Matricola"];
+						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Nome"];
 						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Cognome"];
-						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
-							echo $res["Matricola"];
 						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Email"];
@@ -76,7 +87,9 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Telefono"];
-						echo '</td>';
+						echo '</td>';		echo '<td class="box-elenco-studenti">';
+									echo $res["Anno"];
+								echo '</td>';
 						if($utente -> get_ruolo() == "admin"){
 							echo '<td>';
 								echo('<a href="admin_valutazione_studente.php?ID='.$res['Id_anagrafe'].'" onclick="return sicuro('.$res['Id_anagrafe'].'")>  Aggiungi </a>');
@@ -94,3 +107,9 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 		<?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>
+
+<script>
+	$("#cerca_criteri").change(function(){
+		alert("ciao");
+	});
+</script>

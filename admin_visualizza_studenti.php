@@ -32,11 +32,12 @@
 					<th> Email </th>
 					<th> Indirizzo </th>
 					<th> Telefono </th>
+					<th> Anno </th>
 				</tr>
 
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
 				//INIZIO TABELLA CONTENUTI
-				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
+				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola, s.Anno FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
 					echo "<tr>";
@@ -57,6 +58,9 @@
 						echo '</td>';
 						echo '<td class="box-elenco-studenti">';
 							echo $res["Telefono"];
+						echo '</td>';
+						echo '<td class="box-elenco-studenti">';
+							echo $res["Anno"];
 						echo '</td>';
 						if($utente -> get_ruolo() == "admin"){
 							echo '<td>';
