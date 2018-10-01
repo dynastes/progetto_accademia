@@ -281,6 +281,7 @@ if(isset($_SESSION['inserimento_voti'])){
                                         <?php }
                                 }
                             } ?>
+
                             </tr>
                             <!-- <tr><th colspan="8" style="background-color:#ff99ff;text-align:center;">Attività Formative Integrative o Affini</th></tr> -->
                             <?php
@@ -397,7 +398,7 @@ if(isset($_SESSION['inserimento_voti'])){
                                 <td colspan="3" style="background-color:#55FD51;"></td>
                             </tr>
 
-<
+
                             <?php
                             $tot_crediti = 0;
                         }//Chiusura ciclo for "anni"

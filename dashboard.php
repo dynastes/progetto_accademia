@@ -25,7 +25,6 @@
 														<b>Benvenuto <?php echo $utente->nome; ?></b>
 						</p>
 			</div>
-			<?php echo($utente->get_ruolo()); ?>
 			<?php
 			if($utente->get_ruolo() =="admin" or  $utente->get_ruolo() == "editor"){
 				echo('	<div class="row">

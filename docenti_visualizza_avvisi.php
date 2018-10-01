@@ -16,7 +16,7 @@
 				<tr>
 					<td><b>Data comunicazione</b></td>
 					<td><b>Contenuto</b></td>
-					<td><b>Opzioni</b></td>
+
 					<td><b>Visibilità</b></td>
 				</tr>
 				<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti

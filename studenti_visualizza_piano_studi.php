@@ -21,6 +21,9 @@
 <div class="container">
     <div class="page-header">
         <h1>Visualizza Piano di Studi</h1>
+        <a class="btn btn-default" href="studenti_modifica_piano_studi.php">
+            Modifica piano studi
+        </a>
 
     </div>
 

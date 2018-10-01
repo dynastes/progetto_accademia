@@ -1,7 +1,7 @@
 <?php
 @include_once 'shared/menu.php';
 
-$testo=$_POST['avviso'];
+$testo="Richiesta sostituizione materia: <b>".$_POST['materia_originale']." </b> con <b>".$_POST['materia_sostituita']."</b>";
 
 
 $sqlInserisciRichiesta='INSERT INTO studenti_richieste

@@ -111,7 +111,7 @@ if (isset($_POST['avviso']) && $_POST['avviso']!="postato"){
 
 <script>
 	var tabella_completa = $("#studenti_tabella").html();
-	$("#cerca_criteri").change(function(){
+	$("#cerca_criteri").keyup(function(){
 		var input = $("#cerca_criteri").val();
 		var filter = input.toUpperCase();
 		var gestore_tabella = $("#studenti_tabella"); //serve per gestire il contenuto della tabella quando facciamo le ricerche

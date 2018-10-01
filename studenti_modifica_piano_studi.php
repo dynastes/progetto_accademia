@@ -17,26 +17,32 @@ function coloraRighe($a){
 	</head>
 	<body>
 
-	
+
    <?php menu();?>
-	
+
 
 			<div class="container">
-				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?></b>
-				</div>
-				
-				<p>Scrivi qui di seguito la materia che vorresti sostituire e la materia con cui vorresti rimpiazzarla</p>
+				<p>Modifica materie piano di studi</p>
 					<div id="elenco-avvisi">
 						<form method="post" action="studenti_modifica_piano_studi_query.php">
 							<div class="form-group">
-								<textarea name="avviso" style="width:90%;height:20%;"></textarea> 
-								<input type="submit" value="Invia richiesta modifica piano di studi" style="margin-top:20px;float:right;">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="materia_originale" placeholder="Materia originale" />
+
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="materia_sostituita" placeholder="Materia sostituitiva"
+										<br>
+										<input class="btn btn-default" type="submit" value="Invia richiesta modifica piano di studi" style="margin-top:20px;float:right;">
+									</div>
+								</div>
+
 							</div>
 						</form>
 					</div>
 				</div>
-			
+
 		</div>
 
 	<?php @include_once 'shared/footer.php'; ?>
