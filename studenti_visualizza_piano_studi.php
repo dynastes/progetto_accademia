@@ -166,6 +166,9 @@
                             <th style="text-align:center">CFA</th>
                             <th>Data esame</th>
                             <th>Voto</th>
+                            <th style="text-align:center;">
+                                Opzioni
+                            </th>
                             <th></th>
                         </tr>
                         <?php
@@ -238,7 +241,11 @@
                                         <td><?php echo $nome_materia . " " . $modulo; ?></td>
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
                                         <td><?php echo $data ?></td>
-                                        <td><?php echo $voto ?></td><?php }
+                                        <td><?php echo $voto ?></td>
+                                        <td style="text-align:center">
+                                            -
+                                        </td>
+                                    <?php }
                                 }
                             } ?>
                             </tr>
@@ -298,7 +305,10 @@
                                       <td><?php echo $nome_materia . " " . $modulo; ?></td>
                                       <td style="text-align:center"><?php echo $cfa; ?></td>
                                       <td><?php echo $data ?></td>
-                                      <td><?php echo $voto ?></td><?php }
+                                      <td><?php echo $voto ?></td>
+                                      <td style="text-align:center">
+                                          -
+                                      </td><?php }
                                 }
                             } ?>
                             </tr>
@@ -358,7 +368,10 @@
 <td><?php echo $nome_materia . " " . $modulo; ?></td>
 <td style="text-align:center"><?php echo $cfa; ?></td>
 <td><?php echo $data ?></td>
-<td><?php echo $voto ?></td><?php }
+<td><?php echo $voto ?></td>
+<td style="text-align:center">
+        <a href="studenti_modifica_piano_studi.php?id_materia=<?php echo($id_materia_in_piano);?>&nome_materia=<?php echo($nome_materia.' '.$modulo) ?>" class="btn btn-default">Richiedi <br /> variazione materia </a>
+    </td><?php }
                                 }
                             } ?>
                             </tr>

@@ -14,7 +14,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <link href="css/over-bootstrap.css" rel="stylesheet" />
 
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
 <!-- JavaScript -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

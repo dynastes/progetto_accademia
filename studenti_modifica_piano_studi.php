@@ -27,14 +27,15 @@ function coloraRighe($a){
 						<form method="post" action="studenti_modifica_piano_studi_query.php">
 							<div class="form-group">
 								<div class="row">
-									<div class="col-md-6">
-										<input type="text" class="form-control" name="materia_originale" placeholder="Materia originale" />
-
+									<div class="col-md-4">
+										<input type="hidden" class="form-control" name="materia_originale" placeholder="Materia originale" value="<?php echo($_GET['id_materia']); ?>" />
+										<input type="hidden" class="form-control" name="nome_materia_originale" placeholder="Materia originale" value="<?php echo($_GET['nome_materia']); ?>" />
+										<label> <?php echo($_GET['nome_materia']); ?> </label>
 									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control" name="materia_sostituita" placeholder="Materia sostituitiva"
+									<div class="col-md-4">
+										<input type="text" class="form-control" name="materia_sostituita" placeholder="Materia sostituitiva" />
 										<br>
-										<input class="btn btn-default" type="submit" value="Invia richiesta modifica piano di studi" style="margin-top:20px;float:right;">
+										<input class="btn btn-default" type="submit" value="Invia richiesta variazione piano di studi" style="margin-top:20px;float:right;">
 									</div>
 								</div>
 

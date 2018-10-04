@@ -1,12 +1,12 @@
 <?php
 @include_once 'shared/menu.php';
 
-$testo="Richiesta sostituizione materia: <b>".$_POST['materia_originale']." </b> con <b>".$_POST['materia_sostituita']."</b>";
+$testo="Richiesta sostituizione materia: <b>".$_POST['nome_materia_originale']." </b> con <b>".$_POST['materia_sostituita']."</b>";
 
 
 $sqlInserisciRichiesta='INSERT INTO studenti_richieste
-						(Id_anagrafe, Stato_richiesta, Data_invio, Tipo, Testo)
-						VALUES ('.$utente->id.', "Non letto", SYSDATE(), 4, "'.$testo.'")';
+						(Id_anagrafe, Stato_richiesta, Data_invio, Tipo, Testo, Id_materia)
+						VALUES ('.$utente->id.', "Non letto", SYSDATE(), 4, "'.$testo.'",'.$_POST['materia_originale'].')';
 
 echo $sqlInserisciRichiesta;
 if($connessione->query($sqlInserisciRichiesta)){
