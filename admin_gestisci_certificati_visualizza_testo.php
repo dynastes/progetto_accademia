@@ -31,11 +31,11 @@ $idTestoRichiesta=$_GET['id'];
 						<p>
 						<?php
 
-						$sqlTesto="SELECT Testo, Id_anagrafe, Id_materia FROM studenti_richieste WHERE Id=".$idTestoRichiesta;
+						$sqlTesto="SELECT Id, Testo, Id_anagrafe, Id_materia FROM studenti_richieste WHERE Id=".$idTestoRichiesta;
 						//echo $sqlTesto;
 						$res=$connessione->query($sqlTesto);
 						$resTesto=$res->fetch_assoc();
-
+						$idStudente = $resTesto['Id_anagrafe'];
 						//ottieni nome e cognome persona
 						$sqlPersona="SELECT a.Nome, a.Cognome FROM anagrafe AS a, studenti_richieste AS sr WHERE a.Id=".$resTesto['Id_anagrafe'];
 						$res=$connessione->query($sqlPersona);
@@ -49,7 +49,7 @@ $idTestoRichiesta=$_GET['id'];
 						</p>
 
 					<b>Seleziona la materia sostituitiva in base ai dati ricevuti dalla comunicazione</b>
-					<form action="admin_modifica_materia_studente.php" method="post">
+					<form action="admin_modifica_materia_studente_query.php" method="post">
 							<SELECT name="materia_sostitutiva" id="materia_sostitutiva" class="form-control">
 							<?php
 								$sqlMaterie="SELECT  Id, Nome_materia FROM materie_anagrafica";
@@ -69,7 +69,10 @@ $idTestoRichiesta=$_GET['id'];
 								select.selectpicker("refresh");
 						 </script>
 						 <label>Crediti</label>
-						 <input type="number" max="12" class="form-control" required />
+						 <input type="number" name="crediti"  max="12" min="1" class="form-control" required />
+						 <input type="hidden" name="materia_vecchia" value="<?php echo($idMateria); ?>">
+						 <input type="hidden" name="id_studente" value="<?php echo($idStudente); ?>">
+						 <input type="hidden" name="id_richiesta" value="<?php echo($resTesto['Id']); ?>">
 						 <input type="submit" value="Modifica materia" class="btn btn-default" />
 					</form>
 					<a href="admin_gestisci_certificati.php">&lt;&lt; Torna indietro</a>

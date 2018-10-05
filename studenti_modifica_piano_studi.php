@@ -22,7 +22,7 @@ function coloraRighe($a){
 
 
 			<div class="container">
-				<p>Modifica materie piano di studi</p>
+				<p>Variazione piano di studi</p>
 					<div id="elenco-avvisi">
 						<form method="post" action="studenti_modifica_piano_studi_query.php">
 							<div class="form-group">

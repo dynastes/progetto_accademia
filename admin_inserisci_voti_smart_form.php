@@ -1,6 +1,6 @@
 <?php
    $passato= 0;
-   $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$_GET['ID']." AND Id_materia = ".$id_materia."";
+   $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$_GET['ID']." AND Id_materia = ".$id_materia." AND Modulo = '".$modulo."'";
    $elencoEsami=$connessione->query($stringasql);
    while($res=$elencoEsami->fetch_assoc()){
       $passato = 1;
@@ -17,6 +17,7 @@
                             <td style="text-align:center"><?php echo $cfa; ?></td>
                             <input type="hidden" value = "<?php echo $id_materia ?>" name="id_materia">
                             <input type="hidden" value = "<?php echo $_GET['ID'] ?>" name="id_studente">
+                            <input type="hidden" value = "<?php echo $modulo; ?>"    name="modulo">
                             <td><input class="form-control"type="date" name="data_esame"  required/></td>
                             <td>
                                 <SELECT name="voto" class="form-control" required>

@@ -1,5 +1,8 @@
 <?php @include_once 'shared/menu.php';
-
+if( @$_SESSION['inserimento']===1){
+	echo "<div style=\"width:100%;color:green;text-align:center;font-weight:bold;border-style:solid;border-width:2px;border-color:green;background-color:#81F79F;\">Richiesta inviata correttamente</div>";
+	$_SESSION['inserimento']=0;
+}
 
 /*function coloraRighe($a){
 	if($a==="Base"){
@@ -321,14 +324,28 @@
                             while ($res = $res_piani->fetch_assoc()) {
                                 $id_materia_in_piano = $res['Id'];
                                 $id_materia = $res['Id_materia'];
+                                //controlla se lo studente abbia modificato la materia scelta
+                                $sql_controllo_materie_scelta = "SELECT * FROM materie_scelta WHERE Id_materia_piano_orig = ".$id_materia_in_piano." AND Id_studente = ".$utente->id."";
+                                $res_controllo = $connessione->query($sql_controllo_materie_scelta);
+                                $numero_righe = mysqli_num_rows($res_controllo);
+
                                 if ($res['Modulo'] != "0") {
                                     $modulo = $res['Modulo'];
                                 } else {
                                     $modulo = " ";
                                 }
-                                $cfa = $res['Cfa'];
-                                $tipo = $res['Tipologia'];
-                                $ore = $res['Ore'];
+                                if($numero_righe > 0){
+                                    $res_controllo_risultato = $res_controllo->fetch_assoc();
+                                    $cfa = $res_controllo_risultato['Crediti'];
+                                    $tipo = $res['Tipologia'];
+                                    $ore = $res_controllo_risultato['Crediti'] * 24;
+                                    $id_materia = $res_controllo_risultato['Id_materia_sostitutiva'];
+                                }else{
+                                    $cfa = $res['Cfa'];
+                                    $tipo = $res['Tipologia'];
+                                    $ore = $res['Ore'];
+                                }
+
 
                                 $sql_carica_materia_e_settore = "SELECT Nome_materia, Id_settore FROM materie_anagrafica WHERE Id='" . $id_materia . "'";
                                 $res_materia_corso_e_settore = $connessione->query($sql_carica_materia_e_settore);
@@ -370,7 +387,12 @@
 <td><?php echo $data ?></td>
 <td><?php echo $voto ?></td>
 <td style="text-align:center">
-        <a href="studenti_modifica_piano_studi.php?id_materia=<?php echo($id_materia_in_piano);?>&nome_materia=<?php echo($nome_materia.' '.$modulo) ?>" class="btn btn-default">Richiedi <br /> variazione materia </a>
+        <?php
+            if($voto<=0){
+                echo('<a href="studenti_modifica_piano_studi.php?id_materia='.$id_materia_in_piano.'&nome_materia='.$nome_materia.' '.$modulo.'" class="btn btn-default">Richiedi <br /> cambio materia </a>');
+            }
+         ?>
+
     </td><?php }
                                 }
                             } ?>

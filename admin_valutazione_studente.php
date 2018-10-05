@@ -292,14 +292,26 @@ if(isset($_SESSION['inserimento_voti'])){
                             while ($res = $res_piani->fetch_assoc()) {
                                 $id_materia_in_piano = $res['Id'];
                                 $id_materia = $res['Id_materia'];
+                                //controlla se lo studente abbia modificato la materia scelta
+                                $sql_controllo_materie_scelta = "SELECT * FROM materie_scelta WHERE Id_materia_piano_orig = ".$id_materia_in_piano." AND Id_studente = ".$_GET['ID']."";
+                                $res_controllo = $connessione->query($sql_controllo_materie_scelta);
+                                $numero_righe = mysqli_num_rows($res_controllo);
                                 if ($res['Modulo'] != "0") {
                                     $modulo = $res['Modulo'];
                                 } else {
                                     $modulo = " ";
                                 }
-                                $cfa = $res['Cfa'];
-                                $tipo = $res['Tipologia'];
-                                $ore = $res['Ore'];
+                                if($numero_righe > 0){
+                                    $res_controllo_risultato = $res_controllo->fetch_assoc();
+                                    $cfa = $res_controllo_risultato['Crediti'];
+                                    $tipo = $res['Tipologia'];
+                                    $ore = $res_controllo_risultato['Crediti'] * 24;
+                                    $id_materia = $res_controllo_risultato['Id_materia_sostitutiva'];
+                                }else{
+                                    $cfa = $res['Cfa'];
+                                    $tipo = $res['Tipologia'];
+                                    $ore = $res['Ore'];
+                                }
 
                                 $sql_carica_materia_e_settore = "SELECT Nome_materia, Id_settore FROM materie_anagrafica WHERE Id='" . $id_materia . "'";
                                 $res_materia_corso_e_settore = $connessione->query($sql_carica_materia_e_settore);
@@ -342,6 +354,7 @@ if(isset($_SESSION['inserimento_voti'])){
                                 while ($res = $res_piani->fetch_assoc()) {
                                     $id_materia_in_piano = $res['Id'];
                                     $id_materia = $res['Id_materia'];
+
                                     if ($res['Modulo'] != "0") {
                                         $modulo = $res['Modulo'];
                                     } else {
