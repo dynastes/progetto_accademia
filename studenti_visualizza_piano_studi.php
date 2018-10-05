@@ -24,10 +24,6 @@ if( @$_SESSION['inserimento']===1){
 <div class="container">
     <div class="page-header">
         <h1>Visualizza Piano di Studi</h1>
-        <a class="btn btn-default" href="studenti_modifica_piano_studi.php">
-            Modifica piano studi
-        </a>
-
     </div>
 
     <!-- SEZIONE 1-->
@@ -227,7 +223,7 @@ if( @$_SESSION['inserimento']===1){
                                             $Conta_attivita_base = 1;
                                         }
                                         //if($Conta_attivita_base==0){echo "<th rowspan=".$rowspan_base." style=\"vertical-align:middle; text-align:center;\">Attività Formative di Base</th>"; $Conta_attivita_base=1;}
-                                        $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia."";
+                                        $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia." AND Modulo = '".$modulo."'";
                                         $elencoEsami=$connessione->query($stringasql);
                                         $voto ="";
                                         $data ="";
@@ -291,7 +287,7 @@ if( @$_SESSION['inserimento']===1){
                                             $Conta_attivita_caratterizzante = 1;
                                         }
                                       //if($Conta_attivita_caratterizzante==0){echo "<th rowspan=".$rowspan_caratterizzante." style=\"vertical-align:middle; text-align:center;\">Attività Formative Caratterizzanti</th>"; $Conta_attivita_caratterizzante=1;}
-                                      $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia."";
+                                      $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia." AND Modulo = '".$modulo."' ";
                                       $elencoEsami=$connessione->query($stringasql);
                                       $voto = "";
                                       $data = "";
@@ -368,7 +364,7 @@ if( @$_SESSION['inserimento']===1){
                                             $Conta_attivita_integrative = 1;
                                         }
                                         //if($Conta_attivita_integrative==0){echo "<th rowspan=".$rowspan_integrativa." style=\"vertical-align:middle; text-align:center;\">Attività Formative Integrative o Affini</th>"; $Conta_attivita_integrative=1;}
-                                        $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia."";
+                                        $stringasql="SELECT * FROM materie_studenti WHERE Id_studente =".$utente->id." AND Id_materia = ".$id_materia." AND Modulo = '".$modulo."'";
                                         $elencoEsami=$connessione->query($stringasql);
                                         $voto = "";
                                         $data = "";
