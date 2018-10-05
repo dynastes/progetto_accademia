@@ -25,7 +25,6 @@ if( @$_SESSION['inserimento']===1){
     <div class="page-header">
         <h1>Visualizza Piano di Studi</h1>
     </div>
-
     <!-- SEZIONE 1-->
     <?php
     $tot_crediti = 0;
