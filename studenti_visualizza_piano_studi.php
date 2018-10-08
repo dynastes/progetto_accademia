@@ -21,8 +21,8 @@ if( @$_SESSION['inserimento']===1){
 </head>
 <body>
 <?php menu(); ?>
-<div class="container">
-    <div class="page-header">
+<div class="container" >
+    <div class="page-header" >
         <h1>Visualizza Piano di Studi</h1>
     </div>
     <!-- SEZIONE 1-->
@@ -37,7 +37,7 @@ if( @$_SESSION['inserimento']===1){
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <div class="form-group">
+                <div class="form-group" id="main_container">
                     <table class="table sortable table-striped" id="piano_di_studi">
                         <tr>
                             <!-- <th style="text-align:center">ID</th> -->
@@ -500,7 +500,7 @@ var specialElementHandlers = {
 };
 
 $('#cmd').click(function () {
-doc.fromHTML($('body').html(), 15, 15, {
+doc.fromHTML($('#main_container').html(), 15, 15, {
     'width': 170,
         'elementHandlers': specialElementHandlers
 });
