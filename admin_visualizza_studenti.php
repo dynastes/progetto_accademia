@@ -23,8 +23,16 @@
 					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
 					<p>Qui verranno elencati tutti gli studenti che sono iscritti all'accademia</p>
 				</div>
+				<label>Cerca studenti</label>
+				<div class="row">
+					<div class="col-md-4">
+							<input type="text" class="form-control" id="cerca_criteri" placeholder="Nome,Cognome,Matricola,Indirizzo, ecc..." />
+					</div>
+					<div class="col-md-8">
 
-				<table class="table sortable table-striped">
+					</div>
+				</div>
+				<table class="table sortable table-striped" id="studenti_tabella">
 				<tr>
 					<th> Nome </th>
 					<th> Cognome </th>
@@ -40,26 +48,26 @@
 				$stringasql="SELECT s.Id_anagrafe, a.Nome, a.Cognome, a.Email, a.Indirizzo, a.Telefono, s.Matricola, s.Anno FROM anagrafe AS a, studenti AS s WHERE s.Id_anagrafe=a.Id AND s.Matricola!=0 ORDER BY a.Cognome";
 				$elencoStudenti=$connessione->query($stringasql);
 				while($res=$elencoStudenti->fetch_assoc()){
-					echo "<tr>";
-						echo '<td class="box-elenco-studenti">';
+					echo "<tr class='ricerca_row'>";
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Nome"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Cognome"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Matricola"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Email"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Indirizzo"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Telefono"];
 						echo '</td>';
-						echo '<td class="box-elenco-studenti">';
+						echo '<td class="box-elenco-studenti ricerca">';
 							echo $res["Anno"];
 						echo '</td>';
 						if($utente -> get_ruolo() == "admin"){
@@ -74,7 +82,26 @@
 
 			</div>
 		</div>
-
+		<script>
+			var tabella_completa = $("#studenti_tabella").html();
+			$("#cerca_criteri").keyup(function(){
+				var input = $("#cerca_criteri").val();
+				var filter = input.toUpperCase();
+				var gestore_tabella = $("#studenti_tabella"); //serve per gestire il contenuto della tabella quando facciamo le ricerche
+				gestore_tabella.html(tabella_completa); //diamo i valori originali della tabella per le nuove ricerche
+				var table = $("#studenti_tabella .ricerca_row"); // serve per scorrere le righe eccetto quella dell'header;
+				table.each(function(){
+					parent = $(this);
+					parent.detach();
+					parent.find(".ricerca").each(function(){
+						td = $(this).html().toUpperCase();
+						if(td.includes(filter)){
+							parent.appendTo("table");
+						}
+					});
+				});
+			});
+		</script>
 		<!-- INIZIO FOOTER -->
 		<?php @include_once 'shared/footer.php'; ?>
 	</body>

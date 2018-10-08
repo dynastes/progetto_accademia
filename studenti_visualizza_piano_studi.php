@@ -38,7 +38,7 @@ if( @$_SESSION['inserimento']===1){
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="form-group">
-                    <table class="table sortable table-striped">
+                    <table class="table sortable table-striped" id="piano_di_studi">
                         <tr>
                             <!-- <th style="text-align:center">ID</th> -->
                             <th style="text-align:center">Dipartimento</th>
@@ -477,9 +477,33 @@ if( @$_SESSION['inserimento']===1){
                 </div>
             </div>
         </form>
+        <button id="cmd"></button>
     <?php } ?>
+    <p id="contenuto">
+        ciao
+    </p>
 </div>
 
 <?php @include_once 'shared/footer.php'; ?>
 </body>
 </html>
+
+<script src="js/jspdf.min.js">
+ </script>
+<script>
+alert("ciao");
+var doc = new jsPDF();
+var specialElementHandlers = {
+'#editor': function (element, renderer) {
+    return true;
+}
+};
+
+$('#cmd').click(function () {
+doc.fromHTML($('body').html(), 15, 15, {
+    'width': 170,
+        'elementHandlers': specialElementHandlers
+});
+doc.save('sample-file.pdf');
+});
+</script>
