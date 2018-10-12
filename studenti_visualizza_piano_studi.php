@@ -488,18 +488,26 @@ if( @$_SESSION['inserimento']===1){
 </body>
 </html>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"> </script>
+
+//esportazione in pdf
 <script>
+	//variabile bottone
 	var bottone_pdf = $("#funzione_pdf");
 	bottone_pdf.click(function(){
+	//variabile tabella per nascondere temporaneamente la colonna delle opzioni
 	var tabella_piano = $("#tabella_piano");
 	tabella_piano.find(".opzioni-colonna").hide();
+	//convertiamo la tabella in una immagine con canvas
 	html2canvas(document.querySelector("#tabella_piano")).then(canvas => {
+		//creaiamo il pdf
 		var doc = new jsPDF("p","mm","a4");
+		//aggiungiamo l'immagine al pdf salviamolo
 		doc.addImage(canvas,"JPEG",10,10,190,200);
 		doc.save("libretto_materie.pdf");
+		//facciamo riapparire la colonna delle opzioni
 		tabella_piano.find(".opzioni-colonna").show();
 	});
 });
