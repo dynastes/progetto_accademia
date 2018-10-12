@@ -24,6 +24,8 @@ if( @$_SESSION['inserimento']===1){
 <div class="container" >
     <div class="page-header" >
         <h1>Visualizza Piano di Studi</h1>
+				<br>
+				<button id="funzione_pdf" class="btn btn-default"> <i class="far fa-file-pdf"> </i> &nbsp Esporta e scarica PDF </button>
     </div>
     <!-- SEZIONE 1-->
     <?php
@@ -139,7 +141,7 @@ if( @$_SESSION['inserimento']===1){
         <form action="#" method="post">
             <div class="row">
                 <div class="form-group">
-                    <table class="table table-curved">
+                    <table class="table table-curved" id="tabella_piano">
                         <!-- <table class="table">							 -->
                         <tr>
                             <th class="title" colspan="9"
@@ -164,7 +166,7 @@ if( @$_SESSION['inserimento']===1){
                             <th style="text-align:center">CFA</th>
                             <th>Data esame</th>
                             <th>Voto</th>
-                            <th style="text-align:center;">
+                            <th style="text-align:center;" class="opzioni-colonna">
                                 Opzioni
                             </th>
                             <th></th>
@@ -240,7 +242,7 @@ if( @$_SESSION['inserimento']===1){
                                         <td style="text-align:center"><?php echo $cfa; ?></td>
                                         <td><?php echo $data ?></td>
                                         <td><?php echo $voto ?></td>
-                                        <td style="text-align:center">
+                                        <td style="text-align:center" class="opzioni-colonna">
                                             -
                                         </td>
                                     <?php }
@@ -304,7 +306,7 @@ if( @$_SESSION['inserimento']===1){
                                       <td style="text-align:center"><?php echo $cfa; ?></td>
                                       <td><?php echo $data ?></td>
                                       <td><?php echo $voto ?></td>
-                                      <td style="text-align:center">
+                                      <td style="text-align:center" class="opzioni-colonna">
                                           -
                                       </td><?php }
                                 }
@@ -381,7 +383,7 @@ if( @$_SESSION['inserimento']===1){
 <td style="text-align:center"><?php echo $cfa; ?></td>
 <td><?php echo $data ?></td>
 <td><?php echo $voto ?></td>
-<td style="text-align:center">
+<td style="text-align:center" class="opzioni-colonna">
         <?php
             if($voto<=0){
                 echo('<a href="studenti_modifica_piano_studi.php?id_materia='.$id_materia_in_piano.'&nome_materia='.$nome_materia.' '.$modulo.'" class="btn btn-default">Richiedi <br /> cambio materia </a>');
@@ -477,33 +479,30 @@ if( @$_SESSION['inserimento']===1){
                 </div>
             </div>
         </form>
-        <button id="cmd"></button>
+
     <?php } ?>
-    <p id="contenuto">
-        ciao
-    </p>
+
 </div>
 
 <?php @include_once 'shared/footer.php'; ?>
 </body>
 </html>
 
-<script src="js/jspdf.min.js">
- </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"> </script>
 <script>
-alert("ciao");
-var doc = new jsPDF();
-var specialElementHandlers = {
-'#editor': function (element, renderer) {
-    return true;
-}
-};
+	var bottone_pdf = $("#funzione_pdf");
+	bottone_pdf.click(function(){
+	var tabella_piano = $("#tabella_piano");
+	tabella_piano.find(".opzioni-colonna").hide();
+	html2canvas(document.querySelector("#tabella_piano")).then(canvas => {
+		var doc = new jsPDF("p","mm","a4");
+		doc.addImage(canvas,"JPEG",10,10,190,200);
+		doc.save("libretto_materie.pdf");
+		tabella_piano.find(".opzioni-colonna").show();
+	});
+});
 
-$('#cmd').click(function () {
-doc.fromHTML($('#main_container').html(), 15, 15, {
-    'width': 170,
-        'elementHandlers': specialElementHandlers
-});
-doc.save('sample-file.pdf');
-});
+
 </script>
