@@ -509,8 +509,8 @@ if( @$_SESSION['inserimento']===1){
 		doc.save("libretto_materie.pdf");
 		//facciamo riapparire la colonna delle opzioni
 		tabella_piano.find(".opzioni-colonna").show();
-	});
-});
+			});
+		});
 
 
 </script>
