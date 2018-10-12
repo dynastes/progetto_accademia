@@ -512,5 +512,5 @@ if( @$_SESSION['inserimento']===1){
 			});
 		});
 
-
+		
 </script>
