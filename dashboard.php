@@ -10,7 +10,7 @@
 		<?php @include_once 'shared/head_inclusions.php';?>
 		<link href="css/dashboard.css" rel="stylesheet">
 		<?php @include_once 'shared/menu.php';?>
-
+		<?php $_SESSION['lang'] = "En"; ?>
 	</head>
 
 	<body>
