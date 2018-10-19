@@ -19,7 +19,7 @@ $dataValue = $_GET['value'];
 
         <div class="row">
             <div class="col-md-12 col-xs-12">
-                <h1>Modifica <?php echo $dataType; ?></h1>
+                <h1><?= ucfirst(modifica) ?> <?php echo $dataType; ?></h1>
             </div>
         </div>
         <hr>
@@ -27,7 +27,7 @@ $dataValue = $_GET['value'];
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                 <ul class="pager">
-                    <li class="previous"><a href="profilo.php"><span aria-hidden="true">&larr;</span>Torna indietro</a></li>
+                    <li class="previous"><a href="profilo.php"><span aria-hidden="true">&larr;</span><?= torna_indietro ?></a></li>
                 </ul>
             </div>
 
@@ -35,8 +35,8 @@ $dataValue = $_GET['value'];
                 <form class="form-group" action="profilo_modifica_query.php" method="post">
                     <table class="table table-responsive">
                         <thead>
-                        <th><?php echo ucfirst($dataType); ?> precedente</th>
-                        <th>Nuovo <?php echo $dataType; ?></th>
+                        <th><?php echo ucfirst($dataType); ?> <?= precedente ?></th>
+                        <th><?= ucfirst(nuovo)?> <?php echo $dataType; ?></th>
                         <th></th>
                         </thead>
                         <tr>
@@ -47,8 +47,8 @@ $dataValue = $_GET['value'];
                             }else if($dataType == "telefono"){
                                   echo('<td><input type="number" class="form-control" name="value" required></td>');
                             }else if($dataType == "indirizzo"){
-                                  echo('<td><input type="text" class="form-control" name="value1" placeholder="Via" pattern="[A-Za-z]+" required></td>');
-                                  echo('<td><input type="number" class="form-control" name="value2" placeholder="Numero civico" required></td>');
+                                  echo('<td><input type="text" class="form-control" name="value1" placeholder="'.via.'" pattern="[A-Za-z]+" required></td>');
+                                  echo('<td><input type="number" class="form-control" name="value2" placeholder="'.numero_civico.'" required></td>');
                             }else if($dataType == "email"){
                                 echo('<td><input type="email" class="form-control" name="value" pattern="[A-Za-z]+" required></td>');
                             }else{
@@ -57,7 +57,7 @@ $dataValue = $_GET['value'];
                             ?>
 
                             <td>
-                                <button class="btn btn-info"><span class="glyphicon glyphicon-ok"></span> Salva</button>
+                                <button class="btn btn-info"><span class="glyphicon glyphicon-ok"></span> <?= salva ?></button>
                             </td>
                         </tr>
                     </table>

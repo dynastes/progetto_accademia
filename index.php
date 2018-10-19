@@ -26,6 +26,8 @@ $ruoloUtente="";//serve per poter prelevare da utente->ruolo il ruolo dell'utent
 //inizio controllo per il login:
 if(isset($_POST['usermail'])){
 	//echo "email SETTATA";
+	$language=$_POST['lingua'];
+	$_SESSION['lingua'] = $language;
 	$usermail=$_POST['usermail'];
 	$password=$_POST['password'];
 	$loginString="SELECT * FROM anagrafe WHERE Email=\"" . $usermail . "\"";
@@ -190,12 +192,21 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 						<input type="password" name="password" class="form-control" placeholder="password" required>
 					</div>
 					<div class="row center-block">
+						<br>
+						<div class="row text-center">
+							<input type="radio" name="lingua" id="lingua" value="it" checked>Italiano</input>
+							<input type="radio" name="lingua" id="lingua" value="en">English</input>
+							<input type="radio" name="lingua" id="lingua" value="cn">Chinese</input>
+						</div>
 						<br />
 						<button type="submit" class="btn btn-primary center-block" aria-haspopup="false">
 							Login
 						</button>
 					</div>
 					<br />
+
+
+					<br>
 					<a href="registrati.php">Registrati</a>
 					<br />
 					<a href="ripristina_password.php">Password dimenticata ? </a>

@@ -7,6 +7,15 @@ if(!isset($_SESSION['login'])){
 	} else {
 		$utente=$_SESSION['ut'];
 		$utente=unserialize($utente);
+		if($_SESSION['lingua']=="it"){
+			include("lingue/ita.php");
+		}
+		if($_SESSION['lingua']=="en"){
+			include("lingue/en.php");
+		}
+		if($_SESSION['lingua']=="cn"){
+			include("lingue/cn.php");
+		}
 }
 
 function menu(){

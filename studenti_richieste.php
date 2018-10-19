@@ -19,17 +19,17 @@ if(@$_SESSION['richiesta-inviata']===1){
 					<b>Benvenuto <?php echo $utente->nome; ?></b>
 				</div>
 
-					<h2>Richieste</h2>
-					<p>Da questa pagina si possono inviare le richieste per i certificati direttamente alla segreteria.</p>
-					<p>Una volta trattata la richiesta, lo stato passerà a "confermato" e si potrà andare a ritirare la versione cartacea.</p>
+					<h2><?= richieste ?></h2>
+					<p><?= certificati_spiegazione ?></p>
+					<p><? certificati_spiegazione_richiesta ?></p>
 					<!-- ### FORM richiedi certificato ###-->
 					<form id="richiedi_certificati" name="richiedi_certificati" method="post" action="studenti_richiedi_certificato_query.php" accept-charset="utf-8"> <?php/* echo $_SERVER['PHP_SELF']; */?>
 						<div class="form-group">
-						<label>Seleziona il certificato da richiedere:&nbsp;</label>
+						<label><?= certificato_da_richiedere?>&nbsp;</label>
 						<select name="tipo-certificato">
-							<option value="1">Certificato di frequenza</option>
-							<option value="2">Certificato di iscrizione</option>
-							<option value="3">Certificato per materie sostenute</option>
+							<option value="1"><?= certificato_di_frequenza ?></option>
+							<option value="2"><?= certificato_di_iscrizione ?></option>
+							<option value="3"><?= certificato_per_materie_sostenute ?></option>
 						</select>
 						<input class="btn btn-info" type="submit" value="Richiedi certificato">
 					</div>
@@ -37,9 +37,9 @@ if(@$_SESSION['richiesta-inviata']===1){
 
 						<table class="table">
 							<tr>
-								<td><b>Data invio richiesta</b></td>
-								<td><b>Stato richiesta</b></td>
-								<td><b>Tipo richiesta</b></td>
+								<td><b><?= data_invio_richiesta ?></b></td>
+								<td><b><?= stato_richiesta ?></b></td>
+								<td><b><?= tipo_richiesta ?></b></td>
 							</tr>
 							<?php
 								$sqlElencoCertificati="SELECT sr.Data_invio, sr.Stato_richiesta, t.Tipo

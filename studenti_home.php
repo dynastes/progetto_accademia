@@ -25,11 +25,11 @@ non convertite
                 if($_GET['tipo'] == "questionari"){
                   echo '<table class="table">';
                   echo '<tr>';
-                  echo '<th colspan="3">Questionari feedback materie</th>';
+                  echo '<th colspan="3">'.titolo_feedback.'</th>';
                   echo '<tr>';
-                  echo '<td><b>Nome</b></td>';
-                  echo '<td><b>Compila</b></td>';
-                  echo '<td><b>Data Pubblicazione</b></td>';
+                  echo '<td><b>'.nome.'</b></td>';
+                  echo '<td><b>'.compila.'</b></td>';
+                  echo '<td><b>'.data_pubblicazione.'</b></td>';
                   echo '</tr>';
                   //assegnazione questionari materie
                   //prendere id_materia_dei questionari e scorrerli tutti
@@ -85,7 +85,7 @@ non convertite
                                   echo '<input type="hidden" value ="' . $idQuestionario . '" name="codice" />';
                                   echo '<tr>';
                                   echo '<td> ' . $nomeQuestionario . ' </td>';
-                                  echo '<td> <button class="btn btn-default">Compila</button> </td>';
+                                  echo '<td> <button class="btn btn-default">'.compila.'</button> </td>';
                                   echo '<td> ' . $dataQuestionario . ' </td>';
                                   echo '</tr>';
                                   echo '</form>';
@@ -100,15 +100,15 @@ non convertite
 
 
             }else{
-                echo("<p>Qui verranno visualizzati gli ultimi 10 avvisi pubblicati da segreteria o docenti. Per vedere lo storico completo degli avvisi, andare nella pagina Avvisi.</p>");
+                echo("<p>".spiegazione_calendario."</p>");
                 $sqlavvisi = "SELECT an.Nome, an.Cognome, av.Testo, av.Data_pubblicazione FROM avvisi AS av, anagrafe AS an WHERE Visibilita='pubblico' AND an.Id = av.Id_docente ORDER BY av.Data_pubblicazione DESC"; //av.Id_docente=an.Id AND
                 $avvisiLista = $connessione->query($sqlavvisi);
                 echo '<table class="table">';
                 echo '<tr>';
-                echo '<td><b>Nome</b></td>';
-                echo '<td><b>Cognome</b></td>';
-                echo '<td><b>Testo</b></td>';
-                echo '<td><b>Data Pubblicazione</b></td>';
+                echo '<td><b>'.nome.'</b></td>';
+                echo '<td><b>'.cognome.'</b></td>';
+                echo '<td><b>'.testo.'</b></td>';
+                echo '<td><b>'.data_pubblicazione.'</b></td>';
                 echo '</tr>';
                 while ($resAvvisi = $avvisiLista->fetch_assoc()) {
                     echo '<tr>';

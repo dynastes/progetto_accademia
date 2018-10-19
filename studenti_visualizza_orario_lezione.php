@@ -13,8 +13,8 @@
 
 			<div class="container">
 				<div id="benvenuto">
-					<b>Benvenuto <?php echo $utente->nome; ?>!</b>
-					<p>Qui verranno elencati tutti gli orari delle lezioni/avvenimenti presenti nell'Accademia</p>
+					<b><?=benvenuto ?> <?php echo $utente->nome; ?>!</b>
+					<p><?= spiegazione_calendario ?></p>
 				</div>
 
 				<div id="calendar" style="margin-bottom:20px;"></div>

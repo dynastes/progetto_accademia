@@ -4,25 +4,25 @@
 		<?php @include_once 'shared/head_inclusions.php';?>
 	</head>
 	<body>
-	
+
    <?php menu(); ?>
-		
- 
+
+
 			<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
-					<p>Qui verranno elencati i documenti caricati attraverso l'apposita pagina <a href="studenti_carica_documenti.php">Carica documenti</a></p>
+					<p><?= spiegazione_documenti_visualizza ?><a href="studenti_carica_documenti.php">Carica documenti</a></p>
 				</div>
 				<table class = "table table-striped">
 					<tr>
 						<td >
-							<b>Nome file</b>
+							<b><?= nome_file ?></b>
 						</td>
 					<td >
-							<b>Data caricamento</b>
+							<b><?= data_caricamento ?></b>
 						</td>
 					<td >
-							<b>Link di download</b>
+							<b><?= link_download ?></b>
 						</td>
 					</tr>
 					<?php //qui interrogo il DB per sapere la lista di programmi pubblicati dai docenti
@@ -33,14 +33,14 @@
 							echo '<td>'.$res["Nome_file"].'</td>';
 							echo '<td>'.$res["Data_caricamento"].'</td>';
 							echo '<td>';
-								echo '<a href="'.$res["Percorso_file"].$res["Nome_file"].'">Scarica File</a>';
+								echo '<a href="'.$res["Percorso_file"].$res["Nome_file"].'">'.scarica_file.'</a>';
 							echo '</td>';
 						echo '</tr>';
 					}
 					?>
 				</table>
 			</div>
-			
+
 <?php @include_once 'shared/footer.php'; ?>
 	</body>
 </html>

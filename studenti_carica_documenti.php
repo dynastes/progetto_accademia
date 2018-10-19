@@ -32,7 +32,7 @@ menu();
 
 <div class="container">
     <div id="benvenuto">
-        <h1>Carica Documenti</h1>
+        <h1><?= carica_documenti ?></h1>
         <b>Utente corrente: <?php echo $utente->nome; ?></b>
     </div>
     <div id="avvisi">
@@ -55,24 +55,23 @@ menu();
             }
             echo 'Per caricare un ulteriore file, <a href="studenti_carica_documenti.php">cliccare qui</a>';
         } else {
-            echo '<p>Carica i documenti (in formato immagine o PDF) come ricevute di bonifico, bollettini regionali ecc...).
-							I file caricati devono essere del formato <b>.jpg, png, pdf</b> o <b>bmp</b>. Altri formati potrebbero non essere caricati.</p>
+            echo '<p>'.descrizione_carica_documenti.'</p>
 							<form width:60%;" action="studenti_carica_documenti.php" enctype="multipart/form-data" method="POST">
 								<div class="row">
 								    <div class="col-md-4">
                                         <input style="float:left;" class="btn btn-default" type="file" name="FileUtente"  class="form-control">
                                     </div>
-                                    
-									
-									
+
+
+
                                     <div class="col-md-4">
-								
+
                                         <!--<label style="float:left; margin-right:10px;">Scegli quale tipo di file stai caricando</label>-->
                                         <select id="tipoFile" name="tipoFile" style="float:left; margin-right:30px;"  class="form-control">
-                                            <option value="1">Pagamenti</option>
-                                            <option value="2">Bonifico</option>
-                                            <option value="3">Immagine</option>
-                                            <option value="4" onclick="showDiv1()">Altro...</option>
+                                            <option value="1">'.pagamenti.'</option>
+                                            <option value="2">'.bonifico.'</option>
+                                            <option value="3">'.immagine.'</option>
+                                            <option value="4" onclick="showDiv1()">'.altro.'</option>
                                          </select>
                                     </div>
                                     	<textarea id="Altro" name="Altro" style="display:none">  </textarea>
@@ -80,7 +79,7 @@ menu();
                                         <input class="btn btn-info" style="float:left;" type="submit" value="Invia file/documento">
 								    </div>
                                 </div>
-								
+
 							</form>';
         }
         ?>

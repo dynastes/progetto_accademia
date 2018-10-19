@@ -19,10 +19,10 @@
 		<div class="container">
 			<div class="dashboard-header text-center">
 						<img src="img/logo.png" class="dashboard-logo">
-						<h1> Accademia di Belle Arti Kandinskij  </h1>
-						<h3>Dashboard - <?php echo($utente->get_ruolo()); ?> <h3>
+						<h1> <?= titolo_accademia ?> </h1>
+						<h3> <?= dashboard ?> - <?php echo($utente->get_ruolo()); ?> <h3>
 						<p>
-														<b>Benvenuto <?php echo $utente->nome; ?></b>
+														<b><?= benvenuto ?> <?php echo $utente->nome; ?></b>
 						</p>
 			</div>
 			<?php
@@ -106,30 +106,30 @@
 			if($utente->get_ruolo() =="studente"){
 				echo('<div class="row">
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="profilo.php" class="btn btn-default custom-button"> <i class="fas fa-user"> </i> &nbsp Profilo </a>
+							<a href="profilo.php" class="btn btn-default custom-button"> <i class="fas fa-user"> </i> &nbsp '.profilo.' </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="studenti_visualizza_piano_studi.php" class="btn btn-default custom-button"> <i class="fas fa-book"> </i> &nbsp Piano di studi </a>
+							<a href="studenti_visualizza_piano_studi.php" class="btn btn-default custom-button"> <i class="fas fa-book"> </i> &nbsp '.piano_di_studi.'</a>
 						</div>
 							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<a href="studenti_visualizza_orario_lezione.php" class="btn btn-default custom-button"><i class="fas fa-calendar-alt"> </i> &nbsp Orario lezioni </a>
+								<a href="studenti_visualizza_orario_lezione.php" class="btn btn-default custom-button"><i class="fas fa-calendar-alt"> </i> &nbsp '.orario_lezioni.' </a>
 
 							</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-exclamation"> </i> &nbsp Avvisi </a>
+							<a href="studenti_home.php" class="btn btn-default custom-button"> <i class="fas fa-exclamation"> </i> &nbsp '.avvisi.' </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="studenti_home.php?tipo=questionari" class="btn btn-default custom-button"> <i class="fas fa-check-square"> </i> &nbsp Feedback </a>
+							<a href="studenti_home.php?tipo=questionari" class="btn btn-default custom-button"> <i class="fas fa-check-square"> </i> &nbsp '.feedback.' </a>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-						<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"> </i> &nbsp Documenti/Certificati<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle btn btn-default custom-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"> </i> &nbsp '.documenti_certificati.'<span class="caret"></span></a>
 						<ul class="dropdown-menu custom-dropdown">
-							<li><a href="studenti_visualizza_documenti.php">Visualizza Documenti</a></li>
-							<li><a href="studenti_carica_documenti.php">Carica documenti</a></li>
-							<li><a href="studenti_richieste.php">Richiedi documenti/certificati</a></li>
+							<li><a href="studenti_visualizza_documenti.php">'.visualizza_documenti.'</a></li>
+							<li><a href="studenti_carica_documenti.php">'.carica_documenti.'</a></li>
+							<li><a href="studenti_richieste.php">'.richiedi_documenti_certificati.'</a></li>
 							<!--<li><a href="#">Richiedi certificati</a></li>-->
 						</ul>
 						</div>

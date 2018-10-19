@@ -23,9 +23,9 @@ if( @$_SESSION['inserimento']===1){
 <?php menu(); ?>
 <div class="container" >
     <div class="page-header" >
-        <h1>Visualizza Piano di Studi</h1>
+        <h1><?= visualizza_piano_di_studi ?></h1>
 				<br>
-				<button id="funzione_pdf" class="btn btn-default"> <i class="far fa-file-pdf"> </i> &nbsp Esporta e scarica PDF </button>
+				<button id="funzione_pdf" class="btn btn-default"> <i class="far fa-file-pdf"> </i> &nbsp <?= scarica_pdf ?> </button>
     </div>
     <!-- SEZIONE 1-->
     <?php
@@ -43,8 +43,8 @@ if( @$_SESSION['inserimento']===1){
                     <table class="table sortable table-striped" id="piano_di_studi">
                         <tr>
                             <!-- <th style="text-align:center">ID</th> -->
-                            <th style="text-align:center">Dipartimento</th>
-                            <th style="text-align:center">Nome</th>
+                            <th style="text-align:center"><?= dipartimento ?></th>
+                            <th style="text-align:center"><?= nome ?></th>
                             <th class="sorttable_nosort"><!-- Modifica --></th>
                             <th class="sorttable_nosort"><!-- Elimina --></th>
                         </tr>
@@ -67,7 +67,7 @@ if( @$_SESSION['inserimento']===1){
                             <td><?php echo $res['Nome_corso']; ?></td>
                             <td><a class="btn btn-info"
                                    href="studenti_visualizza_piano_studi_seleziona_corso.php?IdCorso=<?php echo $res['Id']; ?>&IdDipartimento=<?php echo $res['Id_dipartimento']; ?>"
-                                   onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')">Seleziona<?php }
+                                   onclick="return sicuro('<?php echo $res['Nome_corso']; ?>')"><?= seleziona ?><?php }
                                     } ?></a></td>
                         </tr>
                     </table>
@@ -161,13 +161,13 @@ if( @$_SESSION['inserimento']===1){
                         </tr>
                         <tr style="background-color:#FF3535; color:white;">
                             <th></th>
-                            <th style="text-align:center;">Codice</th>
-                            <th>Campo Disciplinare</th>
-                            <th style="text-align:center">CFA</th>
-                            <th>Data esame</th>
-                            <th>Voto</th>
+                            <th style="text-align:center;"><?= codice ?></th>
+                            <th><?= campo_disciplinare ?></th>
+                            <th style="text-align:center"><?= cfa ?></th>
+                            <th><?= data_esame ?></th>
+                            <th><?= voto ?></th>
                             <th style="text-align:center;" class="opzioni-colonna">
-                                Opzioni
+                                <?= opzioni ?>
                             </th>
                             <th></th>
                         </tr>
@@ -182,7 +182,7 @@ if( @$_SESSION['inserimento']===1){
                             ?>
                             <tr>
                                 <th colspan="9" style="background-color:#0393FC; color:white; text-align:center;">
-                                    ANNO <?php echo $i; ?></th>
+                                    <?= strtoupper(anno) ?> <?php echo $i; ?></th>
                             </tr>
                             <!-- <tr><th colspan="8" style="background-color:#0070c0; text-align:center;">Attività Formative di Base</th></tr> -->
                             <?php
@@ -386,7 +386,7 @@ if( @$_SESSION['inserimento']===1){
 <td style="text-align:center" class="opzioni-colonna">
         <?php
             if($voto<=0){
-                echo('<a href="studenti_modifica_piano_studi.php?id_materia='.$id_materia_in_piano.'&nome_materia='.$nome_materia.' '.$modulo.'" class="btn btn-default">Richiedi <br /> cambio materia </a>');
+                echo('<a href="studenti_modifica_piano_studi.php?id_materia='.$id_materia_in_piano.'&nome_materia='.$nome_materia.' '.$modulo.'" class="btn btn-default">'. data_cambio_materia.' </a>');
             }
          ?>
 
@@ -455,7 +455,7 @@ if( @$_SESSION['inserimento']===1){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <th style="background-color:#55FD51; text-align:right">Crediti acquisiti</th>
+                                <th style="background-color:#55FD51; text-align:right"><?= totale_crediti_anno ?></th>
                                 <td style="background-color:#55FD51;"></td>
                                 <th style="background-color:#55FD51; text-align:center"> <?php echo($tot_crediti);?>/<?php $crediti_totali += $crediti_anno;
                                     echo $crediti_anno; ?></th>
@@ -469,8 +469,7 @@ if( @$_SESSION['inserimento']===1){
                         ?>
                         <tr class="crediti_totali">
                             <td></td>
-                            <th colspan="3" style="background-color:#55FD51; text-align:right">Totale Crediti Formativi
-                                previsti nel <?php echo $livello_testo; ?></th>
+                            <th colspan="3" style="background-color:#55FD51; text-align:right"><?= totale_crediti_formativi_previsti ?> <?php echo $livello_testo; ?></th>
                             <td style="background-color:#55FD51;"></td>
                             <th style="background-color:#55FD51; text-align:center"><?php echo $crediti_totali; ?></th>
                             <td colspan="3" style="background-color:#55FD51; text-align:center"></td>
@@ -512,5 +511,5 @@ if( @$_SESSION['inserimento']===1){
 			});
 		});
 
-		
+
 </script>

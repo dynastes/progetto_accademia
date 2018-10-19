@@ -31,7 +31,7 @@ if(isset($_SESSION['profilo_modificato'])){
             </div>-->
 
             <div class="col-md-11 col-xs-10">
-                <h1>Profilo</h1>
+                <h1><?= profilo ?></h1>
             </div>
         </div>
         <hr>
@@ -113,69 +113,69 @@ if(isset($_SESSION['profilo_modificato'])){
                 <!--<div class="row">-->
                 <!-- INIZIO TABELLA -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">I tuoi dati personali</div>
+                        <div class="panel-heading"><?= dati_personali ?></div>
                         <div class="panel-body">
                             <table class="table table-responsive">
                                 <tr>
-                                    <td><b>Nome</b></td>
+                                    <td><b><?= nome ?></b></td>
                                     <td><?php echo $utente->nome; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=nome&value=<?php echo $utente->nome; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Cognome</b></td>
+                                    <td><b><?= cognome ?></b></td>
                                     <td><?php echo $utente->cognome; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=cognome&value=<?php echo $utente->cognome; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Email</b></td>
+                                    <td><b><?= email ?></b></td>
                                     <td><?php echo $utente->email; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=email&value=<?php echo $utente->email; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Codice Fiscale</b></td>
+                                    <td><b><?=codice_fiscale ?></b></td>
                                     <td><?php echo $utente->cf; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=cf&value=<?php echo $utente->cf; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Indirizzo</b></td>
+                                    <td><b><?= indirizzo ?></b></td>
                                     <td><?php echo $utente->indirizzo; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=indirizzo&value=<?php echo $utente->indirizzo; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Residenza</b></td>
+                                    <td><b><?= residenza ?></b></td>
                                     <td><?php echo $utente->residenza; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=residenza&value=<?php echo $utente->residenza; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Telefono</b></td>
+                                    <td><b><?= telefono ?></b></td>
                                     <td><?php echo $utente->telefono; ?></td>
                                     <td>
                                         <a href="profilo_modifica.php?data_type=telefono&value=<?php echo $utente->telefono; ?>" type="button" class="btn btn-default btn-info btn-xs">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifica
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
                                 </tr>
