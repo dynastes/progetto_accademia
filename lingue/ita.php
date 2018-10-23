@@ -20,6 +20,7 @@
   define('richiedi_documenti_certificati','Richiedi documenti/certificati');
 
   //Globals
+  define("studente", "studente");
   define('benvenuto','Benvenuto');
   define('disconnetti','Disconetti');
   define('nome','Nome');
@@ -48,7 +49,7 @@
   define('corso','corso');
   define('anno','anno');
   define('codice','Codice');
-  define('campo_disciplinare','Campo disciplinare');
+  define('campo_disciplinare','Corsi');
   define('seleziona','seleziona');
   define('dipartimento','Dipartimento');
   define('scarica_pdf','Esporta e scarica PDF');

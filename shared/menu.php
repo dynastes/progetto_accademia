@@ -43,7 +43,7 @@ function menu(){
 		//admin, studente, docente
 		$menu='<ul class="nav navbar-nav navbar-right" >
 			<li><a href="dashboard.php"><i class="fas fa-book"></i> Dashboard <span class="sr-only">(current)</span></a></li>';
-	$chiusure='				<li ><a href="logout.php"><i class="fas fa-door-open"> </i> Disconnetti</a><!-- * --></li>
+	$chiusure='				<li ><a href="logout.php"><i class="fas fa-door-open"> </i>'.disconnetti.'</a><!-- * --></li>
 								</ul>
 								</div> <!-- /.collapse navbar-collapse -->
 						<!-- </div> /.container-fluid -->

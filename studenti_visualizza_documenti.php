@@ -11,7 +11,7 @@
 			<div class="container">
 				<div id="benvenuto">
 					<b>Benvenuto <?php echo $utente->nome; ?>!!!</b>
-					<p><?= spiegazione_documenti_visualizza ?><a href="studenti_carica_documenti.php">Carica documenti</a></p>
+					<p><?= spiegazione_documenti_visualizza ?><a href="studenti_carica_documenti.php">&nbsp<?= carica_documenti ?></a></p>
 				</div>
 				<table class = "table table-striped">
 					<tr>

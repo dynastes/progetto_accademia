@@ -141,7 +141,7 @@
 
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="logout.php" class="btn btn-danger custom-button"><i class="fas fa-door-open"> </i> &nbsp Disconnetti </a>
+							<a href="logout.php" class="btn btn-danger custom-button"><i class="fas fa-door-open"> </i> &nbsp'.disconnetti.' </a>
 						</div>
 					</div>
 					');

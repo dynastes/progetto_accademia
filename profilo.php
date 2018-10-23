@@ -120,7 +120,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?= nome ?></b></td>
                                     <td><?php echo $utente->nome; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=nome&value=<?php echo $utente->nome; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=nome?>&value=<?php echo $utente->nome; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
@@ -129,7 +129,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?= cognome ?></b></td>
                                     <td><?php echo $utente->cognome; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=cognome&value=<?php echo $utente->cognome; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=cognome?>&value=<?php echo $utente->cognome; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
@@ -138,7 +138,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?= email ?></b></td>
                                     <td><?php echo $utente->email; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=email&value=<?php echo $utente->email; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=email?>&value=<?php echo $utente->email; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
@@ -147,7 +147,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?=codice_fiscale ?></b></td>
                                     <td><?php echo $utente->cf; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=cf&value=<?php echo $utente->cf; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=codice_fiscale?>&value=<?php echo $utente->cf; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
@@ -156,7 +156,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?= indirizzo ?></b></td>
                                     <td><?php echo $utente->indirizzo; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=indirizzo&value=<?php echo $utente->indirizzo; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=indirizzo?>&value=<?php echo $utente->indirizzo; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
@@ -165,7 +165,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?= residenza ?></b></td>
                                     <td><?php echo $utente->residenza; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=residenza&value=<?php echo $utente->residenza; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=residenza?>&value=<?php echo $utente->residenza; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>
@@ -174,7 +174,7 @@ if(isset($_SESSION['profilo_modificato'])){
                                     <td><b><?= telefono ?></b></td>
                                     <td><?php echo $utente->telefono; ?></td>
                                     <td>
-                                        <a href="profilo_modifica.php?data_type=telefono&value=<?php echo $utente->telefono; ?>" type="button" class="btn btn-default btn-info btn-xs">
+                                        <a href="profilo_modifica.php?data_type=<?=telefono?>&value=<?php echo $utente->telefono; ?>" type="button" class="btn btn-default btn-info btn-xs">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?= modifica ?>
                                         </a>
                                     </td>

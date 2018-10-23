@@ -76,7 +76,7 @@ menu();
                                     </div>
                                     	<textarea id="Altro" name="Altro" style="display:none">  </textarea>
                                     <div class="col-md-4">
-                                        <input class="btn btn-info" style="float:left;" type="submit" value="Invia file/documento">
+                                        <input class="btn btn-info" style="float:left;" type="submit" value="'.invia_documento.'">
 								    </div>
                                 </div>
 
