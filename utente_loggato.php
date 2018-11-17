@@ -11,7 +11,11 @@ class utenteLoggato
     var $indirizzo;
     var $residenza;
     var $telefono;
-    var $ruolo; //valori: docente, studente, admin
+    var $ruolo; //valori: docente, studente,
+    var $modP;  // valori: 0 - 1 -> se è 0 l'utente non ha modificato la password,
+                // se è 0 non ha modificato la pass, se è 0 non ha richiesto modifiche
+                //se è 1 ha richiesto di modificare la password e ha ricevuto una temporanea da sostituire una volta loggato.
+
 
     public function __construct()
     {
@@ -20,6 +24,7 @@ class utenteLoggato
         $this->cognome = null;
         $this->matricola = null;
         $this->ruolo = null;
+        $this->modP = null;
     }
 
     function __destroy()
@@ -29,6 +34,7 @@ class utenteLoggato
         $this->cognome = null;
         $this->matricola = null;
         $this->ruolo = null;
+        $this->modP = null;
     }
 
     public function setNome($nome)
@@ -36,7 +42,7 @@ class utenteLoggato
         $this->nome = $nome;
     }
 
-    public function set_parameter($id, $nome, $cognome, $data_nascita, $cf, $email, $indirizzo, $residenza, $telefono)
+    public function set_parameter($id, $nome, $cognome, $data_nascita, $cf, $email, $indirizzo, $residenza, $telefono,$modP)
     {
         $this->id = $id;
         $this->nome = $nome;
@@ -47,6 +53,7 @@ class utenteLoggato
         $this->indirizzo = $indirizzo;
         $this->residenza = $residenza;
         $this->telefono = $telefono;
+        $this->modP = $modP;
     }
 
     public function set_ruolo($ruolo)
@@ -61,6 +68,13 @@ class utenteLoggato
         return $this->id;
     }
 
+    public function set_modP($modP){
+      $this->modP = $modP;
+    }
+
+    public function get_modP(){
+      return $this->modP;
+    }
 
     public function reloadUser($connessione){
         $query = "SELECT * FROM anagrafe WHERE Id=" . $this->id;

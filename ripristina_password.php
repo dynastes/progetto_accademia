@@ -17,8 +17,10 @@ if (isset ($_SESSION['autorizza_modifica'])) {
 		}
 }
  ?>
+
 </head>
 <body>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 
 	<!-- start header -->
@@ -43,7 +45,7 @@ if (isset ($_SESSION['autorizza_modifica'])) {
 	<!-- start slider -->
 						<div class="container">
 						 <!-- <a href="index.html"><img src="img/logo.png" height="20%" alt="" ></a>-->
-						 <div class="row form-group">
+						 <div class="page-header">
 							<a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a>
 						 </div>
 						<section class="loginform cf" >
@@ -73,15 +75,47 @@ if (isset ($_SESSION['autorizza_modifica'])) {
 						</div> <!-- /row form-group (1) -->
 						</div>
 						<div class="row form-group pull-right">
-						<div class="col-md-12">
-							<input type="submit" class="btn btn-info" value="Avanti">
+						<div class="col-md-10">
+							 <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"    data-callback="recaptchaCallback"></div>
+						</div>
+						<div class="col-md-2">
+							<button type="button" class="btn btn-info" id="bottone_conferma" disabled> Avanti </button>
 							</div>
 						</div> <!-- /row form-group (12) -->
+						<div id="conferma" class="text-center" style="width:50%;height:50%;background-color:white;position:fixed;top:25%;right:25%;border-radius:6px;border-style:solid;" hidden>
+							<h1> Confermi ripristino password? </h1>
+							<input type="submit" class="btn btn-info" value="SI">
+							<button type="button" class="btn btn-danger" id="bottone_no"> NO </button>
+						</div>
 				</form>
 			</section>
 		</div>
 
 
+
 <?php @include_once 'shared/footer.php'; ?>
 </body>
+<script>
+	$("#bottone_conferma").click(function(){
+		$("#conferma").show();
+	});
+	$("#bottone_no").click(function(){
+		$("#conferma").hide();
+	})
+</script>
+<script>
+function recaptchaCallback() {
+		alert("callback");
+		var captchResponse = $('#g-recaptcha-response').val();
+		if (captchResponse == "") {
+				$("#bottone_conferma").prop("disabled",true);
+		}
+		else {
+			$("#bottone_conferma").prop("disabled",false);
+		}
+
+};
+</script>
+
+
 </html>

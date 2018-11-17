@@ -24,7 +24,10 @@ function menu(){
 	} else {
 		$utente=$_SESSION['ut'];
 		$utente=unserialize($utente);
+		if($utente->get_modP()==1){
+		 	echo "<div style=\"width:100%;background-color:#FF3333;text-align:center;\"><b>Per una maggiore sicurezza si prega di modificare la password tramite questo <a href='ripristina_password_next.php'> Link </a></b></div>";
 
+		}
 		$nav='<nav class="navbar navbar-default">
 						<!--div class="container-fluid"-->
 								<div class="navbar-header">

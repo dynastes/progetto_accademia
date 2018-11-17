@@ -58,7 +58,7 @@ elseif($risultato->num_rows==1 && $password_verificata == true){ //se vi è un v
 		$_SESSION['login'] = true;
 		//popolo l'oggetto UTENTE
 		$utente = new utenteLoggato();
-		$utente->set_parameter($res["Id"],$res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"]);
+		$utente->set_parameter($res["Id"],$res["Nome"],$res["Cognome"],$res["Data_nascita"],$res["Codice_fiscale"],$res["Email"],$res["Indirizzo"],$res["Residenza"],$res["Telefono"],$res['Modp']);
 		//finito di popolare l'utente
 		//IDENTIFICO se l'utente è un DOCENTE, STUDENTE, ADMIN
 		//echo "Id dell'UTENTE: ".$utente->id;
@@ -141,6 +141,7 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
         $_SESSION['iscritto-aggiunto'] = 0;
     }
 }
+
 ?>
 
 

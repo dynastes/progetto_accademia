@@ -3,24 +3,30 @@
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
 
-if (isset ($_SESSION['autorizza_modifica'])){
-	if(	$_SESSION['autorizza_modifica']==FALSE){
-		header("Location: index.php");
-	}
-	$_SESSION['autorizza_modifica'] = false;
-}
-?>
 
+?>
+<?php
+$utente=$_SESSION['ut'];
+$utente=unserialize($utente);
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
 <?php @include_once 'shared/head_inclusions.php';?>
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<?php @include_once 'shared/menu.php';?>
 </head>
 <body>
+<?php
+if (isset ($_SESSION['autorizza_modifica'])){
+	if(	$_SESSION['autorizza_modifica']==FALSE){
+		echo "<div style=\"width:100%;background-color:#FF3333;text-align:center;\"><b>La pasword temporanea inserita è errata. Si prega di ricontrollare e riprovare</b></div>";
 
-
+	}
+	unset($_SESSION['autorizza_modifica']);
+}
+ ?>
 	<!-- start header -->
 	<header>
 		<div class="navbar navbar-default navbar-static-top">
@@ -42,16 +48,20 @@ if (isset ($_SESSION['autorizza_modifica'])){
 	<!-- end header -->
 	<!-- start slider -->
 						<div class="container">
+              <div class="page-header">
+ 							<a href="index.php"><b>&lt;&lt; Torna alla dashboard</b></a>
+ 						 </div>
 						 <!-- <a href="index.html"><img src="img/logo.png" height="20%" alt="" ></a>-->
-						 <div class="row form-group">
-							 	<a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a>
-						 </div>
 						<section class="loginform cf" style="float:left;">
 						<form name="register" action="ripristina_password_next_query.php" method="post" accept-charset="utf-8">
 						<div class="row form-group">
 							<h2>Ripristina password:</h2>
 						</div>
 
+						<div class="row form-group">
+							<label>Inserisci password temporanea: </label>
+							<input id="pass_temporanea" type="password" name="password_temporanea" class="form-control" placeholder="inserisci password temporanea qui" required>
+						</div> <!-- /row form-group (1) -->
 
 						<div class="row form-group">
 							<label>Inserisci nuova password:</label>
@@ -70,7 +80,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 						<div class="row form-group">
 							  <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"    data-callback="recaptchaCallback"></div>
 						</div>
-						<input type="hidden" name="id" value="<?php echo($_GET['id']); ?>">
+						<input type="hidden" name="id" value="<?php echo($utente->get_id()); ?>">
 						<div class="row form-group">
 							<input id="bottone_invia" type="submit" class="btn btn-info" value="Conferma" disabled="true">
 						</div> <!-- /row form-group (12) -->
@@ -113,6 +123,8 @@ function recaptchaCallback() {
 
 };
 </script>
+
+
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
 <!-- <script src="js/jquery.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>

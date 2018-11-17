@@ -120,7 +120,7 @@
 		</section>
 	</div>
 	</section>
-	
+
 <!-- javascript ================================================== --><!-- Placed at the end of the document so the pages load faster -->
 <!-- <script src="js/jquery.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>

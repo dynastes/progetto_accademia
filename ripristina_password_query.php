@@ -25,11 +25,12 @@ if(password_verify($risposta,$res['Risposta'])){
 	echo($uncripted_pass);
 	$password = password_hash($uncripted_pass,PASSWORD_BCRYPT);
 	$id = $res['Id'];
-	$sql = "UPDATE anagrafe SET Password = '".$password."' WHERE Id = ".$id."";
+	$sql = "UPDATE anagrafe SET Password = '".$password."', Modp = 1 WHERE Id = ".$id."";
 	$res = $connessione->query($sql);
 	include "phpmailer/index.php";
 	echo($body);
 	echo($email);
+	header("Location: index.php");
 }else {
   $_SESSION['autorizza_modifica'] = 0;
   header("Location: ripristina_password.php");

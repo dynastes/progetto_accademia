@@ -15,7 +15,15 @@
 
 	<body>
 		<?php menu(); ?>
+		<?php
+		if (isset ($_SESSION['password_modificata'])) {
+		    if ($_SESSION['password_modificata'] == true) {
+					echo "<div style=\"width:100%;background-color:green;text-align:center;\"><b>Password modificata correttamente! </b></div>";
 
+		        $_SESSION['password_modificata'] = false;
+		    }
+		}
+		 ?>
 		<div class="container">
 			<div class="dashboard-header text-center">
 						<img src="img/logo.png" class="dashboard-logo">

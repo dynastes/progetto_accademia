@@ -117,7 +117,7 @@
 
 				                <div class="row form-group">
                 <div class="col-md-4">
-                    <label>Residenza: &nbsp;</label></td>
+                    <label>Città: &nbsp;</label></td>
                     <input type="text" class="form-control" name="residenza" required>
                 </div> <!-- /row form-group (7) -->
 
