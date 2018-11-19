@@ -65,7 +65,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 
 						<div class="row form-group">
 							<label>Inserisci nuova password:</label>
-							<input id="pass_1" type="password" name="password" class="form-control" placeholder="inserisci nuova password qui" required>
+							<input id="pass_1" type="password" name="password" class="form-control" placeholder="inserisci nuova password qui"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="<?= parametri_pass ?>" required>
 						</div> <!-- /row form-group (1) -->
 
 						<div di="pass_conf" class="row form-group">

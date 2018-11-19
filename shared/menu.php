@@ -17,8 +17,11 @@ if(!isset($_SESSION['login'])){
 			include("lingue/cn.php");
 		}
 }
-
+if(!isset($_SESSION['ut'])){
+	header("Location: index.php");
+}
 function menu(){
+
 	if(!isset($_SESSION['login'])){
 		@header("location:index.php");
 	} else {

@@ -100,7 +100,7 @@
                 <div class="row form-group">
 				<div class="col-md-4">
                     <label>E-mail: &nbsp;</label>
-                    <input type="text" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email" required>
 					</div>
 
 
@@ -128,7 +128,7 @@
 
                 <div class="col-md-4">
                     <label>Password: &nbsp;</label>
-                    <input type="password" class="form-control" name="password" required>
+                    <input type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="minimo 8 caratteri di cui almeno una lettera Maiscuola, una lettera minuscola e un numero" required>
                 </div> <!-- /row form-group (9) -->
 				</div>
 
@@ -155,7 +155,7 @@
            <div class="row form-group pull-right">
 					<div class="col-md-12">
 						<input type="checkbox" required />
-						<label>Dichiaro di aver letto l'informativa sui cookies <a href="https://www.accademiadibelleartikandinskij.it/privacy/" target="_blank">Link</a></label>
+						<label>Ho letto <a href="https://www.accademiadibelleartikandinskij.it/privacy/" target="_blank">l'informativa sulla privacy</a> e autorizzo il trattamento dei miei dati personali per le finalità ivi indicate.</label>
 
 								  <label> &nbsp; </label>
                   <input type="submit" class="btn btn-info" color="blue" id="bottone_conferma" value="Registrati" disabled>

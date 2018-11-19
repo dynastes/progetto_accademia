@@ -20,6 +20,7 @@
   define('richiedi_documenti_certificati','Richiedi documenti/certificati');
 
   //Globals
+  define("parametri_pass","minimo 8 caratteri di cui almeno una lettera Maiscuola, una lettera minuscola e un numero");
   define("studente", "studente");
   define('benvenuto','Benvenuto');
   define('disconnetti','Disconetti');

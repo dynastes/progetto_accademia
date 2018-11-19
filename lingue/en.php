@@ -20,7 +20,7 @@
   define('richiedi_documenti_certificati','Request documents/certificates');
 
   //Globals
-
+  define("parametri_pass","Minimum 8 characters with almost one Uppercase letter, one lowercase letter and a number");
   define("studente","student");
   define('benvenuto','Welcome');
   define('disconnetti','Logout');

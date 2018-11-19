@@ -25,6 +25,9 @@
 		}
 		 ?>
 		<div class="container">
+			<?php
+					include("shared/lingue.php");
+			 ?>
 			<div class="dashboard-header text-center">
 						<img src="img/logo.png" class="dashboard-logo">
 						<h1> <?= titolo_accademia ?> </h1>

@@ -93,7 +93,7 @@
 					</tr>
 					<tr>
 						<td><label>Password &nbsp;</label></td>
-						<td><input name ="password" type="text"></td>
+						<td><input name ="password" type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></td>
 					</tr>
 					<tr>
 						<td></br></td>

@@ -1,10 +1,10 @@
-<?php
+i<?php
 @session_start();
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE htmli>
 <html lang="en">
 <head>
 
@@ -104,6 +104,7 @@ if (isset ($_SESSION['autorizza_modifica'])) {
 	})
 </script>
 <script>
+
 function recaptchaCallback() {
 		var captchResponse = $('#g-recaptcha-response').val();
 		if (captchResponse == "") {
