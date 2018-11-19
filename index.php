@@ -2,6 +2,9 @@
 @session_start();
 @include_once 'utente_loggato.php';
 @include_once 'dbconnection.php';
+if(!isset($_SESSION['lingua'])){
+	$_SESSION['lingua'] = "it";
+}
 //@include_once 'menu.php';
 /*Verifico che la sessione sia disponibile. Se lo è, vuol dire che l'utente si è già loggato e quindi che possiede già un OGGETTO UTENTE da serializzare*/
 $password_verificata= false;
@@ -154,6 +157,9 @@ if (isset ($_SESSION['iscritto-aggiunto'])) {
 </head>
 <body>
 	<div class="container">
+		<?php
+			include("shared/lingue.php");
+			?>
 		<!-- start header -->
 		<header class="row logo-accademia">
 			<div class="col-md-5"></div>
