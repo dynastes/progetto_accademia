@@ -45,7 +45,7 @@
         <div class="page-header">
             <p><a href="index.php"><b>&lt;&lt; Torna alla pagina di Login</b></a></p>
         </div>
-        <section class="loginform cf"">
+        <section class="loginform cf">
             <form name="register" action="registrati_query.php" method="post" accept-charset="utf-8">
                 <div class="page-header">
                     <h2>Registrati</h2>
@@ -148,7 +148,7 @@
 
                 </div>
 					<div class="col-md-4">
-                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    <?php include("recaptcha.php"); ?>
                 </div>
 
 				</div>
@@ -158,7 +158,7 @@
 						<label>Dichiaro di aver letto l'informativa sui cookies <a href="https://www.accademiadibelleartikandinskij.it/privacy/" target="_blank">Link</a></label>
 
 								  <label> &nbsp; </label>
-                  <input type="submit" class="btn btn-info" color="blue"  value="Registrati">
+                  <input type="submit" class="btn btn-info" color="blue" id="bottone_conferma" value="Registrati" disabled>
           </div>
 
 
@@ -171,7 +171,18 @@
     <div class="col-md-3"></div>
 </div>
 
+<script>
+function recaptchaCallback() {
+		var captchResponse = $('#g-recaptcha-response').val();
+		if (captchResponse == "") {
+				$("#bottone_conferma").prop("disabled",true);
+		}
+		else {
+			$("#bottone_conferma").prop("disabled",false);
+		}
 
+};
+</script>
 <?php @include_once 'shared/footer.php'; ?>
 </body>
 </html>

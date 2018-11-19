@@ -78,7 +78,7 @@ if (isset ($_SESSION['autorizza_modifica'])){
 							</div>
 						</div> <!-- /row form-group (1) -->
 						<div class="row form-group">
-							  <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"    data-callback="recaptchaCallback"></div>
+							 <?php include("recaptcha.php"); ?>
 						</div>
 						<input type="hidden" name="id" value="<?php echo($utente->get_id()); ?>">
 						<div class="row form-group">
@@ -112,7 +112,6 @@ if (isset ($_SESSION['autorizza_modifica'])){
 
 <script>
 function recaptchaCallback() {
-		alert("callback");
 		var captchResponse = $('#g-recaptcha-response').val();
 		if (captchResponse == "") {
 				$("#bottone_invia").prop("disabled",true);
